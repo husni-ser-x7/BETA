@@ -1,10 +1,10 @@
-FROM fusuf/whatsasena:latest
+FROM node:lts-buster
 
-RUN git clone https://github.com/A-J-M-A-L/BETA /Drips/Zimbotv4
+RUN git clone https://github.com/zim-bot/zimbot-v4  /root/Ejumel
 
-WORKDIR /Drips/Zimbotv4
+WORKDIR /root/Ejumel
 
-ENV TZ=Asia/Kolkata
+ENV TZ=Africa/Harare
 
 RUN npm install
 
