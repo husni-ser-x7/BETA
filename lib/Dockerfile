@@ -1,10 +1,10 @@
 FROM fusuf/whatsasena:latest
 
-RUN git clone https://github.com/zim-bot/zimbot-v4 /Drips/Zimbotv4
+RUN git clone https://github.com/A-J-M-A-L/BETA /Drips/Zimbotv4
 
 WORKDIR /Drips/Zimbotv4
 
-ENV TZ=Africa/Harare
+ENV TZ=Asia/Kolkata
 
 RUN npm install
 
