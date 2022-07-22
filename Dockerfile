@@ -1,8 +1,8 @@
-FROM fusuf/whatsasena:latest
+FROM node:lts-buster
 
-RUN git clone https://github.com/zim-bot/zimbot-v4  /Drips/Zimbotv4
+RUN git clone https://github.com/zim-bot/zimbot-v4  /root/Ejumel
 
-WORKDIR /Drips/Zimbotv4
+WORKDIR /root/Ejumel
 
 ENV TZ=Africa/Harare
 
