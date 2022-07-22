@@ -1,36 +1,15 @@
-// ⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈
-//▮ZIM BOT INC 2022 ®️ALL RIGHTS RESERVED
-//▮
-//▮FORK AND DON'T FORGET TO GIVE A STAR
-//▮
-//▮THIS SOFTWARE IS UNDER UZ COPYRIGHT
-//▮
-//▮REPORT ABUSE OF THIS SOFTWARE EMAIL US
-//▮reinhardtuna@mail.uk
-//▮WHATSAPP US : +44 7441 437150
-//▮YOUTUBE CHANNELL: https://youtube.com/c/DRIPSOFC
-//▮
-//╰▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-//
-//┏━━━━━━━━━━━━━━━━━━━━━━━━━
-//┃THIS SOFTWARE INCLUDES 
-//┃SOME ENCRYPTED FILES
-//┃
-//┃THANKS FOR CHOOSING ZIMBOT
-//┃I WROTE THIS SCRIPT BY MYSELF THIS SCRIPT IS FOR EVERYONE DONT SELL IT
-//┗━━━━━━━━━━━━━━━━━━━━━━━━━
-//
-
 require('./bot')
 const { default: ZimBotIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
-const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
+const ssname = `${sessionName}.json`
 const pino = require('pino')
 const fs = require('fs')
 const chalk = require('chalk')
+const {MakeSession} =require ('./lib/session')
 const FileType = require('file-type')
 const path = require('path')
 const { exec, spawn, execSync } = require('child_process')
 const  { Boom } = require('@hapi/boom')
+const ssid = process.env.SESSION_ID|| ''
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
@@ -57,8 +36,14 @@ say('ZIM-BOT\nV4', {
     align: 'center',
     gradient: ['red', 'green']
   })
+
+if(!fs.existsSync('./session.json')){
+MakeSession(ssid,ssname)
+}
+
+
 Drips.hr();
-console.log(color(''), color('THANKS FOR CHOOSING ZIM BOT', 'green'))
+console.log(color(''), color('Thanks For Choosing Wizard MD', 'green'))
 console.log(color(''), color('SCRIPT BY DRIPS', 'red'))
 console.log(color( ''), color('https://wa.me/27634090203','cyan'))
 Drips.hr();
@@ -70,11 +55,13 @@ Drips.error('')
 Drips.time('')
 Drips.hr();
 
+ setTimeout(() => {
 async function startZimBotInc() {
+const { state, saveState } = useSingleFileAuthState(ssname)
     const ZimBotInc = ZimBotIncConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['SUB DRIPS OFC','Ubuntu','20.0.04'],
+        browser: ['Wizard-MD','Ubuntu','20.0.04'],
         auth: state,
         
     })
@@ -160,8 +147,8 @@ body:"SUB DRIPS OFC",
 showAdAttribution: true,
 mediaType:2,
 thumbnail:wangu,
-mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo`,
+mediaUrl:`https://youtu.be/ww4z2m3uORU`, 
+sourceUrl: `https://youtu.be/ww4z2m3uORU`,
 }}
 }
 const driphunny = fs.readFileSync('./Zimbot/welcome.mp3')
@@ -193,8 +180,8 @@ body:"SUB DRIPS OFC",
 showAdAttribution: true,
 mediaType:2,
 thumbnail: mhatadzenyu,
-mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo`,
+mediaUrl:`https://youtu.be/ww4z2m3uORU`, 
+sourceUrl: `https://youtu.be/ww4z2m3uORU`,
 }}
 }
 const dripbabe = fs.readFileSync('./Zimbot/leave.mp3')
@@ -763,6 +750,7 @@ scheduleGc();
 
 startZimBotInc()
 
+}, 3000);
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
