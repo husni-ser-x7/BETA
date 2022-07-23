@@ -202,23 +202,6 @@ setTimeout(function() {
   exec('npm start'); //put your cmd for execute every 60 mins
 }, nextMinute * 60 * 1000); // every 60 minutes
 */
-var nextMinutes = Math.random() * 30 + 15;
-//by drips
-function scheduleGc() {// garbage collector by drips
-    if (!global.gc) {//memory leak fix
-      console.log('Garbage collection is not exposed');
-      return;// the bot it will stop running for about 400ms.
-    }
-    
-//by drips
-setTimeout(function(){
-    global.gc();
-    console.log('Manual gc', process.memoryUsage());
-    scheduleGc();
-  }, nextMinutes * 30 * 1000);
-  //done now our garbage is being collected every 30 minutes
-}
-scheduleGc();
 
 
 
