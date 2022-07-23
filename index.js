@@ -31,7 +31,7 @@ say('ZIM-BOT\nV4', {
     maxLenght: '0'
 
   })
-  say(`ZIM-BOT-INC By @${author.name || author}`, {
+  say(`ZIM-BOT-INC By @AJMAL`, {
     font: 'console',
     align: 'center',
     gradient: ['red', 'green']
