@@ -8,6 +8,5 @@ ENV TZ=Africa/Harare
 
 RUN npm install
 
-RUN npm install supervisor -g
 RUN yarn install --ignore-engines
 CMD ["node", "index.js"]
