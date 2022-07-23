@@ -19,7 +19,7 @@
       },
 		"SESSION_ID": {
 			"description": "Add your session id heren which you got after scanning the QR",
-			"required": true,
+			"required": false,
 			"value": ""
 		},
 		"OWNER_NAME": {
