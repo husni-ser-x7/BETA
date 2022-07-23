@@ -69,6 +69,7 @@
     "os": "^0.1.2",
     "path": "^0.12.7",
     "perf_hooks": "0.0.1",
+    "pastebin-js": "^1.0.6",
     "pg": "^8.7.3",
     "pino": "^7.0.5",
     "qrcode-terminal": "^0.12.0",
