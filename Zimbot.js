@@ -7263,6 +7263,8 @@ ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.
 timestampe = speed();
 latensie = speed() - timestampe
 anu = `
+EJUMAL IKKAAAAAA lub you
+
 *ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}
 
 ┌───〔 *_◉ᴀʙᴏᴜᴛ◉_* 〕
