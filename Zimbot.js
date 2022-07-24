@@ -25,6 +25,7 @@ const Config = require('./drips');
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const Heroku = require('heroku-client');
+const heroku = new Heroku({ token: process.env.HEROKU_API_KEY })
 git_url =  git_url.replace("https://", "https://api:" + process.env.HEROKU_API_KEY + "@")
 const { PassThrough } = require('stream');
 const { getLinkPreview, getPreviewFromContent } = require("link-preview-js");
@@ -4059,7 +4060,8 @@ case 'updatenow':
       return await ZimBotInc.sendMessage(m.chat, { text:"_Bot up to date_"})
     } else {
       await ZimBotInc.sendMessage(m.chat, {text: "_Build started ⏫_"})
-      try {
+     git_url =  git_url.replace("https://", "https://api:" + process.env.HEROKU_API_KEY + "@")
+	    try {
         var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
         var git_url = await heroku.get(app.git_url)
     } catch(e) {
