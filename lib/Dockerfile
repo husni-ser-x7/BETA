@@ -1,6 +1,6 @@
 FROM node:lts-buster
 
-RUN git clone https://github.com/zim-bot/zimbot-v4  /root/Ejumel
+RUN git clone https://github.com/A-J-M-A-L/BETA /root/Ejumel
 
 WORKDIR /root/Ejumel
 
