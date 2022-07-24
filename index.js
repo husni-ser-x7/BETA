@@ -1,59 +1,33 @@
 require('./bot')
 const { default: ZimBotIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
-const ssname = `${sessionName}.json`
+
 const pino = require('pino')
 const fs = require('fs')
 const chalk = require('chalk')
-const {MakeSession} =require ('./lib/session')
+
 const FileType = require('file-type')
 const path = require('path')
 const { exec, spawn, execSync } = require('child_process')
 const  { Boom } = require('@hapi/boom')
-const ssid = process.env.SESSION_ID|| ''
+
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
 const Drips = require('drips-memes')
 global.api = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
+const {MakeSession} =require ('./lib/session')
+const ssname = `./${sessionName}.json`
+const ssid = process.env.SESSION_ID|| ''
+
+if(!fs.existsSync(ssname)){
+MakeSession(ssid,ssname)
+}
 
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 const { say } =  require('cfonts')
 const { color } = require('./lib/color')
-say('ZIM-BOT\nV4', {
-    font: '3d',
-    colors: ["#0ff",'green',"#ff0"],
-    align: 'center',
-    gradient: false,
-    background: "transparent",
-    letterSpacing: 1,
-    lineHeight: 1,
-    space: true,
-    maxLenght: '0'
-
-  })
-  say(`ZIM-BOT-INC By @AJMAL`, {
-    font: 'console',
-    align: 'center',
-    gradient: ['red', 'green']
-  })
-
-if(!fs.existsSync('./session.json')){
-MakeSession(ssid,ssname)
-}
 
 
-Drips.hr();
-console.log(color(''), color('Thanks For Choosing Wizard MD', 'green'))
-console.log(color(''), color('SCRIPT BY DRIPS', 'red'))
-console.log(color( ''), color('https://wa.me/27634090203','cyan'))
-Drips.hr();
-Drips.banner(`DRIPS ZIM BOT OWNER`)
-Drips.ok('WELCOME TO ZIMBOT')
-Drips.done('I WROTE THIS SCRIPT BY MYSELF')
-Drips.info('YOU WANNA CONTRUBUTE FEEL FREE TO CONTACT ME, BEING FRIENDLY IS MY LANGUAGE')
-Drips.error('')
-Drips.time('')
-Drips.hr();
 
  setTimeout(() => {
 async function startZimBotInc() {
