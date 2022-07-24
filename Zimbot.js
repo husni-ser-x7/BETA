@@ -26,7 +26,6 @@ const simpleGit = require('simple-git');
 const git = simpleGit();
 const Heroku = require('heroku-client');
 const heroku = new Heroku({ token: process.env.HEROKU_API_KEY })
-git_url =  git_url.replace("https://", "https://api:" + process.env.HEROKU_API_KEY + "@")
 const { PassThrough } = require('stream');
 const { getLinkPreview, getPreviewFromContent } = require("link-preview-js");
 const primbon = new Primbon()
