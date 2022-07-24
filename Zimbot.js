@@ -4083,8 +4083,8 @@ case 'updatenow':
       try {
         var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
         var git_url = await heroku.get(app.git_url)
-    } catch {
-        await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
+    } catch(e) {
+        await ZimBotInc.sendMessage(m.chat, { text:e})
 
         await new Promise(r => setTimeout(r, 1000));
       }
@@ -4094,7 +4094,9 @@ case 'updatenow':
     git_url =  git_url.replace("https://", "https://api:" + Config.HEROKU_API_KEY + "@")//drips
       try {
         await git.addRemote('heroku', git_url);
-    } catch {console.log('Deploy error catched. Retrying...')}
+    } catch(e) {
+	await ZimBotInc.sendMessage(m.chat, { text:e+'\n2nd catch'})
+	    console.log('Deploy error catched. Retrying...')}
     try { await git.push('heroku', 'main'); } catch(e){ 
     if (e.message.includes("concurrent")) return reply("Your account has reached in-parallel build limit! Please wait for the other app to finish its deploy ❗"); 
     }
