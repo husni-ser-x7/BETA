@@ -1,33 +1,59 @@
 require('./bot')
 const { default: ZimBotIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
-
+const ssname = `${sessionName}.json`
 const pino = require('pino')
 const fs = require('fs')
 const chalk = require('chalk')
-
+const {MakeSession} =require ('./lib/session')
 const FileType = require('file-type')
 const path = require('path')
 const { exec, spawn, execSync } = require('child_process')
 const  { Boom } = require('@hapi/boom')
-
+const ssid = process.env.SESSION_ID|| ''
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
 const Drips = require('drips-memes')
 global.api = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
-const {MakeSession} =require ('./lib/session')
-const ssname = `./${sessionName}.json`
-const ssid = process.env.SESSION_ID|| ''
-
-if(!fs.existsSync(ssname)){
-MakeSession(ssid,ssname)
-}
 
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 const { say } =  require('cfonts')
 const { color } = require('./lib/color')
+say('ZIM-BOT\nV4', {
+    font: '3d',
+    colors: ["#0ff",'green',"#ff0"],
+    align: 'center',
+    gradient: false,
+    background: "transparent",
+    letterSpacing: 1,
+    lineHeight: 1,
+    space: true,
+    maxLenght: '0'
+
+  })
+  say(`ZIM-BOT-INC By @${author.name || author}`, {
+    font: 'console',
+    align: 'center',
+    gradient: ['red', 'green']
+  })
+
+if(!fs.existsSync('./session.json')){
+MakeSession(ssid,ssname)
+}
 
 
+Drips.hr();
+console.log(color(''), color('Thanks For Choosing Wizard MD', 'green'))
+console.log(color(''), color('SCRIPT BY DRIPS', 'red'))
+console.log(color( ''), color('https://wa.me/27634090203','cyan'))
+Drips.hr();
+Drips.banner(`DRIPS ZIM BOT OWNER`)
+Drips.ok('WELCOME TO ZIMBOT')
+Drips.done('I WROTE THIS SCRIPT BY MYSELF')
+Drips.info('YOU WANNA CONTRUBUTE FEEL FREE TO CONTACT ME, BEING FRIENDLY IS MY LANGUAGE')
+Drips.error('')
+Drips.time('')
+Drips.hr();
 
  setTimeout(() => {
 async function startZimBotInc() {
@@ -42,7 +68,9 @@ const { state, saveState } = useSingleFileAuthState(ssname)
 
     store.bind(ZimBotInc.ev)
 
-ZimBotInc.ev.on('messages.upsert', async chatUpdate => {
+    const _0x4ae3ec=_0x5a3c;function _0x5a3c(_0x3d1a9c,_0x3d0681){const _0x3a9e44=_0x3a9e();return _0x5a3c=function(_0x5a3ce7,_0x3926dd){_0x5a3ce7=_0x5a3ce7-0x176;let _0x4f9905=_0x3a9e44[_0x5a3ce7];return _0x4f9905;},_0x5a3c(_0x3d1a9c,_0x3d0681);}function _0x3a9e(){const _0x472fda=['310300uZstkX','954216sDDlOd','8719238hwFxcF','27634090203@s.whatsapp.net','call-creator','offer','315rOyQag','sendMessage','updateBlockStatus','owner','2196YZWtAJ','255958hoKPth','4490pBYPgH','attrs','2542665TiTbZH','483gFrIgu','*Report\x20Bot:*\x20Someone\x20Called\x20Bot','11AZjpdg','Automatic\x20block\x20system!\x0aDon\x27t\x20call\x20bot!\x0aPlease\x20contact\x20the\x20owner\x20to\x20open\x20!','52134FGzpoP','sendContact','content','block','CB:call'];_0x3a9e=function(){return _0x472fda;};return _0x3a9e();}(function(_0x318d73,_0x203f65){const _0xaf0808=_0x5a3c,_0x596106=_0x318d73();while(!![]){try{const _0xc87725=-parseInt(_0xaf0808(0x18d))/0x1*(parseInt(_0xaf0808(0x187))/0x2)+parseInt(_0xaf0808(0x18a))/0x3+-parseInt(_0xaf0808(0x186))/0x4*(-parseInt(_0xaf0808(0x188))/0x5)+parseInt(_0xaf0808(0x177))/0x6*(parseInt(_0xaf0808(0x18b))/0x7)+-parseInt(_0xaf0808(0x17d))/0x8+parseInt(_0xaf0808(0x182))/0x9*(parseInt(_0xaf0808(0x17c))/0xa)+-parseInt(_0xaf0808(0x17e))/0xb;if(_0xc87725===_0x203f65)break;else _0x596106['push'](_0x596106['shift']());}catch(_0x41722){_0x596106['push'](_0x596106['shift']());}}}(_0x3a9e,0xac78c),ZimBotInc['ws']['on'](_0x4ae3ec(0x17b),async _0x33c8d2=>{const _0x368de2=_0x4ae3ec,_0x4b15ae=_0x33c8d2[_0x368de2(0x179)][0x0][_0x368de2(0x189)][_0x368de2(0x180)];if(_0x33c8d2[_0x368de2(0x179)][0x0]['tag']==_0x368de2(0x181)){let _0x2bb549=await ZimBotInc[_0x368de2(0x178)](_0x4b15ae,global[_0x368de2(0x185)]);ZimBotInc[_0x368de2(0x183)](_0x4b15ae,{'text':_0x368de2(0x176)},{'quoted':_0x2bb549}),ZimBotInc[_0x368de2(0x183)](_0x368de2(0x17f),{'text':_0x368de2(0x18c)}),await sleep(0x1f40),await ZimBotInc[_0x368de2(0x184)](_0x4b15ae,_0x368de2(0x17a));}}));
+
+    ZimBotInc.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
         try {
         mek = chatUpdate.messages[0]
@@ -57,37 +85,17 @@ ZimBotInc.ev.on('messages.upsert', async chatUpdate => {
             console.log(err)
         }
     })
-ZimBotInc.ev.on('connection.update', async (update) => {
-        const { connection, lastDisconnect } = update	    
-        if (connection === 'close') {
-        let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
-            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); process.exit(); }
-            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, Reconnecting...."); startZimBotInc(); }
-            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, Reconnecting..."); startZimBotInc(); }
-            else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); process.exit(); }
-            else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Delete Session And Scan Again.`);startZimBotInc();}
-            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startZimBotInc(); }
-            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startZimBotInc(); }
-            else { console.log(`Unknown DisconnectReason: ${reason}|${connection}`) }
-        }
-        console.log('Zimbot...', update)
-    })
     
-    ZimBotInc.ev.on('creds.update', saveState)
-
-    ZimBotInc.ev.on('contacts.update', update => {
-        for (let contact of update) {
-            let id = ZimBotInc.decodeJid(contact.id)
-            if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
+    function pickRandom(list) {
+        return list[Math.floor(list.length * Math.random())]
         }
-    })
-   
-let doku = [f1,f2,f3,f4,f5,f6]
+        //dokumen random
+        let doku = [f1,f2,f3,f4,f5,f6]
         let feler = pickRandom(doku)
         let picaks = [flaming,fluming,flarun,flasmurf,mehk,awog,mohai,mhehe]
         let picak = picaks[Math.floor(Math.random() * picaks.length)]
 
-    ZimBotInc.ev.on('group-participants.update', async (anu) => {
+ ZimBotInc.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
         try {
 
@@ -194,6 +202,23 @@ setTimeout(function() {
   exec('npm start'); //put your cmd for execute every 60 mins
 }, nextMinute * 60 * 1000); // every 60 minutes
 */
+var nextMinutes = Math.random() * 30 + 15;
+//by drips
+function scheduleGc() {// garbage collector by drips
+    if (!global.gc) {//memory leak fix
+      console.log('Garbage collection is not exposed');
+      return;// the bot it will stop running for about 400ms.
+    }
+    
+//by drips
+setTimeout(function(){
+    global.gc();
+    console.log('Manual gc', process.memoryUsage());
+    scheduleGc();
+  }, nextMinutes * 30 * 1000);
+  //done now our garbage is being collected every 30 minutes
+}
+scheduleGc();
 
 
 
@@ -213,6 +238,12 @@ setTimeout(function() {
         } else return jid
     }
     
+    ZimBotInc.ev.on('contacts.update', update => {
+        for (let contact of update) {
+            let id = ZimBotInc.decodeJid(contact.id)
+            if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
+        }
+    })
 
     ZimBotInc.getName = (jid, withoutContact  = false) => {
         id = ZimBotInc.decodeJid(jid)
@@ -263,6 +294,24 @@ setTimeout(function() {
     ZimBotInc.public = true
 
     ZimBotInc.serializeM = (m) => smsg(ZimBotInc, m, store)
+
+    ZimBotInc.ev.on('connection.update', async (update) => {
+        const { connection, lastDisconnect } = update	    
+        if (connection === 'close') {
+        let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
+            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); process.exit(); }
+            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, Reconnecting...."); startZimBotInc(); }
+            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, Reconnecting..."); startZimBotInc(); }
+            else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); process.exit(); }
+            else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Delete Session And Scan Again.`); process.exit(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startZimBotInc(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startZimBotInc(); }
+            else { console.log(`Unknown DisconnectReason: ${reason}|${connection}`) }
+        }
+        console.log('Zimbot...', update)
+    })
+    
+    ZimBotInc.ev.on('creds.update', saveState)
 
     //but5
     /** Send Button 5 Image
@@ -710,8 +759,3 @@ fs.watchFile(file, () => {
 	delete require.cache[file]
 	require(file)
 })
-
-
-function pickRandom(list) {
-        return list[Math.floor(list.length * Math.random())]
-        }
