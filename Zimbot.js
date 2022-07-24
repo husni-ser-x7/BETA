@@ -1,25 +1,3 @@
-// ⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈
-//▮ZIM BOT INC 2022 ®️ALL RIGHTS RESERVED
-//▮
-//▮FORK AND DON'T FORGET TO GIVE A STAR
-//▮
-//▮THIS SOFTWARE IS UNDER UZ COPYRIGHT
-//▮
-//▮REPORT ABUSE OF THIS SOFTWARE EMAIL US
-//▮reinhardtuna@mail.uk
-//▮WHATSAPP US : +44 7441 437150
-//▮YOUTUBE CHANNELL: https://youtube.com/c/DRIPSOFC
-//▮
-//╰▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-//
-//┏━━━━━━━━━━━━━━━━━━━━━━━━━
-//┃THIS SOFTWARE INCLUDES 
-//┃SOME ENCRYPTED FILES
-//┃
-//┃THANKS FOR CHOOSING ZIMBOT
-//┃I WROTE THIS SCRIPT BY MYSELF THIS SCRIPT IS FOR EVERYONE DONT SELL IT
-//┗━━━━━━━━━━━━━━━━━━━━━━━━━
-//
 process.on('uncaughtException', console.error)
 require('./bot')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, WAZimBotIncection, MessageType, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType, fetchLatestBaileysVersion } = require('@adiwajshing/baileys')
@@ -47,6 +25,7 @@ const Config = require('./drips');
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const Heroku = require('heroku-client');
+git_url =  git_url.replace("https://", "https://api:" + process.env.HEROKU_API_KEY + "@")
 const { PassThrough } = require('stream');
 const { getLinkPreview, getPreviewFromContent } = require("link-preview-js");
 const primbon = new Primbon()
@@ -4090,8 +4069,7 @@ case 'updatenow':
       }
       git.fetch('upstream', 'main');
       git.reset('hard', ['FETCH_HEAD']);//lols
-
-    git_url =  git_url.replace("https://", "https://api:" + Config.HEROKU_API_KEY + "@")//drips
+	    
       try {
         await git.addRemote('heroku', git_url);
     } catch(e) {
