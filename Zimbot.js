@@ -4019,72 +4019,69 @@ await ZimBotInc.sendMessage(m.chat,kuku, { quoted:m }).catch(err => {
 return('Error!')
 })  
 break
-case 'update':
-  const heroku = new Heroku({ token: Config.HEROKU_API_KEY })
-  await git.fetch();
-  var commits = await git.log(['main' + '..origin/' + 'main']);
-  if (commits.total === 0) {
-    reply("*No pending updates!*")
-  } else {
-    var changelog = "_Pending updates:_\n\n";
-    commits['all'].map(
-        (commit) => {
-            reply(`• *${commit.message}* _[${commit.date.substring(0, 10)}]_ \n`)
-          }
-          );
-          mss = changelog;
-          var img = ""
-       var buttons = [{
-        urlButton: {
-            displayText: 'DRIPS',
-            url: 'tes'
-        }
-    },// By drips 
-    {
-        quickReplyButton: {
-            displayText: 'lol',
-            id: `${prefix}upd`
-        }
-    }];
-    }
-    await ZimBotInc.sendMessage(m.chat, {text: ` *type updatenow to update the bot*`});
-    
+case 'update' :{
+             
+                    await git.fetch();
+                        var commits = await git.log(['master' + '..origin/' + 'master']);
+                    if (commits.total === 0) {
+                        await ZimBotInc.sendMessage(m.chat,{text:'```You have the latest version installed```'})    
+                    } else {
+                        var availupdate = '*ᴜᴘᴅᴀᴛᴇs ᴀᴠᴀɪʟᴀʙʟᴇ* \n\n'+'```';
+                        commits['all'].map(
+                        (commit) => { 
+                        availupdate += '●  '+ commit.message +'\n'});
+                        let buttons = [
+                            { buttonId: 'updatenow', buttonText: { displayText: 'Update' }, type: 1 },
+                        ]
+                        await ZimBotInc.sendButtonText(m.chat, buttons, availupdate + '```', ZimBotInc.user.name)
+                        
+                    }}                       
+            
+            break
+case 'updatenow':{
+                const Heroku = require('heroku-client');
+                const heroku = new Heroku({ token: HEROKU.API })
+                const simpleGit = require('simple-git')
+                const git = simpleGit();
+                await git.fetch();
+                        var commits = await git.log([BRANCH + '..origin/' + BRANCH]);
+                        if (commits.total === 0) {
+                            return await ZimBotInc.sendMessage(m.chat,{text:'```You have the latest version installed```'})   
+                        } else {
+                               
+
+                                    var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
+                                    await ZimBotInc.sendMessage(m.chat,{text:'*ᴜᴘᴅᴀᴛɪɴɢ...*'})
+                                
+                                    /*await ZimBotInc.sendMessage(m.chat,{text:'```Invalid Heroku Credentials```'})
+                                    await new Promise(r => setTimeout(r, 1000));
+                                    return await ZimBotInc.sendMessage(m.chat,{text:'```Please give correct credentials```'})*/
+                                
+                    
+                                git.fetch('upstream', BRANCH);
+                                git.reset('hard', ['FETCH_HEAD']);
+                    
+                                var git_url = app.git_url.replace(
+                                    "https://", "https://api:" + HEROKU_API_KEY + "@"
+                                )
+                               try{
+                                try {
+                                    await git.addRemote('heroku', git_url);
+                                } catch(e) { console.log(e); }
+                               
+                                await git.push('heroku', BRANCH);
+                    
+                                await ZimBotInc.chat.sendMessage(m.chat,{text:'*Updated...*'})
+                    
+                                await ZimBotInc.sendMessage(m.chat,{text:'Restarting...'})
+                                
+                         
+                        }catch(e){
+                            m.reply(e)
+}}}
 
 break
-case 'updatenow':
-  
-    await git.fetch();
-    var commits = await git.log(['main' + '..origin/' + 'main']);
-    if (commits.total === 0) {
-      return await ZimBotInc.sendMessage(m.chat, { text:"_Bot up to date_"})
-    } else {
-      await ZimBotInc.sendMessage(m.chat, {text: "_Build started ⏫_"})
-     git_url =  git_url.replace("https://", "https://api:" + process.env.HEROKU_API_KEY + "@")
-	    try {
-        var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
-        var git_url = await heroku.get(app.git_url)
-    } catch(e) {
-        await ZimBotInc.sendMessage(m.chat, { text:e})
 
-        await new Promise(r => setTimeout(r, 1000));
-      }
-      git.fetch('upstream', 'main');
-      git.reset('hard', ['FETCH_HEAD']);//lols
-	    
-      try {
-        await git.addRemote('heroku', git_url);
-    } catch(e) {
-	await ZimBotInc.sendMessage(m.chat, { text:e+'\n2nd catch'})
-	    console.log('Deploy error catched. Retrying...')}
-    try { await git.push('heroku', 'main'); } catch(e){ 
-    if (e.message.includes("concurrent")) return reply("Your account has reached in-parallel build limit! Please wait for the other app to finish its deploy ❗"); 
-    }
-    await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
- //
-
-  }
-
-break
 case 'awoo2':
 reply(mess.wait)
 bhingo = await axios.get(`https://waifu.pics/api/sfw/awoo`)
