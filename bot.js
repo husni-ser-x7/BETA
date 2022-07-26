@@ -10,8 +10,8 @@ global.APIKeys = {
 	'https://zenzapi.xyz': '805a6c3fa9', //api keys from zenzi
 }
 
-Config.herokuapi = process.env.HEROKU_API_KEY
-Config.herokuapp = process.env.HEROKU_APP_NAME
+global.herokuapi = process.env.HEROKU_API_KEY
+global.herokuapp = process.env.HEROKU_APP_NAME
 //settings
 let fake = process.env.OWNER_NUMBER
 global.owner = ['918113921898',`${fake}`]
