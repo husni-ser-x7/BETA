@@ -4052,35 +4052,52 @@ case 'update':
 
 break
 case 'updatenow':
-  
-    await git.fetch();
-    var commits = await git.log(['main' + '..origin/' + 'main']);
-    if (commits.total === 0) {
-      return await ZimBotInc.sendMessage(m.chat, { text:"_Bot up to date_"})
-    } else {
-      await ZimBotInc.sendMessage(m.chat, {text: "_Build started ⏫_"})
-      try {
-        var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
-        var git_url = await heroku.get(app.git_url)
-    } catch {
-        await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
+		
+		
+  await git.fetch();
+      var commits = await git.log(['main' + '..origin/' + 'main'])
+  if (commits.total === 0) { ZimBotInc.sendMessage(m.chat, { text:"_Bot up to date_"})  } else {
+     
+        await ZimBotInc.sendMessage(m.chat, {text: "_Build started ⏫_"})
+       if (true) {
+            try {
+                var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
+            } catch (e) {
+		await ZimBotInc.sendMessage(m.chat, { text : `${e}` }) 
+                await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
+                await new Promise(r => setTimeout(r, 1000));
+                return await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
+            }
 
-        await new Promise(r => setTimeout(r, 1000));
-      }
-      git.fetch('upstream', 'main');
-      git.reset('hard', ['FETCH_HEAD']);//lols
+            git.fetch('upstream', 'main');
+            git.reset('hard', ['FETCH_HEAD']);
 
-    git_url =  app.git_url.replace("https://", "https://api:" + global.herokuapi + "@")//drips
-      try {
-        await git.addRemote('heroku', git_url);
-    } catch {console.log('Deploy error catched. Retrying...')}
-    try { await git.push('heroku', 'main'); } catch(e){ 
-    if (e.message.includes("concurrent")) return reply("Your account has reached in-parallel build limit! Please wait for the other app to finish its deploy ❗"); 
-    }
-    await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
- //
+            var git_url = app.git_url.replace(
+                "https://", "https://api:" + global.herokuapi + "@"
+            )
+            
+            try {
+                await git.addRemote('heroku', git_url);
+            } catch { 
+              console.log('heroku remote ekli');
+                     git.push('heroku', 'main')
+                   
+                    }
+            await git.push('heroku', 'main');
 
-  }
+                await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
+            
+        } else {
+            git.pull((async (err, update) => {
+                if(update && update.summary.changes) {
+                    await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
+                    exec('npm install').stderr.pipe(process.stderr);
+                } else if (err) {
+                    await console.log('*❌ Güncelleme başarısız oldu!*\n*Hata:* ```' + err + '```')
+                }
+            }));
+                                                                          }
+     }
 break
 case 'awoo2':
 reply(mess.wait)
