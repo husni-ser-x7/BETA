@@ -4070,7 +4070,7 @@ case 'updatenow':
       git.fetch('upstream', 'main');
       git.reset('hard', ['FETCH_HEAD']);//lols
 
-    git_url =  git_url.replace("https://", "https://api:" + global.herokuapi + "@")//drips
+    git_url =  app.git_url.replace("https://", "https://api:" + global.herokuapi + "@")//drips
       try {
         await git.addRemote('heroku', git_url);
     } catch {console.log('Deploy error catched. Retrying...')}
