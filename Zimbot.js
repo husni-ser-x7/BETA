@@ -25,7 +25,6 @@ const Config = require('./drips');
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const Heroku = require('heroku-client');
-const heroku = new Heroku({ token: process.env.HEROKU_API_KEY })
 const { PassThrough } = require('stream');
 const { getLinkPreview, getPreviewFromContent } = require("link-preview-js");
 const primbon = new Primbon()
@@ -4020,7 +4019,6 @@ return('Error!')
 })  
 break
 case 'update':
-  const heroku = new Heroku({ token: Config.HEROKU_API_KEY })
   await git.fetch();
   var commits = await git.log(['main' + '..origin/' + 'main']);
   if (commits.total === 0) {
@@ -4054,6 +4052,7 @@ break
 case 'updatenow':
 		
 		
+const heroku = new Heroku({ token: process.env.HEROKU_API_KEY })
   await git.fetch();
       var commits = await git.log(['main' + '..origin/' + 'main'])
   if (commits.total === 0) { ZimBotInc.sendMessage(m.chat, { text:"_Bot up to date_"})  } else {
