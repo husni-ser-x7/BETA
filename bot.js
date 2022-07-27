@@ -58,7 +58,9 @@ global.f5 = 'application/pdf'
 global.f6 = 'application/vnd.android.package-archive'
 global.flaming = 'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text='
 global.mess = {
-    success: 'Takaenda Done!',
+    success: 'All set sucessfully changed settings!',
+    public: 'Wizard MD is now working in public mode',
+    private: 'Wizard MD is now working in private mode',
     admin: '*This feature is only for admin!*',
     botAdmin: '*wizard bot must be admin first!*',
     owner: '*this feature is only for owner*',
