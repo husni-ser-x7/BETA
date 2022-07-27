@@ -7037,25 +7037,19 @@ case 'listmenu':
   m.chat, 
   {
   text: `
-╔➽「 ᴢɪᴍ ʙᴏᴛ ᴠ4」
-║➭ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
-╔➽「 ◉ᴜsᴇʀ ɪɴғᴏ◉ 」
-║➭ *NAME:* ${pushname}
-║➭  ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-║➭ *RANK:* ${role}
-║➭ *STATUS:* ${elit}
-║➭ *MONEY:* $${(getBalance(sender, balance))}
-║➭ *XP:* ${getLevelingXp(sender)}/${reqXp}
-║➭ *LEVEL:* ${getLevelingLevel(sender)}
-║➭ *MONEY:* $${(getBalance(sender, balance))}
-║➭ *GOLD:* ${getEmas(sender)}
-║➭ *IRON:* ${getBesi(sender)}
-║➭ *FISH:* ${getFish(sender)}
-║➭ *DIAMOND:* ${getDm(sender)}
-║➭ *ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
-║➭ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${Object.keys(global.db.users).length}
-└───────────●
+┍━━━━━━━━━━━━━━━━━━━━
+│ ❐│ *ɴᴀᴍᴇ* : ${pushname}
+│ ❐│ *ʟᴇᴠᴇʟ* : ${getLevelingLevel(sender)}
+│ ❐│ *ʀᴏʟᴇ* : ${role}
+│ ❐│ *ᴛɪᴍᴇ* : ${time}
+│ ❐│ *ᴘʀᴇғɪx* : ${prefix}
+│ ❐│ *ᴠᴇʀꜱɪᴏɴ:* 1.0
+│ ❐│ *sᴇʀᴠᴇʀ* : Heroku
+│ ❐│ *ғʀᴀᴍᴇᴡᴏʀᴋ* : Nodejs
+│ ❐│ *ᴡᴇʙ ɪɴғᴏ* : Baileys
+│ ❐│ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${Object.keys(global.db.users).length}
+│ ❐│ *sᴛᴏʀᴀɢᴇ* : 467/500GB.
+┕━━━━━━━━━━━━━━━━━━━━━
 `,
   footer: watermark,
   title: `*LIST MENU*`,
@@ -7153,21 +7147,7 @@ case 'setmenu': {
          title: ``,
          description:
  `
- *ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}
-
- ╔➽「 ◉ᴀʙᴏᴜᴛ◉ 」
- ║➭ *❗ᴏꜱ ʀᴇʟᴇᴀꜱᴇ:* ${os.release()}
- ║➭ *❕ᴏꜱ ᴛʏᴘᴇ:*   ${os.type()}
- ║➭ *❗ᴅɪʀᴇᴄᴛᴏʀʏ:*  ${os.homedir()}
- ║➭ *❕ꜱᴘᴇᴇᴅ :* ${latensie.toFixed(4)} Second
- ║➭ *ʀᴀᴍᴜsᴀɢᴇ :* ${ram2}
- ║➭ *❗ᴘʟᴀᴛʟғᴏʀᴍ :* ${os.platform()} 
- ║➭ *❗ꜰʀᴇᴇ ᴍᴏᴍᴏʀʏ:* ${os.freemem()}
- ║➭ *❕ᴛᴏᴛᴀʟ ᴍᴇᴍᴏʀʏ:* ${os.totalmem()}
- ║➭ *❕ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
- ║➭ *❗ᴅᴇᴠɪᴄᴇ :* ${os.hostname()}
- ║➭ *❕ᴛᴏᴛᴀʟ ᴜsᴇʀs :* ${Object.keys(global.db.users).length}
- └───────────●
+ SET MENU
         `,
          buttonText: "SET MENU",
          footerText: botname,
@@ -7253,19 +7233,7 @@ latensie = speed() - timestampe
 anu = `
 *ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}
 
-╔➽「 ◉ᴀʙᴏᴜᴛ◉ 」
-║➭ *❗ᴏꜱ ʀᴇʟᴇᴀꜱᴇ:* ${os.release()}
-║➭ *❕ᴏꜱ ᴛʏᴘᴇ:*   ${os.type()}
-║➭ *❗ᴅɪʀᴇᴄᴛᴏʀʏ:*  ${os.homedir()}
-║➭ *❕ꜱᴘᴇᴇᴅ :* ${latensie.toFixed(4)} Second
-║➭ *ʀᴀᴍᴜsᴀɢᴇ :* ${ram2}
-║➭ *❗ᴘʟᴀᴛʟғᴏʀᴍ :* ${os.platform()} 
-║➭ *❗ꜰʀᴇᴇ ᴍᴏᴍᴏʀʏ:* ${os.freemem()}
-║➭ *❕ᴛᴏᴛᴀʟ ᴍᴇᴍᴏʀʏ:* ${os.totalmem()}
-║➭ *❕ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
-║➭ *❗ᴅᴇᴠɪᴄᴇ :* ${os.hostname()}
-║➭ *❕ᴛᴏᴛᴀʟ ᴜsᴇʀs :* ${Object.keys(global.db.users).length}
-└───────────●
+
 
 ╔➽〔 *_◉ᴍᴇɴᴜ◉_* 〕
 ║➭ downloadmenu
@@ -7961,11 +7929,10 @@ anu = `
 ┍━━━━━━━━━━━━━━━━━━━━
 │ ❐│ *ɴᴀᴍᴇ* : ${pushname}
 │ ❐│ *ʟᴇᴠᴇʟ* : ${getLevelingLevel(sender)}
-│ ❐│ *ʟɪᴍɪᴛ* : ${limit}
 │ ❐│ *ʀᴏʟᴇ* : ${role}
-│ ❐│ *ʀᴀɴᴋ* : ${rank}
 │ ❐│ *ᴛɪᴍᴇ* : ${time}
 │ ❐│ *ᴘʀᴇғɪx* : ${prefix}
+│ ❐│ *ᴠᴇʀꜱɪᴏɴ:* 1.0
 │ ❐│ *sᴇʀᴠᴇʀ* : Heroku
 │ ❐│ *ғʀᴀᴍᴇᴡᴏʀᴋ* : Nodejs
 │ ❐│ *ᴡᴇʙ ɪɴғᴏ* : Baileys
@@ -8025,17 +7992,17 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'OWNER MENU')
 ram3 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu = `
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ◉ᴏᴡɴᴇʀᴍᴇɴᴜ◉ 」
 ║➭ chatbot on/off
@@ -8093,17 +8060,17 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'DATABASE MENU')
 ram4 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu = `
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ◉ᴅᴀᴛᴀʙᴀꜱᴇᴍᴇɴᴜ◉ 」
 ║➭ addmsg -msg-
@@ -8145,17 +8112,17 @@ case 'photooxymenu': {
   buffer = await getBuffer(picak+'PHOTOOXY MENU')
   ram5 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   anu = `
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ◉Photooxyᴍᴇɴᴜ◉ 」
 ║➭ silk -text-
@@ -8215,17 +8182,17 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'GROUP MENU')
 ram0 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu = `
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ◉ɢʀᴏᴜᴘᴍᴇɴᴜ◉ 」
 ║➭ add -admin-
@@ -8302,17 +8269,17 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'TEXTPRO MENU')
 ram11 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu = `
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ◉ᴛᴇxᴛᴘʀᴏᴍᴇɴᴜ◉ 」
 ║➭ candy -text-
@@ -8403,17 +8370,17 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'DOWNLOAD MENU')
 ram22 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu =`
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ」
 ║➭ ytmp3 -link-
@@ -8495,17 +8462,17 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'PHOTOFILTER MENU')
 ram30 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu =`
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
 
   
 ╔➽「 ᴘʜᴏᴛꜰɪʟᴛᴇʀᴍᴇɴᴜ」
@@ -8579,17 +8546,17 @@ case 'animemenu':{
   ram40 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   buffer = await getBuffer(picak+'ANIME MENU')
   anu =`
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
   
     
 ╔➽「 ᴀɴɪᴍᴇᴍᴇɴᴜ」
@@ -8666,17 +8633,17 @@ case 'convertmenu': {
   ram70 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   buffer = await getBuffer(picak+'CONVERT MENU')
   anu =`
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
   
     
 ╔➽「 ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ」
@@ -8731,17 +8698,17 @@ case 'toolmenu': {
   buffer = await getBuffer(picak+'TOOL MENU')
   ram90 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   anu =`
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
   
     
 ╔➽「 ᴛᴏᴏʟᴍᴇɴᴜ」
@@ -8791,17 +8758,17 @@ case 'searchmenu':{
   buffer = await getBuffer(picak+'SEARCH MENU')
   ram200 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   anu =`
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ꜱᴇᴀʀᴄʜᴍᴇɴᴜ」
 ║➭ lyrics -query-
@@ -8863,17 +8830,17 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'EPHOTO MENU')
 ram250 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu =`
-*Oi Bro  @${stod.split('@')[0]}*
-*👤Name:* ${pushname}
+*Oi Bro*
+*📁Directory:* ${os.homedir()}
 *👑Creator:*${global.ownername}
 *💳Version:* 1.0
 *💎Prefix:* [ ${prefix} ]
 *⌚Time:* ${time}
-*🖥️ Work type:* ${publik ? 'public' : 'self'}
-*📡Server:* ${os.platform}
+*🖥️ Speed:* ${latensie.toFixed(4)} Second
+*📡Free Memory:* ${os.freemem()}
 *📦Framework:* Nodejs
-*🦄Webinfo:* Baileyes
-*🗃️Storage:* Not Defined
+*🦄Total Memory:* ${os.totalmem()}
+*🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ᴇᴘʜᴏᴛᴏ-ᴍᴇɴᴜ」
 ║➭ 3d-wood
