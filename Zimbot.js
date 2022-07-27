@@ -150,10 +150,10 @@ return dDisplay + hDisplay + mDisplay + sDisplay;
 
 
 const reply = (teks) => {
-    ZimBotInc.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: "UPDATE TEST",mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, detectLinks: true,body: "DRIPS OFC", thumbnail: fs.readFileSync('./drips.jpg'),sourceUrl: ("https://youtu.be/KNu-gr2h7bo")}}})
+    ZimBotInc.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: botname,mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, detectLinks: true,body: caption, thumbnail: fs.readFileSync('./drips.jpg'),sourceUrl: ("github.com/Ajmal-Achu")}}})
 }
 const replay = (teks) => {
-    ZimBotInc.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: "ZIM BOT V4",mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, body: "DRIPS OFC", thumbnail: fs.readFileSync('./drips.jpg'),sourceUrl: ("https://youtu.be/KNu-gr2h7bo")}}})
+    ZimBotInc.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: botname,mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, body: caption, thumbnail: fs.readFileSync('./drips.jpg'),sourceUrl: ("github.com/Ajmal-Achu")}}})
 }
 
 const drip =  {
@@ -166,11 +166,11 @@ participant : '0@s.whatsapp.net'
     isForwarded: false, // ini biar ada tulisannya diteruskan berkali-kali, jika ingin di hilangkan ganti true menjadi false
  // Bagian ini sesuka kalian berkreasi :'v
 showAdAttribution: true,
-title: "ZIM BOT V4",
-body: "GIVE IT A STAR",
+title: botname,
+body: caption,
 mediaType: "VIDEO",
 mediaUrl: `https://githb.com/zim-bot/zimbot-v4`,
-description: 'DRIPS OFC',
+description: ownername,
 previewType: "PHOTO",
 thumbnail: fs.readFileSync('./drips.jpg'),
 sourceUrl: "",
@@ -187,7 +187,7 @@ participant : '0@s.whatsapp.net'
   message: {
   documentMessage: {
 showAdAttribution: true,
-  title: "ZIM BOT V4", 
+  title: botname, 
   jpegThumbnail: fs.readFileSync('./drips.jpg')
 }
 }
@@ -280,6 +280,7 @@ if (!('templateGif' in setting)) setting.templateGif = false
 if (!('templateMsg' in setting)) setting.templateMsg = false
 if (!('templateList' in setting)) setting.templateList = false
 if (!('templateDoc' in setting)) setting.templateDoc = true
+if (!('templateCatalog' in setting)) setting.templateCatalog = false   
 if (!('chatbot' in setting)) setting.chatbot = false
 if (!('templateZimbot' in setting)) setting.templateZimbot = false
 if (!('grouponly' in setting)) setting.grouponly = false
@@ -293,7 +294,8 @@ templateGif: false,
 templateMsg: false,
 templateList: false,
 templateDoc: false,
-templateZimbot: true,
+templateCatalog: true,
+templateZimbot: false,
 chatbot: false,
 grouponly: false,
 autoblock: false,
@@ -490,7 +492,7 @@ hydratedFooterText: `ʀᴘɢ ɢᴀᴍᴇ ʙʏ ᴢɪᴍʙᴏᴛ`,
 hydratedButtons:  [{        
     "urlButton": {
       "displayText": "SUBSCRIBE",
-      "url": "https://www.youtube.com/c/DRIPSOFC"
+      "url": youtube
     }
 }, {
 quickReplyButton: {
@@ -543,7 +545,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
   hydratedButtons:  [{        
       "urlButton": {
         "displayText": "SUBSCRIBE",
-        "url": "https://www.youtube.com/c/DRIPSOFC"
+        "url": youtube
       }
   }, {
   quickReplyButton: {
@@ -592,7 +594,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
           hydratedButtons:  [{        
               "urlButton": {
                 "displayText": "SUBSCRIBE",
-                "url": "https://www.youtube.com/c/DRIPSOFC"
+                "url": youtube
               }
           }, {
           quickReplyButton: {
@@ -641,7 +643,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
             hydratedButtons:  [{        
                 "urlButton": {
                   "displayText": "SUBSCRIBE",
-                  "url": "https://www.youtube.com/c/DRIPSOFC"
+                  "url": youtube
                 }
             }, {
             quickReplyButton: {
@@ -690,7 +692,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
             hydratedButtons:  [{        
                 "urlButton": {
                   "displayText": "SUBSCRIBE",
-                  "url": "https://www.youtube.com/c/DRIPSOFC"
+                  "url": youtube
                 }
             }, {
             quickReplyButton: {
@@ -740,7 +742,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
               hydratedButtons: [{        
               "urlButton": {
               "displayText": "SUBSCRIBE",
-              "url": "https://www.youtube.com/c/DRIPSOFC"
+              "url": youtube
               }
             }, {
               quickReplyButton: {
@@ -791,7 +793,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
               hydratedButtons: [{        
               "urlButton": {
               "displayText": "SUBSCRIBE",
-              "url": "https://www.youtube.com/c/DRIPSOFC"
+              "url": youtube
               }
             }, {
               quickReplyButton: {
@@ -837,7 +839,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
             hydratedButtons:  [{        
                 "urlButton": {
                   "displayText": "SUBSCRIBE",
-                  "url": "https://www.youtube.com/c/DRIPSOFC"
+                  "url": youtube
                 }
             }, {
             quickReplyButton: {
@@ -863,7 +865,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
             emoji.get(satu)
             .then(emoji => {
             const buttons = [{buttonId: "y", buttonText: {displayText:satu}, type: 1}]
-            const buttonMessage = {image: {url: emoji.images[dua].url},caption: "ZIM BOT V4",footerText: 'Loading...',buttons: buttons,headerType: 4}
+            const buttonMessage = {image: {url: emoji.images[dua].url},caption: botname,footerText: 'Loading...',buttons: buttons,headerType: 4}
             ZimBotInc.sendMessage(from, buttonMessage, {quoted:m})
             })
             } catch (e) {
@@ -1155,7 +1157,7 @@ setInterval(() => {
 //But5Loc
 var nextMinutes = Math.random() * 300 + 30;
 setTimeout(function(){
-  ZimBotInc.sendMessage(ZimBotInc.user.id, {text: `*ZIM BOT INC ANNOUNCEMENT:* *SUBSCRIBE TO DRIPS OFC*\n\n*YOUTUBE:* https://www.youtube.com/c/DRIPSOFC\n\n*NEW FEATURES COMING SOON SO STAY TUNED*\n\n*FEEL FREE TO BRING IDEAS OF THE FEATURES ON THE TABLE*\n\n*IF YOU WANT TO CONTRUBUTE FORK THE REPO, MAKE CHANGES PUSH YOUR CHANGES TO THE ORIGIN BRANCH AND WAIT FOR YOUR PULL REQUEST TO BE VERIFIED*\n\n*Thanks for choosing zim-bot*`,contextInfo: { externalAdReply:{title:"ZIM BOT V4",body:"SUBSCRIBE DRIPS OFC",showAdAttribution: true,mediaType:2,thumbnail: fs.readFileSync(`./drips.jpg`) ,mediaUrl:`https://youtu.be/KNu-gr2h7bo`, sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+  ZimBotInc.sendMessage(ZimBotInc.user.id, {text: `*ZIM BOT INC ANNOUNCEMENT:* *SUBSCRIBE TO DRIPS OFC*\n\n*YOUTUBE:* https://www.youtube.com/c/DRIPSOFC\n\n*NEW FEATURES COMING SOON SO STAY TUNED*\n\n*FEEL FREE TO BRING IDEAS OF THE FEATURES ON THE TABLE*\n\n*IF YOU WANT TO CONTRUBUTE FORK THE REPO, MAKE CHANGES PUSH YOUR CHANGES TO THE ORIGIN BRANCH AND WAIT FOR YOUR PULL REQUEST TO BE VERIFIED*\n\n*Thanks for choosing zim-bot*`,contextInfo: { externalAdReply:{title:botname,body:"SUBSCRIBE DRIPS OFC",showAdAttribution: true,mediaType:2,thumbnail: fs.readFileSync(`./drips.jpg`) ,mediaUrl:tutorial, sourceUrl: tutorial }}}, {quoted: m})
   //anouncement by drips 
 }, nextMinutes * 300 * 1000);
 const send5Butlmg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
@@ -2190,7 +2192,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
  case 'sc': case 'script': case 'donate': case 'donasi': case 'donate': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
 
   teks = `
-  *ZIM-BOT-V4*\n\n*YOUTUBE:* https://youtu.be/KNu-gr2h7bo\n*GITHUB:* https://github.com/zim-bot/zimbot-v4/fork\n\n*DONATE:* https://www.paypal.com/paypalme/zimbotinc`
+  *ZIM-BOT-V4*\n\n*YOUTUBE:* github.com/Ajmal-Achu\n*GITHUB:* https://github.com/Ajmal-Achu/Wizard-MD\n\n*DONATE:* https://www.paypal.com/paypalme/zimbotinc`
   let buttons = [
   {buttonId: `rpgmenu`, buttonText: {displayText: 'RPG'}, type: 1}
   ]
@@ -2203,12 +2205,12 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
   headerType: 4,
   contextInfo:{externalAdReply:{
   title:"DONATE ME",
-  body: "DRIPS OFC", 
+  body: caption, 
   showAdAttribution: true,
   thumbnail: fs.readFileSync("Zimbot/drips.jpg"),
   mediaType:1,
-  mediaUrl: 'https://youtu.be/KNu-gr2h7bo',
-  sourceUrl: "https://youtu.be/KNu-gr2h7bog"
+  mediaUrl: 'github.com/Ajmal-Achu',
+  sourceUrl: "github.com/Ajmal-Achug"
   }}
   }
   ZimBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -2230,12 +2232,12 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
   headerType: 4,
   contextInfo:{externalAdReply:{
   title:"DONATE ME",
-  body: "DRIPS OFC", 
+  body: caption, 
   showAdAttribution: true,
   thumbnail: fs.readFileSync("Zimbot/drips.jpg"),
   mediaType:1,
-  mediaUrl: 'https://youtu.be/KNu-gr2h7bo',
-  sourceUrl: "https://youtu.be/KNu-gr2h7bog"
+  mediaUrl: 'github.com/Ajmal-Achu',
+  sourceUrl: "github.com/Ajmal-Achug"
   }}
   }
   ZimBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -3284,13 +3286,13 @@ if (!regex1.test(args[0])) throw 'link!'
     // 'attachment; filenameq=ZidniGanz.zip'
     reply(`*Please wait, sending repository..*`)
     ZimBotInc.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' , quoted: m,contextInfo: { externalAdReply:{
-      title:"ZIM BOT V4",
-      body:"SUB DRIPS OFC",
+      title:botname,
+      body:caption,
       showAdAttribution: true,
       mediaType:2,
       thumbnail: fs.readFileSync('./drips.jpg'),
-      mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-      sourceUrl: `https://youtu.be/KNu-gr2h7bo`,
+      mediaUrl:tutorial, 
+      sourceUrl: tutorial,
       }}
       })
  
@@ -3304,13 +3306,13 @@ if (!regex1.test(args[0])) throw 'link!'
 				const ttrth = trut[Math.floor(Math.random() * trut.length)]
 				truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 			ZimBotInc.sendMessage(m.chat, {image: truteh, caption: '*Truth*\n\n'+ ttrth, quoted: m,contextInfo: { externalAdReply:{
-        title:"ZIM BOT V4",
-        body:"SUB DRIPS OFC",
+        title:botname,
+        body:caption,
         showAdAttribution: true,
         mediaType:2,
         thumbnail: fs.readFileSync(`./drips.jpg`) ,
-        mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-        sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+        mediaUrl:tutorial, 
+        sourceUrl: tutorial }}}, {quoted: m})
 break
 case 'ghsearch': 
        case 'githubsearch': 
@@ -3772,8 +3774,8 @@ replay(mess.wait)
  showAdAttribution: true,
  thumbnail: global.thumb,
  mediaType:2,
- mediaUrl: `https://youtu.be/KNu-gr2h7bo`,
- sourceUrl: `https://youtu.be/KNu-gr2h7bo`
+ mediaUrl: tutorial,
+ sourceUrl: tutorial
  }}
  }
  XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -4019,6 +4021,7 @@ return('Error!')
 })  
 break
 case 'update':
+  const heroku = new Heroku({ token: Config.HEROKU_API_KEY })
   await git.fetch();
   var commits = await git.log(['main' + '..origin/' + 'main']);
   if (commits.total === 0) {
@@ -4050,53 +4053,36 @@ case 'update':
 
 break
 case 'updatenow':
-		
-		
-const heroku = new Heroku({ token: process.env.HEROKU_API_KEY })
-  await git.fetch();
-      var commits = await git.log(['main' + '..origin/' + 'main'])
-  if (commits.total === 0) { ZimBotInc.sendMessage(m.chat, { text:"_Bot up to date_"})  } else {
-     
-        await ZimBotInc.sendMessage(m.chat, {text: "_Build started ⏫_"})
-       if (true) {
-            try {
-                var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
-            } catch (e) {
-		await ZimBotInc.sendMessage(m.chat, { text : `${e}` }) 
-                await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
-                await new Promise(r => setTimeout(r, 1000));
-                return await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
-            }
+  
+    await git.fetch();
+    var commits = await git.log(['main' + '..origin/' + 'main']);
+    if (commits.total === 0) {
+      return await ZimBotInc.sendMessage(m.chat, { text:"_Bot up to date_"})
+    } else {
+      await ZimBotInc.sendMessage(m.chat, {text: "_Build started ⏫_"})
+      try {
+        var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
+        var git_url = await heroku.get(app.git_url)
+    } catch {
+        await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
 
-            git.fetch('upstream', 'main');
-            git.reset('hard', ['FETCH_HEAD']);
+        await new Promise(r => setTimeout(r, 1000));
+      }
+      git.fetch('upstream', 'main');
+      git.reset('hard', ['FETCH_HEAD']);//lols
 
-            var git_url = app.git_url.replace(
-                "https://", "https://api:" + global.herokuapi + "@"
-            )
-            
-            try {
-                await git.addRemote('heroku', git_url);
-            } catch { 
-              console.log('heroku remote ekli');
-                     git.push('heroku', 'main')
-                   
-                    }
-            await git.push('heroku', 'main');
+    git_url =  git_url.replace("https://", "https://api:" + Config.HEROKU_API_KEY + "@")//drips
+      try {
+        await git.addRemote('heroku', git_url);
+    } catch {console.log('Deploy error catched. Retrying...')}
+    try { await git.push('heroku', 'main'); } catch(e){ 
+    if (e.message.includes("concurrent")) return reply("Your account has reached in-parallel build limit! Please wait for the other app to finish its deploy ❗"); 
+    }
+    await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
+ //
 
-                await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
-            
-        } else {
-            git.pull((async (err, update) => {
-                if(update && update.summary.changes) {
-                    await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
-                    exec('npm install').stderr.pipe(process.stderr);
-                } else if (err) {
-                    await console.log('*❌ Güncelleme başarısız oldu!*\n*Hata:* ```' + err + '```')
-                }
-            }));
-                                                                          }
-     }
+  }
+
 break
 case 'awoo2':
 reply(mess.wait)
@@ -4175,7 +4161,7 @@ url: `${drips2.videos[0].url}`
 }, {
 urlButton: {
 displayText: `GITHUB`, 
-url: `https://github.com/zim-bot/zimbot-v4/fork`
+url: `https://github.com/Ajmal-Achu/Wizard-MD`
 }
 }, {
 quickReplyButton: {
@@ -4237,7 +4223,7 @@ url: `${anu.url}`
 }, {
 urlButton: {
 displayText: `GITHUB`, 
-url: `https://github.com/zim-bot/zimbot-v4/fork`
+url: `https://github.com/Ajmal-Achu/Wizard-MD`
 }
 }, {
 quickReplyButton: {
@@ -4279,13 +4265,13 @@ let caption = `
 buf = await getBuffer(media.thumb)
 ZimBotInc.sendMessage(m.chat, { image: { url: media.thumb }, jpegThumbnail:buf, caption: `${caption}` }, { quoted: m }).catch((err) => m.reply('*Sorry, the link you provided is not valid*'))   
 ZimBotInc.sendMessage(m.chat, {document:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`,  quoted: m, contextInfo: { externalAdReply:{
-title:"ZIM BOT V4",
-body:"SUB DRIPS OFC",
+title:botname,
+body:caption,
 showAdAttribution: true,
 mediaType:2,
 thumbnail: fs.readFileSync(`./drips.jpg`) ,
-mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+mediaUrl:tutorial, 
+sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 case 'audio': {    
@@ -4304,13 +4290,13 @@ let caption = `
 buf = await getBuffer(media.thumb)
 ZimBotInc.sendMessage(m.chat, { image: { url: media.thumb }, jpegThumbnail:buf, caption: `${caption}` }, { quoted: m }).catch((err) => m.reply('*Sorry, the link you provided is not valid*'))   
 ZimBotInc.sendMessage(m.chat, {audio:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`,  quoted: m, contextInfo: { externalAdReply:{
-title:"ZIM BOT V4",
+title:botname,
 body:"DRIPS",
 showAdAttribution: true,
 mediaType:2,
 thumbnail: fs.readFileSync(`./drips.jpg`) ,
-mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+mediaUrl:tutorial, 
+sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 case 'ytmp4': case 'ytvideo': {
@@ -4329,13 +4315,13 @@ var capti = `
 var buf = await getBuffer(media.thumb)
 ZimBotInc.sendMessage(m.chat, { image: { url: media.thumb }, jpegThumbnail:buf, caption: `${capti}` }, { quoted: m })
 ZimBotInc.sendMessage(m.chat, { video: { url: media.dl_link }, jpegThumbnail:buf, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `*Downloading From ${text}*` ,  quoted: m,contextInfo: { externalAdReply:{
-title:"ZIM BOT V4",
+title:botname,
 body:"DRIPS",
 showAdAttribution: true,
 mediaType:2,
 thumbnail: fs.readFileSync(`./drips.jpg`) ,
-mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+mediaUrl:tutorial, 
+sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 case 'ytshorts': case 'shorts': {
@@ -4402,13 +4388,13 @@ const result4 = `
 *${botname}*`
 reply(`${result4}`)
 ZimBotInc.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime ,  quoted : mudratunha, contextInfo: { externalAdReply:{
-  title:"ZIM BOT V4",
+  title:botname,
   body:"SUBSCRIBE DRIPS OFC",
   showAdAttribution: true,
   mediaType:2,
   thumbnail: fs.readFileSync(`./drips.jpg`) ,
-  mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+  mediaUrl:tutorial, 
+sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 case 'song': {
@@ -4565,13 +4551,13 @@ case 'fbdl': case 'fb': case 'facebook': case 'fbvideo': {
      ZimBotInc.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, {quoted: mudratunha})
      for (let i of data.result) {  
     ZimBotInc.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, mimetype: 'video/mp4', caption: `*◉ Quality :* ${i.quality}` ,  quoted: m,contextInfo: { externalAdReply:{
-      title:"ZIM BOT V4",
+      title:botname,
       body:"SUBSCRIBE DRIPS OFC",
       showAdAttribution: true,
       mediaType:2,
       thumbnail: fs.readFileSync(`./drips.jpg`) ,
-      mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-      sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+      mediaUrl:tutorial, 
+      sourceUrl: tutorial }}}, {quoted: m})
      
        
      }
@@ -4632,7 +4618,7 @@ const sendm =  ZimBotInc.sendMessage(
 
    text: `${data.meta.title} *Here is the list of videos, click the button below to choose, here is the list of videos, click the button below to choose*`,
 
-   footer: `©ZIM BOT INC 2022`,
+   footer: watermark,
 
    title: "**▊▊▊SAVEFROM DL▊▊▊**",
 
@@ -4733,12 +4719,12 @@ hydratedFooterText: `${botname}`,
 hydratedButtons: [{
 urlButton: {
 displayText: 'SUBSCRIBE',
-url: 'https://www.youtube.com/c/DRIPSOFC'
+url: youtube
 }
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }, {
 quickReplyButton: {
@@ -4832,7 +4818,7 @@ url: `${text}`
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }, {
 quickReplyButton: {
@@ -5355,7 +5341,7 @@ await sleep(1500)
 let btn = [{
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }]
 let txt = `「 *ZIMBOT BROADCAST* 」\n\n${text}`
@@ -5374,7 +5360,7 @@ await sleep(1500)
 let btn = [{
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }]
 let txt = `「 *ZIMBOT BROADCAST* 」\n\n${text}`
@@ -5407,7 +5393,7 @@ await sleep(1500)
 let butoon = [{
 urlButton: {
 displayText: `GITHUB`,
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 },
 {
@@ -5574,13 +5560,13 @@ let media = await ZimBotInc.downloadAndSaveMediaMessage(quoted)
 let anu = await TelegraPh(media)
 let buf = await getBuffer(`https://violetics.pw/api/photofilter/${command}?apikey=beta&image=${anu}`)
 ZimBotInc.sendMessage(m.chat, { image: buf, jpegThumbnail:buf, caption: `PhotoFilter ${command}` ,  quoted: m, contextInfo: { externalAdReply:{
-  title:"ZIM BOT V4",
+  title:botname,
   body:"SUBSCRIBE DRIPS OFC",
   showAdAttribution: true,
   mediaType:2,
   thumbnail: fs.readFileSync(`./drips.jpg`) ,
-  mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+  mediaUrl:tutorial, 
+sourceUrl: tutorial }}}, {quoted: m})
 }
  
 //----END HERE-------\\
@@ -5707,13 +5693,13 @@ if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-onli
 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
 let anu = await maker.textpro(link, q)
 ZimBotInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname}` ,  quoted: m, contextInfo: { externalAdReply:{
-  title:"ZIM BOT V4",
+  title:botname,
   body:"SUBSCRIBE DRIPS OFC",
   showAdAttribution: true,
   mediaType:2,
   thumbnail: fs.readFileSync(`./drips.jpg`) ,
-  mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+  mediaUrl:tutorial, 
+sourceUrl: tutorial }}}, {quoted: m})
 }
 //----END HERE--------\\
 
@@ -5750,13 +5736,13 @@ case 'underwaterocean': {
 if (!text) throw `Example : ${prefix + command} text`
 anu = await getBuffer(`https://violetics.pw/api/photooxy/${command}?apikey=beta&text=${text}`)
 ZimBotInc.sendMessage(m.chat, { image: anu, caption: `*PHOTO OXY ${command}*` , quoted: m, contextInfo: { externalAdReply:{
-  title:"ZIM BOT V4",
+  title:botname,
   body:"SUBSCRIBE DRIPS OFC",
   showAdAttribution: true,
   mediaType:2,
   thumbnail: fs.readFileSync(`./drips.jpg`) ,
-  mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+  mediaUrl:tutorial, 
+sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 
@@ -5779,13 +5765,13 @@ case 'summerysand': {
 if (!text) throw `Example : ${prefix + command} nama anime`
 anu = await getBuffer(`https://violetics.pw/api/ephoto360/${command}?apikey=beta&text=${text}`)
 ZimBotInc.sendMessage(m.chat, { image: anu, caption: `*EPHOTO ${command}*` ,  quoted: m, contextInfo: { externalAdReply:{
-  title:"ZIM BOT V4",
+  title:botname,
   body:"SUBSCRIBE DRIPS OFC",
   showAdAttribution: true,
   mediaType:2,
   thumbnail: fs.readFileSync(`./drips.jpg`) ,
-  mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-sourceUrl: `https://youtu.be/KNu-gr2h7bo` }}}, {quoted: m})
+  mediaUrl:tutorial, 
+sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 
@@ -7005,12 +6991,12 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{
 urlButton: {
 displayText: 'SUBSCRIBE',
-url: 'https://www.youtube.com/c/DRIPSOFC'
+url: youtube
 }
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }, {
 quickReplyButton: {
@@ -7085,7 +7071,7 @@ case 'listmenu':
 ┊ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${Object.keys(global.db.users).length}
 └───────────●
 `,
-  footer: `ZIM BOT INC`,
+  footer: watermark,
   title: `*LIST MENU*`,
   jpegThumbnail: buffer,
   buttonText: "CLICK HERE",
@@ -7098,6 +7084,7 @@ case 'setmenu': {
      if (args[0] === 'templateImage'){
       setbot.templateImage = true
       setbot.templateLocation = false
+      setbot.templateCatalog = false
       setbot.templateGif = false
       setbot.templateMsg = false
       setbot.templateList = false
@@ -7107,6 +7094,17 @@ case 'setmenu': {
       } else if (args[0] === 'templateLocation'){
       setbot.templateImage = false
       setbot.templateLocation = true
+      setbot.templateCatalog = false
+      setbot.templateGif = false
+      setbot.templateMsg = false
+      setbot.templateList = false
+      setbot.templateDoc = false
+      setbot.templateZimbot = false
+      reply(mess.success)
+      } else if (args[0] === 'templateCatalog'){
+      setbot.templateImage = false
+      setbot.templateLocation = false
+      setbot.templateCatalog = true
       setbot.templateGif = false
       setbot.templateMsg = false
       setbot.templateList = false
@@ -7116,6 +7114,7 @@ case 'setmenu': {
       } else if (args[0] === 'templateGif'){
       setbot.templateImage = false
       setbot.templateLocation = false
+      setbot.templateCatalog = false
       setbot.templateGif = true
       setbot.templateMsg = false
       setbot.templateList = false
@@ -7124,7 +7123,8 @@ case 'setmenu': {
       reply(mess.success)
       } else if (args[0] === 'templateMessage'){
       setbot.templateImage = false
-      setbot.templateLocation = false
+      setbot.templateLocation = false 
+      setbot.templateCatalog = false
       setbot.templateGif = false
       setbot.templateMsg = true
       setbot.templateList = false
@@ -7134,6 +7134,7 @@ case 'setmenu': {
       } else if (args[0] === 'templateList'){
       setbot.templateImage = false
       setbot.templateLocation = false
+      setbot.templateCatalog = false
       setbot.templateGif = false
       setbot.templateMsg = false
       setbot.templateList = true
@@ -7142,7 +7143,8 @@ case 'setmenu': {
       reply(mess.success)
       } else if (args[0] === 'templateDoc'){
       setbot.templateImage = false
-      setbot.templateLocation = false
+      setbot.templateLocation = false 
+      setbot.templateCatalog = false
       setbot.templateGif = false
       setbot.templateMsg = false
       setbot.templateList = false
@@ -7152,6 +7154,7 @@ case 'setmenu': {
     } else if (args[0] === 'templateZimbot'){
       setbot.templateImage = false
       setbot.templateLocation = false
+      setbot.templateCatalog = false
       setbot.templateGif = false
       setbot.templateMsg = false
       setbot.templateList = false
@@ -7166,7 +7169,7 @@ case 'setmenu': {
  `
  *ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}
 
- ┌───〔 *_◉ᴀʙᴏᴜᴛ◉_* 〕
+ ╔➽〔 *_◉ᴀʙᴏᴜᴛ◉_* 〕
  ┊ *❗ᴏꜱ ʀᴇʟᴇᴀꜱᴇ:* ${os.release()}
  ┊ *❕ᴏꜱ ᴛʏᴘᴇ:*   ${os.type()}
  ┊ *❗ᴅɪʀᴇᴄᴛᴏʀʏ:*  ${os.homedir()}
@@ -7181,10 +7184,10 @@ case 'setmenu': {
  └───────────●
         `,
          buttonText: "SET MENU",
-         footerText: "ZIM BOT INC 4",
+         footerText: botname,
          listType: "SINGLE_SELECT",
          sections: [{
-       "title": "ZIM BOT INC",
+       "title": watermark,
        "rows": [
        {
        "title": "TEMPLATE ZIM-BOT",
@@ -7194,12 +7197,17 @@ case 'setmenu': {
        ]
        },
        {
-       "title": "ZIM BOT V4",
+       "title": botname,
        "rows": [
        {
        "title": "TEMPLATE IMAGE",
        
        "rowId": `${prefix}setmenu templateImage`
+       },
+       {
+       "title": "TEMPLATE CATALOG",
+       
+       "rowId": `${prefix}setmenu templateCatalog`
        },
        {
        "title": "TEMPLATE MESSAGE",
@@ -7257,8 +7265,6 @@ ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.
 timestampe = speed();
 latensie = speed() - timestampe
 anu = `
-EJUMAL IKKAAAAAA lub you
-
 *ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}
 
 ┌───〔 *_◉ᴀʙᴏᴜᴛ◉_* 〕
@@ -7749,12 +7755,12 @@ EJUMAL IKKAAAAAA lub you
     let btn = [{
         urlButton: {
             displayText: 'SUBSCRIBE',
-            url: 'https://www.youtube.com/c/DRIPSOFC'
+            url: youtube
         }
     }, {
         urlButton: {
             displayText: 'GITHUB',
-            url: 'https://github.com/zim-bot/zimbot-v4/fork'
+            url: 'https://github.com/Ajmal-Achu/Wizard-MD'
         }
     }, {
         quickReplyButton: {
@@ -7784,12 +7790,12 @@ EJUMAL IKKAAAAAA lub you
     hydratedButtons: [{
     urlButton: {
     displayText: 'SUBSCRIBE',
-    url: 'https://www.youtube.com/c/DRIPSOFC'
+    url: youtube
     }
     }, {
     urlButton: {
     displayText: 'GITHUB',
-    url: 'https://github.com/zim-bot/zimbot-v4/fork'
+    url: 'https://github.com/Ajmal-Achu/Wizard-MD'
     }
     }, {
     quickReplyButton: {
@@ -7822,12 +7828,12 @@ EJUMAL IKKAAAAAA lub you
     hydratedButtons: [{
     urlButton: {
     displayText: 'SUBSCRIBE',
-    url: 'https://www.youtube.com/c/DRIPSOFC'
+    url: youtube
     }
     }, {
     urlButton: {
     displayText: 'GITHUB',
-    url: 'https://github.com/zim-bot/zimbot-v4/fork'
+    url: 'https://github.com/Ajmal-Achu/Wizard-MD'
     }
     }, {
     quickReplyButton: {
@@ -7860,12 +7866,12 @@ EJUMAL IKKAAAAAA lub you
     hydratedButtons: [{
     urlButton: {
     displayText: 'SUBSCRIBE',
-    url: 'https://www.youtube.com/c/DRIPSOFC'
+    url: youtube
     }
     }, {
     urlButton: {
     displayText: 'GITHUB',
-    url: 'https://github.com/zim-bot/zimbot-v4/fork'
+    url: 'https://github.com/Ajmal-Achu/Wizard-MD'
     }
     }, {
     quickReplyButton: {
@@ -7887,7 +7893,30 @@ EJUMAL IKKAAAAAA lub you
     }
     }), { userJid: m.chat, quoted: m })
     ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
-    } else if (setbot.templateZimbot) {
+          } else if (setbot.templateCatalog) {
+       	tod = await (await fetch(logo)).buffer() 
+						var messa = await prepareWAMessageMedia({ image: tod}, { upload: ZimBotInc.waUploadToServer })
+						var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+						"productMessage": {
+						"product": {
+						"productImage": messa.imageMessage,
+						"productId": "7091718154232528",
+						"title": `ALL MENU`,
+						"description": anu,
+						"footerText": botname,
+						"currencyCode": "IDR",
+						"priceAmount1000": "100000000000000000",
+						"productImageCount": 1,
+						"firstImageId": 1,
+						"salePriceAmount1000": "1000",
+						"retailerId": ownername,
+						"url": `hdhhd`
+						},
+						"businessOwnerJid": "0@s.whatsapp.net",
+						}
+						}), { userJid: m.chat, quoted: drip })
+						ZimBotInc.relayMessage(m.chat, catalog.message, { messageId: catalog.key.id })
+   } else if (setbot.templateZimbot) {
         try {
             ppuser = await ZimBotInc.profilePictureUrl(m.sender, 'image')
         } catch {
@@ -7895,7 +7924,7 @@ EJUMAL IKKAAAAAA lub you
         }
         
     var buffer = await getBuffer(ppuser)
-    const buttonsDefault = [{ urlButton: { displayText: `SUBSCRIBE`, url : `https://www.youtube.com/c/DRIPSOFC` } }, { urlButton: { displayText: `GITHUB`, url : `https://github.com/zim-bot/zimbot-v4/fork` } },
+    const buttonsDefault = [{ urlButton: { displayText: `SUBSCRIBE`, url : `https://www.youtube.com/c/DRIPSOFC` } }, { urlButton: { displayText: `GITHUB`, url : `https://github.com/Ajmal-Achu/Wizard-MD` } },
     {					
       quickReplyButton: {
       displayText: 'SPEED',
@@ -7918,19 +7947,19 @@ EJUMAL IKKAAAAAA lub you
     document: fs.readFileSync('./lib/tes.xlsx'),
     mimetype: dripsee,
     jpegThumbnail: buffer,
-    fileName: `ZIMBOT-V4`,
+    fileName: botname,
     fileLength: 99999999999999,
     templateButtons: buttonsDefault,
-    footer: `©ZIM BOT INC 2022`,
+    footer: watermark,
     headerType: 4,
     contextInfo: { externalAdReply:{
-      title:"ZIM BOT V4",
-      body:"DRIPS OFC",
+      title:botname,
+      body:caption,
       showAdAttribution: true,
       mediaType:2,
       thumbnail: fs.readFileSync(`./drips.jpg`) ,
-      mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-    sourceUrl: `https://youtu.be/KNu-gr2h7bo`
+      mediaUrl:tutorial, 
+    sourceUrl: tutorial
     }}}, {quoted:m})
     } else if  (setbot.templateMsg) {
       ZimBotInc.send5ButMsg(m.chat, anu, global.botname, btn)
@@ -7978,7 +8007,7 @@ EJUMAL IKKAAAAAA lub you
 ┊ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${Object.keys(global.db.users).length}
 └───────────●
 `,
-    footer: `ZIM BOT INC`,
+    footer: watermark,
     title: `*LIST MENU*`,
     jpegThumbnail: buffer,
     buttonText: "CLICK HERE",
@@ -8000,20 +8029,20 @@ EJUMAL IKKAAAAAA lub you
         document: fs.readFileSync('./lib/tes.xlsx'),
         mimetype: dripsee,
         jpegThumbnail:buffer,
-        fileName: `MENU V4`,
+        fileName: botname,
         fileLength: 99999999999999,
         caption: anu,
-        footer: `©ZIM BOT INC 2022`,
+        footer: watermark,
         buttons: buttons,
         headerType: 4,
         contextInfo: { externalAdReply:{
-        title:"ZIM BOT V4",
-        body:"SUB DRIPS OFC",
+        title:botname,
+        body:caption,
         showAdAttribution: true,
         mediaType:2,
         thumbnail: fs.readFileSync('./drips.jpg'),
-        mediaUrl:`https://youtu.be/KNu-gr2h7bo`, 
-        sourceUrl: `https://youtu.be/KNu-gr2h7bo`,
+        mediaUrl:tutorial, 
+        sourceUrl: tutorial,
         }}
         }
         ZimBotInc.sendMessage(m.chat, buttonMessage)
@@ -8073,12 +8102,12 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": "https://www.youtube.com/c/DRIPSOFC"
+"url": youtube
 }
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }
 ]
@@ -8125,12 +8154,12 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": "https://www.youtube.com/c/DRIPSOFC"
+"url": youtube
 }
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }
 ]
@@ -8195,12 +8224,12 @@ case 'photooxymenu': {
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": "https://www.youtube.com/c/DRIPSOFC"
+  "url": youtube
   }
   }, {
   urlButton: {
   displayText: 'GITHUB',
-  url: 'https://github.com/zim-bot/zimbot-v4/fork'
+  url: 'https://github.com/Ajmal-Achu/Wizard-MD'
   }
   }
   ]
@@ -8282,12 +8311,12 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": "https://www.youtube.com/c/DRIPSOFC"
+"url": youtube
 }
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }
 ]
@@ -8383,12 +8412,12 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": "https://www.youtube.com/c/DRIPSOFC"
+"url": youtube
 }
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }
 ]
@@ -8475,12 +8504,12 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": "https://www.youtube.com/c/DRIPSOFC"
+"url": youtube
 }
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }
 ]
@@ -8559,12 +8588,12 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": "https://www.youtube.com/c/DRIPSOFC"
+"url": youtube
 }
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }
 ]
@@ -8625,12 +8654,12 @@ case 'nsfwmenu':{
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": "https://www.youtube.com/c/DRIPSOFC"
+  "url": youtube
   }
   }, {
   urlButton: {
   displayText: 'GITHUB',
-  url: 'https://github.com/zim-bot/zimbot-v4/fork'
+  url: 'https://github.com/Ajmal-Achu/Wizard-MD'
   }
   }
   ]
@@ -8712,12 +8741,12 @@ case 'animemenu':{
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": "https://www.youtube.com/c/DRIPSOFC"
+  "url": youtube
   }
   }, {
   urlButton: {
   displayText: 'GITHUB',
-  url: 'https://github.com/zim-bot/zimbot-v4/fork'
+  url: 'https://github.com/Ajmal-Achu/Wizard-MD'
   }
   }
   ]
@@ -8777,12 +8806,12 @@ case 'convertmenu': {
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": "https://www.youtube.com/c/DRIPSOFC"
+  "url": youtube
   }
   }, {
   urlButton: {
   displayText: 'GITHUB',
-  url: 'https://github.com/zim-bot/zimbot-v4/fork'
+  url: 'https://github.com/Ajmal-Achu/Wizard-MD'
   }
   }
   ]
@@ -8838,12 +8867,12 @@ case 'toolmenu': {
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": "https://www.youtube.com/c/DRIPSOFC"
+  "url": youtube
   }
   }, {
   urlButton: {
   displayText: 'GITHUB',
-  url: 'https://github.com/zim-bot/zimbot-v4/fork'
+  url: 'https://github.com/Ajmal-Achu/Wizard-MD'
   }
   }
   ]
@@ -8911,12 +8940,12 @@ case 'searchmenu':{
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": "https://www.youtube.com/c/DRIPSOFC"
+  "url": youtube
   }
   }, {
   urlButton: {
   displayText: 'GITHUB',
-  url: 'https://github.com/zim-bot/zimbot-v4/fork'
+  url: 'https://github.com/Ajmal-Achu/Wizard-MD'
   }
   }
   ]
@@ -8968,12 +8997,12 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": "https://www.youtube.com/c/DRIPSOFC"
+"url": youtube
 }
 }, {
 urlButton: {
 displayText: 'GITHUB',
-url: 'https://github.com/zim-bot/zimbot-v4/fork'
+url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }
 ]
