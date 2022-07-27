@@ -3718,8 +3718,8 @@ replay(mess.wait)
  buttons: buttons,
  headerType: 4,
  contextInfo:{externalAdReply:{
- title:`ZIM BOT V4`,
- body:`DRIPS OFC`,
+ title:botname,
+ body: caption,
  showAdAttribution: true,
  thumbnail: global.thumb,
  mediaType:2,
@@ -6616,9 +6616,7 @@ ram9000 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Ma
 timestampe = speed();
 latensie = speed() - timestampe
   anu = process.env.ALIVE_MESSAGE
-const aliveer = fs.readFileSync('./Zimbot/alive.mp3')
-ZimBotInc.sendMessage(m.chat, { audio: aliveer, mimetype: 'audio/mp4', ptt: true, quoted: mudratunha})
-huso = await getBuffer(picak+'ZIM BOT IS ALIVE')
+huso = await getBuffer(logo)
 let message = await prepareWAMessageMedia({ image: huso, jpegThumbnail:huso }, { upload: ZimBotInc.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 templateMessage: {
@@ -6662,7 +6660,7 @@ break
   if(!text) throw `Enter The Bug Example\n\n${command} Menu Error `
   ZimBotInc.sendMessage(`918590508376@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
-reply(`*Successfully reported to the owner\n\nPlease make sure the bug is valid, if you play with this, use this feature again and again for no reason, you will be banned for using zim bot*`)
+reply(`*Successfully reported to the owner\n\nPlease make sure the bug is valid, if you play with this, use this feature again and again for no reason, you will be banned for using the bot*`)
   }
 break 
 case 'listmenu':             
