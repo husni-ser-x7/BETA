@@ -325,7 +325,7 @@ const Drips = require('drips-memes')
 colors = ['red', 'white', 'black', 'blue', 'yellow', 'green']
 let d = new Date(new Date + 3600000)
 let locale = 'id'
-let time = d.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Kolkata '})
+let time = d.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Kolkata'})
 const { color } = require('./lib/color')
 if (isCmd && !m.isGroup)
 console.log(color('[ RECIEVED ]'), color(time, 'red'), color(`${command} [${args.length}]`), Drips.hr(), 'FROM', color(pushname))
@@ -1182,7 +1182,7 @@ cron.schedule('00 12 * * *', () => {
  console.log('Reseted Limit')
 }, {
  scheduled: true,
- timezone: "Asia/Kolkata "
+ timezone: "Asia/Kolkata"
 })
 //script by drips   
 //respond to cmd
@@ -2531,7 +2531,7 @@ try{
   } catch {
  var pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
   }
-let ingfo = `*𝗚𝗥𝗢𝗨𝗣 𝗜𝗡𝗙𝗢*\n\n*𝗡𝗔𝗠𝗘 :* ${groupName}\n*𝗜𝗗 𝗚𝗥𝗢𝗨𝗣:* ${m.chat}\n*𝗠𝗔𝗗𝗘 :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata ').format('DD/MM/YYYY HH:mm:ss')}\n*𝗚𝗥𝗢𝗨𝗣 𝗢𝗪𝗡𝗘𝗥:* @${groupMetadata.owner.split('@')[0]}\n*𝗔𝗗𝗠𝗜𝗡𝗦 :* ${groupAdmins.length}\n*𝗠𝗘𝗠𝗕𝗘𝗥𝗦 :* ${participants.length}\n*𝗗𝗘𝗦𝗖 :* \n${groupMetadata.desc}`
+let ingfo = `*𝗚𝗥𝗢𝗨𝗣 𝗜𝗡𝗙𝗢*\n\n*𝗡𝗔𝗠𝗘 :* ${groupName}\n*𝗜𝗗 𝗚𝗥𝗢𝗨𝗣:* ${m.chat}\n*𝗠𝗔𝗗𝗘 :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n*𝗚𝗥𝗢𝗨𝗣 𝗢𝗪𝗡𝗘𝗥:* @${groupMetadata.owner.split('@')[0]}\n*𝗔𝗗𝗠𝗜𝗡𝗦 :* ${groupAdmins.length}\n*𝗠𝗘𝗠𝗕𝗘𝗥𝗦 :* ${participants.length}\n*𝗗𝗘𝗦𝗖 :* \n${groupMetadata.desc}`
 ds = await getBuffer(pic)
 ZimBotInc.sendMessage(m.chat, { image: ds,caption: ingfo, mentions: [groupMetadata.owner] }, { quoted: m})
 break
@@ -3447,7 +3447,7 @@ break
     let teks = `🎪𝗚𝗥𝗢𝗨𝗣 𝗖𝗛𝗔𝗧 𝗟𝗜𝗦𝗧\n\n𝗧𝗢𝗧𝗔𝗟 𝗚𝗥𝗢𝗨𝗣 : ${anu.length} Group\n\n`
     for (let i of anu) {
 let metadata = await ZimBotInc.groupMetadata(i)
-teks += `🎪𝗡𝗔𝗠𝗘 : ${metadata.subject}\n🎪𝗢𝗪𝗡𝗘𝗥 : @${metadata.owner.split('@')[0]}\n🎪𝗜𝗗 : ${metadata.id}\n🎪 𝗠𝗔𝗗𝗘 : ${moment(metadata.creation * 1000).tz('Asia/Kolkata ').format('DD/MM/YYYY HH:mm:ss')}\n🎪 𝗠𝗘𝗠𝗕𝗘𝗥 : ${metadata.participants.length}\n\n────────────────────────\n\n`
+teks += `🎪𝗡𝗔𝗠𝗘 : ${metadata.subject}\n🎪𝗢𝗪𝗡𝗘𝗥 : @${metadata.owner.split('@')[0]}\n🎪𝗜𝗗 : ${metadata.id}\n🎪 𝗠𝗔𝗗𝗘 : ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n🎪 𝗠𝗘𝗠𝗕𝗘𝗥 : ${metadata.participants.length}\n\n────────────────────────\n\n`
     }
     ZimBotInc.sendTextWithMentions(m.chat, teks, m)
 }
