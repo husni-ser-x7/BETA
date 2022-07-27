@@ -6529,7 +6529,7 @@ other: function (who = '') {
  case 'public': {
    if (!isCreator) throw global.owner
    ZimBotInc.public = true
-   reply('${global.botname} 𝗻𝗼𝘄 𝘄𝗼𝗿𝗸𝗶𝗻𝗴 𝗮𝘀 𝗽𝘂𝗯𝗹𝗶𝗰')
+   reply(mess.public)
  }// https://hardianto.xyz/api/rip?image=https://i.imgur.com/rANDwCP.jpeg&apikey=hardianto
  break
  case 'attp': {
@@ -6550,7 +6550,7 @@ other: function (who = '') {
  case 'self': {
    if (!isCreator) throw global.owner
    ZimBotInc.public = false
-   reply('${global.botname} 𝗻𝗼𝘄 𝘄𝗼𝗿𝗸𝗶𝗻𝗴 𝗮𝘀 𝗽𝗿𝗶𝘃𝗮𝘁𝗲')
+   reply(mess.private)
  }
  break
  case 'ping': case 'speed': case 'botstatus': case 'statusbot': {
@@ -6615,14 +6615,14 @@ case 'tes': case 'test': case 'alive': case 'bot': case 'robot': case 'zimbot': 
 ram9000 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 timestampe = speed();
 latensie = speed() - timestampe
-  anu = process.env.ALIVE_MESSAGE
+  alivemess = process.env.ALIVE_MESSAGE
 huso = await getBuffer(logo)
 let message = await prepareWAMessageMedia({ image: huso, jpegThumbnail:huso }, { upload: ZimBotInc.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 templateMessage: {
 hydratedTemplate: {
 imageMessage: message.imageMessage,
-hydratedContentText: anu,
+hydratedContentText: alivemess,
 hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{
 urlButton: {
