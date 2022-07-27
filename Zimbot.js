@@ -6550,7 +6550,7 @@ other: function (who = '') {
  case 'self': {
    if (!isCreator) throw global.owner
    ZimBotInc.public = false
-   reply(mess.private)
+   reply(mess.selfNEW)
  }
  break
  case 'ping': case 'speed': case 'botstatus': case 'statusbot': {
