@@ -203,7 +203,7 @@ showAdAttribution: true,
     message: { 
        "extendedTextMessage": {
                 "text": caption,
-                "title": ${global.botname},
+                "title": botname,
                 'jpegThumbnail': fs.readFileSync('./drips.jpg')
              }
            } 
