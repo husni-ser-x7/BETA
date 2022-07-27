@@ -81,7 +81,7 @@ module.exports = ZimBotInc = async (ZimBotInc, m, chatUpdate, store) => {
 try {
 var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
 var budy = (typeof m.text == 'string' ? m.text : '')
-var prefix = prefa ? /^[°┊π÷┊¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°┊π÷┊¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
+var prefix = prefa ? /^[°║➭π÷║➭¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°║➭π÷║➭¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
 const isCmd = body.startsWith(prefix)
 const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 const args = body.trim().split(/ +/).slice(1)
@@ -325,7 +325,7 @@ const Drips = require('drips-memes')
 colors = ['red', 'white', 'black', 'blue', 'yellow', 'green']
 let d = new Date(new Date + 3600000)
 let locale = 'id'
-let time = d.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Africa/Harare'})
+let time = d.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Kolkata '})
 const { color } = require('./lib/color')
 if (isCmd && !m.isGroup)
 console.log(color('[ RECIEVED ]'), color(time, 'red'), color(`${command} [${args.length}]`), Drips.hr(), 'FROM', color(pushname))
@@ -434,53 +434,53 @@ async function sendButLoc(from) {
 ]
 bufu = await getBuffer(picak+'RPG GAMES')
 var DADYDR = `
- ┌───〔 *_◉ᴀʙᴏᴜᴛ◉_* 〕
- ┊ *Nᴀᴍᴇ:* ${pushname}
- ┊ *Rᴀɴᴋ:* ${role}
- ┊ *Sᴛᴀᴛᴜꜱ:* ${elit}
- ┊ *Mᴏɴᴇʏ:* $${(getBalance(sender, balance))}
- ┊ *Xᴘ:* ${getLevelingXp(sender)}/${reqXp}
- ┊ *Lᴇᴠᴇʟ:* ${getLevelingLevel(sender)}
+ ╔➽「 ◉ᴀʙᴏᴜᴛ◉ 」
+ ║➭ *Nᴀᴍᴇ:* ${pushname}
+ ║➭ *Rᴀɴᴋ:* ${role}
+ ║➭ *Sᴛᴀᴛᴜꜱ:* ${elit}
+ ║➭ *Mᴏɴᴇʏ:* $${(getBalance(sender, balance))}
+ ║➭ *Xᴘ:* ${getLevelingXp(sender)}/${reqXp}
+ ║➭ *Lᴇᴠᴇʟ:* ${getLevelingLevel(sender)}
  └───────────●
 
- ┌───〔 *_◉ɪɴꜰᴏ◉_* 〕
- ┊ *Mᴏɴᴇʏ:* $${(getBalance(sender, balance))}
- ┊ *Gᴏʟᴅ:* ${getEmas(sender)}
- ┊ *Iʀᴏɴ:* ${getBesi(sender)}
- ┊ *Fɪꜱʜ:* ${getFish(sender)}
- ┊ *Dɪᴀᴍᴏɴᴅ:* ${getDm(sender)}
+ ╔➽「 ◉ɪɴꜰᴏ◉ 」
+ ║➭ *Mᴏɴᴇʏ:* $${(getBalance(sender, balance))}
+ ║➭ *Gᴏʟᴅ:* ${getEmas(sender)}
+ ║➭ *Iʀᴏɴ:* ${getBesi(sender)}
+ ║➭ *Fɪꜱʜ:* ${getFish(sender)}
+ ║➭ *Dɪᴀᴍᴏɴᴅ:* ${getDm(sender)}
  └───────────●
 
- ┌───〔 *_◉ᴍᴇɴᴜ ʀᴘɢ◉_* 〕
- ┊ ${prefix}joinrpg
- ┊ ${prefix}quest 
- ┊ ${prefix}mining
- ┊ ${prefix}mancing
- ┊ ${prefix}luckyday
- ┊ ${prefix}luckytime
- ┊ ${prefix}adventure
- ┊ ${prefix}inventori
+ ╔➽「 ◉ᴍᴇɴᴜ ʀᴘɢ◉ 」
+ ║➭ ${prefix}joinrpg
+ ║➭ ${prefix}quest 
+ ║➭ ${prefix}mining
+ ║➭ ${prefix}mancing
+ ║➭ ${prefix}luckyday
+ ║➭ ${prefix}luckytime
+ ║➭ ${prefix}adventure
+ ║➭ ${prefix}inventori
  └───────────●
 
- ┌───〔 *_◉Fᴀʀᴍ ʀᴘɢ◉_* 〕
- ┊ ${prefix}killslime
- ┊ ${prefix}killgoblin
- ┊ ${prefix}killdevil
- ┊ ${prefix}killbehemoth
- ┊ ${prefix}killdemon
- ┊ ${prefix}killdemonking 
+ ╔➽「 ◉Fᴀʀᴍ ʀᴘɢ◉ 」
+ ║➭ ${prefix}killslime
+ ║➭ ${prefix}killgoblin
+ ║➭ ${prefix}killdevil
+ ║➭ ${prefix}killbehemoth
+ ║➭ ${prefix}killdemon
+ ║➭ ${prefix}killdemonking 
  └───────────●
 
- ┌───〔 *_◉Tʀᴀᴅᴇ ʀᴘɢ◉_* 〕
- ┊ ${prefix}sellikan
- ┊ ${prefix}sellbesi
- ┊ ${prefix}sellemas
- ┊ ${prefix}selldiamond
+ ╔➽「 ◉Tʀᴀᴅᴇ ʀᴘɢ◉ 」
+ ║➭ ${prefix}sellikan
+ ║➭ ${prefix}sellbesi
+ ║➭ ${prefix}sellemas
+ ║➭ ${prefix}selldiamond
  └───────────●
 
- ┌───〔 *_ᴛʜᴀɴᴋs ᴛᴏ_* 〕
- ┊ʏᴏᴜʀ ᴄʀᴇᴅɪᴛꜱ
- └───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+ ╔➽「 ᴛʜᴀɴᴋs ᴛᴏ」
+ ║➭ʏᴏᴜʀ ᴄʀᴇᴅɪᴛꜱ
+ └───「 ᴢɪᴍ ʙᴏᴛ ɪɴᴄ」
  `
 let message = await prepareWAMessageMedia({ image: bufu, jpegThumbnail:bufu }, { upload: ZimBotInc.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -530,10 +530,10 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
  ❲ *_Sᴜᴄᴄᴇꜱꜱ Jᴏɪɴ ʀᴘɢ_* ❳
  
 ╏ᴘʀᴏꜰɪʟᴇ ╏
-┊ *Nᴀᴍᴇ :* ${name}
-┊ *Lᴇᴠᴇʟ :* ${getLevelingLevel(sender)}
-┊ *Sᴛᴀᴛᴜꜱ :* ${elit}
-┊ *Xᴘ:*  ${getLevelingXp(sender)}/${reqXp}
+║➭ *Nᴀᴍᴇ :* ${name}
+║➭ *Lᴇᴠᴇʟ :* ${getLevelingLevel(sender)}
+║➭ *Sᴛᴀᴛᴜꜱ :* ${elit}
+║➭ *Xᴘ:*  ${getLevelingXp(sender)}/${reqXp}
 ❲ *_ʀᴘɢ ɢᴀᴍᴇ_* ❳`
   let message = await prepareWAMessageMedia({ image: bufut, jpegThumbnail:bufut }, { upload: ZimBotInc.waUploadToServer })
   const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -583,7 +583,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-          var hg = `*Mission to kill Slime*\n\n🎁 *Reward for killing Slime*\n ┊ *Money:* $${b}\n ┊ *Iron:* ${c}\n ┊ *Gold:* ${a}\n ┊ *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
+          var hg = `*Mission to kill Slime*\n\n🎁 *Reward for killing Slime*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold:* ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
           let message = await prepareWAMessageMedia({ image: bufutI, jpegThumbnail:bufutI }, { upload: ZimBotInc.waUploadToServer })
           const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
           templateMessage: {
@@ -632,7 +632,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission To kill Goblin*\n\n🎁 *Reward for killing Goblin*\n ┊ *Money:* $${b}\n ┊ *Iron:* ${c}\n ┊ *Gold:* ${a}\n ┊ *Diamond:* ${d}\n\n*Thank you for carrying out this misssion*`
+            var hg = `*Mission To kill Goblin*\n\n🎁 *Reward for killing Goblin*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold:* ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank you for carrying out this misssion*`
             let message = await prepareWAMessageMedia({ image: bufo, jpegThumbnail:bufo }, { upload: ZimBotInc.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
             templateMessage: {
@@ -681,7 +681,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission to kill 𝗗𝗲𝘃𝗶𝗹️*\n\n🎁 *Reward for killing Devil*\n ┊ *Money:* $${b}\n ┊ *Iron:* ${c}\n ┊ *Gold:* ${a}\n ┊ *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
+            var hg = `*Mission to kill 𝗗𝗲𝘃𝗶𝗹️*\n\n🎁 *Reward for killing Devil*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold:* ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
             let message = await prepareWAMessageMedia({ image: bufas, jpegThumbnail:bufas }, { upload: ZimBotInc.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
             templateMessage: {
@@ -730,7 +730,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission to kill Behemoth*\n\n🎁 *Reward for kiling Behemoth*\n ┊ *Money:* $${b}\n ┊ *Iron:* ${c}\n ┊ *Gold:* ${a}\n ┊ *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
+            var hg = `*Mission to kill Behemoth*\n\n🎁 *Reward for kiling Behemoth*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold:* ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
             let message = await prepareWAMessageMedia({ image: batai, jpegThumbnail: batai }, { upload: ZimBotInc.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
               templateMessage: {
@@ -781,7 +781,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission to kill Demon*\n🎁 *Demon Kill Reward*\n ┊ *Money:* $${b}\n ┊ *Iron:* ${c}\n ┊ *Gold*: ${a}\n ┊ *Diamond:* ${d}\n\n*Thank You for Carrying Out This Mission*`
+            var hg = `*Mission to kill Demon*\n🎁 *Demon Kill Reward*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold*: ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank You for Carrying Out This Mission*`
             let message = await prepareWAMessageMedia({ image: bhuu, jpegThumbnail: bhuu }, { upload: ZimBotInc.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
               templateMessage: {
@@ -828,7 +828,7 @@ ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission to kill DemonKing*\n\n🎁 *DemonKing Kill Reward*\n ┊ *Money* : $${b}\n ┊ *Iron :* ${c}\n ┊ *Gold :* ${a}\n ┊ *Diamond :* ${d}\n\n*Thank You for Carrying Out This Mission*`
+            var hg = `*Mission to kill DemonKing*\n\n🎁 *DemonKing Kill Reward*\n ║➭ *Money* : $${b}\n ║➭ *Iron :* ${c}\n ║➭ *Gold :* ${a}\n ║➭ *Diamond :* ${d}\n\n*Thank You for Carrying Out This Mission*`
             let message = await prepareWAMessageMedia({ image: bhuud, jpegThumbnail:bhuud }, { upload: ZimBotInc.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
             templateMessage: {
@@ -1157,7 +1157,7 @@ setInterval(() => {
 //But5Loc
 var nextMinutes = Math.random() * 300 + 30;
 setTimeout(function(){
-  ZimBotInc.sendMessage(ZimBotInc.user.id, {text: `*ZIM BOT INC ANNOUNCEMENT:* *SUBSCRIBE TO DRIPS OFC*\n\n*YOUTUBE:* https://www.youtube.com/c/DRIPSOFC\n\n*NEW FEATURES COMING SOON SO STAY TUNED*\n\n*FEEL FREE TO BRING IDEAS OF THE FEATURES ON THE TABLE*\n\n*IF YOU WANT TO CONTRUBUTE FORK THE REPO, MAKE CHANGES PUSH YOUR CHANGES TO THE ORIGIN BRANCH AND WAIT FOR YOUR PULL REQUEST TO BE VERIFIED*\n\n*Thanks for choosing zim-bot*`,contextInfo: { externalAdReply:{title:botname,body:"SUBSCRIBE DRIPS OFC",showAdAttribution: true,mediaType:2,thumbnail: fs.readFileSync(`./drips.jpg`) ,mediaUrl:tutorial, sourceUrl: tutorial }}}, {quoted: m})
+  ZimBotInc.sendMessage(ZimBotInc.user.id, {text: `*ZIM BOT INC ANNOUNCEMENT:* *SUBSCRIBE TO DRIPS OFC*\n\n*YOUTUBE:* https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA\n\n*NEW FEATURES COMING SOON SO STAY TUNED*\n\n*FEEL FREE TO BRING IDEAS OF THE FEATURES ON THE TABLE*\n\n*IF YOU WANT TO CONTRUBUTE FORK THE REPO, MAKE CHANGES PUSH YOUR CHANGES TO THE ORIGIN BRANCH AND WAIT FOR YOUR PULL REQUEST TO BE VERIFIED*\n\n*Thanks for choosing zim-bot*`,contextInfo: { externalAdReply:{title:botname,body:"SUBSCRIBE DRIPS OFC",showAdAttribution: true,mediaType:2,thumbnail: fs.readFileSync(`./drips.jpg`) ,mediaUrl:tutorial, sourceUrl: tutorial }}}, {quoted: m})
   //anouncement by drips 
 }, nextMinutes * 300 * 1000);
 const send5Butlmg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
@@ -1182,7 +1182,7 @@ cron.schedule('00 12 * * *', () => {
  console.log('Reseted Limit')
 }, {
  scheduled: true,
- timezone: "Africa/Harare"
+ timezone: "Asia/Kolkata "
 })
 //script by drips   
 //respond to cmd
@@ -1620,7 +1620,7 @@ var reqXp  = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
 buttons = [
 { buttonId: 'adventure', buttonText: { displayText: 'Adventure' }, type: 1 }
 ]
-ZimBotInc.sendButtonText(m.chat, buttons, `📍 𝗣𝗿𝗼𝗳𝗶𝗹𝗲 𝗣𝗹𝗮𝘆𝗲𝗿\n ┊ Name: ${pushname}\n ┊ Rank : ${role}\n ┊ Status : ${elit}\n ┊ Xp : ${getLevelingXp(sender)}/${reqXp}\n ┊ Level : ${getLevelingLevel(sender)}\n🎒 𝗜𝗻𝘃𝗲𝗻𝘁𝗼𝗿𝗶 :\n ┊ Gold : ${getEmas(sender)}🪙\n ┊ Money : $${(getBalance(sender, balance))}💰\n ┊ Iron : ${getBesi(sender)}⛓️\n ┊ Diamond : ${getDm(sender)}💎\n ┊ Fish : ${getFish(sender)}🎣`, ZimBotInc.user.name, m)
+ZimBotInc.sendButtonText(m.chat, buttons, `📍 𝗣𝗿𝗼𝗳𝗶𝗹𝗲 𝗣𝗹𝗮𝘆𝗲𝗿\n ║➭ Name: ${pushname}\n ║➭ Rank : ${role}\n ║➭ Status : ${elit}\n ║➭ Xp : ${getLevelingXp(sender)}/${reqXp}\n ║➭ Level : ${getLevelingLevel(sender)}\n🎒 𝗜𝗻𝘃𝗲𝗻𝘁𝗼𝗿𝗶 :\n ║➭ Gold : ${getEmas(sender)}🪙\n ║➭ Money : $${(getBalance(sender, balance))}💰\n ║➭ Iron : ${getBesi(sender)}⛓️\n ║➭ Diamond : ${getDm(sender)}💎\n ║➭ Fish : ${getFish(sender)}🎣`, ZimBotInc.user.name, m)
 break
 case 'sellikan':
 if (!m.isGroup) return reply(mess.group) 
@@ -1634,7 +1634,7 @@ addBalance(sender, rp, balance)
 buttons = [
 { buttonId: 'inventori', buttonText: { displayText: 'Inventori' }, type: 1 }
 ]
-ZimBotInc.sendButtonText(m.chat, buttons, `🛒 *MARKET*\n ┊ Seller : ${pushname}\n ┊ Buyer : Admin\n ┊ Price/Fish : 5\n ┊ Status : Success\n ┊ Left FishPrice/Fish : ${getFish(sender)}\n ┊ Sales Results : $${rp}`,  ZimBotInc.user.name, m)
+ZimBotInc.sendButtonText(m.chat, buttons, `🛒 *MARKET*\n ║➭ Seller : ${pushname}\n ║➭ Buyer : Admin\n ║➭ Price/Fish : 5\n ║➭ Status : Success\n ║➭ Left FishPrice/Fish : ${getFish(sender)}\n ║➭ Sales Results : $${rp}`,  ZimBotInc.user.name, m)
 break
 case 'sellbesi':
 if (!m.isGroup) return reply(mess.group) 
@@ -1648,7 +1648,7 @@ addBalance(sender, rp, balance)
 buttons = [
 { buttonId: 'inventori', buttonText: { displayText: 'Inventori' }, type: 1 }
 ]
-ZimBotInc.sendButtonText(m.chat, buttons, `🛒 MARKET\n ┊ Seller : ${pushname}\n ┊ Buyer : Admin\n ┊ Harga/Besi : 10\n ┊ Status : Sukses\n ┊ Sisa Besi : ${getBesi(sender)}\n ┊ Sales Results : $${rp}`, ZimBotInc.user.name, m)
+ZimBotInc.sendButtonText(m.chat, buttons, `🛒 MARKET\n ║➭ Seller : ${pushname}\n ║➭ Buyer : Admin\n ║➭ Harga/Besi : 10\n ║➭ Status : Sukses\n ║➭ Sisa Besi : ${getBesi(sender)}\n ║➭ Sales Results : $${rp}`, ZimBotInc.user.name, m)
 break
 case 'sellemas':
 if (!m.isGroup) return reply(mess.group) 
@@ -1662,7 +1662,7 @@ addBalance(sender, rp, balance)
 buttons = [
 { buttonId: 'inventori', buttonText: { displayText: 'Inventori' }, type: 1 }
 ]
-ZimBotInc.sendButtonText(m.chat, buttons, `🛒 MARKET\n ┊ Seller : ${pushname}\n ┊ Buyer : Admin\n ┊ Harga/Emas : 25\n ┊ Status : Sukses\n ┊ Sisa Emas : ${getEmas(sender)}\n ┊ Sales Results : $${rp}`, ZimBotInc.user.name, m)
+ZimBotInc.sendButtonText(m.chat, buttons, `🛒 MARKET\n ║➭ Seller : ${pushname}\n ║➭ Buyer : Admin\n ║➭ Harga/Emas : 25\n ║➭ Status : Sukses\n ║➭ Sisa Emas : ${getEmas(sender)}\n ║➭ Sales Results : $${rp}`, ZimBotInc.user.name, m)
 break 
 case 'selldiamond':
 if (!m.isGroup) return reply(mess.group) 
@@ -1676,7 +1676,7 @@ addBalance(sender, etoo, balance)
 buttons = [
 { buttonId: 'inventori', buttonText: { displayText: 'Inventori' }, type: 1 }
 ]
-ZimBotInc.sendButtonText(m.chat, buttons, `🛒 MARKET\n ┊ Seller : ${pushname}\n ┊ Buyer : Admin\n ┊ Harga/Dm : 75\n ┊ Status : Sukses\n ┊ Sisa Diamond : ${getDm(sender)}\n ┊ Sales Results : $${etoo}`, ZimBotInc.user.name, m)
+ZimBotInc.sendButtonText(m.chat, buttons, `🛒 MARKET\n ║➭ Seller : ${pushname}\n ║➭ Buyer : Admin\n ║➭ Harga/Dm : 75\n ║➭ Status : Sukses\n ║➭ Sisa Diamond : ${getDm(sender)}\n ║➭ Sales Results : $${etoo}`, ZimBotInc.user.name, m)
 break 
 case 'mancing':
 if (!m.isGroup) return reply(mess.group) 
@@ -1692,7 +1692,7 @@ var button = [
 		{ quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
 		{ quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
 		]
-        var hg = `「 Memancing 」\n\n ┊ *Capture:* ${ikannya}\n ┊ *Total Get:* ${ditangkap} *Fish*\n ┊ MONEY : $${coin}\n ┊ EXP : ${xp}Xp`
+        var hg = `「 Memancing 」\n\n ║➭ *Capture:* ${ikannya}\n ║➭ *Total Get:* ${ditangkap} *Fish*\n ║➭ MONEY : $${coin}\n ║➭ EXP : ${xp}Xp`
         ZimBotInc.sendMessage(from, { caption: hg, location: { jpegThumbnail: cing }, templateButtons: button, footer: `ʀᴘɢ ɢᴀᴍᴇ ʙʏ ᴢɪᴍʙᴏᴛ`, mentions: [sender] })
         .catch ((err) => reply(mess.error))
 }, 6000)
@@ -1729,7 +1729,7 @@ var button = [
 		{ quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
 		{ quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
 		]
-        var hg = `「 DEATH 」\n\n *┊ Place*  ${ad}\n ┊ *MONEY :* $${money}\n ┊ *EXP :* ${adven}Xp`
+        var hg = `「 DEATH 」\n\n *║➭ Place*  ${ad}\n ║➭ *MONEY :* $${money}\n ║➭ *EXP :* ${adven}Xp`
         ZimBotInc.sendMessage(from, { caption: hg, location: { jpegThumbnail: hasm }, templateButtons: button, footer: `ʀᴘɢ ɢᴀᴍᴇ ʙʏ ᴢɪᴍʙᴏᴛ`, mentions: [sender] })
         .catch ((err) => reply(mess.error))
 }, 7000)
@@ -1761,7 +1761,7 @@ addBesi(sender, c)
 buttons = [
 { buttonId: `${command}`, buttonText: { displayText: `TRY LUCKY` }, type: 1 }
 ]
-ZimBotInc.sendButtonText(m.chat, buttons, `🎰 *Lucky*\n┊ *Money:* $${b}\n┊ *Gold :* ${a}\n┊ *Iron :* ${c}\n┊ *XP :* ${ez}`, ZimBotInc.user.name, m)
+ZimBotInc.sendButtonText(m.chat, buttons, `🎰 *Lucky*\n║➭ *Money:* $${b}\n║➭ *Gold :* ${a}\n║➭ *Iron :* ${c}\n║➭ *XP :* ${ez}`, ZimBotInc.user.name, m)
 }
 break
  /*case 'xp': case 'inventory': case 'profile':{
@@ -2210,7 +2210,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
   thumbnail: fs.readFileSync("Zimbot/drips.jpg"),
   mediaType:1,
   mediaUrl: 'github.com/Ajmal-Achu',
-  sourceUrl: "github.com/Ajmal-Achug"
+  sourceUrl: "github.com/Ajmal-Achu"
   }}
   }
   ZimBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
@@ -2531,7 +2531,7 @@ try{
   } catch {
  var pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
   }
-let ingfo = `*𝗚𝗥𝗢𝗨𝗣 𝗜𝗡𝗙𝗢*\n\n*𝗡𝗔𝗠𝗘 :* ${groupName}\n*𝗜𝗗 𝗚𝗥𝗢𝗨𝗣:* ${m.chat}\n*𝗠𝗔𝗗𝗘 :* ${moment(`${groupMetadata.creation}` * 1000).tz('Africa/Harare').format('DD/MM/YYYY HH:mm:ss')}\n*𝗚𝗥𝗢𝗨𝗣 𝗢𝗪𝗡𝗘𝗥:* @${groupMetadata.owner.split('@')[0]}\n*𝗔𝗗𝗠𝗜𝗡𝗦 :* ${groupAdmins.length}\n*𝗠𝗘𝗠𝗕𝗘𝗥𝗦 :* ${participants.length}\n*𝗗𝗘𝗦𝗖 :* \n${groupMetadata.desc}`
+let ingfo = `*𝗚𝗥𝗢𝗨𝗣 𝗜𝗡𝗙𝗢*\n\n*𝗡𝗔𝗠𝗘 :* ${groupName}\n*𝗜𝗗 𝗚𝗥𝗢𝗨𝗣:* ${m.chat}\n*𝗠𝗔𝗗𝗘 :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata ').format('DD/MM/YYYY HH:mm:ss')}\n*𝗚𝗥𝗢𝗨𝗣 𝗢𝗪𝗡𝗘𝗥:* @${groupMetadata.owner.split('@')[0]}\n*𝗔𝗗𝗠𝗜𝗡𝗦 :* ${groupAdmins.length}\n*𝗠𝗘𝗠𝗕𝗘𝗥𝗦 :* ${participants.length}\n*𝗗𝗘𝗦𝗖 :* \n${groupMetadata.desc}`
 ds = await getBuffer(pic)
 ZimBotInc.sendMessage(m.chat, { image: ds,caption: ingfo, mentions: [groupMetadata.owner] }, { quoted: m})
 break
@@ -2542,7 +2542,7 @@ break
 let teks = ` 
  ┏━━━━━━━━━━━┑
  ┃𝗧𝗔𝗚𝗔𝗟𝗟
- ┃┄┄┄┄┄┄┄┄┄┄┄┊
+ ┃┄┄┄┄┄┄┄┄┄┄┄║➭
  ┃*𝐌𝐄𝐒𝐒𝐀𝐆𝐄 : ${q ? q : 'blank'}*\n\n
  ┗━━━━━━━━ 
 `
@@ -3378,7 +3378,7 @@ break
  }
   }]
  fatihgans = fs.readFileSync('./Zimbot/drips.jpg')
- let txt = `「 ZimBot Broadcast 」\n\n${text}`
+ let txt = `「 ${global.botname} BROADCAST 」\n\n${text}`
  ZimBotInc.send5ButImg(i, txt, ZimBotInc.user.name, fatihgans, btn)
   }
    reply(`Successful Sending Broadcast To ${anu.length} Group(s)`)
@@ -3447,7 +3447,7 @@ break
     let teks = `🎪𝗚𝗥𝗢𝗨𝗣 𝗖𝗛𝗔𝗧 𝗟𝗜𝗦𝗧\n\n𝗧𝗢𝗧𝗔𝗟 𝗚𝗥𝗢𝗨𝗣 : ${anu.length} Group\n\n`
     for (let i of anu) {
 let metadata = await ZimBotInc.groupMetadata(i)
-teks += `🎪𝗡𝗔𝗠𝗘 : ${metadata.subject}\n🎪𝗢𝗪𝗡𝗘𝗥 : @${metadata.owner.split('@')[0]}\n🎪𝗜𝗗 : ${metadata.id}\n🎪 𝗠𝗔𝗗𝗘 : ${moment(metadata.creation * 1000).tz('Africa/Harare').format('DD/MM/YYYY HH:mm:ss')}\n🎪 𝗠𝗘𝗠𝗕𝗘𝗥 : ${metadata.participants.length}\n\n────────────────────────\n\n`
+teks += `🎪𝗡𝗔𝗠𝗘 : ${metadata.subject}\n🎪𝗢𝗪𝗡𝗘𝗥 : @${metadata.owner.split('@')[0]}\n🎪𝗜𝗗 : ${metadata.id}\n🎪 𝗠𝗔𝗗𝗘 : ${moment(metadata.creation * 1000).tz('Asia/Kolkata ').format('DD/MM/YYYY HH:mm:ss')}\n🎪 𝗠𝗘𝗠𝗕𝗘𝗥 : ${metadata.participants.length}\n\n────────────────────────\n\n`
     }
     ZimBotInc.sendTextWithMentions(m.chat, teks, m)
 }
@@ -4021,7 +4021,7 @@ return('Error!')
 })  
 break
 case 'update':
-  const heroku = new Heroku({ token: Config.HEROKU_API_KEY })
+
   await git.fetch();
   var commits = await git.log(['main' + '..origin/' + 'main']);
   if (commits.total === 0) {
@@ -4054,34 +4054,52 @@ case 'update':
 break
 case 'updatenow':
   
-    await git.fetch();
-    var commits = await git.log(['main' + '..origin/' + 'main']);
-    if (commits.total === 0) {
-      return await ZimBotInc.sendMessage(m.chat, { text:"_Bot up to date_"})
-    } else {
-      await ZimBotInc.sendMessage(m.chat, {text: "_Build started ⏫_"})
-      try {
-        var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
-        var git_url = await heroku.get(app.git_url)
-    } catch {
-        await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
+    const heroku = new Heroku({ token: process.env.HEROKU_API_KEY })
+  await git.fetch();
+      var commits = await git.log(['main' + '..origin/' + 'main'])
+  if (commits.total === 0) { ZimBotInc.sendMessage(m.chat, { text:"_Bot up to date_"})  } else {
 
-        await new Promise(r => setTimeout(r, 1000));
-      }
-      git.fetch('upstream', 'main');
-      git.reset('hard', ['FETCH_HEAD']);//lols
+        await ZimBotInc.sendMessage(m.chat, {text: "_Build started ⏫_"})
+       if (true) {
+            try {
+                var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
+            } catch (e) {
+		await ZimBotInc.sendMessage(m.chat, { text : `${e}` }) 
+                await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
+                await new Promise(r => setTimeout(r, 1000));
+                return await ZimBotInc.sendMessage(m.chat, { text:"*Heroku app name/api key wrong*"})
+            }
 
-    git_url =  git_url.replace("https://", "https://api:" + Config.HEROKU_API_KEY + "@")//drips
-      try {
-        await git.addRemote('heroku', git_url);
-    } catch {console.log('Deploy error catched. Retrying...')}
-    try { await git.push('heroku', 'main'); } catch(e){ 
-    if (e.message.includes("concurrent")) return reply("Your account has reached in-parallel build limit! Please wait for the other app to finish its deploy ❗"); 
-    }
-    await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
- //
+        
+            git.fetch('upstream', 'main');
+            git.reset('hard', ['FETCH_HEAD']);
+            
+            var git_url = app.git_url.replace(
+                "https://", "https://api:" + global.herokuapi + "@"
+            )
 
-  }
+            try {
+                await git.addRemote('heroku', git_url);
+            } catch { 
+              console.log('heroku remote ekli');
+                     git.push('heroku', 'main')
+
+                    }
+            await git.push('heroku', 'main');
+
+                await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
+
+        } else {
+            git.pull((async (err, update) => {
+                if(update && update.summary.changes) {
+                    await ZimBotInc.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
+                    exec('npm install').stderr.pipe(process.stderr);
+                } else if (err) {
+                    await console.log('*❌ Güncelleme başarısız oldu!*\n*Hata:* ```' + err + '```')
+                }
+            }));
+                                                                          }
+     }
 
 break
 case 'awoo2':
@@ -5344,7 +5362,7 @@ displayText: 'GITHUB',
 url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }]
-let txt = `「 *ZIMBOT BROADCAST* 」\n\n${text}`
+let txt = `「 *${global.botname} BROADCAST* 」\n\n${text}`
 ZimBotInc.send5ButImg(i, txt, botname, global.bc, btn)
 }
 reply(` *Send Broadcast To* ${anu.length} *Group*`)
@@ -5363,7 +5381,7 @@ displayText: 'GITHUB',
 url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 }
 }]
-let txt = `「 *ZIMBOT BROADCAST* 」\n\n${text}`
+let txt = `「 *${global.botname} BROADCAST* 」\n\n${text}`
 ZimBotInc.send5ButImg(yoi, txt, botname, global.bc, btn)
 }
 reply('*Success Broadcast*')
@@ -5511,7 +5529,6 @@ break
 
 //----END HERE------\\
 
-//CREATED BY ZIM BOT INC
 
 //----PHOT FILTER-----\\
 break
@@ -6946,38 +6963,7 @@ case 'tes': case 'test': case 'alive': case 'bot': case 'robot': case 'zimbot': 
 ram9000 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 timestampe = speed();
 latensie = speed() - timestampe
-  anu = `
-*ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}
-
-┌───〔 *_◉ᴀʙᴏᴜᴛ◉_* 〕
-┊ *❗ᴏꜱ ʀᴇʟᴇᴀꜱᴇ:* ${os.release()}
-┊ *❕ᴏꜱ ᴛʏᴘᴇ:*   ${os.type()}
-┊ *❗ᴅɪʀᴇᴄᴛᴏʀʏ:*  ${os.homedir()}
-┊ *❕ꜱᴘᴇᴇᴅ :* ${latensie.toFixed(4)} Second
-┊ *ʀᴀᴍᴜsᴀɢᴇ :* ${ram9000}
-┊ *❗ᴘʟᴀᴛʟғᴏʀᴍ :* ${os.platform()} 
-┊ *❗ꜰʀᴇᴇ ᴍᴏᴍᴏʀʏ:* ${os.freemem()}
-┊ *❕ᴛᴏᴛᴀʟ ᴍᴇᴍᴏʀʏ:* ${os.totalmem()}
-┊ *❕ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
-┊ *❗ᴅᴇᴠɪᴄᴇ :* ${os.hostname()}
-┊ *❕ᴛᴏᴛᴀʟ ᴜsᴇʀs :* ${Object.keys(global.db.users).length}
-└───────────●
-  
-┌───〔 *_◉ᴜsᴇʀ ɪɴғᴏ◉_* 〕
-┊ *NAME:* ${pushname}
-┊  ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊ *RANK:* ${role}
-┊ *STATUS:* ${elit}
-┊ *MONEY:* $${(getBalance(sender, balance))}
-┊ *XP:* ${getLevelingXp(sender)}/${reqXp}
-┊ *LEVEL:* ${getLevelingLevel(sender)}
-┊ *MONEY:* $${(getBalance(sender, balance))}
-┊ *GOLD:* ${getEmas(sender)}
-┊ *IRON:* ${getBesi(sender)}
-┊ *FISH:* ${getFish(sender)}
-┊ *DIAMOND:* ${getDm(sender)}
-└───────────●
-`
+  anu = process.env.alivemessage
 const aliveer = fs.readFileSync('./Zimbot/alive.mp3')
 ZimBotInc.sendMessage(m.chat, { audio: aliveer, mimetype: 'audio/mp4', ptt: true, quoted: mudratunha})
 huso = await getBuffer(picak+'ZIM BOT IS ALIVE')
@@ -7051,24 +7037,24 @@ case 'listmenu':
   m.chat, 
   {
   text: `
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
+╔➽「 ᴢɪᴍ ʙᴏᴛ ᴠ4」
+║➭ᴡᴇʟᴄᴏᴍᴇ
 └───────────●
-┌───〔 *_◉ᴜsᴇʀ ɪɴғᴏ◉_* 〕
-┊ *NAME:* ${pushname}
-┊  ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊ *RANK:* ${role}
-┊ *STATUS:* ${elit}
-┊ *MONEY:* $${(getBalance(sender, balance))}
-┊ *XP:* ${getLevelingXp(sender)}/${reqXp}
-┊ *LEVEL:* ${getLevelingLevel(sender)}
-┊ *MONEY:* $${(getBalance(sender, balance))}
-┊ *GOLD:* ${getEmas(sender)}
-┊ *IRON:* ${getBesi(sender)}
-┊ *FISH:* ${getFish(sender)}
-┊ *DIAMOND:* ${getDm(sender)}
-┊ *ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
-┊ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${Object.keys(global.db.users).length}
+╔➽「 ◉ᴜsᴇʀ ɪɴғᴏ◉ 」
+║➭ *NAME:* ${pushname}
+║➭  ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
+║➭ *RANK:* ${role}
+║➭ *STATUS:* ${elit}
+║➭ *MONEY:* $${(getBalance(sender, balance))}
+║➭ *XP:* ${getLevelingXp(sender)}/${reqXp}
+║➭ *LEVEL:* ${getLevelingLevel(sender)}
+║➭ *MONEY:* $${(getBalance(sender, balance))}
+║➭ *GOLD:* ${getEmas(sender)}
+║➭ *IRON:* ${getBesi(sender)}
+║➭ *FISH:* ${getFish(sender)}
+║➭ *DIAMOND:* ${getDm(sender)}
+║➭ *ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
+║➭ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${Object.keys(global.db.users).length}
 └───────────●
 `,
   footer: watermark,
@@ -7169,18 +7155,18 @@ case 'setmenu': {
  `
  *ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}
 
- ╔➽〔 *_◉ᴀʙᴏᴜᴛ◉_* 〕
- ┊ *❗ᴏꜱ ʀᴇʟᴇᴀꜱᴇ:* ${os.release()}
- ┊ *❕ᴏꜱ ᴛʏᴘᴇ:*   ${os.type()}
- ┊ *❗ᴅɪʀᴇᴄᴛᴏʀʏ:*  ${os.homedir()}
- ┊ *❕ꜱᴘᴇᴇᴅ :* ${latensie.toFixed(4)} Second
- ┊ *ʀᴀᴍᴜsᴀɢᴇ :* ${ram2}
- ┊ *❗ᴘʟᴀᴛʟғᴏʀᴍ :* ${os.platform()} 
- ┊ *❗ꜰʀᴇᴇ ᴍᴏᴍᴏʀʏ:* ${os.freemem()}
- ┊ *❕ᴛᴏᴛᴀʟ ᴍᴇᴍᴏʀʏ:* ${os.totalmem()}
- ┊ *❕ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
- ┊ *❗ᴅᴇᴠɪᴄᴇ :* ${os.hostname()}
- ┊ *❕ᴛᴏᴛᴀʟ ᴜsᴇʀs :* ${Object.keys(global.db.users).length}
+ ╔➽「 ◉ᴀʙᴏᴜᴛ◉ 」
+ ║➭ *❗ᴏꜱ ʀᴇʟᴇᴀꜱᴇ:* ${os.release()}
+ ║➭ *❕ᴏꜱ ᴛʏᴘᴇ:*   ${os.type()}
+ ║➭ *❗ᴅɪʀᴇᴄᴛᴏʀʏ:*  ${os.homedir()}
+ ║➭ *❕ꜱᴘᴇᴇᴅ :* ${latensie.toFixed(4)} Second
+ ║➭ *ʀᴀᴍᴜsᴀɢᴇ :* ${ram2}
+ ║➭ *❗ᴘʟᴀᴛʟғᴏʀᴍ :* ${os.platform()} 
+ ║➭ *❗ꜰʀᴇᴇ ᴍᴏᴍᴏʀʏ:* ${os.freemem()}
+ ║➭ *❕ᴛᴏᴛᴀʟ ᴍᴇᴍᴏʀʏ:* ${os.totalmem()}
+ ║➭ *❕ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
+ ║➭ *❗ᴅᴇᴠɪᴄᴇ :* ${os.hostname()}
+ ║➭ *❕ᴛᴏᴛᴀʟ ᴜsᴇʀs :* ${Object.keys(global.db.users).length}
  └───────────●
         `,
          buttonText: "SET MENU",
@@ -7267,489 +7253,474 @@ latensie = speed() - timestampe
 anu = `
 *ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}
 
-┌───〔 *_◉ᴀʙᴏᴜᴛ◉_* 〕
-┊ *❗ᴏꜱ ʀᴇʟᴇᴀꜱᴇ:* ${os.release()}
-┊ *❕ᴏꜱ ᴛʏᴘᴇ:*   ${os.type()}
-┊ *❗ᴅɪʀᴇᴄᴛᴏʀʏ:*  ${os.homedir()}
-┊ *❕ꜱᴘᴇᴇᴅ :* ${latensie.toFixed(4)} Second
-┊ *ʀᴀᴍᴜsᴀɢᴇ :* ${ram2}
-┊ *❗ᴘʟᴀᴛʟғᴏʀᴍ :* ${os.platform()} 
-┊ *❗ꜰʀᴇᴇ ᴍᴏᴍᴏʀʏ:* ${os.freemem()}
-┊ *❕ᴛᴏᴛᴀʟ ᴍᴇᴍᴏʀʏ:* ${os.totalmem()}
-┊ *❕ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
-┊ *❗ᴅᴇᴠɪᴄᴇ :* ${os.hostname()}
-┊ *❕ᴛᴏᴛᴀʟ ᴜsᴇʀs :* ${Object.keys(global.db.users).length}
+╔➽「 ◉ᴀʙᴏᴜᴛ◉ 」
+║➭ *❗ᴏꜱ ʀᴇʟᴇᴀꜱᴇ:* ${os.release()}
+║➭ *❕ᴏꜱ ᴛʏᴘᴇ:*   ${os.type()}
+║➭ *❗ᴅɪʀᴇᴄᴛᴏʀʏ:*  ${os.homedir()}
+║➭ *❕ꜱᴘᴇᴇᴅ :* ${latensie.toFixed(4)} Second
+║➭ *ʀᴀᴍᴜsᴀɢᴇ :* ${ram2}
+║➭ *❗ᴘʟᴀᴛʟғᴏʀᴍ :* ${os.platform()} 
+║➭ *❗ꜰʀᴇᴇ ᴍᴏᴍᴏʀʏ:* ${os.freemem()}
+║➭ *❕ᴛᴏᴛᴀʟ ᴍᴇᴍᴏʀʏ:* ${os.totalmem()}
+║➭ *❕ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
+║➭ *❗ᴅᴇᴠɪᴄᴇ :* ${os.hostname()}
+║➭ *❕ᴛᴏᴛᴀʟ ᴜsᴇʀs :* ${Object.keys(global.db.users).length}
 └───────────●
 
-┌───〔 *_◉ᴜsᴇʀ ɪɴғᴏ◉_* 〕
-┊ *NAME:* ${pushname}
-┊  ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊ *RANK:* ${role}
-┊ *STATUS:* ${elit}
-┊ *MONEY:* $${(getBalance(sender, balance))}
-┊ *XP:* ${getLevelingXp(sender)}/${reqXp}
-┊ *LEVEL:* ${getLevelingLevel(sender)}
-┊ *MONEY:* $${(getBalance(sender, balance))}
-┊ *GOLD:* ${getEmas(sender)}
-┊ *IRON:* ${getBesi(sender)}
-┊ *FISH:* ${getFish(sender)}
-┊ *DIAMOND:* ${getDm(sender)}
+╔➽〔 *_◉ᴍᴇɴᴜ◉_* 〕
+║➭ downloadmenu
+║➭ groupmenu
+║➭ animemenu
+║➭ searchmenu
+║➭ ownermenu
+║➭ databasemenu
+║➭ textpromenu
+║➭ ephotomenu
+║➭ toolsmenu
+║➭ convertmenu
 └───────────●
 
-┌───〔 *_◉ᴍᴇɴᴜ◉_* 〕
-┊🪨downloadmenu
-┊🪨groupmenu
-┊🪨animemenu
-┊🪨searchmenu
-┊🪨ownermenu
-┊🪨databasemenu
-┊🪨textpromenu
-┊🪨ephotomenu
-┊🪨toolsmenu
-┊🪨convertmenu
+╔➽〔 *_ᴛᴏᴏʟᴍᴇɴᴜ_* 〕
+║➭ ip ->-
+║➭ ipdomain -domain name-
+║➭ codecolor -text-
+║➭ hackermaker -pic url-
+║➭ checknumber -number-
+║➭ veriphone -number-
+║➭ weather -place-
+║➭ attp -text-
+║➭ ssweb-hp -url-
+║➭ shortlink -url-
+║➭ ssweb-pc -url-
+║➭ shortlinkcuttly -url-
+║➭ shortlinkisgd -url-
+║➭ brainly -query-
+└───〔 *_${global.caption}_* 〕
+
+
+╔➽〔 *_◉ᴏᴡɴᴇʀᴍᴇɴᴜ◉_* 〕
+║➭ chatbot on/off
+║➭ setmenu -option-
+║➭ checkupdate 
+║➭ updatenow
+║➭ bc -text-
+║➭ bcall -text-
+║➭ bctext -text-
+║➭ bcvideo -media-
+║➭ bcaudio -media-
+║➭ bcimage -media-
+║➭ bcloc  -text-
+║➭ bcgc -text-
+║➭ lockcmd
+║➭ setstatus -text-
+║➭ setppbot -owner-
+║➭ block -owner-
+║➭ unblock -owner-
+║➭ join -owner-
+║➭ leave -owner-
+║➭ chat -owner-
+║➭ public
+║➭ self
+║➭ grouponly
+└───〔 *_${global.caption}_* 〕
+
+
+╔➽〔 *_◉ɢʀᴏᴜᴘᴍᴇɴᴜ◉_* 〕
+║➭ add -admin-
+║➭ kick -admin-
+║➭ welcome on/off -admin-
+║➭ listpc 
+║➭ listgc
+║➭ groupinfo -admin-
+║➭ antivn -admin-
+║➭ antiphoto -admin-
+║➭ antisticker -admin-
+║➭ antivideo -admin-
+║➭ antilinkall -admin-
+║➭ antiinstagram -admin-
+║➭ antitelegram -admin-
+║➭ antilink -admin-
+║➭ antiyt -admin-
+║➭ antibule -admin-
+║➭ antitiktok -admin-
+║➭ antifacebook -admin-
+║➭ antivirus -admin-
+║➭ antibadword -admin-
+║➭ antiwame -admin-
+║➭ group -options-
+║➭ mute
+║➭ groupinfo
+║➭ truth 
+║➭ dare
+║➭ slot
+║➭ math
+║➭ vote
+║➭ devote
+║➭ cekvote
+║➭ deletevote
+║➭ upvote
+║➭ setsubject -admin-
+║➭ setdesc -admin-
+║➭ setppgroup -admin-
+║➭ tagall -admin-
+║➭ hidetag -admin-
+║➭ ephemeral
+║➭ demote -admin-
+║➭ promote -admin-
+║➭ editinfo -admin-
+└───〔 *_${global.caption}_* 〕
+
+
+╔➽〔 *_◉ᴛᴇxᴛᴘʀᴏᴍᴇɴᴜ◉_* 〕
+║➭ candy -text-
+║➭ christmas -text-
+║➭ 3dchristmas -text-
+║➭ sparklechristmas -text-
+║➭ deepsea -text-
+║➭ scifi -text-
+║➭ rainbow2 -text-
+║➭ waterpipe -text-
+║➭ spooky -text-
+║➭ pencil -text-
+║➭ circuit -text-
+║➭ discovery -text-
+║➭ metalic -text-
+║➭ fiction -text-
+║➭ demon -text-
+║➭ transformer -text-
+║➭ berry -text-
+║➭ thunder -text-
+║➭ 3dstone2 -text-
+║➭ neonlight -text-
+║➭ glitch -text-
+║➭ harrypotter -text-
+║➭ brokenglass -text-
+║➭ papercut -text-
+║➭ watercolor -text-
+║➭ multicolor -text-
+║➭ neondevil -text-
+║➭ underwater -text-
+║➭ graffitibike -text-
+║➭ snow -text-
+║➭ cloud -text-
+║➭ honey -text-
+║➭ ice -text-
+║➭ fruitjuice -text-
+║➭ biscuit -text-
+║➭ wood -text-
+║➭ chocolate -text-
+║➭ strawberry -text-
+║➭ matrix -text-
+║➭ blood -text-
+║➭ dropwater -text-
+║➭ toxic -text-
+║➭ lava -text-
+║➭ rock -text-
+║➭ bloodglass -text-
+║➭ halloween -text-
+║➭ darkgold -text-
+║➭ joker -text-
+║➭ wicker -text-
+║➭ firework -text-
+║➭ skeleton -text-
+║➭ blackpink -text-
+║➭ sand -text-
+║➭ glue -text-
+║➭ 1917 -text-
+║➭ leaves -text-
+└───〔 *_${global.caption}_* 〕
+
+
+╔➽〔 *_ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ_* 〕
+║➭ ytmp3 -link-
+║➭ ytmp4 -link-
+║➭ audio  -link-
+║➭ play -query-
+║➭ song -query-
+║➭ play2 -query-
+║➭ mediafire -link-
+║➭ fb -link-
+║➭ fb2 -link-
+║➭ ytsvideo -query-
+║➭ getmusic -query-
+║➭ getvideo -query-
+║➭ savefrom -query-
+║➭ pindl -query-
+║➭ joox -query-
+║➭ tiktok -link-
+║➭ tiktok2 -link-
+║➭ twitter -link-
+║➭ twitter2 -link-
+║➭ tiktok3 -link-
+║➭ tiktok4 -link-
+║➭ ig -link-
+║➭ instagramstory -link-
+║➭ instagramstory2 -link-
+║➭ igimage -link-
+║➭ instagramreal -link-
+║➭ soundcloud -link-
+║➭ ytshorts -link-
+║➭ unma -link-
+║➭ twitteraudio -link-
+║➭ ytsaudio -query-
+║➭ ytsvideo -query-
+║➭ yts2 -query-
+║➭ fbdl -link-
+║➭ fbvideo -link-
+║➭ get -link-
+║➭ tiktok5 -link-
+║➭ titktok3 -link-
+║➭ tiktokmp3 -link-
+║➭ ttmp3 -link-
+║➭ ig2 -link-
+║➭ ig3 -link-
+║➭ igimage -link-
+║➭ igtv -link-
+║➭ fbmp3 -link-
+║➭ ytdl -link-
+└───〔 *_${global.caption}_* 〕
+
+
+╔➽〔 *_ᴘʜᴏᴛꜰɪʟᴛᴇʀᴍᴇɴᴜ_* 〕
+║➭ angie -photo-
+║➭ aria -photo-
+║➭ attic -photo-
+║➭ blackandwhite -photo-
+║➭ chorme1977 -photo-
+║➭ constrastbandw -photo-
+║➭ creamy -photo-
+║➭ duotone -photo-
+║➭ eva -photo-
+║➭ goldenhour -photo-
+║➭ hana -photo-
+║➭ lavander -photo-
+║➭ lemonande -photo-
+║➭ lightleak -photo-
+║➭ lisa -photo-
+║➭ lomo -photo-
+║➭ milk -photo-
+║➭ molly -photo-
+║➭ monochrome -photo-
+║➭ morning -photo-
+║➭ movie -photo-
+║➭ orton -photo-
+║➭ paretro -photo-
+║➭ perfectbandw -photo-
+║➭ plumy -photo-
+║➭ retrolga -photo-
+║➭ ruby -photo-
+║➭ sand -photo-
+║➭ sapphire -photo-
+║➭ sepia -photo-
+║➭ softsepia -photo-
+║➭ solarize -photo-
+║➭ sphinx -photo-
+║➭ venus -photo-
+║➭ japanese -photo-
+║➭ hdr -photo-
+║➭ viewfilter -photo-
+║➭ warmsunset -photo-
+└───〔 *_${global.caption}_* 〕
+
+
+╔➽〔 *_ɴꜱꜰᴡᴍᴇɴᴜ_* 〕
+║➭ masturbation
+║➭ jahy
+║➭ hentai
+║➭ glasses
+║➭ gangbang
+║➭ foot
+║➭ femdom
+║➭ cum
+║➭ ero
+║➭ cuckhold
+║➭ blowjob
+║➭ bdsm
+║➭ ahegao
+║➭ ass
+║➭ orgy
+║➭ panties
+║➭ pussy
+║➭ yuri
+║➭ thighs
+║➭ tentacles
+└───〔 *_${global.caption}_* 〕
+
+
+╔➽〔 *_ᴀɴɪᴍᴇᴍᴇɴᴜ_* 〕
+║➭ cry
+║➭ kill
+║➭ hug
+║➭ pat
+║➭ lick
+║➭ kiss
+║➭ bite
+║➭ yeet
+║➭ neko
+║➭ bully
+║➭ bonk
+║➭ wink
+║➭ poke
+║➭ nom
+║➭ slap
+║➭ smile
+║➭ wave
+║➭ awoo
+║➭ blush
+║➭ smug
+║➭ glomp
+║➭ happy
+║➭ dance
+║➭ cringe
+║➭ cuddle
+║➭ highfive
+║➭ shinobu
+║➭ megumin
+║➭ handhold
+║➭ animeslap
+║➭ animepat
+║➭ animeneko
+║➭ animehug
+║➭ animekiss
+║➭ animewlp
+║➭ animespank
+║➭ shinobu2
+║➭ megumin2
+║➭ awoo2
+║➭ animewall2
+║➭ searchanime -query-
+└───〔 *_${global.caption}_* 〕
+
+
+╔➽〔 *_ꜱᴇᴀʀᴄʜᴍᴇɴᴜ_* 〕
+║➭ lyrics -query-
+║➭ linkwa -query-
+║➭ apk -query-
+║➭ happymod -query-
+║➭ apkupro -query-
+║➭ google -query-
+║➭ wiki -query-
+║➭ ytsearch -query-
+║➭ recipe -query-
+║➭ playstore -query-
+║➭ wikimedia -query-
+║➭ news -query-
+║➭ news2 -query-
+║➭ animee -query-
+║➭ anime -query-
+║➭ amino -query-
+║➭ googleimage -query-
+║➭ apkdone -query-
+║➭ githubsearch -query->
+║➭ igsearch -username-
+║➭ googlenews -query-
+║➭ gnews -query-
+║➭ wallpaper -query-
+║➭ searchgroups -query-
+║➭ qoutesanime -query-
+║➭ gmsarena -query-
+└───〔 *_${global.caption}_* 〕
+
+╔➽〔*_◉ᴇᴘʜᴏᴛᴏ-ᴍᴇɴᴜ◉_*〕
+║➭ 3d-wood
+║➭ angels-wings
+║➭ snake-text
+║➭ redhot-metal2
+║➭ sandsummer-beach
+║➭ snow-text
+║➭ water-3d
+║➭ water-effect
+║➭ wet-glass
+║➭ status-mood2
+║➭ summerysand
 └───────────●
 
-┌───〔 *_ᴛᴏᴏʟᴍᴇɴᴜ_* 〕
-┊🪨ip ->-
-┊🪨ipdomain -domain name-
-┊🪨codecolor -text-
-┊🪨hackermaker -pic url-
-┊🪨checknumber -number-
-┊🪨veriphone -number-
-┊🪨weather -place-
-┊🪨attp -text-
-┊🪨ssweb-hp -url-
-┊🪨shortlink -url-
-┊🪨ssweb-pc -url-
-┊🪨shortlinkcuttly -url-
-┊🪨shortlinkisgd -url-
-┊🪨brainly -query-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽〔 *_ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ_* 〕
+║➭ toimg -quote sticker-
+║➭ togif -quote video-
+║➭ todocument -media-
+║➭ bass -audio-
+║➭ blown -audio-
+║➭ deep -audio-
+║➭ earape -audio-
+║➭ fast -audio-
+║➭ fat -audio-
+║➭ nightcore -audio-
+║➭ reverse -audio-
+║➭ robot -audio-
+║➭ slow -audio-
+║➭ smooth -audio-
+║➭ squirrel -audio-
+║➭ sticker -media-
+║➭ smeme -media-
+║➭ stickermeme -media-
+║➭ swm -sticker-
+└───〔 *_${global.caption}_* 〕
+
+╔➽〔 *_◉ᴅᴀᴛᴀʙᴀꜱᴇᴍᴇɴᴜ◉_* 〕
+║➭ addmsg -msg-
+║➭ delmsg -msg-
+║➭ listmsg -msg-
+║➭ getmsg -msg-
+║➭ setcmd -msg-
+║➭ delcmd -msg-
+║➭ listcmd -msg-
+└───〔 *_${global.caption}_* 〕
+
+╔➽〔 *_◉Photooxyᴍᴇɴᴜ◉_* 〕
+║➭ silk -text-
+║➭ 3dnature -text-
+║➭ bevel -text-
+║➭ birthdaycake -text-
+║➭ burnpaper -text-
+║➭ coffee -text-
+║➭ coffee-heartcup -text-
+║➭ embroiderytext -text-
+║➭ flaming -text-
+║➭ flowertypo -text-
+║➭ funnycup -text-
+║➭ fur -text-
+║➭ gerbang -text-
+║➭ glowrainbow -text-
+║➭ gradientavatar -text-
+║➭ graffititext -text-
+║➭ harrypotter -text-
+║➭ lovemessage -text-
+║➭ neonlight -text-
+║➭ sweetcandy -text-
+║➭ summertext -text-
+║➭ woodheart -text-
+║➭ yellowroses -text-
+║➭ wolfmetal -text-
+║➭ underwaterocean -text-
+└───〔 *_${global.caption}_* 〕
 
 
-┌───〔 *_◉ᴏᴡɴᴇʀᴍᴇɴᴜ◉_* 〕
-┊🪨chatbot on/off
-┊🪨setmenu -option-
-┊🪨checkupdate 
-┊🪨updatenow
-┊🪨bc -text-
-┊🪨bcall -text-
-┊🪨bctext -text-
-┊🪨bcvideo -media-
-┊🪨bcaudio -media-
-┊🪨bcimage -media-
-┊🪨bcloc  -text-
-┊🪨bcgc -text-
-┊🪨lockcmd
-┊🪨setstatus -text-
-┊🪨setppbot -owner-
-┊🪨block -owner-
-┊🪨unblock -owner-
-┊🪨join -owner-
-┊🪨leave -owner-
-┊🪨chat -owner-
-┊🪨public
-┊🪨self
-┊🪨grouponly
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-
-┌───〔 *_◉ɢʀᴏᴜᴘᴍᴇɴᴜ◉_* 〕
-┊🪨add -admin-
-┊🪨kick -admin-
-┊🪨welcome on/off -admin-
-┊🪨listpc 
-┊🪨listgc
-┊🪨groupinfo -admin-
-┊🪨antivn -admin-
-┊🪨antiphoto -admin-
-┊🪨antisticker -admin-
-┊🪨antivideo -admin-
-┊🪨antilinkall -admin-
-┊🪨antiinstagram -admin-
-┊🪨antitelegram -admin-
-┊🪨antilink -admin-
-┊🪨antiyt -admin-
-┊🪨antibule -admin-
-┊🪨antitiktok -admin-
-┊🪨antifacebook -admin-
-┊🪨antivirus -admin-
-┊🪨antibadword -admin-
-┊🪨antiwame -admin-
-┊🪨group -options-
-┊🪨mute
-┊🪨groupinfo
-┊🪨truth 
-┊🪨dare
-┊🪨slot
-┊🪨math
-┊🪨vote
-┊🪨devote
-┊🪨cekvote
-┊🪨deletevote
-┊🪨upvote
-┊🪨setsubject -admin-
-┊🪨setdesc -admin-
-┊🪨setppgroup -admin-
-┊🪨tagall -admin-
-┊🪨hidetag -admin-
-┊🪨ephemeral
-┊🪨demote -admin-
-┊🪨promote -admin-
-┊🪨editinfo -admin-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-
-┌───〔 *_◉ᴛᴇxᴛᴘʀᴏᴍᴇɴᴜ◉_* 〕
-┊🪨candy -text-
-┊🪨christmas -text-
-┊🪨3dchristmas -text-
-┊🪨sparklechristmas -text-
-┊🪨deepsea -text-
-┊🪨scifi -text-
-┊🪨rainbow2 -text-
-┊🪨waterpipe -text-
-┊🪨spooky -text-
-┊🪨pencil -text-
-┊🪨circuit -text-
-┊🪨discovery -text-
-┊🪨metalic -text-
-┊🪨fiction -text-
-┊🪨demon -text-
-┊🪨transformer -text-
-┊🪨berry -text-
-┊🪨thunder -text-
-┊🪨3dstone2 -text-
-┊🪨neonlight -text-
-┊🪨glitch -text-
-┊🪨harrypotter -text-
-┊🪨brokenglass -text-
-┊🪨papercut -text-
-┊🪨watercolor -text-
-┊🪨multicolor -text-
-┊🪨neondevil -text-
-┊🪨underwater -text-
-┊🪨graffitibike -text-
-┊🪨snow -text-
-┊🪨cloud -text-
-┊🪨honey -text-
-┊🪨ice -text-
-┊🪨fruitjuice -text-
-┊🪨biscuit -text-
-┊🪨wood -text-
-┊🪨chocolate -text-
-┊🪨strawberry -text-
-┊🪨matrix -text-
-┊🪨blood -text-
-┊🪨dropwater -text-
-┊🪨toxic -text-
-┊🪨lava -text-
-┊🪨rock -text-
-┊🪨bloodglass -text-
-┊🪨halloween -text-
-┊🪨darkgold -text-
-┊🪨joker -text-
-┊🪨wicker -text-
-┊🪨firework -text-
-┊🪨skeleton -text-
-┊🪨blackpink -text-
-┊🪨sand -text-
-┊🪨glue -text-
-┊🪨1917 -text-
-┊🪨leaves -text-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-
-┌───〔 *_ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ_* 〕
-┊🪨ytmp3 -link-
-┊🪨ytmp4 -link-
-┊🪨audio  -link-
-┊🪨play -query-
-┊🪨song -query-
-┊🪨play2 -query-
-┊🪨mediafire -link-
-┊🪨fb -link-
-┊🪨fb2 -link-
-┊🪨ytsvideo -query-
-┊🪨getmusic -query-
-┊🪨getvideo -query-
-┊🪨savefrom -query-
-┊🪨pindl -query-
-┊🪨joox -query-
-┊🪨tiktok -link-
-┊🪨tiktok2 -link-
-┊🪨twitter -link-
-┊🪨twitter2 -link-
-┊🪨tiktok3 -link-
-┊🪨tiktok4 -link-
-┊🪨ig -link-
-┊🪨instagramstory -link-
-┊🪨instagramstory2 -link-
-┊🪨igimage -link-
-┊🪨instagramreal -link-
-┊🪨soundcloud -link-
-┊🪨ytshorts -link-
-┊🪨unma -link-
-┊🪨twitteraudio -link-
-┊🪨ytsaudio -query-
-┊🪨ytsvideo -query-
-┊🪨yts2 -query-
-┊🪨fbdl -link-
-┊🪨fbvideo -link-
-┊🪨get -link-
-┊🪨tiktok5 -link-
-┊🪨titktok3 -link-
-┊🪨tiktokmp3 -link-
-┊🪨ttmp3 -link-
-┊🪨ig2 -link-
-┊🪨ig3 -link-
-┊🪨igimage -link-
-┊🪨igtv -link-
-┊🪨fbmp3 -link-
-┊🪨ytdl -link-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-
-┌───〔 *_ᴘʜᴏᴛꜰɪʟᴛᴇʀᴍᴇɴᴜ_* 〕
-┊🪨angie -photo-
-┊🪨aria -photo-
-┊🪨attic -photo-
-┊🪨blackandwhite -photo-
-┊🪨chorme1977 -photo-
-┊🪨constrastbandw -photo-
-┊🪨creamy -photo-
-┊🪨duotone -photo-
-┊🪨eva -photo-
-┊🪨goldenhour -photo-
-┊🪨hana -photo-
-┊🪨lavander -photo-
-┊🪨lemonande -photo-
-┊🪨lightleak -photo-
-┊🪨lisa -photo-
-┊🪨lomo -photo-
-┊🪨milk -photo-
-┊🪨molly -photo-
-┊🪨monochrome -photo-
-┊🪨morning -photo-
-┊🪨movie -photo-
-┊🪨orton -photo-
-┊🪨paretro -photo-
-┊🪨perfectbandw -photo-
-┊🪨plumy -photo-
-┊🪨retrolga -photo-
-┊🪨ruby -photo-
-┊🪨sand -photo-
-┊🪨sapphire -photo-
-┊🪨sepia -photo-
-┊🪨softsepia -photo-
-┊🪨solarize -photo-
-┊🪨sphinx -photo-
-┊🪨venus -photo-
-┊🪨japanese -photo-
-┊🪨hdr -photo-
-┊🪨viewfilter -photo-
-┊🪨warmsunset -photo-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-
-┌───〔 *_ɴꜱꜰᴡᴍᴇɴᴜ_* 〕
-┊🪨masturbation
-┊🪨jahy
-┊🪨hentai
-┊🪨glasses
-┊🪨gangbang
-┊🪨foot
-┊🪨femdom
-┊🪨cum
-┊🪨ero
-┊🪨cuckhold
-┊🪨blowjob
-┊🪨bdsm
-┊🪨ahegao
-┊🪨ass
-┊🪨orgy
-┊🪨panties
-┊🪨pussy
-┊🪨yuri
-┊🪨thighs
-┊🪨tentacles
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-
-┌───〔 *_ᴀɴɪᴍᴇᴍᴇɴᴜ_* 〕
-┊🪨cry
-┊🪨kill
-┊🪨hug
-┊🪨pat
-┊🪨lick
-┊🪨kiss
-┊🪨bite
-┊🪨yeet
-┊🪨neko
-┊🪨bully
-┊🪨bonk
-┊🪨wink
-┊🪨poke
-┊🪨nom
-┊🪨slap
-┊🪨smile
-┊🪨wave
-┊🪨awoo
-┊🪨blush
-┊🪨smug
-┊🪨glomp
-┊🪨happy
-┊🪨dance
-┊🪨cringe
-┊🪨cuddle
-┊🪨highfive
-┊🪨shinobu
-┊🪨megumin
-┊🪨handhold
-┊🪨animeslap
-┊🪨animepat
-┊🪨animeneko
-┊🪨animehug
-┊🪨animekiss
-┊🪨animewlp
-┊🪨animespank
-┊🪨shinobu2
-┊🪨megumin2
-┊🪨awoo2
-┊🪨animewall2
-┊🪨searchanime -query-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-
-┌───〔 *_ꜱᴇᴀʀᴄʜᴍᴇɴᴜ_* 〕
-┊🪨lyrics -query-
-┊🪨linkwa -query-
-┊🪨apk -query-
-┊🪨happymod -query-
-┊🪨apkupro -query-
-┊🪨google -query-
-┊🪨wiki -query-
-┊🪨ytsearch -query-
-┊🪨recipe -query-
-┊🪨playstore -query-
-┊🪨wikimedia -query-
-┊🪨news -query-
-┊🪨news2 -query-
-┊🪨animee -query-
-┊🪨anime -query-
-┊🪨amino -query-
-┊🪨googleimage -query-
-┊🪨apkdone -query-
-┊🪨githubsearch -query->
-┊🪨igsearch -username-
-┊🪨googlenews -query-
-┊🪨gnews -query-
-┊🪨wallpaper -query-
-┊🪨searchgroups -query-
-┊🪨qoutesanime -query-
-┊🪨gmsarena -query-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-┌───〔*_◉ᴇᴘʜᴏᴛᴏ-ᴍᴇɴᴜ◉_*〕
-┊🪨3d-wood
-┊🪨angels-wings
-┊🪨snake-text
-┊🪨redhot-metal2
-┊🪨sandsummer-beach
-┊🪨snow-text
-┊🪨water-3d
-┊🪨water-effect
-┊🪨wet-glass
-┊🪨status-mood2
-┊🪨summerysand
+╔➽〔 *_◉ᴍᴇɴᴜ ʀᴘɢ◉_* 〕
+║➭ joinrpg
+║➭ quest 
+║➭ mining
+║➭ mancing
+║➭ luckyday
+║➭ luckytime
+║➭ adventure
+║➭ inventori
 └───────────●
 
-┌───〔 *_ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ_* 〕
-┊🪨toimg -quote sticker-
-┊🪨togif -quote video-
-┊🪨todocument -media-
-┊🪨bass -audio-
-┊🪨blown -audio-
-┊🪨deep -audio-
-┊🪨earape -audio-
-┊🪨fast -audio-
-┊🪨fat -audio-
-┊🪨nightcore -audio-
-┊🪨reverse -audio-
-┊🪨robot -audio-
-┊🪨slow -audio-
-┊🪨smooth -audio-
-┊🪨squirrel -audio-
-┊🪨sticker -media-
-┊🪨smeme -media-
-┊🪨stickermeme -media-
-┊🪨swm -sticker-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-┌───〔 *_◉ᴅᴀᴛᴀʙᴀꜱᴇᴍᴇɴᴜ◉_* 〕
-┊🪨addmsg -msg-
-┊🪨delmsg -msg-
-┊🪨listmsg -msg-
-┊🪨getmsg -msg-
-┊🪨setcmd -msg-
-┊🪨delcmd -msg-
-┊🪨listcmd -msg-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-┌───〔 *_◉Photooxyᴍᴇɴᴜ◉_* 〕
-┊🪨silk -text-
-┊🪨3dnature -text-
-┊🪨bevel -text-
-┊🪨birthdaycake -text-
-┊🪨burnpaper -text-
-┊🪨coffee -text-
-┊🪨coffee-heartcup -text-
-┊🪨embroiderytext -text-
-┊🪨flaming -text-
-┊🪨flowertypo -text-
-┊🪨funnycup -text-
-┊🪨fur -text-
-┊🪨gerbang -text-
-┊🪨glowrainbow -text-
-┊🪨gradientavatar -text-
-┊🪨graffititext -text-
-┊🪨harrypotter -text-
-┊🪨lovemessage -text-
-┊🪨neonlight -text-
-┊🪨sweetcandy -text-
-┊🪨summertext -text-
-┊🪨woodheart -text-
-┊🪨yellowroses -text-
-┊🪨wolfmetal -text-
-┊🪨underwaterocean -text-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-
-
-┌───〔 *_◉ᴍᴇɴᴜ ʀᴘɢ◉_* 〕
-┊🪨joinrpg
-┊🪨quest 
-┊🪨mining
-┊🪨mancing
-┊🪨luckyday
-┊🪨luckytime
-┊🪨adventure
-┊🪨inventori
+╔➽〔 *_◉Fᴀʀᴍ ʀᴘɢ◉_* 〕
+║➭ killslime
+║➭ killgoblin
+║➭ killdevil
+║➭ killbehemoth
+║➭ killdemon
+║➭ killdemonking 
 └───────────●
 
-┌───〔 *_◉Fᴀʀᴍ ʀᴘɢ◉_* 〕
-┊🪨killslime
-┊🪨killgoblin
-┊🪨killdevil
-┊🪨killbehemoth
-┊🪨killdemon
-┊🪨killdemonking 
-└───────────●
-
-┌───〔 *_◉Tʀᴀᴅᴇ ʀᴘɢ◉_* 〕
-┊🪨sellikan
-┊🪨sellbesi
-┊🪨sellemas
-┊🪨selldiamond
+╔➽〔 *_◉Tʀᴀᴅᴇ ʀᴘɢ◉_* 〕
+║➭ sellikan
+║➭ sellbesi
+║➭ sellemas
+║➭ selldiamond
 └───────────●
 %readmore` 
     let btn = [{
@@ -7924,7 +7895,7 @@ anu = `
         }
         
     var buffer = await getBuffer(ppuser)
-    const buttonsDefault = [{ urlButton: { displayText: `SUBSCRIBE`, url : `https://www.youtube.com/c/DRIPSOFC` } }, { urlButton: { displayText: `GITHUB`, url : `https://github.com/Ajmal-Achu/Wizard-MD` } },
+    const buttonsDefault = [{ urlButton: { displayText: `SUBSCRIBE`, url : `https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA` } }, { urlButton: { displayText: `GITHUB`, url : `https://github.com/Ajmal-Achu/Wizard-MD` } },
     {					
       quickReplyButton: {
       displayText: 'SPEED',
@@ -7987,25 +7958,20 @@ anu = `
     m.chat, 
     {
     text: `
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
-┌───〔 *_◉ᴜsᴇʀ ɪɴғᴏ◉_* 〕
-┊ *NAME:* ${pushname}
-┊  ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊ *RANK:* ${role}
-┊ *STATUS:* ${elit}
-┊ *MONEY:* $${(getBalance(sender, balance))}
-┊ *XP:* ${getLevelingXp(sender)}/${reqXp}
-┊ *LEVEL:* ${getLevelingLevel(sender)}
-┊ *MONEY:* $${(getBalance(sender, balance))}
-┊ *GOLD:* ${getEmas(sender)}
-┊ *IRON:* ${getBesi(sender)}
-┊ *FISH:* ${getFish(sender)}
-┊ *DIAMOND:* ${getDm(sender)}
-┊ *ᴠᴇʀꜱɪᴏɴ:* ${os.version()}
-┊ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${Object.keys(global.db.users).length}
-└───────────●
+┍━━━━━━━━━━━━━━━━━━━━
+│ ❐│ *ɴᴀᴍᴇ* : ${pushname}
+│ ❐│ *ʟᴇᴠᴇʟ* : ${getLevelingLevel(sender)}
+│ ❐│ *ʟɪᴍɪᴛ* : ${limit}
+│ ❐│ *ʀᴏʟᴇ* : ${role}
+│ ❐│ *ʀᴀɴᴋ* : ${rank}
+│ ❐│ *ᴛɪᴍᴇ* : ${time}
+│ ❐│ *ᴘʀᴇғɪx* : ${prefix}
+│ ❐│ *sᴇʀᴠᴇʀ* : Heroku
+│ ❐│ *ғʀᴀᴍᴇᴡᴏʀᴋ* : Nodejs
+│ ❐│ *ᴡᴇʙ ɪɴғᴏ* : Baileys
+│ ❐│ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${Object.keys(global.db.users).length}
+│ ❐│ *sᴛᴏʀᴀɢᴇ* : 467/500GB.
+┕━━━━━━━━━━━━━━━━━━━━━
 `,
     footer: watermark,
     title: `*LIST MENU*`,
@@ -8049,48 +8015,52 @@ anu = `
       }
     }
 break
+case 'runtime': case 'uptime': {
+ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+reply(`*ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}`)
+break
 case 'ownermenu': {
 ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 buffer = await getBuffer(picak+'OWNER MENU')
 ram3 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu = `
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
 
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram3}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
-
-┌───〔 *_◉ᴏᴡɴᴇʀᴍᴇɴᴜ◉_* 〕
-┊🪨chatbot on/off
-┊🪨setmenu -option-
-┊🪨checkupdate 
-┊🪨updatenow
-┊🪨bc -text-
-┊🪨bcall -text-
-┊🪨bctext -text-
-┊🪨bcvideo -media-
-┊🪨bcaudio -media-
-┊🪨bcimage -media-
-┊🪨bcloc  -text-
-┊🪨bcgc -text-
-┊🪨lockcmd
-┊🪨setstatus -text-
-┊🪨setppbot -owner-
-┊🪨block -owner-
-┊🪨unblock -owner-
-┊🪨join -owner-
-┊🪨leave -owner-
-┊🪨chat -owner-
-┊🪨public
-┊🪨self
-┊🪨grouponly
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ◉ᴏᴡɴᴇʀᴍᴇɴᴜ◉ 」
+║➭ chatbot on/off
+║➭ setmenu -option-
+║➭ checkupdate 
+║➭ updatenow
+║➭ bc -text-
+║➭ bcall -text-
+║➭ bctext -text-
+║➭ bcvideo -media-
+║➭ bcaudio -media-
+║➭ bcimage -media-
+║➭ bcloc  -text-
+║➭ bcgc -text-
+║➭ lockcmd
+║➭ setstatus -text-
+║➭ setppbot -owner-
+║➭ block -owner-
+║➭ unblock -owner-
+║➭ join -owner-
+║➭ leave -owner-
+║➭ chat -owner-
+║➭ public
+║➭ self
+║➭ grouponly
+└───「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8102,7 +8072,7 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": youtube
+"url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
 }
 }, {
 urlButton: {
@@ -8122,27 +8092,27 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'DATABASE MENU')
 ram4 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu = `
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
 
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram4}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
-
-┌───〔 *_◉ᴅᴀᴛᴀʙᴀꜱᴇᴍᴇɴᴜ◉_* 〕
-┊🪨addmsg -msg-
-┊🪨delmsg -msg-
-┊🪨listmsg -msg-
-┊🪨getmsg -msg-
-┊🪨setcmd -msg-
-┊🪨delcmd -msg-
-┊🪨listcmd -msg-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ◉ᴅᴀᴛᴀʙᴀꜱᴇᴍᴇɴᴜ◉ 」
+║➭ addmsg -msg-
+║➭ delmsg -msg-
+║➭ listmsg -msg-
+║➭ getmsg -msg-
+║➭ setcmd -msg-
+║➭ delcmd -msg-
+║➭ listcmd -msg-
+└───「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8154,7 +8124,7 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": youtube
+"url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
 }
 }, {
 urlButton: {
@@ -8174,45 +8144,45 @@ case 'photooxymenu': {
   buffer = await getBuffer(picak+'PHOTOOXY MENU')
   ram5 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   anu = `
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
 
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram5}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
-
-┌───〔 *_◉Photooxyᴍᴇɴᴜ◉_* 〕
-┊🪨silk -text-
-┊🪨3dnature -text-
-┊🪨bevel -text-
-┊🪨birthdaycake -text-
-┊🪨burnpaper -text-
-┊🪨coffee -text-
-┊🪨coffee-heartcup -text-
-┊🪨embroiderytext -text-
-┊🪨flaming -text-
-┊🪨flowertypo -text-
-┊🪨funnycup -text-
-┊🪨fur -text-
-┊🪨gerbang -text-
-┊🪨glowrainbow -text-
-┊🪨gradientavatar -text-
-┊🪨graffititext -text-
-┊🪨harrypotter -text-
-┊🪨lovemessage -text-
-┊🪨neonlight -text-
-┊🪨sweetcandy -text-
-┊🪨summertext -text-
-┊🪨woodheart -text-
-┊🪨yellowroses -text-
-┊🪨wolfmetal -text-
-┊🪨underwaterocean -text-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ◉Photooxyᴍᴇɴᴜ◉ 」
+║➭ silk -text-
+║➭ 3dnature -text-
+║➭ bevel -text-
+║➭ birthdaycake -text-
+║➭ burnpaper -text-
+║➭ coffee -text-
+║➭ coffee-heartcup -text-
+║➭ embroiderytext -text-
+║➭ flaming -text-
+║➭ flowertypo -text-
+║➭ funnycup -text-
+║➭ fur -text-
+║➭ gerbang -text-
+║➭ glowrainbow -text-
+║➭ gradientavatar -text-
+║➭ graffititext -text-
+║➭ harrypotter -text-
+║➭ lovemessage -text-
+║➭ neonlight -text-
+║➭ sweetcandy -text-
+║➭ summertext -text-
+║➭ woodheart -text-
+║➭ yellowroses -text-
+║➭ wolfmetal -text-
+║➭ underwaterocean -text-
+└───「 ${global.caption}」
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
   const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8224,7 +8194,7 @@ case 'photooxymenu': {
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": youtube
+  "url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
   }
   }, {
   urlButton: {
@@ -8244,62 +8214,62 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'GROUP MENU')
 ram0 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu = `
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
 
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram0}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
-
-┌───〔 *_◉ɢʀᴏᴜᴘᴍᴇɴᴜ◉_* 〕
-┊🪨add -admin-
-┊🪨kick -admin-
-┊🪨welcome on/off -admin-
-┊🪨listpc 
-┊🪨listgc
-┊🪨groupinfo -admin-
-┊🪨antivn -admin-
-┊🪨antiphoto -admin-
-┊🪨antisticker -admin-
-┊🪨antivideo -admin-
-┊🪨antilinkall -admin-
-┊🪨antiinstagram -admin-
-┊🪨antitelegram -admin-
-┊🪨antilink -admin-
-┊🪨antiyt -admin-
-┊🪨antibule -admin-
-┊🪨antitiktok -admin-
-┊🪨antifacebook -admin-
-┊🪨antivirus -admin-
-┊🪨antibadword -admin-
-┊🪨antiwame -admin-
-┊🪨group -options-
-┊🪨mute
-┊🪨groupinfo
-┊🪨truth 
-┊🪨dare
-┊🪨slot
-┊🪨math
-┊🪨vote
-┊🪨devote
-┊🪨cekvote
-┊🪨deletevote
-┊🪨upvote
-┊🪨setsubject -admin-
-┊🪨setdesc -admin-
-┊🪨setppgroup -admin-
-┊🪨tagall -admin-
-┊🪨hidetag -admin-
-┊🪨ephemeral
-┊🪨demote -admin-
-┊🪨promote -admin-
-┊🪨editinfo -admin-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ◉ɢʀᴏᴜᴘᴍᴇɴᴜ◉ 」
+║➭ add -admin-
+║➭ kick -admin-
+║➭ welcome on/off -admin-
+║➭ listpc 
+║➭ listgc
+║➭ groupinfo -admin-
+║➭ antivn -admin-
+║➭ antiphoto -admin-
+║➭ antisticker -admin-
+║➭ antivideo -admin-
+║➭ antilinkall -admin-
+║➭ antiinstagram -admin-
+║➭ antitelegram -admin-
+║➭ antilink -admin-
+║➭ antiyt -admin-
+║➭ antibule -admin-
+║➭ antitiktok -admin-
+║➭ antifacebook -admin-
+║➭ antivirus -admin-
+║➭ antibadword -admin-
+║➭ antiwame -admin-
+║➭ group -options-
+║➭ mute
+║➭ groupinfo
+║➭ truth 
+║➭ dare
+║➭ slot
+║➭ math
+║➭ vote
+║➭ devote
+║➭ cekvote
+║➭ deletevote
+║➭ upvote
+║➭ setsubject -admin-
+║➭ setdesc -admin-
+║➭ setppgroup -admin-
+║➭ tagall -admin-
+║➭ hidetag -admin-
+║➭ ephemeral
+║➭ demote -admin-
+║➭ promote -admin-
+║➭ editinfo -admin-
+└───「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8311,7 +8281,7 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": youtube
+"url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
 }
 }, {
 urlButton: {
@@ -8331,76 +8301,76 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'TEXTPRO MENU')
 ram11 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu = `
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
 
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram11}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
-
-┌───〔 *_◉ᴛᴇxᴛᴘʀᴏᴍᴇɴᴜ◉_* 〕
-┊🪨candy -text-
-┊🪨christmas -text-
-┊🪨3dchristmas -text-
-┊🪨sparklechristmas -text-
-┊🪨deepsea -text-
-┊🪨scifi -text-
-┊🪨rainbow2 -text-
-┊🪨waterpipe -text-
-┊🪨spooky -text-
-┊🪨pencil -text-
-┊🪨circuit -text-
-┊🪨discovery -text-
-┊🪨metalic -text-
-┊🪨fiction -text-
-┊🪨demon -text-
-┊🪨transformer -text-
-┊🪨berry -text-
-┊🪨thunder -text-
-┊🪨3dstone2 -text-
-┊🪨neonlight -text-
-┊🪨glitch -text-
-┊🪨harrypotter -text-
-┊🪨brokenglass -text-
-┊🪨papercut -text-
-┊🪨watercolor -text-
-┊🪨multicolor -text-
-┊🪨neondevil -text-
-┊🪨underwater -text-
-┊🪨graffitibike -text-
-┊🪨snow -text-
-┊🪨cloud -text-
-┊🪨honey -text-
-┊🪨ice -text-
-┊🪨fruitjuice -text-
-┊🪨biscuit -text-
-┊🪨wood -text-
-┊🪨chocolate -text-
-┊🪨strawberry -text-
-┊🪨matrix -text-
-┊🪨blood -text-
-┊🪨dropwater -text-
-┊🪨toxic -text-
-┊🪨lava -text-
-┊🪨rock -text-
-┊🪨bloodglass -text-
-┊🪨halloween -text-
-┊🪨darkgold -text-
-┊🪨joker -text-
-┊🪨wicker -text-
-┊🪨firework -text-
-┊🪨skeleton -text-
-┊🪨blackpink -text-
-┊🪨sand -text-
-┊🪨glue -text-
-┊🪨1917 -text-
-┊🪨leaves -text-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ◉ᴛᴇxᴛᴘʀᴏᴍᴇɴᴜ◉ 」
+║➭ candy -text-
+║➭ christmas -text-
+║➭ 3dchristmas -text-
+║➭ sparklechristmas -text-
+║➭ deepsea -text-
+║➭ scifi -text-
+║➭ rainbow2 -text-
+║➭ waterpipe -text-
+║➭ spooky -text-
+║➭ pencil -text-
+║➭ circuit -text-
+║➭ discovery -text-
+║➭ metalic -text-
+║➭ fiction -text-
+║➭ demon -text-
+║➭ transformer -text-
+║➭ berry -text-
+║➭ thunder -text-
+║➭ 3dstone2 -text-
+║➭ neonlight -text-
+║➭ glitch -text-
+║➭ harrypotter -text-
+║➭ brokenglass -text-
+║➭ papercut -text-
+║➭ watercolor -text-
+║➭ multicolor -text-
+║➭ neondevil -text-
+║➭ underwater -text-
+║➭ graffitibike -text-
+║➭ snow -text-
+║➭ cloud -text-
+║➭ honey -text-
+║➭ ice -text-
+║➭ fruitjuice -text-
+║➭ biscuit -text-
+║➭ wood -text-
+║➭ chocolate -text-
+║➭ strawberry -text-
+║➭ matrix -text-
+║➭ blood -text-
+║➭ dropwater -text-
+║➭ toxic -text-
+║➭ lava -text-
+║➭ rock -text-
+║➭ bloodglass -text-
+║➭ halloween -text-
+║➭ darkgold -text-
+║➭ joker -text-
+║➭ wicker -text-
+║➭ firework -text-
+║➭ skeleton -text-
+║➭ blackpink -text-
+║➭ sand -text-
+║➭ glue -text-
+║➭ 1917 -text-
+║➭ leaves -text-
+└───「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8412,7 +8382,7 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": youtube
+"url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
 }
 }, {
 urlButton: {
@@ -8432,67 +8402,67 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'DOWNLOAD MENU')
 ram22 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu =`
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
 
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram22}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
-
-┌───〔 *_ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ_* 〕
-┊🪨ytmp3 -link-
-┊🪨ytmp4 -link-
-┊🪨audio  -link-
-┊🪨play -query-
-┊🪨song -query-
-┊🪨play2 -query-
-┊🪨mediafire -link-
-┊🪨fb -link-
-┊🪨fb2 -link-
-┊🪨ytsvideo -query-
-┊🪨getmusic -query-
-┊🪨getvideo -query-
-┊🪨savefrom -query-
-┊🪨pindl -query-
-┊🪨joox -query-
-┊🪨tiktok -link-
-┊🪨tiktok2 -link-
-┊🪨twitter -link-
-┊🪨twitter2 -link-
-┊🪨tiktok3 -link-
-┊🪨tiktok4 -link-
-┊🪨ig -link-
-┊🪨instagramstory -link-
-┊🪨instagramstory2 -link-
-┊🪨igimage -link-
-┊🪨instagramreal -link-
-┊🪨soundcloud -link-
-┊🪨ytshorts -link-
-┊🪨unma -link-
-┊🪨twitteraudio -link-
-┊🪨ytsaudio -query-
-┊🪨ytsvideo -query-
-┊🪨yts2 -query-
-┊🪨fbdl -link-
-┊🪨fbvideo -link-
-┊🪨get -link-
-┊🪨tiktok5 -link-
-┊🪨titktok3 -link-
-┊🪨tiktokmp3 -link-
-┊🪨ttmp3 -link-
-┊🪨ig2 -link-
-┊🪨git -link-
-┊🪨ig3 -link-
-┊🪨igimage -link-
-┊🪨igtv -link-
-┊🪨fbmp3 -link-
-┊🪨ytdl -link-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ」
+║➭ ytmp3 -link-
+║➭ ytmp4 -link-
+║➭ audio  -link-
+║➭ play -query-
+║➭ song -query-
+║➭ play2 -query-
+║➭ mediafire -link-
+║➭ fb -link-
+║➭ fb2 -link-
+║➭ ytsvideo -query-
+║➭ getmusic -query-
+║➭ getvideo -query-
+║➭ savefrom -query-
+║➭ pindl -query-
+║➭ joox -query-
+║➭ tiktok -link-
+║➭ tiktok2 -link-
+║➭ twitter -link-
+║➭ twitter2 -link-
+║➭ tiktok3 -link-
+║➭ tiktok4 -link-
+║➭ ig -link-
+║➭ instagramstory -link-
+║➭ instagramstory2 -link-
+║➭ igimage -link-
+║➭ instagramreal -link-
+║➭ soundcloud -link-
+║➭ ytshorts -link-
+║➭ unma -link-
+║➭ twitteraudio -link-
+║➭ ytsaudio -query-
+║➭ ytsvideo -query-
+║➭ yts2 -query-
+║➭ fbdl -link-
+║➭ fbvideo -link-
+║➭ get -link-
+║➭ tiktok5 -link-
+║➭ titktok3 -link-
+║➭ tiktokmp3 -link-
+║➭ ttmp3 -link-
+║➭ ig2 -link-
+║➭ git -link-
+║➭ ig3 -link-
+║➭ igimage -link-
+║➭ igtv -link-
+║➭ fbmp3 -link-
+║➭ ytdl -link-
+└───「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8504,7 +8474,7 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": youtube
+"url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
 }
 }, {
 urlButton: {
@@ -8524,59 +8494,59 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'PHOTOFILTER MENU')
 ram30 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu =`
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
-
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram30}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
 
   
-┌───〔 *_ᴘʜᴏᴛꜰɪʟᴛᴇʀᴍᴇɴᴜ_* 〕
-┊🪨angie -photo-
-┊🪨aria -photo-
-┊🪨attic -photo-
-┊🪨blackandwhite -photo-
-┊🪨chorme1977 -photo-
-┊🪨constrastbandw -photo-
-┊🪨creamy -photo-
-┊🪨duotone -photo-
-┊🪨eva -photo-
-┊🪨goldenhour -photo-
-┊🪨hana -photo-
-┊🪨lavander -photo-
-┊🪨lemonande -photo-
-┊🪨lightleak -photo-
-┊🪨lisa -photo-
-┊🪨lomo -photo-
-┊🪨milk -photo-
-┊🪨molly -photo-
-┊🪨monochrome -photo-
-┊🪨morning -photo-
-┊🪨movie -photo-
-┊🪨orton -photo-
-┊🪨paretro -photo-
-┊🪨perfectbandw -photo-
-┊🪨plumy -photo-
-┊🪨retrolga -photo-
-┊🪨ruby -photo-
-┊🪨sand -photo-
-┊🪨sapphire -photo-
-┊🪨sepia -photo-
-┊🪨softsepia -photo-
-┊🪨solarize -photo-
-┊🪨sphinx -photo-
-┊🪨venus -photo-
-┊🪨japanese -photo-
-┊🪨hdr -photo-
-┊🪨viewfilter -photo-
-┊🪨warmsunset -photo-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ᴘʜᴏᴛꜰɪʟᴛᴇʀᴍᴇɴᴜ」
+║➭ angie -photo-
+║➭ aria -photo-
+║➭ attic -photo-
+║➭ blackandwhite -photo-
+║➭ chorme1977 -photo-
+║➭ constrastbandw -photo-
+║➭ creamy -photo-
+║➭ duotone -photo-
+║➭ eva -photo-
+║➭ goldenhour -photo-
+║➭ hana -photo-
+║➭ lavander -photo-
+║➭ lemonande -photo-
+║➭ lightleak -photo-
+║➭ lisa -photo-
+║➭ lomo -photo-
+║➭ milk -photo-
+║➭ molly -photo-
+║➭ monochrome -photo-
+║➭ morning -photo-
+║➭ movie -photo-
+║➭ orton -photo-
+║➭ paretro -photo-
+║➭ perfectbandw -photo-
+║➭ plumy -photo-
+║➭ retrolga -photo-
+║➭ ruby -photo-
+║➭ sand -photo-
+║➭ sapphire -photo-
+║➭ sepia -photo-
+║➭ softsepia -photo-
+║➭ solarize -photo-
+║➭ sphinx -photo-
+║➭ venus -photo-
+║➭ japanese -photo-
+║➭ hdr -photo-
+║➭ viewfilter -photo-
+║➭ warmsunset -photo-
+└───「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8588,7 +8558,7 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": youtube
+"url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
 }
 }, {
 urlButton: {
@@ -8603,133 +8573,67 @@ url: 'https://github.com/Ajmal-Achu/Wizard-MD'
 ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
 }
 break
-case 'nsfwmenu':{
-  ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
-  buffer = await getBuffer(picak+'NSFW MENU')
-  ram35 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
-  anu =`
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
-
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram35}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
-  
-    
-┌───〔 *_ɴꜱꜰᴡᴍᴇɴᴜ_* 〕
-┊🪨masturbation
-┊🪨jahy
-┊🪨hentai
-┊🪨glasses
-┊🪨gangbang
-┊🪨foot
-┊🪨femdom
-┊🪨cum
-┊🪨ero
-┊🪨cuckhold
-┊🪨blowjob
-┊🪨bdsm
-┊🪨ahegao
-┊🪨ass
-┊🪨orgy
-┊🪨panties
-┊🪨pussy
-┊🪨yuri
-┊🪨thighs
-┊🪨tentacles
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
-  `
-  let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
-  const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-  templateMessage: {
-  hydratedTemplate: {
-  imageMessage: message.imageMessage,
-  hydratedContentText: anu,
-  hydratedFooterText: `${global.botname}`,
-  hydratedButtons: [{        
-  "urlButton": {
-  "displayText": "SUBSCRIBE",
-  "url": youtube
-  }
-  }, {
-  urlButton: {
-  displayText: 'GITHUB',
-  url: 'https://github.com/Ajmal-Achu/Wizard-MD'
-  }
-  }
-  ]
-  }
-  }
-  }), { userJid: m.chat })
-  ZimBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
-  }
-break
 case 'animemenu':{
   ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
   ram40 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   buffer = await getBuffer(picak+'ANIME MENU')
   anu =`
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
-
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram40}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
   
     
-┌───〔 *_ᴀɴɪᴍᴇᴍᴇɴᴜ_* 〕
-┊🪨cry
-┊🪨kill
-┊🪨hug
-┊🪨pat
-┊🪨lick
-┊🪨kiss
-┊🪨bite
-┊🪨yeet
-┊🪨neko
-┊🪨bully
-┊🪨bonk
-┊🪨wink
-┊🪨poke
-┊🪨nom
-┊🪨slap
-┊🪨smile
-┊🪨wave
-┊🪨awoo
-┊🪨blush
-┊🪨smug
-┊🪨glomp
-┊🪨happy
-┊🪨dance
-┊🪨cringe
-┊🪨cuddle
-┊🪨highfive
-┊🪨shinobu
-┊🪨megumin
-┊🪨handhold
-┊🪨animeslap
-┊🪨animepat
-┊🪨animeneko
-┊🪨animehug
-┊🪨animekiss
-┊🪨animewlp
-┊🪨animespank
-┊🪨shinobu2
-┊🪨megumin2
-┊🪨awoo2
-┊🪨animewall2
-┊🪨searchanime -query-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ᴀɴɪᴍᴇᴍᴇɴᴜ」
+║➭ cry
+║➭ kill
+║➭ hug
+║➭ pat
+║➭ lick
+║➭ kiss
+║➭ bite
+║➭ yeet
+║➭ neko
+║➭ bully
+║➭ bonk
+║➭ wink
+║➭ poke
+║➭ nom
+║➭ slap
+║➭ smile
+║➭ wave
+║➭ awoo
+║➭ blush
+║➭ smug
+║➭ glomp
+║➭ happy
+║➭ dance
+║➭ cringe
+║➭ cuddle
+║➭ highfive
+║➭ shinobu
+║➭ megumin
+║➭ handhold
+║➭ animeslap
+║➭ animepat
+║➭ animeneko
+║➭ animehug
+║➭ animekiss
+║➭ animewlp
+║➭ animespank
+║➭ shinobu2
+║➭ megumin2
+║➭ awoo2
+║➭ animewall2
+║➭ searchanime -query-
+└───「 ${global.caption}」
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
   const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8741,7 +8645,7 @@ case 'animemenu':{
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": youtube
+  "url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
   }
   }, {
   urlButton: {
@@ -8761,40 +8665,40 @@ case 'convertmenu': {
   ram70 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   buffer = await getBuffer(picak+'CONVERT MENU')
   anu =`
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
-
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram70}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
   
     
-┌───〔 *_ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ_* 〕
-┊🪨toimg -quote sticker-
-┊🪨togif -quote video-
-┊🪨todocument -media-
-┊🪨bass -audio-
-┊🪨blown -audio-
-┊🪨deep -audio-
-┊🪨earape -audio-
-┊🪨fast -audio-
-┊🪨fat -audio-
-┊🪨nightcore -audio-
-┊🪨reverse -audio-
-┊🪨robot -audio-
-┊🪨slow -audio-
-┊🪨smooth -audio-
-┊🪨squirrel -audio-
-┊🪨sticker -media-
-┊🪨smeme -media-
-┊🪨stickermeme -media-
-┊🪨swm -sticker-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ」
+║➭ toimg -quote sticker-
+║➭ togif -quote video-
+║➭ todocument -media-
+║➭ bass -audio-
+║➭ blown -audio-
+║➭ deep -audio-
+║➭ earape -audio-
+║➭ fast -audio-
+║➭ fat -audio-
+║➭ nightcore -audio-
+║➭ reverse -audio-
+║➭ robot -audio-
+║➭ slow -audio-
+║➭ smooth -audio-
+║➭ squirrel -audio-
+║➭ sticker -media-
+║➭ smeme -media-
+║➭ stickermeme -media-
+║➭ swm -sticker-
+└───「 ${global.caption}」
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
   const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8806,7 +8710,7 @@ case 'convertmenu': {
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": youtube
+  "url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
   }
   }, {
   urlButton: {
@@ -8826,36 +8730,35 @@ case 'toolmenu': {
   buffer = await getBuffer(picak+'TOOL MENU')
   ram90 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   anu =`
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
-
-
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram90}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
   
     
-┌───〔 *_ᴛᴏᴏʟᴍᴇɴᴜ_* 〕
-┊🪨ip ->-
-┊🪨ipdomain -domain name-
-┊🪨codecolor -text-
-┊🪨hackermaker -pic url-
-┊🪨checknumber -number-
-┊🪨veriphone -number-
-┊🪨weather -place-
-┊🪨attp -text-
-┊🪨ssweb-hp -url-
-┊🪨shortlink -url-
-┊🪨ssweb-pc -url-
-┊🪨shortlinkcuttly -url-
-┊🪨shortlinkisgd -url-
-┊🪨brainly -query-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ᴛᴏᴏʟᴍᴇɴᴜ」
+║➭ ip ->-
+║➭ ipdomain -domain name-
+║➭ codecolor -text-
+║➭ hackermaker -pic url-
+║➭ checknumber -number-
+║➭ veriphone -number-
+║➭ weather -place-
+║➭ attp -text-
+║➭ ssweb-hp -url-
+║➭ shortlink -url-
+║➭ ssweb-pc -url-
+║➭ shortlinkcuttly -url-
+║➭ shortlinkisgd -url-
+║➭ brainly -query-
+└───「 ${global.caption}」
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
   const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -8867,7 +8770,7 @@ case 'toolmenu': {
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": youtube
+  "url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
   }
   }, {
   urlButton: {
@@ -8887,47 +8790,46 @@ case 'searchmenu':{
   buffer = await getBuffer(picak+'SEARCH MENU')
   ram200 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
   anu =`
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
 
-
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram200}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
-
-┌───〔 *_ꜱᴇᴀʀᴄʜᴍᴇɴᴜ_* 〕
-┊🪨lyrics -query-
-┊🪨linkwa -query-
-┊🪨apk -query-
-┊🪨happymod -query-
-┊🪨apkupro -query-
-┊🪨google -query-
-┊🪨wiki -query-
-┊🪨ytsearch -query-
-┊🪨recipe -query-
-┊🪨playstore -query-
-┊🪨wikimedia -query-
-┊🪨news -query-
-┊🪨news2 -query-
-┊🪨animee -query-
-┊🪨anime -query-
-┊🪨amino -query-
-┊🪨googleimage -query-
-┊🪨apkdone -query-
-┊🪨githubsearch -query->
-┊🪨igsearch -username-
-┊🪨googlenews -query-
-┊🪨gnews -query-
-┊🪨wallpaper -query-
-┊🪨searchgroups -query-
-┊🪨qoutesanime -query-
-┊🪨gmsarena -query-
-└───〔 *_ᴢɪᴍ ʙᴏᴛ ɪɴᴄ_* 〕
+╔➽「 ꜱᴇᴀʀᴄʜᴍᴇɴᴜ」
+║➭ lyrics -query-
+║➭ linkwa -query-
+║➭ apk -query-
+║➭ happymod -query-
+║➭ apkupro -query-
+║➭ google -query-
+║➭ wiki -query-
+║➭ ytsearch -query-
+║➭ recipe -query-
+║➭ playstore -query-
+║➭ wikimedia -query-
+║➭ news -query-
+║➭ news2 -query-
+║➭ animee -query-
+║➭ anime -query-
+║➭ amino -query-
+║➭ googleimage -query-
+║➭ apkdone -query-
+║➭ githubsearch -query->
+║➭ igsearch -username-
+║➭ googlenews -query-
+║➭ gnews -query-
+║➭ wallpaper -query-
+║➭ searchgroups -query-
+║➭ qoutesanime -query-
+║➭ gmsarena -query-
+└───「 ${global.caption}」
 
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
@@ -8940,7 +8842,7 @@ case 'searchmenu':{
   hydratedButtons: [{        
   "urlButton": {
   "displayText": "SUBSCRIBE",
-  "url": youtube
+  "url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
   }
   }, {
   urlButton: {
@@ -8960,31 +8862,30 @@ ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key
 buffer = await getBuffer(picak+'EPHOTO MENU')
 ram250 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu =`
-┌───〔 *_ᴢɪᴍ ʙᴏᴛ ᴠ4_* 〕
-┊ᴡᴇʟᴄᴏᴍᴇ
-└───────────●
+*Oi Bro  @${stod.split('@')[0]}*
+*👤Name:* ${pushname}
+*👑Creator:*${global.ownername}
+*💳Version:* 1.0
+*💎Prefix:* [ ${prefix} ]
+*⌚Time:* ${time}
+*🖥️ Work type:* ${publik ? 'public' : 'self'}
+*📡Server:* ${os.platform}
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* Not Defined
 
-
-┌───〔 _*◉ᴀʙᴏᴜᴛ◉*_ 〕
-┊❗ɴᴀᴍᴇ :  ${pushname}
-┊❕ɴᴜᴍʙᴇʀ : wa.me/${m.sender.split('@')[0]}
-┊❗ʀᴀᴍ : ${ram250}
-┊❗ᴅᴇᴠɪᴄᴇ : ${os.type()}
-┊❕ᴛᴏᴛᴀʟ ᴜsᴇʀs : ${Object.keys(global.db.users).length}
-└───────────●
-
-┌───〔*_◉ᴇᴘʜᴏᴛᴏ-ᴍᴇɴᴜ◉_*〕
-┊🪨3d-wood
-┊🪨angels-wings
-┊🪨snake-text
-┊🪨redhot-metal2
-┊🪨sandsummer-beach
-┊🪨snow-text
-┊🪨water-3d
-┊🪨water-effect
-┊🪨wet-glass
-┊🪨status-mood2
-┊🪨summerysand
+╔➽「 ᴇᴘʜᴏᴛᴏ-ᴍᴇɴᴜ」
+║➭ 3d-wood
+║➭ angels-wings
+║➭ snake-text
+║➭ redhot-metal2
+║➭ sandsummer-beach
+║➭ snow-text
+║➭ water-3d
+║➭ water-effect
+║➭ wet-glass
+║➭ status-mood2
+║➭ summerysand
 └───────────●
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: ZimBotInc.waUploadToServer })
@@ -8997,7 +8898,7 @@ hydratedFooterText: `${global.botname}`,
 hydratedButtons: [{        
 "urlButton": {
 "displayText": "SUBSCRIBE",
-"url": youtube
+"url": "https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA"
 }
 }, {
 urlButton: {
