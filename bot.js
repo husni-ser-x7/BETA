@@ -14,8 +14,8 @@ global.herokuapi = process.env.HEROKU_API_KEY
 global.herokuapp = process.env.HEROKU_APP_NAME
 //settings
 let fake = process.env.OWNER_NUMBER
-global.owner = ['918113921898',`${fake}`]
-global.wame = ['918590508376'] 
+global.owner = ['918590508376',`${fake}`]
+global.wame = "https://github.com/Ajmal-Achu/Wizard-MD"
 global.pemilik = ['918590508376']
 global.premium = ['918590508376']
 global.pengguna = process.env.USER_NAME
