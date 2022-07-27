@@ -11,7 +11,7 @@ rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root/Ejumel
 
-ENV TZ=Africa/Harare
+ENV TZ=Asia/Kolkata
 
 RUN npm install
 
