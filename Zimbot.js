@@ -6963,7 +6963,7 @@ case 'tes': case 'test': case 'alive': case 'bot': case 'robot': case 'zimbot': 
 ram9000 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 timestampe = speed();
 latensie = speed() - timestampe
-  anu = process.env.alivemessage
+  anu = process.env.ALIVE_MESSAGE
 const aliveer = fs.readFileSync('./Zimbot/alive.mp3')
 ZimBotInc.sendMessage(m.chat, { audio: aliveer, mimetype: 'audio/mp4', ptt: true, quoted: mudratunha})
 huso = await getBuffer(picak+'ZIM BOT IS ALIVE')
