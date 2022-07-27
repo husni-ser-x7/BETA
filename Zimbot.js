@@ -8018,6 +8018,7 @@ break
 case 'runtime': case 'uptime': {
 ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 reply(`*ᴜᴘᴛɪᴍᴇ :* ${runtime(process.uptime())}`)
+}
 break
 case 'ownermenu': {
 ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
