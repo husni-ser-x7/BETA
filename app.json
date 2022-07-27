@@ -25,7 +25,7 @@
                "ALIVE_MESSAGE": {
 			"description": "Add a message here which you want to see when typing .alive",
 			"required": true,
-			"value": ""
+			"value": "iam alive"
 		},
 		"OWNER_NAME": {
 			"description": "Add the owner name here and if you want to use the default name then just leave it)",
