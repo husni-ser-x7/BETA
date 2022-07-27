@@ -1,81 +1,21 @@
-<a href="https://youtu.be/KNu-gr2h7bo"><img src="https://img.shields.io/badge/Tutorial-Video-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000&link=https://youtu.be/ww4z2m3uORU" /><br>
+<p align="center">
+<img src="https://telegra.ph/file/e0bc28185977299bf5d2c.jpg" alt="PROJECT 01" height= "300" width="300"/>
 
-# ZIM BOT V4
 
-## ``` This Script is for Everyone Don't sell it at high price ```
-## WATCH TUTORIAL NICELY DON'T SKIP [`YOUTUBE`](https://youtu.be/KNu-gr2h7bo)
-
-##  ``` Are you Experiencing an error don't hesitate to ask me ``` [`DRIPS`](https://wa.me/+447441437150)
- WhatsApp with so Many features using multi device  [`BAILEYS`](https://github.com/adiwajshing/baileys)
- 
- <a href="https://youtu.be/KNu-gr2h7bo"><img src="https://img.shields.io/badge/Tutorial-Video-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000&link=https://youtu.be/ww4z2m3uORU" /><br>
- 
- ## ```Donate Me```
-
-- [`Paypal`](https://www.paypal.me/zimbotinc)
- </a>
 </p>
 <p align="center">
-<img src="https://i.imgur.com/LbmTdhf.gif" alt="animated"  />
+<a href="#"><img title="WIZARD MULTI DEVICE" src="https://img.shields.io/badge/WIZARD MULTI DEVICE-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
+<p align="center">
+<a href="https://github.com/Ajmal-Achu"><img title="Author" src="https://img.shields.io/badge/Author-AJMAL-red.svg?style=for-the-badge&logo=github"></a>
+</p>
+<p align="center">
+<a href="https://github.com/"><img title="Followers" src="https://img.shields.io/github/followers/saipulanuar?color=blue&style=flat-square"></a>
+<a href="https://github.com/"><img title="Stars" src="https://img.shields.io/github/stars/saipulanuar/v20-Md?color=red&style=flat-square"></a>
+<a href="https://github.com//network/members"><img title="Forks" src="https://img.shields.io/github/forks/saipulanuar/v20-Md?color=red&style=flat-square"></a>
+</P>
 
-## [![WhatsApp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/EFsb8RCXV4jLEFk4eAcA1A) [![NodeJs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
+</div>
+---
 
-> A Fully PRECIOUS COOL BOT BY DRIPS MEMES <br>
-> 
-## DONT FORGET TO GIVE A STAR🌟 AND FORK
-
-
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA)
-
-## BUILD PACKS
-
-```
-https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
-https://github.com/clhuang/heroku-buildpack-webp-binaries.git
-
-```
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@ReinhardTuna/ZIM-BOT-INC-QR?v=1)
-<img src="https://fontmeme.com/permalink/220116/0c42dc0b64931810388ba399da55e927.png" alt="backwoods-logo-font" border="0"></a>  
-
- ##  > THIS BOT CODED BY DRIPS MEMES ZIM BOT INC 
-
-
-## >  FOLLOW STEPS BELOW FOR INSTALLATION
-
-## >  THIS BOT IT USE MULTI DEVICE BAILEYS
-
-
-``` 
-apt install nodejs
-
-apt install git
-
-apt update && apt upgrade
-
-git clone https://github.com/zim-bot/zimbot-v4
- 
-cd zimbot-v4
-
- 
-rm -r session.json
-
-node --expose-gc index.js
-
-echo scan the qr code and enjoy bot
-
-```
-
-
-## JOIN MY WHATSAPP GROUP
-
-# [![WhatsApp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/EFsb8RCXV4jLEFk4eAcA1A)
-
-## MY PERSONAL CHAT
-
-# [![WhatsApp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/27634090203)
-
-
-# > THANKS FOR CHOOSING ZIM BOT WE APPRECIATE YOU FOR YOUR SUPPORT
- 
+# WIZARD MD
