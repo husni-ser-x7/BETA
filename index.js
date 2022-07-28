@@ -76,7 +76,7 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
                 } catch {
                     ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
                 }
-
+                 let name = await ser.getName(num)
                 // Get Profile Picture Group
                 try {
                     ppgroup = await Wizard.profilePictureUrl(anu.id, 'image')
@@ -85,9 +85,9 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
                 }
                 
                 
-                if (db.chats[m.chat].isWelcome) {//welcome by drips
+                if (db.chats[m.chat].isWelcome) {//welcome by hermit
                 if (anu.action == 'add') {
-var buffer = await getBuffer(ppuser)
+                var buffer = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/welcome?pp=${ppuser}&nama=${name}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${metadata.subject}&member=${metadata.participants.length}&ppgc=${ppgroup}`)
                 var wangu = await getBuffer(picak+'WELCOME CHOMIE')
                 let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
@@ -121,7 +121,7 @@ const driphunny = fs.readFileSync('./Zimbot/welcome.mp3')
 ZimBotInc.sendMessage(anu.id, { audio: driphunny, mimetype: 'audio/mp4', ptt: true})
 ZimBotInc.sendMessage(anu.id, buttonMessage)
                 } else if (anu.action == 'remove') {
-                    var buffer = await getBuffer(ppuser)
+                    var buffer = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/goodbye?pp=${ppuser}&nama=${name}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${metadata.subject}&member=${metadata.participants.length}&ppgc=${ppgroup}`)
                     var mhatadzenyu = await getBuffer(picak+'BYE CHOMIE')
                     let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                     he = `He/She is gone bro ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
