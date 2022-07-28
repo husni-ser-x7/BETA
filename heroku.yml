@@ -2,4 +2,4 @@ build:
   docker:
       worker: /lib/Dockerfile
 run:
-   worker: npm i pastebin-js && npm start
+   worker: npm i pastebin-ts && npm start
