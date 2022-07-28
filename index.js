@@ -86,7 +86,7 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
                 
                 
                 if (db.chats[m.chat].isWelcome) {//welcome by drips
-                if (anu.action == 'add' {
+                if (anu.action == 'add') {
 var buffer = await getBuffer(ppuser)
                 var wangu = await getBuffer(picak+'WELCOME CHOMIE')
                 let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
