@@ -6806,7 +6806,7 @@ case 'setmenu': {
        "title": watermark,
        "rows": [
        {
-       "title": "TEMPLATE ZIM-BOT",
+       "title": "TEMPLATE 5 BUTTON",
        
        "rowId": `${prefix}setmenu templateZimbot`
        }
