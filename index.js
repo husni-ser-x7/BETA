@@ -87,7 +87,7 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
                 
                 if (db.chats[m.chat].isWelcome) {//welcome by hermit
                 if (anu.action == 'add') {
-                var buff = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/welcome?pp=${ppuser}&nama=${name}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${metadata.subject}&member=${metadata.participants.length}&ppgc=${ppgroup}`)
+                var buff = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/goodbye?pp=${encodeURIComponent(ppuser)}&nama=${encodeURIComponent(name)}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(metadata.participants.length)}&ppgc=${encodeURIComponent(ppgroup)}`)
                 let buffer = buff || ppuser
                 var wangu = await getBuffer(picak+'WELCOME CHOMIE')
                 let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
@@ -122,7 +122,7 @@ const driphunny = fs.readFileSync('./Zimbot/welcome.mp3')
 Wizard.sendMessage(anu.id, { audio: driphunny, mimetype: 'audio/mp4', ptt: true})
 Wizard.sendMessage(anu.id, buttonMessage)
                 } else if (anu.action == 'remove') {
-                    var buff = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/goodbye?pp=${ppuser}&nama=${name}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${metadata.subject}&member=${metadata.participants.length}&ppgc=${ppgroup}`)
+                    var buff = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/goodbye?pp=${encodeURIComponent(ppuser)}&nama=${encodeURIComponent(name)}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(metadata.participants.length)}&ppgc=${encodeURIComponent(ppgroup)}`)
                     let buffer = buff || ppuser
                     var mhatadzenyu = await getBuffer(picak+'BYE CHOMIE')
                     let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
