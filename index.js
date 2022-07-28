@@ -76,7 +76,7 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
                 } catch {
                     ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
                 }
-                 let name = await ser.getName(num)
+                 let name = await Wizard.getName(num)
                 // Get Profile Picture Group
                 try {
                     ppgroup = await Wizard.profilePictureUrl(anu.id, 'image')
