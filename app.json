@@ -1,8 +1,8 @@
 {
-  "name": "Zim Bot Inc",
+  "name": "Wizard MD",
   "description": "whatsapp md bot build with nodejs",
-  "repository": "https://github.com/zim-bot/zimbot-v4",
-  "logo": "",
+  "repository": "https://github.com/Ajmal-Achu/Wizard-MD",
+  "logo": "https://telegra.ph/file/e0bc28185977299bf5d2c.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
   "stack": "container",
   "addons": [{
