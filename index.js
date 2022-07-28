@@ -87,76 +87,30 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
                 
                 if (db.chats[m.chat].isWelcome) {//welcome by drips
                 if (anu.action == 'add') {
-                var buffer = await getBuffer(ppuser)
-                var wangu = await getBuffer(picak+'WELCOME CHOMIE')
-                let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-                he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
-                
-let buttons = [
-{buttonId: `halo`, buttonText: {displayText: 'WELCOME'}, type: 1}
+let nama = await Wizard.getName(num)
+memb = metadata.participants.length
 
-]
-let buttonMessage = {
-document: fs.readFileSync('./lib/tes.xlsx'),
-mimetype: feler,
-jpegThumbnail:buffer,
-mentions: [num],
-fileName: `WELCOME TO ${metadata.subject}`,
-fileLength: 99999999999999,
-caption: he,
-footer: `©ZIM BOT INC 2022`,
-buttons: buttons,
-headerType: 4,
-contextInfo: { externalAdReply:{
-title:"ZIM BOT V4",
-body:"SUB DRIPS OFC",
-showAdAttribution: true,
-mediaType:2,
-thumbnail:wangu,
-mediaUrl:`https://youtu.be/ww4z2m3uORU`, 
-sourceUrl: `https://youtu.be/ww4z2m3uORU`,
-}}
-}
-const driphunny = fs.readFileSync('./Zimbot/welcome.mp3')
-Wizard.sendMessage(anu.id, { audio: driphunny, mimetype: 'audio/mp4', ptt: true})
-Wizard.sendMessage(anu.id, buttonMessage)
+Kon = await getBuffer(`https://hardianto.xyz/api/welcome3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/2c42134569ec9a621a773.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
+
+Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/2c42134569ec9a621a773.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
+                if (anu.action == 'add') {
+                    Wizard.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `Welcome To ${metadata.subject} @${num.split("@")[0]}
+
+Hey there, new member
+ᴀs ʏᴏᴜ ᴀʀᴇ ɴᴇᴡ ᴛᴏ ᴏᴜʀ ғᴀᴍ
+ᴘʟᴇᴀsᴇ ᴛᴇʟʟ ᴀs ᴛʜᴇ ᴅᴇᴛᴀɪʟs ᴀsᴋᴇᴅ ʙᴇʟᴏᴡ🤗
+	
+╭❒ ғɪʟʟ ɪᴛ
+├ ɴᴀᴍᴇ :
+├ ᴘʟᴀᴄᴇ :
+├ ᴀɢᴇ  :
+╰❒ ᴀɴᴅ ᴅᴏɴ'ᴛ ғᴏʀɢᴇᴛ ᴛᴏ ғᴏʟʟᴏᴡ ᴛʜᴇ ʀᴜʟᴇs ~!!!`} )
                 } else if (anu.action == 'remove') {
-                    var buffer = await getBuffer(ppuser)
-                    var mhatadzenyu = await getBuffer(picak+'BYE CHOMIE')
-                    let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-                    he = `He/She is gone bro ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
-                    
-let buttons = [
-{buttonId: `halo`, buttonText: {displayText: 'BYE'}, type: 1}
-]
-let buttonMessage = {
-document: fs.readFileSync('./lib/tes.xlsx'),
-mimetype: feler,
-jpegThumbnail:buffer,
-mentions: [num],
-fileName: `HE/SHE IS GONE BRO ${metadata.subject}`,
-fileLength: 99999999999999,
-caption: he,
-footer: `©ZIM BOT INC 2022`,
-buttons: buttons,
-headerType: 4,
-contextInfo: { externalAdReply:{
-title:"ZIM BOT V4",
-body:"SUB DRIPS OFC",
-showAdAttribution: true,
-mediaType:2,
-thumbnail: mhatadzenyu,
-mediaUrl:`https://youtu.be/ww4z2m3uORU`, 
-sourceUrl: `https://youtu.be/ww4z2m3uORU`,
-}}
-}
-const dripbabe = fs.readFileSync('./Zimbot/leave.mp3')
-Wizard.sendMessage(anu.id, { audio: dripbabe, mimetype: 'audio/mp4', ptt: true})
-Wizard.sendMessage(anu.id, buttonMessage)
-    
+                    Wizard.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Left ${metadata.subject}
+
+I'm not sure if it was a goodbye charm, but it was fun while it lasted 😌✨` })
                 }
             }
-         }
         } catch (err) {
             console.log(err)
         }
