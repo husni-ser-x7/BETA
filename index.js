@@ -89,7 +89,7 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
                 if (anu.action == 'add') {
                 var buff = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/welcome?pp=${encodeURIComponent(ppuser)}&nama=${encodeURIComponent(name)}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(metadata.participants.length)}&ppgc=${encodeURIComponent(ppgroup)}`)
                 let buffer = buff || ppuser
-                var wangu = await getBuffer(picak+'WELCOME CHOMIE')
+                var wangu = await getBuffer(`${picak}${encodeURIComponent(`WELCOME TO ${metadata.subject}`)}`)
                 let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
                 
@@ -98,11 +98,9 @@ let buttons = [
 
 ]
 let buttonMessage = {
-document: fs.readFileSync('./lib/tes.xlsx'),
+image: buffer,
 mimetype: feler,
-jpegThumbnail:buffer,
 mentions: [num],
-fileName: `WELCOME TO ${metadata.subject}`,
 fileLength: 99999999999999,
 caption: he,
 footer: watermark,
@@ -113,7 +111,7 @@ title:botname,
 body: caption,
 showAdAttribution: true,
 mediaType:2,
-thumbnail: buffer,
+thumbnail: wangu,
 mediaUrl: tutorial, 
 sourceUrl: tutorial,
 }}
@@ -124,7 +122,7 @@ Wizard.sendMessage(anu.id, buttonMessage)
                 } else if (anu.action == 'remove') {
                     var buff = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/goodbye?pp=${encodeURIComponent(ppuser)}&nama=${encodeURIComponent(name)}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(metadata.participants.length)}&ppgc=${encodeURIComponent(ppgroup)}`)
                     let buffer = buff || ppuser
-                    var mhatadzenyu = await getBuffer(picak+'BYE CHOMIE')
+                    var mhatadzenyu = await getBuffer(`${picak}${encodeURIComponent(`HE/SHE IS GONE BRO ${metadata.subject}`)}`)
                     let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                     he = `He/She is gone bro ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
                     
@@ -132,11 +130,8 @@ let buttons = [
 {buttonId: `halo`, buttonText: {displayText: 'BYE'}, type: 1}
 ]
 let buttonMessage = {
-document: fs.readFileSync('./lib/tes.xlsx'),
-mimetype: feler,
-jpegThumbnail:buffer,
+image: buffer,
 mentions: [num],
-fileName: `HE/SHE IS GONE BRO ${metadata.subject}`,
 fileLength: 99999999999999,
 caption: he,
 footer: watermark,
@@ -147,7 +142,7 @@ title:botname,
 body:caption,
 showAdAttribution: true,
 mediaType:2,
-thumbnail: buffer,
+thumbnail: mhatadzenyu,
 mediaUrl: caption, 
 sourceUrl: caption,
 }}
