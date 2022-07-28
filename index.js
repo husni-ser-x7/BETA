@@ -111,9 +111,7 @@ Hey there, new member
 I'm not sure if it was a goodbye charm, but it was fun while it lasted 😌✨` })
                 }
             }
-        } catch (err) {
-            console.log(err)
-        }
+        } 
     })
     const http = require('http');
 //by drips 
