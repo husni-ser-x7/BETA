@@ -1,5 +1,5 @@
 require('./bot')
-const { default: ZimBotIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { default: WizardConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const ssname = `${sessionName}.json`
 const pino = require('pino')
 const fs = require('fs')
@@ -25,9 +25,9 @@ MakeSession(ssid,ssname)
 
 
  setTimeout(() => {
-async function startZimBotInc() {
+async function startWizard() {
 const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silent" }))
-    const Wizard = ZimBotIncConnect({
+    const Wizard = WizardConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: ['Wizard-MD','Ubuntu','20.0.04'],
@@ -118,8 +118,8 @@ sourceUrl: tutorial,
 }}
 }
 const driphunny = fs.readFileSync('./Zimbot/welcome.mp3')
-ZimBotInc.sendMessage(anu.id, { audio: driphunny, mimetype: 'audio/mp4', ptt: true})
-ZimBotInc.sendMessage(anu.id, buttonMessage)
+Wizard.sendMessage(anu.id, { audio: driphunny, mimetype: 'audio/mp4', ptt: true})
+Wizard.sendMessage(anu.id, buttonMessage)
                 } else if (anu.action == 'remove') {
                     var buffer = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/goodbye?pp=${ppuser}&nama=${name}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${metadata.subject}&member=${metadata.participants.length}&ppgc=${ppgroup}`)
                     var mhatadzenyu = await getBuffer(picak+'BYE CHOMIE')
@@ -151,8 +151,8 @@ sourceUrl: caption,
 }}
 }
 const dripbabe = fs.readFileSync('./Zimbot/leave.mp3')
-ZimBotInc.sendMessage(anu.id, { audio: dripbabe, mimetype: 'audio/mp4', ptt: true})
-ZimBotInc.sendMessage(anu.id, buttonMessage)
+Wizard.sendMessage(anu.id, { audio: dripbabe, mimetype: 'audio/mp4', ptt: true})
+Wizard.sendMessage(anu.id, buttonMessage)
     
                 }
             }
@@ -266,12 +266,12 @@ scheduleGc();
         if (connection === 'close') {
         let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); process.exit(); }
-            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, Reconnecting...."); startZimBotInc(); }
-            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, Reconnecting..."); startZimBotInc(); }
+            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, Reconnecting...."); startWizard(); }
+            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, Reconnecting..."); startWizard(); }
             else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); process.exit(); }
             else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Delete Session And Scan Again.`); process.exit(); }
-            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startZimBotInc(); }
-            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startZimBotInc(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startWizard(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startWizard(); }
             else { console.log(`Unknown DisconnectReason: ${reason}|${connection}`) }
         }
         console.log('Zimbot...', update)
@@ -714,7 +714,7 @@ scheduleGc();
     return Wizard
 }
 
-startZimBotInc()
+startWizard()
 
 }, 3000);
 
