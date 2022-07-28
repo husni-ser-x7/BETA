@@ -42,8 +42,28 @@
 
 <a href="https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="200"></a>
 
+### FOR TERMUX USER
+1. Type mentioned below given commands one by one in Termux.
+```
+apt update && apt upgrade
+apt install bash
+apt install libwebp
+apt install git-y
+apt install nodejs -y
+apt install ffmpeg -y
+apt install wget
+apt install imagemagick -y
+git clone https://github.com/Ajmal-Achu/Wizard-MD
+cd zimbot-v4
+rm -r session.json
+node.
+```  
 
-  
+### Preview bot
+
+- [x] Welcome   *_Same as welcome in repo bot-tzy_
+- [x] Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/abe9435cec00f6afb81d3.jpg"></details>
+- [x] Button Doccumment (_Still in experiment state_) <details><summary>Screenshot</summary><img src="https://telegra.ph/file/a2d24c71e7d0d67dcd05e.jpg"></details>
 
 
 <!---->
