@@ -19,3 +19,43 @@
 ---
 
 # WIZARD MD
+
+<div align="center">
+  
+# `❗❗FORK THIS BEFORE PROCEEDING`
+ 
+ `Use This Button To Fork Now`
+  
+  <a href="https://github.com/Alien-alfa/WhatsAppBot-MD/fork"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://github.com/Alien-alfa/Alien-alfa/blob/beta/img/pngegg.png?raw=true" width="100"></a>
+<br>
+# `Scan QR Code For Session`
+ 
+<a href="https://alien-alfa-md.up.railway.app"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://repl.it/badge/github/quiec/whatsasena" width="100"></a>
+  <br><br><br>
+# `Change Session In Github`
+
+  ### ⚠️ Session Change! 
+  
+```
+❗You can use the Session ID provided when you sacn the QR
+ 
+OR
+  
+❗ You can upload the given session.alfa.json file to github itself
+  
+(The sesond method works well compared to the first one)
+
+``` 
+  
+  <br><br>
+  # `Deploy In Heroku`
+
+
+<a href="https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="400"></a>
+
+
+  
+
+
+<!---->
+
