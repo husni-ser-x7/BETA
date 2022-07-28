@@ -3973,32 +3973,16 @@ case 'update':
 
   await git.fetch();
   var commits = await git.log(['main' + '..origin/' + 'main']);
-  if (commits.total === 0) {
-    reply("*No pending updates!*")
-  } else {
-    var changelog = "_Pending updates:_\n\n";
-    commits['all'].map(
-        (commit) => {
-            reply(`• *${commit.message}* _[${commit.date.substring(0, 10)}]_ \n`)
-          }
-          );
-          mss = changelog;
-          var img = ""
-       var buttons = [{
-        urlButton: {
-            displayText: 'DRIPS',
-            url: 'tes'
-        }
-    },// By drips 
-    {
-        quickReplyButton: {
-            displayText: 'lol',
-            id: `${prefix}upd`
-        }
-    }];
-    }
+  if (commits.total === 0) return reply("*No pending updates!*")
+  let update = ""
+  commits["all"].map((commit) => {
+    update += `${' • '}*${
+      commit.message
+    }* *[${commit.date.substring(0, 10)}]* \n`
+  })
+  var changelog = "*Pending updates:*\n\n" + update;
+     reply(changelog)
     await Wizard.sendMessage(m.chat, {text: ` *type updatenow to update the bot*`});
-    
 
 break
 case 'updatenow':
