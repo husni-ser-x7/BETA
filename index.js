@@ -112,7 +112,7 @@ I'm not sure if it was a goodbye charm, but it was fun while it lasted 😌✨` 
                 }
             }
         } 
-    })
+    }
     const http = require('http');
 //by drips 
 /*var nextMinute = Math.random() * 30 + 15;
