@@ -10,9 +10,9 @@
 <a href="https://github.com/Ajmal-Achu"><img title="Author" src="https://img.shields.io/badge/Author-AJMAL-red.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-<a href="https://github.com/"><img title="Followers" src="https://img.shields.io/github/followers/saipulanuar?color=blue&style=flat-square"></a>
-<a href="https://github.com/"><img title="Stars" src="https://img.shields.io/github/stars/saipulanuar/v20-Md?color=red&style=flat-square"></a>
-<a href="https://github.com//network/members"><img title="Forks" src="https://img.shields.io/github/forks/saipulanuar/v20-Md?color=red&style=flat-square"></a>
+<a href="https://github.com/Ajmal-Achu"><img title="Followers" src="https://img.shields.io/github/followers/Ajmal-Achu?color=blue&style=flat-square"></a>
+<a href="https://github.com/Ajmal-Achu"><img title="Stars" src="https://img.shields.io/github/stars/Ajmal-Achu/Wizard-MD?color=red&style=flat-square"></a>
+<a href="https://github.com//network/members"><img title="Forks" src="https://img.shields.io/github/forks/Ajmal-Achu/Wiard-MD?color=red&style=flat-square"></a>
 </P>
 
 </div>
@@ -30,28 +30,13 @@
 <br>
 # `Scan QR Code For Session`
  
-<a href="https://alien-alfa-md.up.railway.app"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://repl.it/badge/github/quiec/whatsasena" width="100"></a>
+<a href="https://alien-alfa-md.up.railway.app"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://repl.it/badge/github/quiec/whatsasena" width="200"></a>
   <br><br><br>
-# `Change Session In Github`
 
-  ### ⚠️ Session Change! 
-  
-```
-❗You can use the Session ID provided when you sacn the QR
- 
-OR
-  
-❗ You can upload the given session.alfa.json file to github itself
-  
-(The sesond method works well compared to the first one)
-
-``` 
-  
-  <br><br>
   # `Deploy In Heroku`
 
 
-<a href="https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="400"></a>
+<a href="https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="200"></a>
 
 
   
