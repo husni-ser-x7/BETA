@@ -42,6 +42,15 @@
 
 <a href="https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="200"></a>
 
+### Preview bot
+
+- [x] Welcome <details><summary>Screenshot</summary><img src=""></details>
+- [x] Catalog Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/7c33c8442aa5c551309ef.jpg"></details>
+- [x] Setmenu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/5094eb58f19a49543443a.jpg"></details>
+- [x] Document Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/8f50df332fe50495a4853.jpg"></details>
+
+And Many More Features Are Available 😊
+
 ### FOR TERMUX USER
 1. Type mentioned below given commands one by one in Termux.
 ```
@@ -54,17 +63,10 @@ apt install ffmpeg -y
 apt install wget
 apt install imagemagick -y
 git clone https://github.com/Ajmal-Achu/Wizard-MD
-cd zimbot-v4
+cd Wizard-MD
 rm -r session.json
 node.
 ```  
-
-### Preview bot
-
-- [x] Welcome   *_Same as welcome in repo bot-tzy_
-- [x] Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/abe9435cec00f6afb81d3.jpg"></details>
-- [x] Button Doccumment (_Still in experiment state_) <details><summary>Screenshot</summary><img src="https://telegra.ph/file/a2d24c71e7d0d67dcd05e.jpg"></details>
-
 
 <!---->
 
