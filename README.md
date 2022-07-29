@@ -44,7 +44,7 @@
 
 ### Preview bot
 
-- [x] Welcome <details><summary>Screenshot</summary><img src=""></details>
+- [x] Welcome <details><summary>Screenshot</summary><img src="https://telegra.ph/file/e7adc19143c17cebece3c.jpg"></details>
 - [x] Catalog Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/7c33c8442aa5c551309ef.jpg"></details>
 - [x] Setmenu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/5094eb58f19a49543443a.jpg"></details>
 - [x] Document Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/8f50df332fe50495a4853.jpg"></details>
