@@ -99,7 +99,7 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
 ├ ɴᴀᴍᴇ :
 ├ ᴘʟᴀᴄᴇ :
 ├ ᴀɢᴇ  :
-╰❒ ᴀɴᴅ ᴅᴏɴ'ᴛ ғᴏʀɢᴇᴛ ᴛᴏ ғᴏʟʟᴏᴡ ᴛʜᴇ ʀᴜʟᴇs ~!!!`}
+╰❒ ᴀɴᴅ ᴅᴏɴ'ᴛ ғᴏʀɢᴇᴛ ᴛᴏ ғᴏʟʟᴏᴡ ᴛʜᴇ ʀᴜʟᴇs ~!!!`
                 
 let buttons = [
 {buttonId: `halo`, buttonText: {displayText: 'WELCOME'}, type: 1}
