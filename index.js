@@ -89,7 +89,7 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
                 if (anu.action == 'add') {
                 var buff = await getBuffer(`https://h-e-r-m-i-t-web.up.railway.app/api/canvas/welcome?pp=${encodeURIComponent(ppuser)}&nama=${encodeURIComponent(name)}&bg=https://i.imgur.com/cwYKUhH.jpeg&gcname=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(metadata.participants.length)}&ppgc=${encodeURIComponent(ppgroup)}`)
                 let buffer = buff || ppuser
-                var wangu = await getBuffer(`${picak}${encodeURIComponent(`Welcome`)}`)
+                var wangu = await getBuffer(`${picak}${encodeURIComponent(`WELCOME TO\n${metadata.subject}`)}`)
                 let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
                 
