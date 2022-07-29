@@ -99,7 +99,6 @@ let buttons = [
 ]
 let buttonMessage = {
 image: buffer,
-mimetype: feler,
 mentions: [num],
 fileLength: 99999999999999,
 caption: he,
