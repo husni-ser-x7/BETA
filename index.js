@@ -91,7 +91,15 @@ const { state, saveState } = useSingleFileAuthState(ssname, pino({ level: "silen
                 let buffer = buff || ppuser
                 var wangu = await getBuffer(`${picak}${encodeURIComponent(`WELCOME TO\n${metadata.subject}`)}`)
                 let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-                he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
+                he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\nHey there, new member
+ᴀs ʏᴏᴜ ᴀʀᴇ ɴᴇᴡ ᴛᴏ ᴏᴜʀ ғᴀᴍ
+ᴘʟᴇᴀsᴇ ᴛᴇʟʟ ᴀs ᴛʜᴇ ᴅᴇᴛᴀɪʟs ᴀsᴋᴇᴅ ʙᴇʟᴏᴡ🤗
+	
+╭❒ ғɪʟʟ ɪᴛ
+├ ɴᴀᴍᴇ :
+├ ᴘʟᴀᴄᴇ :
+├ ᴀɢᴇ  :
+╰❒ ᴀɴᴅ ᴅᴏɴ'ᴛ ғᴏʀɢᴇᴛ ᴛᴏ ғᴏʟʟᴏᴡ ᴛʜᴇ ʀᴜʟᴇs ~!!!`} )
                 
 let buttons = [
 {buttonId: `halo`, buttonText: {displayText: 'WELCOME'}, type: 1}
