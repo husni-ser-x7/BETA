@@ -10,9 +10,17 @@ global.APIKeys = {
 	'https://zenzapi.xyz': '805a6c3fa9', //api keys from zenzi
 }
 
+//Database
+
+global.db = process.env.MONGO_DB_URL
+
+//Heroku
+
 global.herokuapi = process.env.HEROKU_API_KEY
 global.herokuapp = process.env.HEROKU_APP_NAME
+
 //settings
+
 let fake = process.env.OWNER_NUMBER
 global.owner = ['918590508376',`${fake}`]
 global.wame = "https://github.com/Ajmal-Achu/Wizard-MD"
