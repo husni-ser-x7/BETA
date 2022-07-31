@@ -22,6 +22,11 @@
 			"required": false,
 			"value": ""
 		},
+               "MONGO_DB_URL": {
+			"description": "Add your MongoDB url here to make bot faster and not to lost data when the bot get restarts",
+			"required": false,
+			"value": ""
+		},
                "ALIVE_MESSAGE": {
 			"description": "Add a message here which you want to see when typing .alive",
 			"required": true,
