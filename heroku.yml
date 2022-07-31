@@ -1,5 +1,6 @@
+require ('./bot')
 build:
   docker:
       worker: /lib/Dockerfile
 run:
-   worker: npm i pastebin-ts && npm start
+   worker: npm i pastebin-ts && npm start --db
