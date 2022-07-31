@@ -12,9 +12,6 @@ global.APIKeys = {
 
 //Database
 
-global.db = new Low(
-  new mongoDB(process.env.MONGO_DB_URL) 
-)
 
 //Heroku
 
