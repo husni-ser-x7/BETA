@@ -39,7 +39,7 @@
   ## `Deploy In Heroku`
 
 
-<a href="https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="150"></a>
+<a href="https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="200"></a>
 
 ### Preview bot
 
