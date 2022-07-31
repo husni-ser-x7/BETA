@@ -30,17 +30,16 @@
  
  `Use This Button To Fork Now`
   
-  <a href="https://github.com/Alien-alfa/WhatsAppBot-MD/fork"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://github.com/Alien-alfa/Alien-alfa/blob/beta/img/pngegg.png?raw=true" width="100"></a>
+  <a href="https://github.com/Ajmal-Achu/Wizard-MD/fork"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://github.com/Alien-alfa/Alien-alfa/blob/beta/img/pngegg.png?raw=true" width="100"></a>
 <br>
-# `Scan QR Code For Session`
+## `Scan QR Code For Session`
  
-<a href="https://alien-alfa-md.up.railway.app"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://repl.it/badge/github/quiec/whatsasena" width="200"></a>
-  <br><br><br>
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://millie-qr.up.railway.app/)
 
-  # `Deploy In Heroku`
+  ## `Deploy In Heroku`
 
 
-<a href="https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="200"></a>
+<a href="https://heroku.com/deploy?template=https://github.com/A-J-M-A-L/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="150"></a>
 
 ### Preview bot
 
