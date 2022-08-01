@@ -69,7 +69,7 @@ node.
 
 <!---->
 # Thanks to
-<a href="https://github.com/Ajmal-Achu"><img src="https://github.com/Ajmal-Achu.png?size=100" width="100" height="100"></a> | [![ABHI](https://github.com/.png?size=100)](https://github.com/) 
+<a href="https://github.com/Ajmal-Achu"><img src="https://github.com/Ajmal-Achu.png?size=100" width="100" height="100"></a> | [<img src="https://telegra.ph/file/0d160eade24b0ad32ee12.jpg" width="100" height="100">](https://github.com/Ajmal-Achu/Wizard-MD) 
 ---|---
 [AJMAL](https://github.com/Ajmal-Achu)  | [ABHI](https://github.com/Ajmal-Achu/Wizard-MD)
 DEVELOPER| FOR HELP |
