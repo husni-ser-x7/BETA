@@ -68,4 +68,18 @@ node.
 ```  
 
 <!---->
+# Thanks to
+<a href="https://github.com/Ajmal-Achu"><img src="https://github.com/Ajmal-Achu.png?size=100" width="100" height="100"></a> | [![ABHI](https://github.com/.png?size=100)](https://github.com/) 
+---|---
+[AJMAL](https://github.com/Ajmal-Achu)  | [ABHI](https://github.com/Ajmal-Achu/Wizard-MD)
+DEVELOPER| FOR HELP |
+<a href="https://github.com/V1P3R-X"><img src="https://github.com/V1P3R-X.png?size=100" width="100" height="100"></a> | [![WIZARD MD](https://github.com/Neeraj-X0.png?size=100)](https://github.com/Neeraj-X0) 
+[V1P3R-X](https://github.com/V1P3R-X)  | [Neeraj-X0](https://github.com/Neeraj-X0)
+CONTRIBUTOR| CONTRIBUTOR |
+<a href="https://github.com/Lord-official"><img src="https://github.com/Lord-official.png?size=100" width="100" height="100"></a> | [![WIZARD MD](http://github.com/SafwanGanz.png?size=100)](http://github.com/SafwanGanz) 
+[LORD-SER](https://github.com/Lord-official)  | [SAFWAN GANZ](https://github.com/SafwanGanz)
+FOR HELP | OWNER OF WHATS-FELIX MD|
+<a href="https://github.com/ᴡ4ʟᴋ36.ᴇғx"><img src="https://github.com/ᴡ4ʟᴋ36.ᴇғx.png?size=100" width="100" height="100"></a> | [![WIZARD MD](http://github.com/Alien-alfa.png?size=100)](http://github.com/Alien-alfa)  
+[ANEES](https://github.com/ᴡ4ʟᴋ36.ᴇғx) | [ALIEN ALFA](https://Alien-alfa)
+MODIFYING AS PUBLIC | HEAD OF ALIEN ALFA WA BOT DEV COMMUNITY |
 
