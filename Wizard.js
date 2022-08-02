@@ -7,7 +7,7 @@ const crypto = require('crypto')
 const chalk = require('chalk')
 const { exec, spawn, execSync } = require('child_process')
 const axios = require('axios')
-const { fetchUrl, isUrl, processTime } = require("./lib/myfunc")
+const { fetchUrl, isUrl, processTime } = require("./Library/lib/myfunc")
 const path = require('path')
 const url = require('url')
 const os = require('os')
@@ -28,18 +28,18 @@ const Heroku = require('heroku-client');
 const { PassThrough } = require('stream');
 const { getLinkPreview, getPreviewFromContent } = require("link-preview-js");
 const primbon = new Primbon()
-const { smsg, formatp, tanggal, formatDate, getTime,  sleep, clockString, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
-/*let { addLevelingId, addLevelingLevel, addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require("./lib/lvlfunction")*/
+const { smsg, formatp, tanggal, formatDate, getTime,  sleep, clockString, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./Library/lib/myfunc')
+/*let { addLevelingId, addLevelingLevel, addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require("./Library/lib/lvlfunction")*/
 const speedofbot = require("performance-now")
-const { mediafireDl } = require('./lib/mediafire.js')
-const { lirikLagu } = require('./lib/lirik.js')
+const { mediafireDl } = require('./Library/lib/mediafire.js')
+const { lirikLagu } = require('./Library/lib/lirik.js')
 const { fromBuffer } = require('file-type')
 const mel = require('kitsune-api');
 let { msgFilter } = require('./Zimbot/zimbotii.js')
 const { Boom } = require("@hapi/boom")
 const ffmpeg = require('fluent-ffmpeg')
 const { checkPetualangUser, addInventori, addBesi, sellBesi, getBesi, addDm, sellDm, getDm, addEmas, sellEmas, getEmas, addFish, sellFish, getFish } = require('./tez.js')
-const { addLevelingId, addLevelingLevel ,addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require('./lib/level2')
+const { addLevelingId, addLevelingLevel ,addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require('./Library/lib/level2')
 const { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./limit')
 //xp and leveling database⧈⧈⧈⧈
  
@@ -52,8 +52,8 @@ const  dripsno = JSON.parse(fs.readFileSync('./database/antilink.json'))
 const _level = JSON.parse(fs.readFileSync('./database/leveluser.json'))
 const _petualang = JSON.parse(fs.readFileSync('./database/inventori.json'))
 const balance = JSON.parse(fs.readFileSync('./database/balance.json'))
-const dripsanti = JSON.parse(fs.readFileSync('./lib/rude.json'))
-let bad = JSON.parse(fs.readFileSync('./lib/rude.json'))
+const dripsanti = JSON.parse(fs.readFileSync('./Library/lib/rude.json'))
+let bad = JSON.parse(fs.readFileSync('./Library/lib/rude.json'))
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
 if (global.db) global.db = {
     sticker: {},
@@ -326,7 +326,7 @@ colors = ['red', 'white', 'black', 'blue', 'yellow', 'green']
 let d = new Date(new Date + 3600000)
 let locale = 'id'
 let time = d.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Kolkata'})
-const { color } = require('./lib/color')
+const { color } = require('./Library/lib/color')
 if (isCmd && !m.isGroup)
 console.log(color('[ RECIEVED ]'), color(time, 'red'), color(`${command} [${args.length}]`), Drips.hr(), 'FROM', color(pushname))
 
@@ -902,13 +902,13 @@ Wizard.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 if (db.chats[m.chat].antiinstagram) {
     if (budy.includes("https://www.instagram.com/")){
  if (!isBotAdmins) return
- zimbotv3 = `*▊▊▊DETECTED▊▊▊*\n\n*you are admn okay*`
+ zimbotv3 = `*DETECTED*\n\n*you are admn okay*`
  if (isAdmins) return reply(zimbotv3)
  if (m.key.fromMe) return reply(zimbotv3)
  if (isCreator) return reply(zimbotv3)
  kice = m.sender
  await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
- Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no ig links here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+ Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no ig links here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
  }
 }
 
@@ -921,7 +921,7 @@ if (isCreator) return reply(`*𝘖𝘰𝘰𝘰𝘩 𝘴𝘩𝘪𝘵😩 𝘴𝘰
 reply('*ANTI STICKER*\n\n*NO STICKERS  ALLOWED HERE OKAY GOODBYE*')
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no stickers here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no stickers here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 }
@@ -935,7 +935,7 @@ if (isCreator) return reply(`*𝘖𝘰𝘰𝘰𝘩 𝘴𝘩𝘪𝘵😩 𝘴𝘰
 reply('*ANTI VOICE NOTE*\n\n*NO VOICE ALLOWED HERE  OKAY GOODBYE*')
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no voice note here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no voice note here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 }
@@ -949,7 +949,7 @@ if (isCreator) return reply(`*𝘖𝘰𝘰𝘰𝘩 𝘴𝘩𝘪𝘵😩 𝘴𝘰
 reply('*ANTI VIDEO*\n\n*NO VIDEOS ALLOWED HERE  OKAY GOODBYE*')
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no videos here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no videos here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 }
@@ -963,7 +963,7 @@ if (isCreator) return reply(`*𝘖𝘰𝘰𝘰𝘩 𝘴𝘩𝘪𝘵😩 𝘴𝘰
 reply('*ANTI PHOTOS*\n\n*NO PHOTOS ALLOWED HERE  OKAY GOODBYE*')
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no photos here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no photos here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 }
@@ -971,72 +971,72 @@ Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@
 if (db.chats[m.chat].antifb) {
 if(budy.includes("https://facebook.com/")){
 if (!isBotAdmins) return
-zimbotv3 = `*▊▊▊DETECTED▊▊▊*\n\n*you are admin okay*`
+zimbotv3 = `*DETECTED*\n\n*you are admin okay*`
 if (isAdmins) return reply(zimbotv3)
 if (m.key.fromMe) return reply(zimbotv3)
 if (isCreator) return reply(zimbotv3)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
- Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no fb links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+ Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no fb links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } 
  }
 
  if (db.chats[m.chat].antitelegram) {
  if (budy.includes("https://t.me/")){
  if (!isBotAdmins) return
- zimbotv3 = `*▊▊▊DETECTED▊▊▊*\n*you are admin okay*`
+ zimbotv3 = `*DETECTED*\n*you are admin okay*`
  if (isAdmins) return reply(zimbotv3)
  if (m.key.fromMe) return reply(zimbotv3)
  if (isCreator) return reply(zimbotv3)
  kice = m.sender
  await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
- Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no telegram links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+ Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no telegram links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } 
  }
 
 if (db.chats[m.chat].antitiktok) {
 if (budy.includes("https://www.tiktok.com/")){
 if (!isBotAdmins) return
-zimbotv3 = `*▊▊▊DETECTED▊▊▊*\n\n*you are bot admin okay*`
+zimbotv3 = `*DETECTED*\n\n*you are bot admin okay*`
 if (isAdmins) return m.reply(zimbotv3)
 if (m.key.fromMe) return m.reply(zimbotv3)
 if (isCreator) return m.reply(zimbotv3)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no tiktok links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no tiktok links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 
 if (db.chats[m.chat].antitwitter) {
 if (budy.includes("https://twitter.com/")){
 if (!isBotAdmins) return
-zimbotv3 = `*▊▊▊DETECTED▊▊▊*\n *you are bot admin okay*`
+zimbotv3 = `*DETECTED*\n *you are bot admin okay*`
 if (isAdmins) return reply(zimbotv3)
 if (m.key.fromMe) return reply(zimbotv3)
 if (isCreator) return reply(zimbotv3)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no twittwer link here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no twittwer link here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 
 if (db.chats[m.chat].antilinkall) {
 if (budy.includes("http")){ 
 if (!isBotAdmins) return
-zimbotv3 = `*▊▊▊DETECTED▊▊▊*\n *you are bot admin okay*`
+zimbotv3 = `*DETECTED*\n *you are bot admin okay*`
 if (isAdmins) return reply(zimbotv3)
 if (m.key.fromMe) return reply(zimbotv3)
 if (isCreator) return reply(zimbotv3)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-Wizard.sendMessage(m.chat, {text:`*▊▊▊DETECTED▊▊▊*\n@${kice.split("@")[0]} *I said dont send any links okay*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(m.chat, {text:`*DETECTED*\n@${kice.split("@")[0]} *I said dont send any links okay*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 
 
 if (m.mtype == 'viewOnceMessage') {
 if (!db.chats[m.chat].antionce) return
-teks = `*▊▊▊DETECTED ONCE▊▊▊*
+teks = `*DETECTED ONCE*
 
 `
 Wizard.sendTextWithMentions(m.chat, teks, m)
@@ -1049,19 +1049,19 @@ m.copyNForward(m.chat, true, { readViewOnce: true }).catch(_ => reply(`*I opened
 if (db.chats[m.chat].antilinkyt) {
 if (budy.includes("https://youtube.com/")){ 
 if (!isBotAdmins) return
-zimbotv3 = `*▊▊▊DETECTED▊▊▊*\n*you are admin okay*`
+zimbotv3 = `*DETECTED*\n*you are admin okay*`
 if (isAdmins) return reply(zimbotv3)
 if (m.key.fromMe) return reply(zimbotv3)
 if (isCreator) return reply(zimbotv3)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no yt links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no yt links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } 
 }
 
 if (db.chats[m.chat].antilink) {
 if (budy.match(`chat.whatsapp.com`)) {
-reply(`*▊▊▊ ANTILINK ▊▊▊*\n\n*You have been detected sending a group link, sorry you will be kicked!*`)
+reply(`* ANTILINK *\n\n*You have been detected sending a group link, sorry you will be kicked!*`)
 if (!isBotAdmins) return reply(`*Bbot must be admin okay*`)
 let gclink = (`https://chat.whatsapp.com/`+await Wizard.groupInviteCode(m.chat))
 let isLinkThisGc = new RegExp(gclink, 'i')
@@ -1077,7 +1077,7 @@ if (!m.isGroup) return
 if (!isAntiVirtex) return
 if (groupAdmins) return
 reply('Mark as read\n'.repeat(300))
-reply(`*▊▊▊DETECTED▊▊▊*\n\n*You sent a virtex, sorry you will be kicked from the group*`)
+reply(`*DETECTED*\n\n*You sent a virtex, sorry you will be kicked from the group*`)
 console.log(('[KICK]', 'red'), color('Received a text virus!', 'yellow'))
 Wizard.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }  
@@ -1086,13 +1086,13 @@ Wizard.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 if (db.chats[m.chat].antiwame) {
 if (budy.includes(`http://wa.me`)) {
 if (!isBotAdmins) return
-zimbotv3 = `*▊▊▊DETECTED▊▊▊*\n\n*you are admin okay*`
+zimbotv3 = `*DETECTED*\n\n*you are admin okay*`
 if (isAdmins) return reply(zimbotv3)
 if (m.key.fromMe) return reply(zimbotv3)
 if (isCreator) return reply(zimbotv3)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-Wizard.sendMessage(from, {text:`*▊▊▊DETECTED▊▊▊*\n\n@${kice.split("@")[0]} *I said no links okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no links okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 
@@ -1100,7 +1100,7 @@ if (db.settings[botNumber].autoblock) {
 if (m.chat.endsWith("@s.whatsapp.net")) {
 if (isCreator) reply('*you are bot creator okay*')
 block = m.sender
-await Wizard.sendMessage(from, {text:`*▊▊▊AUTO BLOCK▊▊▊*\n\n@${block.split("@")[0]} *today I'm blocking dumps bye you are _blocked_* *if you want to use bot join this group* ${global.group1}\n\n${global.group2}`, m})
+await Wizard.sendMessage(from, {text:`*AUTO BLOCK*\n\n@${block.split("@")[0]} *today I'm blocking dumps bye you are _blocked_* *if you want to use bot join this group* ${global.group1}\n\n${global.group2}`, m})
 Wizard.updateBlockStatus(m.sender,'block')
 }
 }
@@ -1108,12 +1108,12 @@ Wizard.updateBlockStatus(m.sender,'block')
 if (db.chats[m.chat].antilinkyt) {
 if (budy.includes(`https://nando.com`)) {
 if (!isBotAdmins) return reply('*BOT MUST BE ADMIN OKAY*')
-reply(`*▊▊▊ ANTIYT ▊▊▊*\n\n*SOrry ${botname} will kick you out because what you sent is a youtube link in this group*`)
+reply(`* ANTIYT *\n\n*SOrry ${botname} will kick you out because what you sent is a youtube link in this group*`)
 if (isAdmins) return reply(`*Ehh sorry you admin*`)
  if (isCreator) return reply(`*whoa you are  bot creator i wont kick you okay*`)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
-Wizard.sendMessage(m.chat, {text:`*▊▊▊ ANTILINK ▊▊▊*\n\n@${kice.split("@")[0]} *Has been kicked for sending the youtube link in this group*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(m.chat, {text:`* ANTILINK *\n\n@${kice.split("@")[0]} *Has been kicked for sending the youtube link in this group*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 
@@ -1121,12 +1121,12 @@ Wizard.sendMessage(m.chat, {text:`*▊▊▊ ANTILINK ▊▊▊*\n\n@${kice.spli
 if (db.chats[m.chat].antibule)  {
 if (m.sender.includes(`+212`)) {
 if (!isBotAdmins) return reply('*BOT MUST BE ADMIN OKAY*')
-reply(`*▊▊▊ ANTIBULE ▊▊▊*\n\n*Sorry ${botname} will kick you out because you are a stranger in this group*`)
+reply(`* ANTIBULE *\n\n*Sorry ${botname} will kick you out because you are a stranger in this group*`)
 if (isAdmins) return reply(`*Ehh sorry you admin*`)
 if (isCreator) return reply(`*whoa you are  bot creator i wont kick you okay*`)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
-Wizard.sendMessage(m.chat, {text:`*▊▊▊ ANTILINK ▊▊▊*\n\n@${kice.split("@")[0]} *You shouldn't be in this group*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+Wizard.sendMessage(m.chat, {text:`* ANTILINK *\n\n@${kice.split("@")[0]} *You shouldn't be in this group*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
 }
 if (db.settings[botNumber].grouponly) {
@@ -1715,7 +1715,7 @@ if (!isPetualang) return reply(mess.noPetualang)
 ngab = ['Avalanche','Volcanic Eruption','Tsunami','Earthquake','Meteor','Demon']
 var sesuatu = ngab[Math.floor(Math.random() * ngab.length)]
 var dungeon =['Whetstone','Willow Field','Rodeo','Verdant Blufs','Bull Holland','Fallen Tree','Dellnort','Verona Lush','Leafy Hollow','Chilliad Dome','Garcia','Pine Valley','Santa Florals','Guvero East','Cranbarry','Junever','Aldea Malvada','Green Palms','Green Oasis','Fort Carson','Prickel Pine','Pilson Meadow','Boca Roca','Rocksore East','Camel Toe','Hanky Panky','Fern Ridge','Montgomerry','Flint Yankton','Vespucci','fortress city', 'ravines valley', 'horizon valley', 'cyber city', 'end city', 'templar city', 'pochinki', 'peak','Vertical Zone','Sentainel Country','Night City','Flush City','Royals Canyon','Blackburn','Peterborough','Tarnstead','Jarren’s','Outpost','Landow','Nearon','Kincardine','Aysgarth','Veritas','Openshaw','Bredwardine','Berkton','Wolford','Norwich','Kald','Solaris','Kilead','Pitmerden','Acomb','Eldham','Warcester','Lingmell','Kilead','Cromerth','Wingston','Garmsby','Kingcardine','Perthlochry','Frostford','Hillford','Hardersfield','Tarrin','Holmfirth','Caerleon','Elisyum','Ballaeter','Penshaw','Bradford','Wigston','Accreton','Kameeraska','Ferncombe','Kilerth','Erostey','Carran','Jongvale','Larnwick','Queenstown','Whaelrdrake','Baerney','Wingston','Arkney','Strongfair','Lowestoft','Beggar’s Hole','Shepshed','Perthlochry','Ironforge','Tywardreath','Pontheugh','Foolshope','Hull','Dalmerlington','Aucteraden','Woodpine','Millstone','Windermere','Lancaster','Kirkwall','Rotherhithe','Astrakhan','Watford','Ritherhithe','Krosstoen','Pella’s','Wish','Grimsby','Ayrith','Ampleforth','Skystead','Eanverness','Penshaw','Peatsland','Astrakane','Pontybridge','Caershire','Snowbush','Sutton','Northwich','Hogsfeet','Claethorpes','Sudbury','Cherrytown','Blue Field','Orrinshire','Aempleforth','Garrigill','Jedburgh','Eastbourne','Taedmorden','Venzor','Grasmere','Ubbin','Falls','Violl’s Garden','Glanchester','Bailymena','Arkkukari','Skargness','Cardend','Llanybydder','Faversham','Yellowseed','Carlisle','Cirencester','Aramoor','Furness','Kincardine','Rotherham','Emelle','Boroughton','Carran','Ffestiniog','Mansfield','Huthwaite','Marclesfield','Pavv','Squall’s End','Glenarm','Dragontail','Moressley','Hardersfield','Gilramore','Aria','Ecrin','Clare View Point','Blackburn','Oakheart','Doonatel','Broughton','Carlisle','Murlayfield','Nuxvar']
-anu = fs.readFileSync('./lib/dungeon.js');
+anu = fs.readFileSync('./Library/lib/dungeon.js');
 var ad = dungeon[Math.floor(Math.random() * dungeon.length)]
 jsonData = JSON.parse(anu);
 randIndex = Math.floor(Math.random() * jsonData.length);
@@ -2093,7 +2093,7 @@ downloader.downloadAPK("com.microbees.floatingapp")
 */
 break
 case 'ttc': case 'ttt': case 'tictactoe': {
- let TicTacToe = require("./lib/tictactoe")
+ let TicTacToe = require("./Library/lib/tictactoe")
  this.game = this.game ? this.game : {}
  if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'You are still in the game'
  let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
@@ -2558,7 +2558,7 @@ let teks = `
     case 'style': case 'styletext': {
 if (!isPremium && global.db.users[m.sender].limit < 1) return reply(mess.endLimit) // response when limit runs out
 db.users[m.sender].limit -= 1 // -1 limit
-let { styletext } = require('./lib/scraper')
+let { styletext } = require('./Library/lib/scraper')
 if (!text) throw 'Enter Query text!'
    let anu = await styletext(text)
    let teks = `Entered Text:  ${text}\n\n`
@@ -2923,7 +2923,7 @@ let drips = [
 { buttonId: 'antilink on', buttonText: { displayText: 'ON' }, type: 1 },
 { buttonId: 'antilink off', buttonText: { displayText: 'OFF' }, type: 1 }
 ]
-await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTILINK MODE▊▊▊*`, Wizard.user.name, m)
+await Wizard.sendButtonText(m.chat, drips, `*ANTILINK MODE*`, Wizard.user.name, m)
 }
 }
 break
@@ -2944,7 +2944,7 @@ let drips = [
 { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
 { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
 ]
-await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTILINK MODE▊▊▊*`, Wizard.user.name, m)
+await Wizard.sendButtonText(m.chat, drips, `*ANTILINK MODE*`, Wizard.user.name, m)
 }
 }
 break
@@ -2965,7 +2965,7 @@ reply(`*Antilink disabled*`)
 { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
 { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
  ]
- await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTILINK MODE▊▊▊*`, Wizard.user.name, m)
+ await Wizard.sendButtonText(m.chat, drips, `*ANTILINK MODE*`, Wizard.user.name, m)
 }
 }
 break
@@ -2986,7 +2986,7 @@ case 'antilinkfacebook': case 'antifb': {
     { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
     { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
 ]
-await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTILINK MODE▊▊▊*`, Wizard.user.name, m)
+await Wizard.sendButtonText(m.chat, drips, `*ANTILINK MODE*`, Wizard.user.name, m)
  }
   }
 break
@@ -3007,7 +3007,7 @@ let drips = [
   { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
    ]
-   await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTILINK MODE▊▊▊*`, Wizard.user.name, m)
+   await Wizard.sendButtonText(m.chat, drips, `*ANTILINK MODE*`, Wizard.user.name, m)
  }
 }
 break
@@ -3028,7 +3028,7 @@ case 'antivn': case 'antiaudio': case 'antivoicenote': case 'antivoice': {
      { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
      { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
  ]
- await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANT VN MODE▊▊▊*`, Wizard.user.name, m)
+ await Wizard.sendButtonText(m.chat, drips, `*ANT VN MODE*`, Wizard.user.name, m)
   }
    }
  break
@@ -3049,7 +3049,7 @@ let drips = [
 { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
 { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
 ]
-await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTISTICKER MODE▊▊▊*`, Wizard.user.name, m)
+await Wizard.sendButtonText(m.chat, drips, `*ANTISTICKER MODE*`, Wizard.user.name, m)
 }
 }
 break
@@ -3070,7 +3070,7 @@ let drips = [
 { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
 { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
 ]
-await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTIPHOTO MODE▊▊▊*`, Wizard.user.name, m)
+await Wizard.sendButtonText(m.chat, drips, `*ANTIPHOTO MODE*`, Wizard.user.name, m)
 }
 }
 break
@@ -3091,7 +3091,7 @@ case 'antivideo': case 'antivid': {
      { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
      { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
  ]
- await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTIVIDEO MODE▊▊▊*`, Wizard.user.name, m)
+ await Wizard.sendButtonText(m.chat, drips, `*ANTIVIDEO MODE*`, Wizard.user.name, m)
   }
    }
  break
@@ -3111,7 +3111,7 @@ let drips = [
 { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
 { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
 ]
-await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTILINK VIEW▊▊▊*`, `${global.botname}`, m)
+await Wizard.sendButtonText(m.chat, drips, `*ANTILINK VIEW*`, `${global.botname}`, m)
 }
 break
 case 'antitiktok': case 'aantitik': {
@@ -3131,7 +3131,7 @@ let drips = [
 { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
 { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
 ]
-await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTILINK MODE▊▊▊*`, Wizard.user.name, m)
+await Wizard.sendButtonText(m.chat, drips, `*ANTILINK MODE*`, Wizard.user.name, m)
 }
 }
 break
@@ -3152,7 +3152,7 @@ if (args[0] === "on") {
     { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
     { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
 ]
-await Wizard.sendButtonText(m.chat, drips, `*▊▊▊ANTILINK MODE▊▊▊*`, Wizard.user.name, m)
+await Wizard.sendButtonText(m.chat, drips, `*ANTILINK MODE*`, Wizard.user.name, m)
  }
  }
 break
@@ -3173,7 +3173,7 @@ reply(`*Antilink disabled*`)
 { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
 { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
  ]
- await Wizard.sendButtonText(m.chat, dripsi, `*▊▊▊ANTILINK MODE▊▊▊*`, Wizard.user.name, m)
+ await Wizard.sendButtonText(m.chat, dripsi, `*ANTILINK MODE*`, Wizard.user.name, m)
 }
  }
 break
@@ -3191,7 +3191,7 @@ var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-Wizard.sendMessage(from, {text: `*▊▊▊ANTILINK RUDE▊▊▊*\n\n*no hate speech anymore, watch space im going to kick dumps*`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Wizard.sendMessage(from, {text: `*ANTILINK RUDE*\n\n*no hate speech anymore, watch space im going to kick dumps*`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiToxic) return reply('*Already deactivated*')
 let off = dripsanti.indexOf(from)
@@ -3202,7 +3202,7 @@ reply('*Success in turning off antirude in this group happy now*')
  { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
  { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
  ]
- await Wizard.sendButtonText(m.chat, buttons, `*▊▊▊ANTI BADWORDS▊▊▊*\n\n.`, `${global.botname}`, m)
+ await Wizard.sendButtonText(m.chat, buttons, `*ANTI BADWORDS*\n\n.`, `${global.botname}`, m)
  }
  }
  
@@ -3426,7 +3426,7 @@ break
  break
  case 'ebinary': {
  if (!m.quoted.text && !text) throw `Send/reply text with caption ${prefix + command}`
- let { eBinary } = require('./lib/binary')
+ let { eBinary } = require('./Library/lib/binary')
  let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
  let eb = await eBinary(teks)
  reply(eb)
@@ -3434,7 +3434,7 @@ break
 break
  case 'dbinary': {
  if (!m.quoted.text && !text) throw `Send/reply text with caption ${prefix + command}`
- let { dBinary } = require('./lib/binary')
+ let { dBinary } = require('./Library/lib/binary')
  let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
  let db = await dBinary(teks)
  reply(db)
@@ -3469,7 +3469,7 @@ case 'tomp4': case 'tovideo': {
    if (!quoted) throw 'Reply Image'
    if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
    replay(mess.wait)
-let { webp2mp4File } = require('./lib/uploader')
+let { webp2mp4File } = require('./Library/lib/uploader')
    let media = await Wizard.downloadAndSaveMediaMessage(quoted)
    let webpToMp4 = await webp2mp4File(media)
    await Wizard.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: '*Convert webp to video*' } }, { quoted: m })
@@ -3501,7 +3501,7 @@ let { webp2mp4File } = require('./lib/uploader')
  if (!quoted) throw `Send/Reply Video/Audio You Want to Use as Audio With Caption ${prefix + command}`
  replay(mess.wait)
  let media = await quoted.download()
- let { toAudio } = require('./lib/converter')
+ let { toAudio } = require('./Library/lib/converter')
  let audio = await toAudio(media, 'mp4')
  Wizard.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
  }
@@ -3512,7 +3512,7 @@ let { webp2mp4File } = require('./lib/uploader')
  if (!quoted) throw `Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`
  replay(mess.wait)
  let media = await quoted.download()
- let { toAudio } = require('./lib/converter')
+ let { toAudio } = require('./Library/lib/converter')
  let audio = await toAudio(media, 'mp4')
  Wizard.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${Wizard.user.name}.mp3`}, { quoted : m })
  }
@@ -3522,7 +3522,7 @@ let { webp2mp4File } = require('./lib/uploader')
  if (!quoted) throw `Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`
  replay(mess.wait)
  let media = await quoted.download()
- let { toPTT } = require('./lib/converter')
+ let { toPTT } = require('./Library/lib/converter')
  let audio = await toPTT(media, 'mp4')
  Wizard.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
  }
@@ -3531,7 +3531,7 @@ let { webp2mp4File } = require('./lib/uploader')
    if (!quoted) throw 'Reply Image'
    if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
    replay(mess.wait)
-let { webp2mp4File } = require('./lib/uploader')
+let { webp2mp4File } = require('./Library/lib/uploader')
    let media = await Wizard.downloadAndSaveMediaMessage(quoted)
    let webpToMp4 = await webp2mp4File(media)
    await Wizard.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
@@ -3540,7 +3540,7 @@ let { webp2mp4File } = require('./lib/uploader')
  break
 case 'tourl': {
    replay(mess.wait)
-let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./Library/lib/uploader')
    let media = await Wizard.downloadAndSaveMediaMessage(quoted)
    if (/image/.test(mime)) {
   let anu = await TelegraPh(media)
@@ -3687,7 +3687,7 @@ if (!isUrl(args[0]) && !args[0].includes('youtube')) throw '*The link you provid
 xa.Youtube(`${text}`).then(async (data) => {
 if (data.medias[0].formattedSize.split('MB')[0] >= 100) return reply('*File Over Limit* '+util.format(data)) 
 cap = `
-*▊▊▊YOUTUBE SHORTS▊▊▊*
+*YOUTUBE SHORTS*
 
 *⬤▶━━━━━━━━━2:30*\n\n\n\n*⬤TITLE:* ${data.title}\n*⬤QUALITY:* ${data.medias[0].quality}\n*⬤SIZE:* ${data.medias[0].formattedSize}\n*⬤DURATION* ${data.duration}\n*⬤ID:* ${data.medias[0].cached}\n*⬤LINK:* ${data.url}\n\n*${global.watermark}*`
 buf = await getBuffer(data.thumbnail)
@@ -4141,7 +4141,7 @@ reply('*An error occurred maybe the query was not found*')
 }
 break
 case 'play': {
-let { yta } = require('./lib/y2mate')
+let { yta } = require('./Library/lib/y2mate')
 if (!text)  reply(`Example : ${prefix + command} story wa anime`)
 let yts = require("yt-search")
 let search = await yts(text)
@@ -4201,7 +4201,7 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
 
 break
 case 'ytmp3':  case 'ytmusic': {    
-let { yta } = require('./lib/y2mate')
+let { yta } = require('./Library/lib/y2mate')
 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) throw '*The link you provided is not valid*'    
 let quality = args[1] ? args[1] : '128kbps'
@@ -4226,7 +4226,7 @@ sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 case 'audio': {    
-let { yta } = require('./lib/y2mate')
+let { yta } = require('./Library/lib/y2mate')
 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) throw '*The link you provided is not valid*'    
 let quality = args[1] ? args[1] : '128kbps'
@@ -4251,7 +4251,7 @@ sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 case 'ytmp4': case 'ytvideo': {
-let { ytv } = require('./lib/y2mate')
+let { ytv } = require('./Library/lib/y2mate')
 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) throw '*The link you provided is not valid*'
 let quality = args[1] ? args[1] : '360p'
@@ -4295,7 +4295,7 @@ reply(`*Failed to download and send media*`)
 }
 break
 case 'getmusic': {
-let { yta } = require('./lib/y2mate')   
+let { yta } = require('./Library/lib/y2mate')   
 if (!text) throw `Example : ${prefix + command} 1`
 if (!m.quoted) return m.reply('*Reply message*')
 if (!m.quoted.isBaileys) throw `*Can only reply to messages from bots*`
@@ -4309,7 +4309,7 @@ Wizard.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpe
 }
 break
 case 'getvideo': { 
-let { ytv } = require('./lib/y2mate')  
+let { ytv } = require('./Library/lib/y2mate')  
 if (!text) throw `Example : ${prefix + command} 1`
 if (!m.quoted) return m.reply('Reply Message')
 if (!m.quoted.isBaileys) throw `*Can only reply to messages from bots8`
@@ -4571,7 +4571,7 @@ const sendm =  Wizard.sendMessage(
 
    footer: watermark,
 
-   title: "**▊▊▊SAVEFROM DL▊▊▊**",
+   title: "**SAVEFROM DL**",
 
    buttonText: "CLICK HERE",
 
@@ -4659,7 +4659,7 @@ case 'tiktokmp4': case 'tiktokwm': {
       var hadir = randomNomor(300)
        var memek = randomNomor(1000)                      
      let caption = `
-     *▊▊▊TIKTOK DL▊▊▊*\n\n*AUTHOR* : DRIPS\n*NICKNAME* : ${video.author.nickname}\n*CAPTION* : ${video.description}\n*QUALITY* : nowatermark\n*COMMENTS* : ${memek}\n*CREATE* ${hadir} Ago\n*LIKES* : ${hadi}\n*DISLIKE* : ${hadie}\n*SOURCE* : ${text}\n\n\n*${global.watermark}*`
+     *TIKTOK DL*\n\n*AUTHOR* : DRIPS\n*NICKNAME* : ${video.author.nickname}\n*CAPTION* : ${video.description}\n*QUALITY* : nowatermark\n*COMMENTS* : ${memek}\n*CREATE* ${hadir} Ago\n*LIKES* : ${hadi}\n*DISLIKE* : ${hadie}\n*SOURCE* : ${text}\n\n\n*${global.watermark}*`
      buf = await getBuffer(video.author.avatar)                
      Wizard.sendMessage(m.chat, { image: { url: video.author.avatar }, jpegThumbnail:buf, caption: `${caption}` }, { quoted: m })
      Wizard.sendMessage(m.chat, { video: { url: video.video.no_watermark }, jpegThumbnail:buf, mimetype: 'video/mp4', caption: `*Downloading From ${text}*` }, { quoted: m })               
@@ -4717,7 +4717,7 @@ case 'tiktokmp3': case 'tiktokaudio': {
 
 if (!text) throw '*Enter Link Tiktok!*'
 if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) throw '*The link you provided is not valid*'
-let got = require('./lib/tiktok.js')
+let got = require('./Library/lib/tiktok.js')
    
 got.tiktokDown(`${text}`).then(async (data) => {
 Wizard.sendMessage(m.chat, { audio: { url: data.result.nowatermark }, mimetype: 'audio/mp4'}, { quoted: m })
@@ -4782,7 +4782,7 @@ if (!text) throw '*Enter a Link Query!*'
 if (!isUrl(args[0]) && !args[0].includes('twitter.com')) throw '*The link you provided is not valid*'
      
 xa.Twitter(`${text}`).then(async (data) => {                    
-let txt = `*▊▊▊TWITTER DL▊▊▊*\n\n`
+let txt = `*TWITTER DL*\n\n`
 txt += `*⬤TITLE :* ${data.title}\n`
 txt += `*⬤QUALITY :* ${data.medias[1].quality}\n`
 txt += `*⬤TYPE :* ${data.medias[1].extension}\n`
@@ -4819,7 +4819,7 @@ if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you p
 let bocil = require('@bochilteam/scraper')  
 bocil.facebookdlv2(`${text}`).then(async (data) => {                   
 
-let txt = `*▊▊▊FB DOWNLOAD▊▊▊*\n\n`
+let txt = `*FB DOWNLOAD*\n\n`
 
 txt += `*⬤TITLE :* ${data.title}\n`
 
@@ -4905,7 +4905,7 @@ case 'speedtest': {
   break
   case 'report': {
     if (!args.join(" ")) return m.reply(`Example : \n- ${prefix + command} feature ig error min\n- ${prefix + command} this user is spamming min`)
-    teks = `*▊▊▊REPORT FEATURE▊▊▊*`
+    teks = `*REPORT FEATURE*`
     teks1 = `\n\nNUMBER : @${m.sender.split("@")[0]}\n*REPORT :* ${args.join(" ")}`
     teks2 = `\n\nSucces send to owner`
     for (let i of owner) {
@@ -4916,7 +4916,7 @@ case 'speedtest': {
     break
     case 'request': case 'suggest': {
     if (!args.join(" ")) return m.reply(`Example : ${prefix + command} min add a downloader feature`)
-    teks = `*▊▊▊REQUEST FEATURE▊▊▊*`
+    teks = `*REQUEST FEATURE*`
     teks1 = `\n\n*NUMBER :* @${m.sender.split("@")[0]}\n*REQUEST :* ${args.join(" ")}`
     teks2 = `\n\nSucces send to owner`
     for (let i of owner) {
@@ -4977,7 +4977,7 @@ text: `*Search Results From* ${text}`,
 
 footer: botname,
 
-title: "*▊▊▊ANIME▊▊▊*",
+title: "*ANIME*",
 
 buttonText: "CLICK HERE",
 
@@ -5148,7 +5148,7 @@ reply(mess.wait)
 atas = text.split('|')[0] ? text.split('|')[0] : '-'
 bawah = text.split('|')[1] ? text.split('|')[1] : '-'
 let dwnld = await quoted.download()
-let { floNime } = require('./lib/uploader')
+let { floNime } = require('./Library/lib/uploader')
 let fatGans = await floNime(dwnld)
 let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans.result.url}`
 let FaTiH = await Wizard.sendImageAsSticker(m.chat, smeme, m, { packname: global.packname, author: global.auhor })
@@ -5220,7 +5220,7 @@ case 'venus':
 case 'viewfinder': 
 case 'warmsunset': {
 if (!/image/.test(mime)) throw `*Send/Reply Image With Caption* ${prefix + command}`
-let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./Library/lib/uploader')
 let media = await Wizard.downloadAndSaveMediaMessage(quoted)   
 let anu = await TelegraPh(media)
 let buf = await getBuffer(`https://violetics.pw/api/photofilter/${command}?apikey=beta&image=${anu}`)
@@ -5745,7 +5745,7 @@ case 'igsearch':
   case 'apkdl': case 'apkmod': case 'apkd': {      
   
   if (!text) return m.reply(`Use${prefix + command} vpn`) 
-  let noh = require('./lib/myfunc2')                
+  let noh = require('./Library/lib/myfunc2')                
   noh.rexdl(`${text}`).then(async (data) => {
   let sections = []   
   for (let i of data) {
@@ -5765,7 +5765,7 @@ case 'igsearch':
       {
        text: `${ucapannya2} ${pushname} *Search Results From ${text} Click the button below to choose*`,
        footer: `© ${global.watermark}`,
-       title: "*▊▊▊APK DOWNLOAD▊▊▊*",
+       title: "*APK DOWNLOAD*",
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })                 
@@ -5775,14 +5775,14 @@ case 'igsearch':
             }
             break
             case 'donlod':  {  
-              let dhupi = require('./lib/index.js')             
+              let dhupi = require('./Library/lib/index.js')             
                               if (!text) return m.reply(`Use${prefix + command} whatsapp`)
                               if (!isUrl(args[0]) && !args[0].includes('https://rexdl.com/'))
                               
                          dhupi.rexdldown(`${text}`).then(async (anu) => {        
                          if (anu[0].size.split('MB')[0] >= 150) return reply('*File Over Limit* '+util.format(anu))
                          for (let i of anu) {    
-                         linkye = `*▊▊▊APK DOWNLOAD▊▊▊*\n\n*TITLE:* ${i.title}\n*UPDATE:* ${i.up}\n*VERSION:* ${i.vers}\n*FILESIZE:* ${i.size}\n*URL:* \n*DESCRIPTION:* ${i.desc}\n\n*${global.watermark}*`         
+                         linkye = `*APK DOWNLOAD*\n\n*TITLE:* ${i.title}\n*UPDATE:* ${i.up}\n*VERSION:* ${i.vers}\n*FILESIZE:* ${i.size}\n*URL:* \n*DESCRIPTION:* ${i.desc}\n\n*${global.watermark}*`         
                               Wizard.sendMessage(m.chat, { image: await getBuffer(i.thumb), jpegThumbnail: await getBuffer(i.thumb), caption: `${linkye}` }, { quoted: m })
                               Wizard.sendMessage(m.chat, {document: await getBuffer(i.link), mimetype: `application/vnd.android.package-archive`, fileName: `${i.title}`}, {quoted:m})  
                               }  
@@ -6043,7 +6043,7 @@ if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Y
 if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
 m.reply(mess.wait)
 let media = await quoted.download()
-let { toAudio } = require('./lib/converter')
+let { toAudio } = require('./Library/lib/converter')
 let audio = await toAudio(media, 'mp4')
 Wizard.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${Wizard.user.name}.mp3`}, { quoted : m })
 }
@@ -6063,7 +6063,7 @@ break
 
  case 'wallpaper': {
    if (!text) throw '*give me text to search👀*'
-let { wallpaper } = require('./lib/scraper')
+let { wallpaper } = require('./Library/lib/scraper')
    anu = await wallpaper(text)
    result = anu[Math.floor(Math.random() * anu.length)]
 let buttons = [
@@ -6081,7 +6081,7 @@ let buttons = [
  break
  case 'wikimedia': {
    if (!text) throw '*give me text so search👀*'
-let { wikimedia } = require('./lib/scraper')
+let { wikimedia } = require('./Library/lib/scraper')
    anu = await wikimedia(text)
    result = anu[Math.floor(Math.random() * anu.length)]
    let buttons = [
@@ -6100,7 +6100,7 @@ let { wikimedia } = require('./lib/scraper')
   
  break
  case 'quotesanimekdksksksksk': case 'quoteanimexllzlzkl': {
-let { quotesAnime } = require('./lib/scraper')
+let { quotesAnime } = require('./Library/lib/scraper')
    let anu = await quotesAnime()
    result = anu[Math.floor(Math.random() * anu.length)]
    let buttons = [
@@ -6159,7 +6159,7 @@ let { quotesAnime } = require('./lib/scraper')
  break
 case 'ringtone': {
 if (!text) throw `Example : ${prefix + command} black rover`
-let { ringtone } = require('./lib/scraper')
+let { ringtone } = require('./Library/lib/scraper')
 let anu = await ringtone(text)
 let result = anu[Math.floor(Math.random() * anu.length)]
 Wizard.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
@@ -6855,7 +6855,7 @@ case 'setmenu': {
       }
   break
   case 'allmenu': case 'menu': case 'help': {
-let datane = fs.readFileSync('./lib/random.js')
+let datane = fs.readFileSync('./Library/lib/random.js')
 jsonData = JSON.parse(datane)
 randIndex = Math.floor(Math.random() * jsonData.length)
 randKey = jsonData[randIndex];
@@ -7469,7 +7469,7 @@ anu = `
       }},]
       Wizard.sendMessage(m.chat,{
         caption: anu,
-    document: fs.readFileSync('./lib/tes.xlsx'),
+    document: fs.readFileSync('./Library/lib/tes.xlsx'),
     mimetype: dripsee,
     jpegThumbnail: buffer,
     fileName: botname,
@@ -7545,7 +7545,7 @@ anu = `
         {buttonId: `rpgmenu`, buttonText: {displayText: '©RPG MENU'}, type: 1},
         ]
         let buttonMessage = {
-        document: fs.readFileSync('./lib/tes.xlsx'),
+        document: fs.readFileSync('./Library/lib/tes.xlsx'),
         mimetype: dripsee,
         jpegThumbnail:buffer,
         fileName: botname,
@@ -8505,13 +8505,13 @@ m.copyNForward(other, true, m.quoted && m.quoted.fromMe ? {
    if (antiToxic)
    if (bad.includes(zimbotincv3)) {
    if (m.text) {
-   zimbotv3 = `*▊▊▊ANTIBAD WORDS▊▊▊*\n\n*Lucky you, you are admin*`
+   zimbotv3 = `*ANTIBAD WORDS*\n\n*Lucky you, you are admin*`
    if (isAdmins) return reply(zimbotv3)
    if (m.key.fromMe) return reply(zimbotv3)
    if (isCreator) return reply(zimbotv3)
    kice = m.sender
    await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
-   Wizard.sendMessage(from, {text:`*▊▊▊ANTIBAD WORDS▊▊▊*\n\n@${kice.split("@")[0]} *was kicked because of being rude to others in this group*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})}
+   Wizard.sendMessage(from, {text:`*ANTIBAD WORDS*\n\n@${kice.split("@")[0]} *was kicked because of being rude to others in this group*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})}
    }
 if (isCmd && budy.toLowerCase() != undefined) {
     if (m.chat.endsWith('broadcast')) return
