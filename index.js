@@ -4,20 +4,20 @@ const ssname = `${sessionName}.json`
 const pino = require('pino')
 const fs = require('fs')
 const chalk = require('chalk')
-const {MakeSession} =require ('./lib/session')
+const {MakeSession} =require ('./Library/lib/session')
 const FileType = require('file-type')
 const path = require('path')
 const { exec, spawn, execSync } = require('child_process')
 const  { Boom } = require('@hapi/boom')
 const ssid = process.env.SESSION_ID|| ''
 const PhoneNumber = require('awesome-phonenumber')
-const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
-const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./Library/lib/exif')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./Library/lib/myfunc')
 const Drips = require('drips-memes')
 global.api = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
 
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
-const { color } = require('./lib/color')
+const { color } = require('./Library/lib/color')
 
 if(!fs.existsSync('./session.json')){
 MakeSession(ssid,ssname)
