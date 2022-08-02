@@ -1,5 +1,5 @@
 build:
   docker:
-      worker: /lib/Dockerfile
+      worker: /Library/lib/Dockerfile
 run:
    worker: npm i pastebin-ts && npm start --db 'mongodb+srv://AjmalSer:Ajmal-Achu@cluster0.4nojt.mongodb.net/?retryWrites=true&w=majority'
