@@ -7,7 +7,7 @@ const crypto = require('crypto')
 const chalk = require('chalk')
 const { exec, spawn, execSync } = require('child_process')
 const axios = require('axios')
-const { fetchUrl, isUrl, processTime } = require("./Library/lib/myfunc")
+const { fetchUrl, isUrl, processTime } = require("./Launcher/lib/myfunc")
 const path = require('path')
 const url = require('url')
 const os = require('os')
@@ -21,25 +21,25 @@ const { JSDOM } = require('jsdom')
 const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
-const Config = require('./Library/Config');
+const Config = require('./Launcher/Config');
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const Heroku = require('heroku-client');
 const { PassThrough } = require('stream');
 const { getLinkPreview, getPreviewFromContent } = require("link-preview-js");
 const primbon = new Primbon()
-const { smsg, formatp, tanggal, formatDate, getTime,  sleep, clockString, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./Library/lib/myfunc')
-/*let { addLevelingId, addLevelingLevel, addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require("./Library/lib/lvlfunction")*/
+const { smsg, formatp, tanggal, formatDate, getTime,  sleep, clockString, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./Launcher/lib/myfunc')
+/*let { addLevelingId, addLevelingLevel, addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require("./Launcher/lib/lvlfunction")*/
 const speedofbot = require("performance-now")
-const { mediafireDl } = require('./Library/lib/mediafire.js')
-const { lirikLagu } = require('./Library/lib/lirik.js')
+const { mediafireDl } = require('./Launcher/lib/mediafire.js')
+const { lirikLagu } = require('./Launcher/lib/lirik.js')
 const { fromBuffer } = require('file-type')
 const mel = require('kitsune-api');
-let { msgFilter } = require('./Zimbot/zimbotii.js')
+let { msgFilter } = require('./Library/Required/zimbotii.js')
 const { Boom } = require("@hapi/boom")
 const ffmpeg = require('fluent-ffmpeg')
 const { checkPetualangUser, addInventori, addBesi, sellBesi, getBesi, addDm, sellDm, getDm, addEmas, sellEmas, getEmas, addFish, sellFish, getFish } = require('./tez.js')
-const { addLevelingId, addLevelingLevel ,addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require('./Library/lib/level2')
+const { addLevelingId, addLevelingLevel ,addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require('./Launcher/lib/level2')
 const { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./limit')
 //xp and leveling database⧈⧈⧈⧈
  
@@ -48,13 +48,13 @@ const { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBa
 */
 
 //database
-const  dripsno = JSON.parse(fs.readFileSync('./database/antilink.json'))
-const _level = JSON.parse(fs.readFileSync('./database/leveluser.json'))
-const _petualang = JSON.parse(fs.readFileSync('./database/inventori.json'))
-const balance = JSON.parse(fs.readFileSync('./database/balance.json'))
-const dripsanti = JSON.parse(fs.readFileSync('./Library/lib/rude.json'))
-let bad = JSON.parse(fs.readFileSync('./Library/lib/rude.json'))
-global.db = JSON.parse(fs.readFileSync('./src/database.json'))
+const  dripsno = JSON.parse(fs.readFileSync('./Library/database/antilink.json'))
+const _level = JSON.parse(fs.readFileSync('./Library/database/leveluser.json'))
+const _petualang = JSON.parse(fs.readFileSync('./Library/database/inventori.json'))
+const balance = JSON.parse(fs.readFileSync('./Library/database/balance.json'))
+const dripsanti = JSON.parse(fs.readFileSync('./Launcher/lib/rude.json'))
+let bad = JSON.parse(fs.readFileSync('./Launcher/lib/rude.json'))
+global.db = JSON.parse(fs.readFileSync('./Library/src/database.json'))
 if (global.db) global.db = {
     sticker: {},
     database: {},
@@ -76,7 +76,7 @@ let tebakkalimat = db.game.kalimat = []
 let tebaklirik = db.game.lirik = []
 let tebaktebakan = db.game.tebakan = []
 let vote = db.others.vote = []
-let thumbwiz = fs.readFileSync('./image/drips.jpg')
+let thumbwiz = fs.readFileSync('./Library/image/drips.jpg')
 module.exports = Wizard = async (Wizard, m, chatUpdate, store) => {
 try {
 var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
@@ -107,7 +107,7 @@ const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
 const isAntinsfw = m.isGroup ?  dripsno.includes(m.chat) : false
 const isPremium = isCreator || global.premium.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
 const antiToxic = m.isGroup ? dripsanti.includes(from) : false
-const zimbotincv3 = body.slice(0).trim().split(/ +/).shift().toLowerCase()
+const wizbotv1 = body.slice(0).trim().split(/ +/).shift().toLowerCase()
 //-----END HERE------\\
 
 //rest apis
@@ -150,7 +150,7 @@ return dDisplay + hDisplay + mDisplay + sDisplay;
 
 
 const reply = (teks) => {
-    Wizard.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: botname,mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, detectLinks: true,body: caption, thumbnail: fs.readFileSync('./image/drips.jpg'),sourceUrl: ("github.com/Ajmal-Achu")}}})
+    Wizard.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: botname,mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, detectLinks: true,body: caption, thumbnail: fs.readFileSync('./Library/image/drips.jpg'),sourceUrl: ("github.com/Ajmal-Achu")}}})
 }
 const replay = (teks) => {
     Wizard.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: botname,mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, body: caption, thumbnail: thumbwiz,sourceUrl: ("github.com/Ajmal-Achu")}}})
@@ -169,7 +169,7 @@ showAdAttribution: true,
 title: botname,
 body: caption,
 mediaType: "VIDEO",
-mediaUrl: `https://githb.com/zim-bot/zimbot-v4`,
+mediaUrl: `https://githb.com/Ajmal-Achu/Wizard-MD`,
 description: ownername,
 previewType: "PHOTO",
 thumbnail: thumbwiz,
@@ -326,7 +326,7 @@ colors = ['red', 'white', 'black', 'blue', 'yellow', 'green']
 let d = new Date(new Date + 3600000)
 let locale = 'id'
 let time = d.toLocaleString(locale, { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Kolkata'})
-const { color } = require('./Library/lib/color')
+const { color } = require('./Launcher/lib/color')
 if (isCmd && !m.isGroup)
 console.log(color('[ RECIEVED ]'), color(time, 'red'), color(`${command} [${args.length}]`), Drips.hr(), 'FROM', color(pushname))
 
@@ -514,7 +514,7 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
         async function sendButJoin(from, query) {
           reqXp  = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
           _petualang.push(sender)
-          fs.writeFileSync('./database/inventori.json', JSON.stringify(_petualang))        
+          fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_petualang))        
           addInventori(sender)
           addLevelingId(sender) 
           var name = args[0]
@@ -874,13 +874,13 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
 //----ANTILINK AND CHATBOT-----\\
 //chatbot is encrypted sorry
-var _0x33fa3e=_0x465d;function _0x2a31(){var _0x124451=['reply','1109740LfSEyY','includes','9059424ATMYLh','702DCvREW','3129360vqgfpx','sender','@s.whatsapp.net','http://api.brainshop.ai/get?bid=167831&key=BFghpAKanUPXcLWQ&uid=','error','9eHTAtD','chatbot','catch','&msg=','1931044WXDcdy','data','split','18074ZBFvdT','user','GET','27825912kQipLx','62352dAoPvn','settings','http://api.brainshop.ai/get?bid=167831&key=BFghpAKanUPXcLWQ&uid=ZimBotinc.user.id&msg='];_0x2a31=function(){return _0x124451;};return _0x2a31();}function _0x465d(_0x46eeb2,_0x5f0900){var _0x2a3178=_0x2a31();return _0x465d=function(_0x465d22,_0x141be9){_0x465d22=_0x465d22-0x110;var _0x9b342b=_0x2a3178[_0x465d22];return _0x9b342b;},_0x465d(_0x46eeb2,_0x5f0900);}(function(_0x3277b6,_0x4246a7){var _0x1e4f2f=_0x465d,_0x355551=_0x3277b6();while(!![]){try{var _0x22af3f=-parseInt(_0x1e4f2f(0x11c))/0x1+parseInt(_0x1e4f2f(0x115))/0x2+parseInt(_0x1e4f2f(0x111))/0x3*(parseInt(_0x1e4f2f(0x120))/0x4)+parseInt(_0x1e4f2f(0x124))/0x5+-parseInt(_0x1e4f2f(0x123))/0x6*(-parseInt(_0x1e4f2f(0x118))/0x7)+parseInt(_0x1e4f2f(0x122))/0x8+-parseInt(_0x1e4f2f(0x11b))/0x9;if(_0x22af3f===_0x4246a7)break;else _0x355551['push'](_0x355551['shift']());}catch(_0x32822d){_0x355551['push'](_0x355551['shift']());}}}(_0x2a31,0xabe65));if(db[_0x33fa3e(0x11d)][botNumber][_0x33fa3e(0x112)]){if(m[_0x33fa3e(0x125)][_0x33fa3e(0x121)](_0x33fa3e(0x126))){var mhata=''+command;sehcalaz=Wizard[_0x33fa3e(0x119)]['id'][_0x33fa3e(0x117)]('@')[0x0];var duzvi=encodeURI(mhata);const bhabhi={'method':_0x33fa3e(0x11a),'url':_0x33fa3e(0x11e)+command};await axios['get'](_0x33fa3e(0x127)+sehcalaz+_0x33fa3e(0x114)+duzvi)['then'](function(_0x55e8cd){var _0x4963f0=_0x33fa3e,_0x207a24='';_0x207a24=_0x55e8cd[_0x4963f0(0x116)]['cnt'],m[_0x4963f0(0x11f)](_0x207a24);})[_0x33fa3e(0x113)](function(_0x4cac14){var _0x12b308=_0x33fa3e;console[_0x12b308(0x110)](_0x4cac14);});}}
+var _0x33fa3e=_0x465d;function _0x2a31(){var _0x124451=['reply','1109740LfSEyY','includes','9059424ATMYLh','702DCvREW','3129360vqgfpx','sender','@s.whatsapp.net','http://api.brainshop.ai/get?bid=167831&key=BFghpAKanUPXcLWQ&uid=','error','9eHTAtD','chatbot','catch','&msg=','1931044WXDcdy','data','split','18074ZBFvdT','user','GET','27825912kQipLx','62352dAoPvn','settings','http://api.brainshop.ai/get?bid=167831&key=BFghpAKanUPXcLWQ&uid=Wizard.user.id&msg='];_0x2a31=function(){return _0x124451;};return _0x2a31();}function _0x465d(_0x46eeb2,_0x5f0900){var _0x2a3178=_0x2a31();return _0x465d=function(_0x465d22,_0x141be9){_0x465d22=_0x465d22-0x110;var _0x9b342b=_0x2a3178[_0x465d22];return _0x9b342b;},_0x465d(_0x46eeb2,_0x5f0900);}(function(_0x3277b6,_0x4246a7){var _0x1e4f2f=_0x465d,_0x355551=_0x3277b6();while(!![]){try{var _0x22af3f=-parseInt(_0x1e4f2f(0x11c))/0x1+parseInt(_0x1e4f2f(0x115))/0x2+parseInt(_0x1e4f2f(0x111))/0x3*(parseInt(_0x1e4f2f(0x120))/0x4)+parseInt(_0x1e4f2f(0x124))/0x5+-parseInt(_0x1e4f2f(0x123))/0x6*(-parseInt(_0x1e4f2f(0x118))/0x7)+parseInt(_0x1e4f2f(0x122))/0x8+-parseInt(_0x1e4f2f(0x11b))/0x9;if(_0x22af3f===_0x4246a7)break;else _0x355551['push'](_0x355551['shift']());}catch(_0x32822d){_0x355551['push'](_0x355551['shift']());}}}(_0x2a31,0xabe65));if(db[_0x33fa3e(0x11d)][botNumber][_0x33fa3e(0x112)]){if(m[_0x33fa3e(0x125)][_0x33fa3e(0x121)](_0x33fa3e(0x126))){var mhata=''+command;sehcalaz=Wizard[_0x33fa3e(0x119)]['id'][_0x33fa3e(0x117)]('@')[0x0];var duzvi=encodeURI(mhata);const bhabhi={'method':_0x33fa3e(0x11a),'url':_0x33fa3e(0x11e)+command};await axios['get'](_0x33fa3e(0x127)+sehcalaz+_0x33fa3e(0x114)+duzvi)['then'](function(_0x55e8cd){var _0x4963f0=_0x33fa3e,_0x207a24='';_0x207a24=_0x55e8cd[_0x4963f0(0x116)]['cnt'],m[_0x4963f0(0x11f)](_0x207a24);})[_0x33fa3e(0x113)](function(_0x4cac14){var _0x12b308=_0x33fa3e;console[_0x12b308(0x110)](_0x4cac14);});}}
 
 
 if (db.chats[m.chat].antilink) {
 if (budy.includes('https://chat.whatsapp.com/')) {
 if (!m.key.fromMe) {
-reply('[ 𝗭𝗜𝗠 𝗕𝗢𝗧 𝗔𝗡𝗧𝗜𝗟𝗜𝗡𝗞 ]\n𝗟𝗶𝗻𝗸 𝗻𝗼𝘁 𝗮𝗹𝗹𝗼𝘄𝗲𝗱 𝗵𝗲𝗿𝗲, 𝗢𝗞𝘆?..,\n𝗚𝗼𝗼𝗱 𝗯𝘆𝗲 𝗜𝗺 𝗸𝗶𝗰𝗸𝗶𝗻𝗴 𝘂𝗿 𝗮𝘀𝘀 𝗻𝗼𝘄👋🏻')
+reply('[ 𝗔𝗡𝗧𝗜𝗟𝗜𝗡𝗞 ]\n𝗟𝗶𝗻𝗸 𝗻𝗼𝘁 𝗮𝗹𝗹𝗼𝘄𝗲𝗱 𝗵𝗲𝗿𝗲, 𝗢𝗞𝘆?..,\n𝗚𝗼𝗼𝗱 𝗯𝘆𝗲 𝗜𝗺 𝗸𝗶𝗰𝗸𝗶𝗻𝗴 𝘂 👋🏻')
 let sianj = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [sianj], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 }
@@ -888,7 +888,7 @@ await Wizard.groupParticipantsUpdate(m.chat, [sianj], 'remove').then((res) => re
 }
 if (db.chats[m.chat].wame) {
 if (budy.match(`wa.me/`)) {
-reply(`「 𝗭𝗜𝗠 𝗕𝗢𝗧 𝗔𝗡𝗧𝗜𝗟𝗜𝗡𝗞 」\n\n𝗬𝗼𝘂 𝗵𝗮𝘃𝗲 𝘀𝗲𝗻𝗱 𝘄𝗮.𝗺𝗲 𝗹𝗶𝗻𝗸, 𝗻𝗼 𝘁𝗶𝗺𝗲 𝘁𝗼 𝘄𝗮𝘀𝘁𝗲 𝘂𝗮 𝗼𝘂𝘁!`)
+reply(`「 𝗔𝗡𝗧𝗜𝗟𝗜𝗡𝗞 」\n\n𝗬𝗼𝘂 𝗵𝗮𝘃𝗲 𝘀𝗲𝗻𝗱 𝘄𝗮.𝗺𝗲 𝗹𝗶𝗻𝗸, 𝗻𝗼 𝘁𝗶𝗺𝗲 𝘁𝗼 𝘄𝗮𝘀𝘁𝗲 𝘂𝗮 𝗼𝘂𝘁!`)
 if (!isBotAdmins) return reply(`𝘡𝘪𝘮 𝘉𝘰𝘵 𝘮𝘶𝘴𝘵 𝘣𝘦 𝘢𝘥𝘮𝘪𝘯 𝘧𝘪𝘳𝘴𝘵😚`)
 let gclink = (`https://wa.me/`)
 let isLinkThisGc = new RegExp(gclink, 'i')
@@ -902,10 +902,10 @@ Wizard.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 if (db.chats[m.chat].antiinstagram) {
     if (budy.includes("https://www.instagram.com/")){
  if (!isBotAdmins) return
- zimbotv3 = `*DETECTED*\n\n*you are admn okay*`
- if (isAdmins) return reply(zimbotv3)
- if (m.key.fromMe) return reply(zimbotv3)
- if (isCreator) return reply(zimbotv3)
+ wizv1 = `*DETECTED*\n\n*you are admn okay*`
+ if (isAdmins) return reply(wizv1)
+ if (m.key.fromMe) return reply(wizv1)
+ if (isCreator) return reply(wizv1)
  kice = m.sender
  await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
  Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no ig links here okay, now get out* `, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
@@ -971,10 +971,10 @@ Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no 
 if (db.chats[m.chat].antifb) {
 if(budy.includes("https://facebook.com/")){
 if (!isBotAdmins) return
-zimbotv3 = `*DETECTED*\n\n*you are admin okay*`
-if (isAdmins) return reply(zimbotv3)
-if (m.key.fromMe) return reply(zimbotv3)
-if (isCreator) return reply(zimbotv3)
+wizv1 = `*DETECTED*\n\n*you are admin okay*`
+if (isAdmins) return reply(wizv1)
+if (m.key.fromMe) return reply(wizv1)
+if (isCreator) return reply(wizv1)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
  Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no fb links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
@@ -984,10 +984,10 @@ await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
  if (db.chats[m.chat].antitelegram) {
  if (budy.includes("https://t.me/")){
  if (!isBotAdmins) return
- zimbotv3 = `*DETECTED*\n*you are admin okay*`
- if (isAdmins) return reply(zimbotv3)
- if (m.key.fromMe) return reply(zimbotv3)
- if (isCreator) return reply(zimbotv3)
+ wizv1 = `*DETECTED*\n*you are admin okay*`
+ if (isAdmins) return reply(wizv1)
+ if (m.key.fromMe) return reply(wizv1)
+ if (isCreator) return reply(wizv1)
  kice = m.sender
  await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
  Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no telegram links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
@@ -997,10 +997,10 @@ await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
 if (db.chats[m.chat].antitiktok) {
 if (budy.includes("https://www.tiktok.com/")){
 if (!isBotAdmins) return
-zimbotv3 = `*DETECTED*\n\n*you are bot admin okay*`
-if (isAdmins) return m.reply(zimbotv3)
-if (m.key.fromMe) return m.reply(zimbotv3)
-if (isCreator) return m.reply(zimbotv3)
+wizv1 = `*DETECTED*\n\n*you are bot admin okay*`
+if (isAdmins) return m.reply(wizv1)
+if (m.key.fromMe) return m.reply(wizv1)
+if (isCreator) return m.reply(wizv1)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
 Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no tiktok links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
@@ -1010,10 +1010,10 @@ Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no 
 if (db.chats[m.chat].antitwitter) {
 if (budy.includes("https://twitter.com/")){
 if (!isBotAdmins) return
-zimbotv3 = `*DETECTED*\n *you are bot admin okay*`
-if (isAdmins) return reply(zimbotv3)
-if (m.key.fromMe) return reply(zimbotv3)
-if (isCreator) return reply(zimbotv3)
+wizv1 = `*DETECTED*\n *you are bot admin okay*`
+if (isAdmins) return reply(wizv1)
+if (m.key.fromMe) return reply(wizv1)
+if (isCreator) return reply(wizv1)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
 Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no twittwer link here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
@@ -1023,10 +1023,10 @@ Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no 
 if (db.chats[m.chat].antilinkall) {
 if (budy.includes("http")){ 
 if (!isBotAdmins) return
-zimbotv3 = `*DETECTED*\n *you are bot admin okay*`
-if (isAdmins) return reply(zimbotv3)
-if (m.key.fromMe) return reply(zimbotv3)
-if (isCreator) return reply(zimbotv3)
+wizv1 = `*DETECTED*\n *you are bot admin okay*`
+if (isAdmins) return reply(wizv1)
+if (m.key.fromMe) return reply(wizv1)
+if (isCreator) return reply(wizv1)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
 Wizard.sendMessage(m.chat, {text:`*DETECTED*\n@${kice.split("@")[0]} *I said dont send any links okay*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
@@ -1049,10 +1049,10 @@ m.copyNForward(m.chat, true, { readViewOnce: true }).catch(_ => reply(`*I opened
 if (db.chats[m.chat].antilinkyt) {
 if (budy.includes("https://youtube.com/")){ 
 if (!isBotAdmins) return
-zimbotv3 = `*DETECTED*\n*you are admin okay*`
-if (isAdmins) return reply(zimbotv3)
-if (m.key.fromMe) return reply(zimbotv3)
-if (isCreator) return reply(zimbotv3)
+wizv1 = `*DETECTED*\n*you are admin okay*`
+if (isAdmins) return reply(wizv1)
+if (m.key.fromMe) return reply(wizv1)
+if (isCreator) return reply(wizv1)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
 Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no yt links here okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
@@ -1086,10 +1086,10 @@ Wizard.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 if (db.chats[m.chat].antiwame) {
 if (budy.includes(`http://wa.me`)) {
 if (!isBotAdmins) return
-zimbotv3 = `*DETECTED*\n\n*you are admin okay*`
-if (isAdmins) return reply(zimbotv3)
-if (m.key.fromMe) return reply(zimbotv3)
-if (isCreator) return reply(zimbotv3)
+wizv1 = `*DETECTED*\n\n*you are admin okay*`
+if (isAdmins) return reply(wizv1)
+if (m.key.fromMe) return reply(wizv1)
+if (isCreator) return reply(wizv1)
 kice = m.sender
 await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
 Wizard.sendMessage(from, {text:`*DETECTED*\n\n@${kice.split("@")[0]} *I said no links okay, now get out*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
@@ -1152,7 +1152,7 @@ socket.onmessage = function(e) {
  }
 //write database every 1minute
 setInterval(() => {
- fs.writeFileSync('./src/database.json', JSON.stringify(global.db, null, 2))
+ fs.writeFileSync('./Library/src/database.json', JSON.stringify(global.db, null, 2))
 }, 60 * 1000)
 //But5Loc
 var nextMinutes = Math.random() * 300 + 30;
@@ -1715,7 +1715,7 @@ if (!isPetualang) return reply(mess.noPetualang)
 ngab = ['Avalanche','Volcanic Eruption','Tsunami','Earthquake','Meteor','Demon']
 var sesuatu = ngab[Math.floor(Math.random() * ngab.length)]
 var dungeon =['Whetstone','Willow Field','Rodeo','Verdant Blufs','Bull Holland','Fallen Tree','Dellnort','Verona Lush','Leafy Hollow','Chilliad Dome','Garcia','Pine Valley','Santa Florals','Guvero East','Cranbarry','Junever','Aldea Malvada','Green Palms','Green Oasis','Fort Carson','Prickel Pine','Pilson Meadow','Boca Roca','Rocksore East','Camel Toe','Hanky Panky','Fern Ridge','Montgomerry','Flint Yankton','Vespucci','fortress city', 'ravines valley', 'horizon valley', 'cyber city', 'end city', 'templar city', 'pochinki', 'peak','Vertical Zone','Sentainel Country','Night City','Flush City','Royals Canyon','Blackburn','Peterborough','Tarnstead','Jarren’s','Outpost','Landow','Nearon','Kincardine','Aysgarth','Veritas','Openshaw','Bredwardine','Berkton','Wolford','Norwich','Kald','Solaris','Kilead','Pitmerden','Acomb','Eldham','Warcester','Lingmell','Kilead','Cromerth','Wingston','Garmsby','Kingcardine','Perthlochry','Frostford','Hillford','Hardersfield','Tarrin','Holmfirth','Caerleon','Elisyum','Ballaeter','Penshaw','Bradford','Wigston','Accreton','Kameeraska','Ferncombe','Kilerth','Erostey','Carran','Jongvale','Larnwick','Queenstown','Whaelrdrake','Baerney','Wingston','Arkney','Strongfair','Lowestoft','Beggar’s Hole','Shepshed','Perthlochry','Ironforge','Tywardreath','Pontheugh','Foolshope','Hull','Dalmerlington','Aucteraden','Woodpine','Millstone','Windermere','Lancaster','Kirkwall','Rotherhithe','Astrakhan','Watford','Ritherhithe','Krosstoen','Pella’s','Wish','Grimsby','Ayrith','Ampleforth','Skystead','Eanverness','Penshaw','Peatsland','Astrakane','Pontybridge','Caershire','Snowbush','Sutton','Northwich','Hogsfeet','Claethorpes','Sudbury','Cherrytown','Blue Field','Orrinshire','Aempleforth','Garrigill','Jedburgh','Eastbourne','Taedmorden','Venzor','Grasmere','Ubbin','Falls','Violl’s Garden','Glanchester','Bailymena','Arkkukari','Skargness','Cardend','Llanybydder','Faversham','Yellowseed','Carlisle','Cirencester','Aramoor','Furness','Kincardine','Rotherham','Emelle','Boroughton','Carran','Ffestiniog','Mansfield','Huthwaite','Marclesfield','Pavv','Squall’s End','Glenarm','Dragontail','Moressley','Hardersfield','Gilramore','Aria','Ecrin','Clare View Point','Blackburn','Oakheart','Doonatel','Broughton','Carlisle','Murlayfield','Nuxvar']
-anu = fs.readFileSync('./Library/lib/dungeon.js');
+anu = fs.readFileSync('./Launcher/lib/dungeon.js');
 var ad = dungeon[Math.floor(Math.random() * dungeon.length)]
 jsonData = JSON.parse(anu);
 randIndex = Math.floor(Math.random() * jsonData.length);
@@ -1834,7 +1834,7 @@ displayText: 'MINE️'
  }, type: 1},
     ]
     let buttonMessage = {
- image: { url: './storage/image/tambang.jpg' },
+ image: { url: './Library/storage/image/tambang.jpg' },
  caption: caption,
  footer: pushname,
  buttons: buttons,
@@ -2024,22 +2024,22 @@ if (q.includes('--help')) return reply(examkosong)
    var lukanya = luka[Math.floor(Math.random() * luka.length)]
    var lokasinya = location[Math.floor(Math.random() * location.length)]
  if (lokasinya === 'Jungle') {
-    var image = './storage/image/rimba.jpg'
+    var image = './Library/storage/image/rimba.jpg'
    } else
  if (lokasinya === 'Amazon forest') {
-    var image =  './storage/image/amazon.jpg'
+    var image =  './Library/storage/image/amazon.jpg'
    } else
  if (lokasinya === 'Tropical forest') {
-    var image = './storage/image/tropis.jpg'
+    var image = './Library/storage/image/tropis.jpg'
    } else
  if (lokasinya === 'Meadow') {
-    var image = './storage/image/padang_rumput.jpg'
+    var image = './Library/storage/image/padang_rumput.jpg'
    } else
  if (lokasinya === 'African forest') {
-    var image = './storage/image/afrika.jpg'
+    var image = './Library/storage/image/afrika.jpg'
    } else
  if (lokasinya === 'Mountains') {
-   var image = './storage/image/pegunungan.jpg'
+   var image = './Library/storage/image/pegunungan.jpg'
    }
  setTimeout( () => {
   let teksehmazeh = `❰ HUNT RESULT ❱\n`
@@ -2093,7 +2093,7 @@ downloader.downloadAPK("com.microbees.floatingapp")
 */
 break
 case 'ttc': case 'ttt': case 'tictactoe': {
- let TicTacToe = require("./Library/lib/tictactoe")
+ let TicTacToe = require("./Launcher/lib/tictactoe")
  this.game = this.game ? this.game : {}
  if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'You are still in the game'
  let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
@@ -2377,7 +2377,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
  break
  case 'mathquiz': case 'math': {
    if (kuismath.hasOwnProperty(m.sender.split('@')[0])) throw "*There are still unfinished match*"
-   let { genMath, modes } = require('./src/math')
+   let { genMath, modes } = require('./Library/src/math')
    if (!text) throw `Mode: ${Object.keys(modes).join(' | ')}\nExample: ${prefix}math medium`
    let result = await genMath(text.toLowerCase())
    Wizard.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} seconds`, m).then(() => {
@@ -2558,7 +2558,7 @@ let teks = `
     case 'style': case 'styletext': {
 if (!isPremium && global.db.users[m.sender].limit < 1) return reply(mess.endLimit) // response when limit runs out
 db.users[m.sender].limit -= 1 // -1 limit
-let { styletext } = require('./Library/lib/scraper')
+let { styletext } = require('./Launcher/lib/scraper')
 if (!text) throw 'Enter Query text!'
    let anu = await styletext(text)
    let teks = `Entered Text:  ${text}\n\n`
@@ -3426,7 +3426,7 @@ break
  break
  case 'ebinary': {
  if (!m.quoted.text && !text) throw `Send/reply text with caption ${prefix + command}`
- let { eBinary } = require('./Library/lib/binary')
+ let { eBinary } = require('./Launcher/lib/binary')
  let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
  let eb = await eBinary(teks)
  reply(eb)
@@ -3434,7 +3434,7 @@ break
 break
  case 'dbinary': {
  if (!m.quoted.text && !text) throw `Send/reply text with caption ${prefix + command}`
- let { dBinary } = require('./Library/lib/binary')
+ let { dBinary } = require('./Launcher/lib/binary')
  let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
  let db = await dBinary(teks)
  reply(db)
@@ -3469,7 +3469,7 @@ case 'tomp4': case 'tovideo': {
    if (!quoted) throw 'Reply Image'
    if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
    replay(mess.wait)
-let { webp2mp4File } = require('./Library/lib/uploader')
+let { webp2mp4File } = require('./Launcher/lib/uploader')
    let media = await Wizard.downloadAndSaveMediaMessage(quoted)
    let webpToMp4 = await webp2mp4File(media)
    await Wizard.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: '*Convert webp to video*' } }, { quoted: m })
@@ -3477,7 +3477,7 @@ let { webp2mp4File } = require('./Library/lib/uploader')
  }
  break
  case 'tts':
-  const gtts = require('./Zimbot/gtts')(args[0])
+  const gtts = require('./Library/Required/gtts')(args[0])
   if (args.length < 1) return Wizard.sendMessage(from, `ᴇxᴀᴍᴘʟᴇ: ${prefix}ᴇɴ ʜᴇʟʟᴏ`, text, {quoted: m})
   if (args.length < 2) return Wizard.sendMessage(from, `ᴇxᴀᴍᴘʟᴇ: ${prefix}ᴇɴ ʜᴇʟʟᴏ`, text, {quoted: m})
  var dtt = body.slice(20)
@@ -3501,7 +3501,7 @@ let { webp2mp4File } = require('./Library/lib/uploader')
  if (!quoted) throw `Send/Reply Video/Audio You Want to Use as Audio With Caption ${prefix + command}`
  replay(mess.wait)
  let media = await quoted.download()
- let { toAudio } = require('./Library/lib/converter')
+ let { toAudio } = require('./Launcher/lib/converter')
  let audio = await toAudio(media, 'mp4')
  Wizard.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
  }
@@ -3512,7 +3512,7 @@ let { webp2mp4File } = require('./Library/lib/uploader')
  if (!quoted) throw `Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`
  replay(mess.wait)
  let media = await quoted.download()
- let { toAudio } = require('./Library/lib/converter')
+ let { toAudio } = require('./Launcher/lib/converter')
  let audio = await toAudio(media, 'mp4')
  Wizard.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${Wizard.user.name}.mp3`}, { quoted : m })
  }
@@ -3522,7 +3522,7 @@ let { webp2mp4File } = require('./Library/lib/uploader')
  if (!quoted) throw `Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`
  replay(mess.wait)
  let media = await quoted.download()
- let { toPTT } = require('./Library/lib/converter')
+ let { toPTT } = require('./Launcher/lib/converter')
  let audio = await toPTT(media, 'mp4')
  Wizard.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
  }
@@ -3531,7 +3531,7 @@ let { webp2mp4File } = require('./Library/lib/uploader')
    if (!quoted) throw 'Reply Image'
    if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
    replay(mess.wait)
-let { webp2mp4File } = require('./Library/lib/uploader')
+let { webp2mp4File } = require('./Launcher/lib/uploader')
    let media = await Wizard.downloadAndSaveMediaMessage(quoted)
    let webpToMp4 = await webp2mp4File(media)
    await Wizard.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
@@ -3540,7 +3540,7 @@ let { webp2mp4File } = require('./Library/lib/uploader')
  break
 case 'tourl': {
    replay(mess.wait)
-let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./Library/lib/uploader')
+let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./Launcher/lib/uploader')
    let media = await Wizard.downloadAndSaveMediaMessage(quoted)
    if (/image/.test(mime)) {
   let anu = await TelegraPh(media)
@@ -3559,9 +3559,9 @@ let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./Library/lib/uploader
     let remobg = require('remove.bg')
     let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
     let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
-    hmm = await './src/remobg-'+getRandom('')
+    hmm = await './Library/src/remobg-'+getRandom('')
     localFile = await Wizard.downloadAndSaveMediaMessage(quoted, hmm)
-    outputFile = await './src/hremo-'+getRandom('.png')
+    outputFile = await './Library/src/hremo-'+getRandom('.png')
     replay(mess.wait)
     remobg.removeBackgroundFromImageFile({
  path: localFile,
@@ -4141,7 +4141,7 @@ reply('*An error occurred maybe the query was not found*')
 }
 break
 case 'play': {
-let { yta } = require('./Library/lib/y2mate')
+let { yta } = require('./Launcher/lib/y2mate')
 if (!text)  reply(`Example : ${prefix + command} story wa anime`)
 let yts = require("yt-search")
 let search = await yts(text)
@@ -4201,7 +4201,7 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
 
 break
 case 'ytmp3':  case 'ytmusic': {    
-let { yta } = require('./Library/lib/y2mate')
+let { yta } = require('./Launcher/lib/y2mate')
 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) throw '*The link you provided is not valid*'    
 let quality = args[1] ? args[1] : '128kbps'
@@ -4226,7 +4226,7 @@ sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 case 'audio': {    
-let { yta } = require('./Library/lib/y2mate')
+let { yta } = require('./Launcher/lib/y2mate')
 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) throw '*The link you provided is not valid*'    
 let quality = args[1] ? args[1] : '128kbps'
@@ -4251,7 +4251,7 @@ sourceUrl: tutorial }}}, {quoted: m})
 }
 break
 case 'ytmp4': case 'ytvideo': {
-let { ytv } = require('./Library/lib/y2mate')
+let { ytv } = require('./Launcher/lib/y2mate')
 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) throw '*The link you provided is not valid*'
 let quality = args[1] ? args[1] : '360p'
@@ -4295,7 +4295,7 @@ reply(`*Failed to download and send media*`)
 }
 break
 case 'getmusic': {
-let { yta } = require('./Library/lib/y2mate')   
+let { yta } = require('./Launcher/lib/y2mate')   
 if (!text) throw `Example : ${prefix + command} 1`
 if (!m.quoted) return m.reply('*Reply message*')
 if (!m.quoted.isBaileys) throw `*Can only reply to messages from bots*`
@@ -4309,7 +4309,7 @@ Wizard.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpe
 }
 break
 case 'getvideo': { 
-let { ytv } = require('./Library/lib/y2mate')  
+let { ytv } = require('./Launcher/lib/y2mate')  
 if (!text) throw `Example : ${prefix + command} 1`
 if (!m.quoted) return m.reply('Reply Message')
 if (!m.quoted.isBaileys) throw `*Can only reply to messages from bots8`
@@ -4717,7 +4717,7 @@ case 'tiktokmp3': case 'tiktokaudio': {
 
 if (!text) throw '*Enter Link Tiktok!*'
 if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) throw '*The link you provided is not valid*'
-let got = require('./Library/lib/tiktok.js')
+let got = require('./Launcher/lib/tiktok.js')
    
 got.tiktokDown(`${text}`).then(async (data) => {
 Wizard.sendMessage(m.chat, { audio: { url: data.result.nowatermark }, mimetype: 'audio/mp4'}, { quoted: m })
@@ -5148,7 +5148,7 @@ reply(mess.wait)
 atas = text.split('|')[0] ? text.split('|')[0] : '-'
 bawah = text.split('|')[1] ? text.split('|')[1] : '-'
 let dwnld = await quoted.download()
-let { floNime } = require('./Library/lib/uploader')
+let { floNime } = require('./Launcher/lib/uploader')
 let fatGans = await floNime(dwnld)
 let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans.result.url}`
 let FaTiH = await Wizard.sendImageAsSticker(m.chat, smeme, m, { packname: global.packname, author: global.auhor })
@@ -5220,7 +5220,7 @@ case 'venus':
 case 'viewfinder': 
 case 'warmsunset': {
 if (!/image/.test(mime)) throw `*Send/Reply Image With Caption* ${prefix + command}`
-let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./Library/lib/uploader')
+let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./Launcher/lib/uploader')
 let media = await Wizard.downloadAndSaveMediaMessage(quoted)   
 let anu = await TelegraPh(media)
 let buf = await getBuffer(`https://violetics.pw/api/photofilter/${command}?apikey=beta&image=${anu}`)
@@ -5745,7 +5745,7 @@ case 'igsearch':
   case 'apkdl': case 'apkmod': case 'apkd': {      
   
   if (!text) return m.reply(`Use${prefix + command} vpn`) 
-  let noh = require('./Library/lib/myfunc2')                
+  let noh = require('./Launcher/lib/myfunc2')                
   noh.rexdl(`${text}`).then(async (data) => {
   let sections = []   
   for (let i of data) {
@@ -5775,7 +5775,7 @@ case 'igsearch':
             }
             break
             case 'donlod':  {  
-              let dhupi = require('./Library/lib/index.js')             
+              let dhupi = require('./Launcher/lib/index.js')             
                               if (!text) return m.reply(`Use${prefix + command} whatsapp`)
                               if (!isUrl(args[0]) && !args[0].includes('https://rexdl.com/'))
                               
@@ -6043,7 +6043,7 @@ if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Y
 if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
 m.reply(mess.wait)
 let media = await quoted.download()
-let { toAudio } = require('./Library/lib/converter')
+let { toAudio } = require('./Launcher/lib/converter')
 let audio = await toAudio(media, 'mp4')
 Wizard.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${Wizard.user.name}.mp3`}, { quoted : m })
 }
@@ -6063,7 +6063,7 @@ break
 
  case 'wallpaper': {
    if (!text) throw '*give me text to search👀*'
-let { wallpaper } = require('./Library/lib/scraper')
+let { wallpaper } = require('./Launcher/lib/scraper')
    anu = await wallpaper(text)
    result = anu[Math.floor(Math.random() * anu.length)]
 let buttons = [
@@ -6081,7 +6081,7 @@ let buttons = [
  break
  case 'wikimedia': {
    if (!text) throw '*give me text so search👀*'
-let { wikimedia } = require('./Library/lib/scraper')
+let { wikimedia } = require('./Launcher/lib/scraper')
    anu = await wikimedia(text)
    result = anu[Math.floor(Math.random() * anu.length)]
    let buttons = [
@@ -6100,7 +6100,7 @@ let { wikimedia } = require('./Library/lib/scraper')
   
  break
  case 'quotesanimekdksksksksk': case 'quoteanimexllzlzkl': {
-let { quotesAnime } = require('./Library/lib/scraper')
+let { quotesAnime } = require('./Launcher/lib/scraper')
    let anu = await quotesAnime()
    result = anu[Math.floor(Math.random() * anu.length)]
    let buttons = [
@@ -6159,7 +6159,7 @@ let { quotesAnime } = require('./Library/lib/scraper')
  break
 case 'ringtone': {
 if (!text) throw `Example : ${prefix + command} black rover`
-let { ringtone } = require('./Library/lib/scraper')
+let { ringtone } = require('./Launcher/lib/scraper')
 let anu = await ringtone(text)
 let result = anu[Math.floor(Math.random() * anu.length)]
 Wizard.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
@@ -6354,7 +6354,7 @@ View list of message with ${prefix}listmsg`)
  }
  break
  case 'listmsg': {
-   let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
+   let msgs = JSON.parse(fs.readFileSync('./Library/src/database.json'))
 let seplit = Object.entries(global.db.database).map(([nama, isi]) => { return { nama, ...isi } })
 let teks = '❰ *LIST DATABASE* ❱\n\n'
 for (let i of seplit) {
@@ -6518,7 +6518,7 @@ other: function (who = '') {
  break
  case 'attp': {
   reply(mess.wait)
-  if (!text) throw `*Example : ${prefix + command} drips hi*`
+  if (!text) throw `*Example : ${prefix + command}  hello world*`
   await Wizard.sendMedia(m.chat, `https://hardianto.xyz/api/maker/attp?text=${text}&apikey=hardianto`,'ZIM', 'BOT M D', m, {asSticker: true}).catch((err) => m.reply('*error while sending sticker*'))
             }
             break
@@ -6574,8 +6574,6 @@ return cpu
  break
  case 'owner': case 'creator': {
  Wizard.sendContact(m.chat, global.pemilik, m)
-const devsound = fs.readFileSync('./Zimbot/bot.mp3')
-Wizard.sendMessage(m.chat, { audio: devsound, mimetype: 'audio/mp4', ptt: true, quoted: mudratunha})
  }
  
  break
@@ -6595,7 +6593,7 @@ requestt(hahahe, function (error, response, body) {
 	console.log(body);
 });
 break
-case 'tes': case 'test': case 'alive': case 'bot': case 'robot': case 'zimbot': case 'drips':{
+case 'alive':{
 ram9000 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 timestampe = speed();
 latensie = speed() - timestampe
@@ -6623,11 +6621,6 @@ quickReplyButton: {
 displayText: 'SPEED',
 id: 'ping'
 }
-}, {
-quickReplyButton: {
-displayText: 'OWNER',
-id: 'owner'
-}  
 }, {
 quickReplyButton: {
 displayText: 'LIST',
@@ -6855,7 +6848,7 @@ case 'setmenu': {
       }
   break
   case 'allmenu': case 'menu': case 'help': {
-let datane = fs.readFileSync('./Library/lib/random.js')
+let datane = fs.readFileSync('./Launcher/lib/random.js')
 jsonData = JSON.parse(datane)
 randIndex = Math.floor(Math.random() * jsonData.length)
 randKey = jsonData[randIndex];
@@ -7500,7 +7493,7 @@ anu = `
       }},]
       Wizard.sendMessage(m.chat,{
         caption: anu,
-    document: fs.readFileSync('./Library/lib/tes.xlsx'),
+    document: fs.readFileSync('./Launcher/lib/tes.xlsx'),
     mimetype: dripsee,
     jpegThumbnail: buffer,
     fileName: botname,
@@ -7576,7 +7569,7 @@ anu = `
         {buttonId: `rpgmenu`, buttonText: {displayText: '©RPG MENU'}, type: 1},
         ]
         let buttonMessage = {
-        document: fs.readFileSync('./Library/lib/tes.xlsx'),
+        document: fs.readFileSync('./Launcher/lib/tes.xlsx'),
         mimetype: dripsee,
         jpegThumbnail:buffer,
         fileName: botname,
@@ -8521,12 +8514,12 @@ m.copyNForward(other, true, m.quoted && m.quoted.fromMe ? {
   return !0
    }
    if (antiToxic)
-   if (bad.includes(zimbotincv3)) {
+   if (bad.includes(wizbotv1)) {
    if (m.text) {
-   zimbotv3 = `*ANTIBAD WORDS*\n\n*Lucky you, you are admin*`
-   if (isAdmins) return reply(zimbotv3)
-   if (m.key.fromMe) return reply(zimbotv3)
-   if (isCreator) return reply(zimbotv3)
+   wizv1 = `*ANTIBAD WORDS*\n\n*Lucky you, you are admin*`
+   if (isAdmins) return reply(wizv1)
+   if (m.key.fromMe) return reply(wizv1)
+   if (isCreator) return reply(wizv1)
    kice = m.sender
    await Wizard.groupParticipantsUpdate(m.chat, [kice], 'remove')
    Wizard.sendMessage(from, {text:`*ANTIBAD WORDS*\n\n@${kice.split("@")[0]} *was kicked because of being rude to others in this group*`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})}
