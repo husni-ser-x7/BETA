@@ -7623,7 +7623,7 @@ anu = `
 
  「 𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨 」
 
- ```chatbot on/off
+ chatbot on/off
  setmenu -option-
  checkupdate 
  updatenow
@@ -7645,7 +7645,7 @@ anu = `
  chat -owner-
  public
  self
- grouponly```
+ grouponly
 「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
@@ -7691,13 +7691,13 @@ anu = `
 *🗃️Ram Usage:* ${ram2}
 
 「 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 𝗠𝗘𝗡𝗨 」
- ```addmsg -msg-
+ addmsg -msg-
  delmsg -msg-
  listmsg -msg-
  getmsg -msg-
  setcmd -msg-
  delcmd -msg-
- listcmd -msg-```
+ listcmd -msg-
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -7742,7 +7742,7 @@ case 'photooxymenu': {
 *🗃️Ram Usage:* ${ram2}
 
 「 𝗣𝗛𝗢𝗧𝗢𝗢𝗫𝗬 𝗠𝗘𝗡𝗨 」
- ```silk -text-
+ silk -text-
  3dnature -text-
  bevel -text-
  birthdaycake -text-
@@ -7766,7 +7766,7 @@ case 'photooxymenu': {
  woodheart -text-
  yellowroses -text-
  wolfmetal -text-
- underwaterocean -text-```
+ underwaterocean -text-
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
   const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
