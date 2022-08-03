@@ -21,7 +21,7 @@ const { JSDOM } = require('jsdom')
 const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
-const Config = require('./Library/Config');
+const Config = require('./Config');
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const Heroku = require('heroku-client');
@@ -81,7 +81,7 @@ module.exports = Wizard = async (Wizard, m, chatUpdate, store) => {
 try {
 var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
 var budy = (typeof m.text == 'string' ? m.text : '')
-var prefix = prefa ? /^[°║➭π÷║➭¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°║➭π÷║➭¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
+var prefix = prefa ? /^[°π÷¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°π÷¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
 const isCmd = body.startsWith(prefix)
 const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 const args = body.trim().split(/ +/).slice(1)
@@ -435,51 +435,51 @@ async function sendButLoc(from) {
 bufu = await getBuffer(picak+'RPG GAMES')
 var DADYDR = `
  ╔➽「 ◉ᴀʙᴏᴜᴛ◉ 」
- ║➭ *Nᴀᴍᴇ:* ${pushname}
- ║➭ *Rᴀɴᴋ:* ${role}
- ║➭ *Sᴛᴀᴛᴜꜱ:* ${elit}
- ║➭ *Mᴏɴᴇʏ:* $${(getBalance(sender, balance))}
- ║➭ *Xᴘ:* ${getLevelingXp(sender)}/${reqXp}
- ║➭ *Lᴇᴠᴇʟ:* ${getLevelingLevel(sender)}
+  *Nᴀᴍᴇ:* ${pushname}
+  *Rᴀɴᴋ:* ${role}
+  *Sᴛᴀᴛᴜꜱ:* ${elit}
+  *Mᴏɴᴇʏ:* $${(getBalance(sender, balance))}
+  *Xᴘ:* ${getLevelingXp(sender)}/${reqXp}
+  *Lᴇᴠᴇʟ:* ${getLevelingLevel(sender)}
  └───────────●
 
  ╔➽「 ◉ɪɴꜰᴏ◉ 」
- ║➭ *Mᴏɴᴇʏ:* $${(getBalance(sender, balance))}
- ║➭ *Gᴏʟᴅ:* ${getEmas(sender)}
- ║➭ *Iʀᴏɴ:* ${getBesi(sender)}
- ║➭ *Fɪꜱʜ:* ${getFish(sender)}
- ║➭ *Dɪᴀᴍᴏɴᴅ:* ${getDm(sender)}
+  *Mᴏɴᴇʏ:* $${(getBalance(sender, balance))}
+  *Gᴏʟᴅ:* ${getEmas(sender)}
+  *Iʀᴏɴ:* ${getBesi(sender)}
+  *Fɪꜱʜ:* ${getFish(sender)}
+  *Dɪᴀᴍᴏɴᴅ:* ${getDm(sender)}
  └───────────●
 
  ╔➽「 ◉ᴍᴇɴᴜ ʀᴘɢ◉ 」
- ║➭ ${prefix}joinrpg
- ║➭ ${prefix}quest 
- ║➭ ${prefix}mining
- ║➭ ${prefix}mancing
- ║➭ ${prefix}luckyday
- ║➭ ${prefix}luckytime
- ║➭ ${prefix}adventure
- ║➭ ${prefix}inventori
+  ${prefix}joinrpg
+  ${prefix}quest 
+  ${prefix}mining
+  ${prefix}mancing
+  ${prefix}luckyday
+  ${prefix}luckytime
+  ${prefix}adventure
+  ${prefix}inventori
  └───────────●
 
  ╔➽「 ◉Fᴀʀᴍ ʀᴘɢ◉ 」
- ║➭ ${prefix}killslime
- ║➭ ${prefix}killgoblin
- ║➭ ${prefix}killdevil
- ║➭ ${prefix}killbehemoth
- ║➭ ${prefix}killdemon
- ║➭ ${prefix}killdemonking 
+  ${prefix}killslime
+  ${prefix}killgoblin
+  ${prefix}killdevil
+  ${prefix}killbehemoth
+  ${prefix}killdemon
+  ${prefix}killdemonking 
  └───────────●
 
  ╔➽「 ◉Tʀᴀᴅᴇ ʀᴘɢ◉ 」
- ║➭ ${prefix}sellikan
- ║➭ ${prefix}sellbesi
- ║➭ ${prefix}sellemas
- ║➭ ${prefix}selldiamond
+  ${prefix}sellikan
+  ${prefix}sellbesi
+  ${prefix}sellemas
+  ${prefix}selldiamond
  └───────────●
 
  ╔➽「 ᴛʜᴀɴᴋs ᴛᴏ」
- ║➭ʏᴏᴜʀ ᴄʀᴇᴅɪᴛꜱ
+ ʏᴏᴜʀ ᴄʀᴇᴅɪᴛꜱ
  └───「 ${global.botname} 」
  `
 let message = await prepareWAMessageMedia({ image: bufu, jpegThumbnail:bufu }, { upload: Wizard.waUploadToServer })
@@ -530,10 +530,10 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
  ❲ *_Sᴜᴄᴄᴇꜱꜱ Jᴏɪɴ ʀᴘɢ_* ❳
  
 ╏ᴘʀᴏꜰɪʟᴇ ╏
-║➭ *Nᴀᴍᴇ :* ${name}
-║➭ *Lᴇᴠᴇʟ :* ${getLevelingLevel(sender)}
-║➭ *Sᴛᴀᴛᴜꜱ :* ${elit}
-║➭ *Xᴘ:*  ${getLevelingXp(sender)}/${reqXp}
+ *Nᴀᴍᴇ :* ${name}
+ *Lᴇᴠᴇʟ :* ${getLevelingLevel(sender)}
+ *Sᴛᴀᴛᴜꜱ :* ${elit}
+ *Xᴘ:*  ${getLevelingXp(sender)}/${reqXp}
 ❲ *_ʀᴘɢ ɢᴀᴍᴇ_* ❳`
   let message = await prepareWAMessageMedia({ image: bufut, jpegThumbnail:bufut }, { upload: Wizard.waUploadToServer })
   const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -583,7 +583,7 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-          var hg = `*Mission to kill Slime*\n\n🎁 *Reward for killing Slime*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold:* ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
+          var hg = `*Mission to kill Slime*\n\n🎁 *Reward for killing Slime*\n  *Money:* $${b}\n  *Iron:* ${c}\n  *Gold:* ${a}\n  *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
           let message = await prepareWAMessageMedia({ image: bufutI, jpegThumbnail:bufutI }, { upload: Wizard.waUploadToServer })
           const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
           templateMessage: {
@@ -632,7 +632,7 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission To kill Goblin*\n\n🎁 *Reward for killing Goblin*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold:* ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank you for carrying out this misssion*`
+            var hg = `*Mission To kill Goblin*\n\n🎁 *Reward for killing Goblin*\n  *Money:* $${b}\n  *Iron:* ${c}\n  *Gold:* ${a}\n  *Diamond:* ${d}\n\n*Thank you for carrying out this misssion*`
             let message = await prepareWAMessageMedia({ image: bufo, jpegThumbnail:bufo }, { upload: Wizard.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
             templateMessage: {
@@ -681,7 +681,7 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission to kill 𝗗𝗲𝘃𝗶𝗹️*\n\n🎁 *Reward for killing Devil*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold:* ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
+            var hg = `*Mission to kill 𝗗𝗲𝘃𝗶𝗹️*\n\n🎁 *Reward for killing Devil*\n  *Money:* $${b}\n  *Iron:* ${c}\n  *Gold:* ${a}\n  *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
             let message = await prepareWAMessageMedia({ image: bufas, jpegThumbnail:bufas }, { upload: Wizard.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
             templateMessage: {
@@ -730,7 +730,7 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission to kill Behemoth*\n\n🎁 *Reward for kiling Behemoth*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold:* ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
+            var hg = `*Mission to kill Behemoth*\n\n🎁 *Reward for kiling Behemoth*\n  *Money:* $${b}\n  *Iron:* ${c}\n  *Gold:* ${a}\n  *Diamond:* ${d}\n\n*Thank you for carrying out this mission*`
             let message = await prepareWAMessageMedia({ image: batai, jpegThumbnail: batai }, { upload: Wizard.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
               templateMessage: {
@@ -781,7 +781,7 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission to kill Demon*\n🎁 *Demon Kill Reward*\n ║➭ *Money:* $${b}\n ║➭ *Iron:* ${c}\n ║➭ *Gold*: ${a}\n ║➭ *Diamond:* ${d}\n\n*Thank You for Carrying Out This Mission*`
+            var hg = `*Mission to kill Demon*\n🎁 *Demon Kill Reward*\n  *Money:* $${b}\n  *Iron:* ${c}\n  *Gold*: ${a}\n  *Diamond:* ${d}\n\n*Thank You for Carrying Out This Mission*`
             let message = await prepareWAMessageMedia({ image: bhuu, jpegThumbnail: bhuu }, { upload: Wizard.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
               templateMessage: {
@@ -828,7 +828,7 @@ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 { quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
                 { quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
                 ]
-            var hg = `*Mission to kill DemonKing*\n\n🎁 *DemonKing Kill Reward*\n ║➭ *Money* : $${b}\n ║➭ *Iron :* ${c}\n ║➭ *Gold :* ${a}\n ║➭ *Diamond :* ${d}\n\n*Thank You for Carrying Out This Mission*`
+            var hg = `*Mission to kill DemonKing*\n\n🎁 *DemonKing Kill Reward*\n  *Money* : $${b}\n  *Iron :* ${c}\n  *Gold :* ${a}\n  *Diamond :* ${d}\n\n*Thank You for Carrying Out This Mission*`
             let message = await prepareWAMessageMedia({ image: bhuud, jpegThumbnail:bhuud }, { upload: Wizard.waUploadToServer })
             const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
             templateMessage: {
@@ -1620,7 +1620,7 @@ var reqXp  = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
 buttons = [
 { buttonId: 'adventure', buttonText: { displayText: 'Adventure' }, type: 1 }
 ]
-Wizard.sendButtonText(m.chat, buttons, `📍 𝗣𝗿𝗼𝗳𝗶𝗹𝗲 𝗣𝗹𝗮𝘆𝗲𝗿\n ║➭ Name: ${pushname}\n ║➭ Rank : ${role}\n ║➭ Status : ${elit}\n ║➭ Xp : ${getLevelingXp(sender)}/${reqXp}\n ║➭ Level : ${getLevelingLevel(sender)}\n🎒 𝗜𝗻𝘃𝗲𝗻𝘁𝗼𝗿𝗶 :\n ║➭ Gold : ${getEmas(sender)}🪙\n ║➭ Money : $${(getBalance(sender, balance))}💰\n ║➭ Iron : ${getBesi(sender)}⛓️\n ║➭ Diamond : ${getDm(sender)}💎\n ║➭ Fish : ${getFish(sender)}🎣`, Wizard.user.name, m)
+Wizard.sendButtonText(m.chat, buttons, `📍 𝗣𝗿𝗼𝗳𝗶𝗹𝗲 𝗣𝗹𝗮𝘆𝗲𝗿\n  Name: ${pushname}\n  Rank : ${role}\n  Status : ${elit}\n  Xp : ${getLevelingXp(sender)}/${reqXp}\n  Level : ${getLevelingLevel(sender)}\n🎒 𝗜𝗻𝘃𝗲𝗻𝘁𝗼𝗿𝗶 :\n  Gold : ${getEmas(sender)}🪙\n  Money : $${(getBalance(sender, balance))}💰\n  Iron : ${getBesi(sender)}⛓️\n  Diamond : ${getDm(sender)}💎\n  Fish : ${getFish(sender)}🎣`, Wizard.user.name, m)
 break
 case 'sellikan':
 if (!m.isGroup) return reply(mess.group) 
@@ -1634,7 +1634,7 @@ addBalance(sender, rp, balance)
 buttons = [
 { buttonId: 'inventori', buttonText: { displayText: 'Inventori' }, type: 1 }
 ]
-Wizard.sendButtonText(m.chat, buttons, `🛒 *MARKET*\n ║➭ Seller : ${pushname}\n ║➭ Buyer : Admin\n ║➭ Price/Fish : 5\n ║➭ Status : Success\n ║➭ Left FishPrice/Fish : ${getFish(sender)}\n ║➭ Sales Results : $${rp}`,  Wizard.user.name, m)
+Wizard.sendButtonText(m.chat, buttons, `🛒 *MARKET*\n  Seller : ${pushname}\n  Buyer : Admin\n  Price/Fish : 5\n  Status : Success\n  Left FishPrice/Fish : ${getFish(sender)}\n  Sales Results : $${rp}`,  Wizard.user.name, m)
 break
 case 'sellbesi':
 if (!m.isGroup) return reply(mess.group) 
@@ -1648,7 +1648,7 @@ addBalance(sender, rp, balance)
 buttons = [
 { buttonId: 'inventori', buttonText: { displayText: 'Inventori' }, type: 1 }
 ]
-Wizard.sendButtonText(m.chat, buttons, `🛒 MARKET\n ║➭ Seller : ${pushname}\n ║➭ Buyer : Admin\n ║➭ Harga/Besi : 10\n ║➭ Status : Sukses\n ║➭ Sisa Besi : ${getBesi(sender)}\n ║➭ Sales Results : $${rp}`, Wizard.user.name, m)
+Wizard.sendButtonText(m.chat, buttons, `🛒 MARKET\n  Seller : ${pushname}\n  Buyer : Admin\n  Harga/Besi : 10\n  Status : Sukses\n  Sisa Besi : ${getBesi(sender)}\n  Sales Results : $${rp}`, Wizard.user.name, m)
 break
 case 'sellemas':
 if (!m.isGroup) return reply(mess.group) 
@@ -1662,7 +1662,7 @@ addBalance(sender, rp, balance)
 buttons = [
 { buttonId: 'inventori', buttonText: { displayText: 'Inventori' }, type: 1 }
 ]
-Wizard.sendButtonText(m.chat, buttons, `🛒 MARKET\n ║➭ Seller : ${pushname}\n ║➭ Buyer : Admin\n ║➭ Harga/Emas : 25\n ║➭ Status : Sukses\n ║➭ Sisa Emas : ${getEmas(sender)}\n ║➭ Sales Results : $${rp}`, Wizard.user.name, m)
+Wizard.sendButtonText(m.chat, buttons, `🛒 MARKET\n  Seller : ${pushname}\n  Buyer : Admin\n  Harga/Emas : 25\n  Status : Sukses\n  Sisa Emas : ${getEmas(sender)}\n  Sales Results : $${rp}`, Wizard.user.name, m)
 break 
 case 'selldiamond':
 if (!m.isGroup) return reply(mess.group) 
@@ -1676,7 +1676,7 @@ addBalance(sender, etoo, balance)
 buttons = [
 { buttonId: 'inventori', buttonText: { displayText: 'Inventori' }, type: 1 }
 ]
-Wizard.sendButtonText(m.chat, buttons, `🛒 MARKET\n ║➭ Seller : ${pushname}\n ║➭ Buyer : Admin\n ║➭ Harga/Dm : 75\n ║➭ Status : Sukses\n ║➭ Sisa Diamond : ${getDm(sender)}\n ║➭ Sales Results : $${etoo}`, Wizard.user.name, m)
+Wizard.sendButtonText(m.chat, buttons, `🛒 MARKET\n  Seller : ${pushname}\n  Buyer : Admin\n  Harga/Dm : 75\n  Status : Sukses\n  Sisa Diamond : ${getDm(sender)}\n  Sales Results : $${etoo}`, Wizard.user.name, m)
 break 
 case 'mancing':
 if (!m.isGroup) return reply(mess.group) 
@@ -1692,7 +1692,7 @@ var button = [
 		{ quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
 		{ quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
 		]
-        var hg = `「 Memancing 」\n\n ║➭ *Capture:* ${ikannya}\n ║➭ *Total Get:* ${ditangkap} *Fish*\n ║➭ MONEY : $${coin}\n ║➭ EXP : ${xp}Xp`
+        var hg = `「 Memancing 」\n\n  *Capture:* ${ikannya}\n  *Total Get:* ${ditangkap} *Fish*\n  MONEY : $${coin}\n  EXP : ${xp}Xp`
         Wizard.sendMessage(from, { caption: hg, location: { jpegThumbnail: cing }, templateButtons: button, footer: `ʀᴘɢ ɢᴀᴍᴇ ʙʏ ${global.botname}`, mentions: [sender] })
         .catch ((err) => reply(mess.error))
 }, 6000)
@@ -1729,7 +1729,7 @@ var button = [
 		{ quickReplyButton: { displayText: `Inventori`, id: `${prefix}inventori` } },
 		{ quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } }
 		]
-        var hg = `「 DEATH 」\n\n *║➭ Place*  ${ad}\n ║➭ *MONEY :* $${money}\n ║➭ *EXP :* ${adven}Xp`
+        var hg = `「 DEATH 」\n\n * Place*  ${ad}\n  *MONEY :* $${money}\n  *EXP :* ${adven}Xp`
         Wizard.sendMessage(from, { caption: hg, location: { jpegThumbnail: hasm }, templateButtons: button, footer: `ʀᴘɢ ɢᴀᴍᴇ ʙʏ ${global.botname}`, mentions: [sender] })
         .catch ((err) => reply(mess.error))
 }, 7000)
@@ -1761,7 +1761,7 @@ addBesi(sender, c)
 buttons = [
 { buttonId: `${command}`, buttonText: { displayText: `TRY LUCKY` }, type: 1 }
 ]
-Wizard.sendButtonText(m.chat, buttons, `🎰 *Lucky*\n║➭ *Money:* $${b}\n║➭ *Gold :* ${a}\n║➭ *Iron :* ${c}\n║➭ *XP :* ${ez}`, Wizard.user.name, m)
+Wizard.sendButtonText(m.chat, buttons, `🎰 *Lucky*\n *Money:* $${b}\n *Gold :* ${a}\n *Iron :* ${c}\n *XP :* ${ez}`, Wizard.user.name, m)
 }
 break
  /*case 'xp': case 'inventory': case 'profile':{
@@ -2539,7 +2539,7 @@ break
 let teks = ` 
  ┏━━━━━━━━━━━┑
  ┃𝗧𝗔𝗚𝗔𝗟𝗟
- ┃┄┄┄┄┄┄┄┄┄┄┄║➭
+ ┃┄┄┄┄┄┄┄┄┄┄┄
  ┃*𝐌𝐄𝐒𝐒𝐀𝐆𝐄 : ${q ? q : 'blank'}*\n\n
  ┗━━━━━━━━ 
 `
@@ -6869,413 +6869,444 @@ anu = `
 
 
 
-╔➽〔 *_◉ᴍᴇɴᴜ◉_* 〕
-║➭ downloadmenu
-║➭ groupmenu
-║➭ animemenu
-║➭ searchmenu
-║➭ ownermenu
-║➭ databasemenu
-║➭ textpromenu
-║➭ ephotomenu
-║➭ toolsmenu
-║➭ convertmenu
-└───────────●
 
-╔➽〔 *_ᴛᴏᴏʟᴍᴇɴᴜ_* 〕
-║➭ ip ->-
-║➭ ipdomain -domain name-
-║➭ codecolor -text-
-║➭ hackermaker -pic url-
-║➭ checknumber -number-
-║➭ veriphone -number-
-║➭ weather -place-
-║➭ attp -text-
-║➭ ssweb-hp -url-
-║➭ shortlink -url-
-║➭ ssweb-pc -url-
-║➭ shortlinkcuttly -url-
-║➭ shortlinkisgd -url-
-║➭ brainly -query-
-└───〔 *_${global.caption}_* 〕
+「 𝗠𝗘𝗡𝗨 」
+ 𝚍𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚖𝚎𝚗𝚞
+ 𝚐𝚛𝚘𝚞𝚙𝚖𝚎𝚗𝚞
+ 𝚊𝚗𝚒𝚖𝚎𝚖𝚎𝚗𝚞
+ 𝚜𝚎𝚊𝚛𝚌𝚑𝚖𝚎𝚗𝚞
+ 𝚘𝚠𝚗𝚎𝚛𝚖𝚎𝚗𝚞
+ 𝚍𝚊𝚝𝚊𝚋𝚊𝚜𝚎𝚖𝚎𝚗𝚞
+ 𝚝𝚎𝚡𝚝𝚙𝚛𝚘𝚖𝚎𝚗𝚞
+ 𝚎𝚙𝚑𝚘𝚝𝚘𝚖𝚎𝚗𝚞
+ 𝚝𝚘𝚘𝚕𝚜𝚖𝚎𝚗𝚞
+ 𝚌𝚘𝚗𝚟𝚎𝚛𝚝𝚖𝚎𝚗𝚞
+*_${global.caption}_*
 
+「 𝗧𝗢𝗢𝗟 𝗠𝗘𝗡𝗨 」
 
-╔➽〔 *_◉ᴏᴡɴᴇʀᴍᴇɴᴜ◉_* 〕
-║➭ chatbot on/off
-║➭ setmenu -option-
-║➭ checkupdate 
-║➭ updatenow
-║➭ bc -text-
-║➭ bcall -text-
-║➭ bctext -text-
-║➭ bcvideo -media-
-║➭ bcaudio -media-
-║➭ bcimage -media-
-║➭ bcloc  -text-
-║➭ bcgc -text-
-║➭ lockcmd
-║➭ setstatus -text-
-║➭ setppbot -owner-
-║➭ block -owner-
-║➭ unblock -owner-
-║➭ join -owner-
-║➭ leave -owner-
-║➭ chat -owner-
-║➭ public
-║➭ self
-║➭ grouponly
-└───〔 *_${global.caption}_* 〕
+ 𝚒𝚙 ->-
+ 𝚒𝚙𝚍𝚘𝚖𝚊𝚒𝚗 -𝚍𝚘𝚖𝚊𝚒𝚗 𝚗𝚊𝚖𝚎-
+ 𝚌𝚘𝚍𝚎𝚌𝚘𝚕𝚘𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚑𝚊𝚌𝚔𝚎𝚛𝚖𝚊𝚔𝚎𝚛 -𝚙𝚒𝚌 𝚞𝚛𝚕-
+ 𝚌𝚑𝚎𝚌𝚔𝚗𝚞𝚖𝚋𝚎𝚛 -𝚗𝚞𝚖𝚋𝚎𝚛-
+ 𝚟𝚎𝚛𝚒𝚙𝚑𝚘𝚗𝚎 -𝚗𝚞𝚖𝚋𝚎𝚛-
+ 𝚠𝚎𝚊𝚝𝚑𝚎𝚛 -𝚙𝚕𝚊𝚌𝚎-
+ 𝚊𝚝𝚝𝚙 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚜𝚠𝚎𝚋-𝚑𝚙 -𝚞𝚛𝚕-
+ 𝚜𝚑𝚘𝚛𝚝𝚕𝚒𝚗𝚔 -𝚞𝚛𝚕-
+ 𝚜𝚜𝚠𝚎𝚋-𝚙𝚌 -𝚞𝚛𝚕-
+ 𝚜𝚑𝚘𝚛𝚝𝚕𝚒𝚗𝚔𝚌𝚞𝚝𝚝𝚕𝚢 -𝚞𝚛𝚕-
+ 𝚜𝚑𝚘𝚛𝚝𝚕𝚒𝚗𝚔𝚒𝚜𝚐𝚍 -𝚞𝚛𝚕-
+ 𝚋𝚛𝚊𝚒𝚗𝚕𝚢 -𝚚𝚞𝚎𝚛𝚢
+
+ *_${global.caption}_*
 
 
-╔➽〔 *_◉ɢʀᴏᴜᴘᴍᴇɴᴜ◉_* 〕
-║➭ add -admin-
-║➭ kick -admin-
-║➭ welcome on/off -admin-
-║➭ listpc 
-║➭ listgc
-║➭ groupinfo -admin-
-║➭ antivn -admin-
-║➭ antiphoto -admin-
-║➭ antisticker -admin-
-║➭ antivideo -admin-
-║➭ antilinkall -admin-
-║➭ antiinstagram -admin-
-║➭ antitelegram -admin-
-║➭ antilink -admin-
-║➭ antiyt -admin-
-║➭ antibule -admin-
-║➭ antitiktok -admin-
-║➭ antifacebook -admin-
-║➭ antivirus -admin-
-║➭ antibadword -admin-
-║➭ antiwame -admin-
-║➭ group -options-
-║➭ mute
-║➭ groupinfo
-║➭ truth 
-║➭ dare
-║➭ slot
-║➭ math
-║➭ vote
-║➭ devote
-║➭ cekvote
-║➭ deletevote
-║➭ upvote
-║➭ setsubject -admin-
-║➭ setdesc -admin-
-║➭ setppgroup -admin-
-║➭ tagall -admin-
-║➭ hidetag -admin-
-║➭ ephemeral
-║➭ demote -admin-
-║➭ promote -admin-
-║➭ editinfo -admin-
-└───〔 *_${global.caption}_* 〕
+「 𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨 」
+
+𝚌𝚑𝚊𝚝𝚋𝚘𝚝 𝚘𝚗/𝚘𝚏𝚏
+ 𝚜𝚎𝚝𝚖𝚎𝚗𝚞 -𝚘𝚙𝚝𝚒𝚘𝚗-
+ 𝚌𝚑𝚎𝚌𝚔𝚞𝚙𝚍𝚊𝚝𝚎 
+ 𝚞𝚙𝚍𝚊𝚝𝚎𝚗𝚘𝚠
+ 𝚋𝚌 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚌𝚊𝚕𝚕 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚌𝚝𝚎𝚡𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚌𝚟𝚒𝚍𝚎𝚘 -𝚖𝚎𝚍𝚒𝚊-
+ 𝚋𝚌𝚊𝚞𝚍𝚒𝚘 -𝚖𝚎𝚍𝚒𝚊-
+ 𝚋𝚌𝚒𝚖𝚊𝚐𝚎 -𝚖𝚎𝚍𝚒𝚊-
+ 𝚋𝚌𝚕𝚘𝚌  -𝚝𝚎𝚡𝚝-
+ 𝚋𝚌𝚐𝚌 -𝚝𝚎𝚡𝚝-
+ 𝚕𝚘𝚌𝚔𝚌𝚖𝚍
+ 𝚜𝚎𝚝𝚜𝚝𝚊𝚝𝚞𝚜 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚎𝚝𝚙𝚙𝚋𝚘𝚝 -𝚘𝚠𝚗𝚎𝚛-
+ 𝚋𝚕𝚘𝚌𝚔 -𝚘𝚠𝚗𝚎𝚛-
+ 𝚞𝚗𝚋𝚕𝚘𝚌𝚔 -𝚘𝚠𝚗𝚎𝚛-
+ 𝚓𝚘𝚒𝚗 -𝚘𝚠𝚗𝚎𝚛-
+ 𝚕𝚎𝚊𝚟𝚎 -𝚘𝚠𝚗𝚎𝚛-
+ 𝚌𝚑𝚊𝚝 -𝚘𝚠𝚗𝚎𝚛-
+ 𝚙𝚞𝚋𝚕𝚒𝚌
+ 𝚜𝚎𝚕𝚏
+ 𝚐𝚛𝚘𝚞𝚙𝚘𝚗𝚕𝚢
+
+ *_${global.caption}_*
 
 
-╔➽〔 *_◉ᴛᴇxᴛᴘʀᴏᴍᴇɴᴜ◉_* 〕
-║➭ candy -text-
-║➭ christmas -text-
-║➭ 3dchristmas -text-
-║➭ sparklechristmas -text-
-║➭ deepsea -text-
-║➭ scifi -text-
-║➭ rainbow2 -text-
-║➭ waterpipe -text-
-║➭ spooky -text-
-║➭ pencil -text-
-║➭ circuit -text-
-║➭ discovery -text-
-║➭ metalic -text-
-║➭ fiction -text-
-║➭ demon -text-
-║➭ transformer -text-
-║➭ berry -text-
-║➭ thunder -text-
-║➭ 3dstone2 -text-
-║➭ neonlight -text-
-║➭ glitch -text-
-║➭ harrypotter -text-
-║➭ brokenglass -text-
-║➭ papercut -text-
-║➭ watercolor -text-
-║➭ multicolor -text-
-║➭ neondevil -text-
-║➭ underwater -text-
-║➭ graffitibike -text-
-║➭ snow -text-
-║➭ cloud -text-
-║➭ honey -text-
-║➭ ice -text-
-║➭ fruitjuice -text-
-║➭ biscuit -text-
-║➭ wood -text-
-║➭ chocolate -text-
-║➭ strawberry -text-
-║➭ matrix -text-
-║➭ blood -text-
-║➭ dropwater -text-
-║➭ toxic -text-
-║➭ lava -text-
-║➭ rock -text-
-║➭ bloodglass -text-
-║➭ halloween -text-
-║➭ darkgold -text-
-║➭ joker -text-
-║➭ wicker -text-
-║➭ firework -text-
-║➭ skeleton -text-
-║➭ blackpink -text-
-║➭ sand -text-
-║➭ glue -text-
-║➭ 1917 -text-
-║➭ leaves -text-
-└───〔 *_${global.caption}_* 〕
+「 𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨 」
+
+ 𝚊𝚍𝚍 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚔𝚒𝚌𝚔 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚠𝚎𝚕𝚌𝚘𝚖𝚎 𝚘𝚗/𝚘𝚏𝚏 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚕𝚒𝚜𝚝𝚙𝚌 
+ 𝚕𝚒𝚜𝚝𝚐𝚌
+ 𝚐𝚛𝚘𝚞𝚙𝚒𝚗𝚏𝚘 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚟𝚗 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚙𝚑𝚘𝚝𝚘 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚜𝚝𝚒𝚌𝚔𝚎𝚛 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚟𝚒𝚍𝚎𝚘 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚕𝚒𝚗𝚔𝚊𝚕𝚕 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚒𝚗𝚜𝚝𝚊𝚐𝚛𝚊𝚖 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚝𝚎𝚕𝚎𝚐𝚛𝚊𝚖 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚕𝚒𝚗𝚔 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚢𝚝 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚋𝚞𝚕𝚎 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚝𝚒𝚔𝚝𝚘𝚔 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚏𝚊𝚌𝚎𝚋𝚘𝚘𝚔 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚟𝚒𝚛𝚞𝚜 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚋𝚊𝚍𝚠𝚘𝚛𝚍 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗𝚝𝚒𝚠𝚊𝚖𝚎 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚐𝚛𝚘𝚞𝚙 -𝚘𝚙𝚝𝚒𝚘𝚗𝚜-
+ 𝚖𝚞𝚝𝚎
+ 𝚐𝚛𝚘𝚞𝚙𝚒𝚗𝚏𝚘
+ 𝚝𝚛𝚞𝚝𝚑 
+ 𝚍𝚊𝚛𝚎
+ 𝚜𝚕𝚘𝚝
+ 𝚖𝚊𝚝𝚑
+ 𝚟𝚘𝚝𝚎
+ 𝚍𝚎𝚟𝚘𝚝𝚎
+ 𝚌𝚎𝚔𝚟𝚘𝚝𝚎
+ 𝚍𝚎𝚕𝚎𝚝𝚎𝚟𝚘𝚝𝚎
+ 𝚞𝚙𝚟𝚘𝚝𝚎
+ 𝚜𝚎𝚝𝚜𝚞𝚋𝚓𝚎𝚌𝚝 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚜𝚎𝚝𝚍𝚎𝚜𝚌 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚜𝚎𝚝𝚙𝚙𝚐𝚛𝚘𝚞𝚙 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚝𝚊𝚐𝚊𝚕𝚕 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚑𝚒𝚍𝚎𝚝𝚊𝚐 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚎𝚙𝚑𝚎𝚖𝚎𝚛𝚊𝚕
+ 𝚍𝚎𝚖𝚘𝚝𝚎 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚙𝚛𝚘𝚖𝚘𝚝𝚎 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚎𝚍𝚒𝚝𝚒𝚗𝚏𝚘 -𝚊𝚍𝚖𝚒𝚗-
+
+  *_${global.caption}_*
 
 
-╔➽〔 *_ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ_* 〕
-║➭ ytmp3 -link-
-║➭ ytmp4 -link-
-║➭ audio  -link-
-║➭ play -query-
-║➭ mediafire -link-
-║➭ fb -link-
-║➭ fbmp3 -link-
-║➭ ytsvideo -query-
-║➭ getmusic -query-
-║➭ getvideo -query-
-║➭ savefrom -query-
-║➭ pindl -query-
-║➭ joox -query-
-║➭ tiktok -link-
-║➭ tiktokmp3-link-
-║➭ twitter -link-
-║➭ twittermp3-link-
-║➭ insta -link-
-║➭ igimage-link-
-║➭ igtv -link-
-║➭ soundcloud -link-
-║➭ ytshorts -link-
-║➭ get -link-
-║➭ youtube -link-
-└───〔 *_${global.caption}_* 〕
+「 𝗧𝗘𝗫𝗧 𝗣𝗥𝗢 𝗠𝗘𝗡𝗨 」
+
+ 𝚌𝚊𝚗𝚍𝚢 -𝚝𝚎𝚡𝚝-
+ 𝚌𝚑𝚛𝚒𝚜𝚝𝚖𝚊𝚜 -𝚝𝚎𝚡𝚝-
+ 𝟹𝚍𝚌𝚑𝚛𝚒𝚜𝚝𝚖𝚊𝚜 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚙𝚊𝚛𝚔𝚕𝚎𝚌𝚑𝚛𝚒𝚜𝚝𝚖𝚊𝚜 -𝚝𝚎𝚡𝚝-
+ 𝚍𝚎𝚎𝚙𝚜𝚎𝚊 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚌𝚒𝚏𝚒 -𝚝𝚎𝚡𝚝-
+ 𝚛𝚊𝚒𝚗𝚋𝚘𝚠𝟸 -𝚝𝚎𝚡𝚝-
+ 𝚠𝚊𝚝𝚎𝚛𝚙𝚒𝚙𝚎 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚙𝚘𝚘𝚔𝚢 -𝚝𝚎𝚡𝚝-
+ 𝚙𝚎𝚗𝚌𝚒𝚕 -𝚝𝚎𝚡𝚝-
+ 𝚌𝚒𝚛𝚌𝚞𝚒𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚍𝚒𝚜𝚌𝚘𝚟𝚎𝚛𝚢 -𝚝𝚎𝚡𝚝-
+ 𝚖𝚎𝚝𝚊𝚕𝚒𝚌 -𝚝𝚎𝚡𝚝-
+ 𝚏𝚒𝚌𝚝𝚒𝚘𝚗 -𝚝𝚎𝚡𝚝-
+ 𝚍𝚎𝚖𝚘𝚗 -𝚝𝚎𝚡𝚝-
+ 𝚝𝚛𝚊𝚗𝚜𝚏𝚘𝚛𝚖𝚎𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚎𝚛𝚛𝚢 -𝚝𝚎𝚡𝚝-
+ 𝚝𝚑𝚞𝚗𝚍𝚎𝚛 -𝚝𝚎𝚡𝚝-
+ 𝟹𝚍𝚜𝚝𝚘𝚗𝚎𝟸 -𝚝𝚎𝚡𝚝-
+ 𝚗𝚎𝚘𝚗𝚕𝚒𝚐𝚑𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚐𝚕𝚒𝚝𝚌𝚑 -𝚝𝚎𝚡𝚝-
+ 𝚑𝚊𝚛𝚛𝚢𝚙𝚘𝚝𝚝𝚎𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚛𝚘𝚔𝚎𝚗𝚐𝚕𝚊𝚜𝚜 -𝚝𝚎𝚡𝚝-
+ 𝚙𝚊𝚙𝚎𝚛𝚌𝚞𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚠𝚊𝚝𝚎𝚛𝚌𝚘𝚕𝚘𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚖𝚞𝚕𝚝𝚒𝚌𝚘𝚕𝚘𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚗𝚎𝚘𝚗𝚍𝚎𝚟𝚒𝚕 -𝚝𝚎𝚡𝚝-
+ 𝚞𝚗𝚍𝚎𝚛𝚠𝚊𝚝𝚎𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚐𝚛𝚊𝚏𝚏𝚒𝚝𝚒𝚋𝚒𝚔𝚎 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚗𝚘𝚠 -𝚝𝚎𝚡𝚝-
+ 𝚌𝚕𝚘𝚞𝚍 -𝚝𝚎𝚡𝚝-
+ 𝚑𝚘𝚗𝚎𝚢 -𝚝𝚎𝚡𝚝-
+ 𝚒𝚌𝚎 -𝚝𝚎𝚡𝚝-
+ 𝚏𝚛𝚞𝚒𝚝𝚓𝚞𝚒𝚌𝚎 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚒𝚜𝚌𝚞𝚒𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚠𝚘𝚘𝚍 -𝚝𝚎𝚡𝚝-
+ 𝚌𝚑𝚘𝚌𝚘𝚕𝚊𝚝𝚎 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚝𝚛𝚊𝚠𝚋𝚎𝚛𝚛𝚢 -𝚝𝚎𝚡𝚝-
+ 𝚖𝚊𝚝𝚛𝚒𝚡 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚕𝚘𝚘𝚍 -𝚝𝚎𝚡𝚝-
+ 𝚍𝚛𝚘𝚙𝚠𝚊𝚝𝚎𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚝𝚘𝚡𝚒𝚌 -𝚝𝚎𝚡𝚝-
+ 𝚕𝚊𝚟𝚊 -𝚝𝚎𝚡𝚝-
+ 𝚛𝚘𝚌𝚔 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚕𝚘𝚘𝚍𝚐𝚕𝚊𝚜𝚜 -𝚝𝚎𝚡𝚝-
+ 𝚑𝚊𝚕𝚕𝚘𝚠𝚎𝚎𝚗 -𝚝𝚎𝚡𝚝-
+ 𝚍𝚊𝚛𝚔𝚐𝚘𝚕𝚍 -𝚝𝚎𝚡𝚝-
+ 𝚓𝚘𝚔𝚎𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚠𝚒𝚌𝚔𝚎𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚏𝚒𝚛𝚎𝚠𝚘𝚛𝚔 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚔𝚎𝚕𝚎𝚝𝚘𝚗 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚕𝚊𝚌𝚔𝚙𝚒𝚗𝚔 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚊𝚗𝚍 -𝚝𝚎𝚡𝚝-
+ 𝚐𝚕𝚞𝚎 -𝚝𝚎𝚡𝚝-
+ 𝟷𝟿𝟷𝟽 -𝚝𝚎𝚡𝚝-
+ 𝚕𝚎𝚊𝚟𝚎𝚜 -𝚝𝚎𝚡𝚝-
+
+ *_${global.caption}_*
 
 
-╔➽〔 *_ᴘʜᴏᴛꜰɪʟᴛᴇʀᴍᴇɴᴜ_* 〕
-║➭ angie -photo-
-║➭ aria -photo-
-║➭ attic -photo-
-║➭ blackandwhite -photo-
-║➭ chorme1977 -photo-
-║➭ constrastbandw -photo-
-║➭ creamy -photo-
-║➭ duotone -photo-
-║➭ eva -photo-
-║➭ goldenhour -photo-
-║➭ hana -photo-
-║➭ lavander -photo-
-║➭ lemonande -photo-
-║➭ lightleak -photo-
-║➭ lisa -photo-
-║➭ lomo -photo-
-║➭ milk -photo-
-║➭ molly -photo-
-║➭ monochrome -photo-
-║➭ morning -photo-
-║➭ movie -photo-
-║➭ orton -photo-
-║➭ paretro -photo-
-║➭ perfectbandw -photo-
-║➭ plumy -photo-
-║➭ retrolga -photo-
-║➭ ruby -photo-
-║➭ sand -photo-
-║➭ sapphire -photo-
-║➭ sepia -photo-
-║➭ softsepia -photo-
-║➭ solarize -photo-
-║➭ sphinx -photo-
-║➭ venus -photo-
-║➭ japanese -photo-
-║➭ hdr -photo-
-║➭ viewfilter -photo-
-║➭ warmsunset -photo-
-└───〔 *_${global.caption}_* 〕
+「 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥 𝗠𝗘𝗡𝗨 」
+
+ 𝚢𝚝𝚖𝚙𝟹 -𝚕𝚒𝚗𝚔-
+ 𝚢𝚝𝚖𝚙𝟺 -𝚕𝚒𝚗𝚔-
+ 𝚊𝚞𝚍𝚒𝚘  -𝚕𝚒𝚗𝚔-
+ 𝚙𝚕𝚊𝚢 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚖𝚎𝚍𝚒𝚊𝚏𝚒𝚛𝚎 -𝚕𝚒𝚗𝚔-
+ 𝚏𝚋 -𝚕𝚒𝚗𝚔-
+ 𝚏𝚋𝚖𝚙𝟹 -𝚕𝚒𝚗𝚔-
+ 𝚢𝚝𝚜𝚟𝚒𝚍𝚎𝚘 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚐𝚎𝚝𝚖𝚞𝚜𝚒𝚌 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚐𝚎𝚝𝚟𝚒𝚍𝚎𝚘 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚜𝚊𝚟𝚎𝚏𝚛𝚘𝚖 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚙𝚒𝚗𝚍𝚕 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚓𝚘𝚘𝚡 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚝𝚒𝚔𝚝𝚘𝚔 -𝚕𝚒𝚗𝚔-
+ 𝚝𝚒𝚔𝚝𝚘𝚔𝚖𝚙𝟹-𝚕𝚒𝚗𝚔-
+ 𝚝𝚠𝚒𝚝𝚝𝚎𝚛 -𝚕𝚒𝚗𝚔-
+ 𝚝𝚠𝚒𝚝𝚝𝚎𝚛𝚖𝚙𝟹-𝚕𝚒𝚗𝚔-
+ 𝚒𝚗𝚜𝚝𝚊 -𝚕𝚒𝚗𝚔-
+ 𝚒𝚐𝚒𝚖𝚊𝚐𝚎-𝚕𝚒𝚗𝚔-
+ 𝚒𝚐𝚝𝚟 -𝚕𝚒𝚗𝚔-
+ 𝚜𝚘𝚞𝚗𝚍𝚌𝚕𝚘𝚞𝚍 -𝚕𝚒𝚗𝚔-
+ 𝚢𝚝𝚜𝚑𝚘𝚛𝚝𝚜 -𝚕𝚒𝚗𝚔-
+ 𝚐𝚎𝚝 -𝚕𝚒𝚗𝚔-
+ 𝚢𝚘𝚞𝚝𝚞𝚋𝚎 -𝚕𝚒𝚗𝚔-
+
+ *_${global.caption}_*
 
 
-╔➽〔 *_ᴀɴɪᴍᴇᴍᴇɴᴜ_* 〕
-║➭ cry
-║➭ kill
-║➭ hug
-║➭ pat
-║➭ lick
-║➭ kiss
-║➭ bite
-║➭ yeet
-║➭ neko
-║➭ bully
-║➭ bonk
-║➭ wink
-║➭ poke
-║➭ nom
-║➭ slap
-║➭ smile
-║➭ wave
-║➭ awoo
-║➭ blush
-║➭ smug
-║➭ glomp
-║➭ happy
-║➭ dance
-║➭ cringe
-║➭ cuddle
-║➭ highfive
-║➭ shinobu
-║➭ megumin
-║➭ handhold
-║➭ animeslap
-║➭ animepat
-║➭ animeneko
-║➭ animehug
-║➭ animekiss
-║➭ animewlp
-║➭ animespank
-║➭ shinobu2
-║➭ megumin2
-║➭ awoo2
-║➭ animewall2
-║➭ searchanime -query-
-└───〔 *_${global.caption}_* 〕
+「 𝗣𝗛𝗢𝗧𝗢 𝗙𝗜𝗟𝗧𝗘𝗥 𝗠𝗘𝗡𝗨 」
+ 𝚊𝚗𝚐𝚒𝚎 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚊𝚛𝚒𝚊 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚊𝚝𝚝𝚒𝚌 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚋𝚕𝚊𝚌𝚔𝚊𝚗𝚍𝚠𝚑𝚒𝚝𝚎 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚌𝚑𝚘𝚛𝚖𝚎𝟷𝟿𝟽𝟽 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚌𝚘𝚗𝚜𝚝𝚛𝚊𝚜𝚝𝚋𝚊𝚗𝚍𝚠 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚌𝚛𝚎𝚊𝚖𝚢 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚍𝚞𝚘𝚝𝚘𝚗𝚎 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚎𝚟𝚊 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚐𝚘𝚕𝚍𝚎𝚗𝚑𝚘𝚞𝚛 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚑𝚊𝚗𝚊 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚕𝚊𝚟𝚊𝚗𝚍𝚎𝚛 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚕𝚎𝚖𝚘𝚗𝚊𝚗𝚍𝚎 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚕𝚒𝚐𝚑𝚝𝚕𝚎𝚊𝚔 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚕𝚒𝚜𝚊 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚕𝚘𝚖𝚘 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚖𝚒𝚕𝚔 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚖𝚘𝚕𝚕𝚢 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚖𝚘𝚗𝚘𝚌𝚑𝚛𝚘𝚖𝚎 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚖𝚘𝚛𝚗𝚒𝚗𝚐 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚖𝚘𝚟𝚒𝚎 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚘𝚛𝚝𝚘𝚗 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚙𝚊𝚛𝚎𝚝𝚛𝚘 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚙𝚎𝚛𝚏𝚎𝚌𝚝𝚋𝚊𝚗𝚍𝚠 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚙𝚕𝚞𝚖𝚢 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚛𝚎𝚝𝚛𝚘𝚕𝚐𝚊 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚛𝚞𝚋𝚢 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚜𝚊𝚗𝚍 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚜𝚊𝚙𝚙𝚑𝚒𝚛𝚎 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚜𝚎𝚙𝚒𝚊 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚜𝚘𝚏𝚝𝚜𝚎𝚙𝚒𝚊 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚜𝚘𝚕𝚊𝚛𝚒𝚣𝚎 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚜𝚙𝚑𝚒𝚗𝚡 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚟𝚎𝚗𝚞𝚜 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚓𝚊𝚙𝚊𝚗𝚎𝚜𝚎 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚑𝚍𝚛 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚟𝚒𝚎𝚠𝚏𝚒𝚕𝚝𝚎𝚛 -𝚙𝚑𝚘𝚝𝚘-
+ 𝚠𝚊𝚛𝚖𝚜𝚞𝚗𝚜𝚎𝚝 -𝚙𝚑𝚘𝚝𝚘-
+
+ *_${global.caption}_*
 
 
-╔➽〔 *_ꜱᴇᴀʀᴄʜᴍᴇɴᴜ_* 〕
-║➭ lyrics -query-
-║➭ linkwa -query-
-║➭ apk -query-
-║➭ happymod -query-
-║➭ google -query-
-║➭ wiki -query-
-║➭ ytsearch -query-
-║➭ recipe -query-
-║➭ playstore -query-
-║➭ wikimedia -query-
-║➭ news -query-
-║➭ news2 -query-
-║➭ animee -query-
-║➭ anime -query-
-║➭ amino -query-
-║➭ googleimage -query-
-║➭ githubsearch -query->
-║➭ igsearch -username-
-║➭ googlenews -query-
-║➭ gnews -query-
-║➭ wallpaper -query-
-║➭ searchgroups -query-
-║➭ qoutesanime -query-
-║➭ gmsarena -query-
-└───〔 *_${global.caption}_* 〕
+「 𝗔𝗡𝗜𝗠𝗘 𝗠𝗘𝗡𝗨 」
 
-╔➽〔*_◉ᴇᴘʜᴏᴛᴏ-ᴍᴇɴᴜ◉_*〕
-║➭ 3d-wood
-║➭ angels-wings
-║➭ snake-text
-║➭ redhot-metal2
-║➭ sandsummer-beach
-║➭ snow-text
-║➭ water-3d
-║➭ water-effect
-║➭ wet-glass
-║➭ status-mood2
-║➭ summerysand
-└───────────●
+ 𝚌𝚛𝚢
+ 𝚔𝚒𝚕𝚕
+ 𝚑𝚞𝚐
+ 𝚙𝚊𝚝
+ 𝚕𝚒𝚌𝚔
+ 𝚔𝚒𝚜𝚜
+ 𝚋𝚒𝚝𝚎
+ 𝚢𝚎𝚎𝚝
+ 𝚗𝚎𝚔𝚘
+ 𝚋𝚞𝚕𝚕𝚢
+ 𝚋𝚘𝚗𝚔
+ 𝚠𝚒𝚗𝚔
+ 𝚙𝚘𝚔𝚎
+ 𝚗𝚘𝚖
+ 𝚜𝚕𝚊𝚙
+ 𝚜𝚖𝚒𝚕𝚎
+ 𝚠𝚊𝚟𝚎
+ 𝚊𝚠𝚘𝚘
+ 𝚋𝚕𝚞𝚜𝚑
+ 𝚜𝚖𝚞𝚐
+ 𝚐𝚕𝚘𝚖𝚙
+ 𝚑𝚊𝚙𝚙𝚢
+ 𝚍𝚊𝚗𝚌𝚎
+ 𝚌𝚛𝚒𝚗𝚐𝚎
+ 𝚌𝚞𝚍𝚍𝚕𝚎
+ 𝚑𝚒𝚐𝚑𝚏𝚒𝚟𝚎
+ 𝚜𝚑𝚒𝚗𝚘𝚋𝚞
+ 𝚖𝚎𝚐𝚞𝚖𝚒𝚗
+ 𝚑𝚊𝚗𝚍𝚑𝚘𝚕𝚍
+ 𝚊𝚗𝚒𝚖𝚎𝚜𝚕𝚊𝚙
+ 𝚊𝚗𝚒𝚖𝚎𝚙𝚊𝚝
+ 𝚊𝚗𝚒𝚖𝚎𝚗𝚎𝚔𝚘
+ 𝚊𝚗𝚒𝚖𝚎𝚑𝚞𝚐
+ 𝚊𝚗𝚒𝚖𝚎𝚔𝚒𝚜𝚜
+ 𝚊𝚗𝚒𝚖𝚎𝚠𝚕𝚙
+ 𝚊𝚗𝚒𝚖𝚎𝚜𝚙𝚊𝚗𝚔
+ 𝚜𝚑𝚒𝚗𝚘𝚋𝚞𝟸
+ 𝚖𝚎𝚐𝚞𝚖𝚒𝚗𝟸
+ 𝚊𝚠𝚘𝚘𝟸
+ 𝚊𝚗𝚒𝚖𝚎𝚠𝚊𝚕𝚕𝟸
+ 𝚜𝚎𝚊𝚛𝚌𝚑𝚊𝚗𝚒𝚖𝚎 -𝚚𝚞𝚎𝚛𝚢-
 
-╔➽〔 *_ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ_* 〕
-║➭ toimg -quote sticker-
-║➭ togif -quote video-
-║➭ todocument -media-
-║➭ bass -audio-
-║➭ blown -audio-
-║➭ deep -audio-
-║➭ earape -audio-
-║➭ fast -audio-
-║➭ fat -audio-
-║➭ nightcore -audio-
-║➭ reverse -audio-
-║➭ robot -audio-
-║➭ slow -audio-
-║➭ smooth -audio-
-║➭ squirrel -audio-
-║➭ sticker -media-
-║➭ smeme -media-
-║➭ stickermeme -media-
-║➭ swm -sticker-
-└───〔 *_${global.caption}_* 〕
-
-╔➽〔 *_◉ᴅᴀᴛᴀʙᴀꜱᴇᴍᴇɴᴜ◉_* 〕
-║➭ addmsg -msg-
-║➭ delmsg -msg-
-║➭ listmsg -msg-
-║➭ getmsg -msg-
-║➭ setcmd -msg-
-║➭ delcmd -msg-
-║➭ listcmd -msg-
-└───〔 *_${global.caption}_* 〕
-
-╔➽〔 *_◉Photooxyᴍᴇɴᴜ◉_* 〕
-║➭ silk -text-
-║➭ 3dnature -text-
-║➭ bevel -text-
-║➭ birthdaycake -text-
-║➭ burnpaper -text-
-║➭ coffee -text-
-║➭ coffee-heartcup -text-
-║➭ embroiderytext -text-
-║➭ flaming -text-
-║➭ flowertypo -text-
-║➭ funnycup -text-
-║➭ fur -text-
-║➭ gerbang -text-
-║➭ glowrainbow -text-
-║➭ gradientavatar -text-
-║➭ graffititext -text-
-║➭ harrypotter -text-
-║➭ lovemessage -text-
-║➭ neonlight -text-
-║➭ sweetcandy -text-
-║➭ summertext -text-
-║➭ woodheart -text-
-║➭ yellowroses -text-
-║➭ wolfmetal -text-
-║➭ underwaterocean -text-
-└───〔 *_${global.caption}_* 〕
+ *_${global.caption}_*
 
 
-╔➽〔 *_◉ᴍᴇɴᴜ ʀᴘɢ◉_* 〕
-║➭ joinrpg
-║➭ quest 
-║➭ mining
-║➭ mancing
-║➭ luckyday
-║➭ luckytime
-║➭ adventure
-║➭ inventori
-└───────────●
+「 𝗦𝗘𝗔𝗥𝗖𝗛 𝗠𝗘𝗡𝗨 」
 
-╔➽〔 *_◉Fᴀʀᴍ ʀᴘɢ◉_* 〕
-║➭ killslime
-║➭ killgoblin
-║➭ killdevil
-║➭ killbehemoth
-║➭ killdemon
-║➭ killdemonking 
-└───────────●
+ 𝚕𝚢𝚛𝚒𝚌𝚜 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚕𝚒𝚗𝚔𝚠𝚊 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚊𝚙𝚔 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚑𝚊𝚙𝚙𝚢𝚖𝚘𝚍 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚐𝚘𝚘𝚐𝚕𝚎 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚠𝚒𝚔𝚒 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚢𝚝𝚜𝚎𝚊𝚛𝚌𝚑 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚛𝚎𝚌𝚒𝚙𝚎 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚙𝚕𝚊𝚢𝚜𝚝𝚘𝚛𝚎 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚠𝚒𝚔𝚒𝚖𝚎𝚍𝚒𝚊 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚗𝚎𝚠𝚜 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚗𝚎𝚠𝚜𝟸 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚊𝚗𝚒𝚖𝚎𝚎 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚊𝚗𝚒𝚖𝚎 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚊𝚖𝚒𝚗𝚘 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚐𝚘𝚘𝚐𝚕𝚎𝚒𝚖𝚊𝚐𝚎 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚐𝚒𝚝𝚑𝚞𝚋𝚜𝚎𝚊𝚛𝚌𝚑 -𝚚𝚞𝚎𝚛𝚢->
+ 𝚒𝚐𝚜𝚎𝚊𝚛𝚌𝚑 -𝚞𝚜𝚎𝚛𝚗𝚊𝚖𝚎-
+ 𝚐𝚘𝚘𝚐𝚕𝚎𝚗𝚎𝚠𝚜 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚐𝚗𝚎𝚠𝚜 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚠𝚊𝚕𝚕𝚙𝚊𝚙𝚎𝚛 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚜𝚎𝚊𝚛𝚌𝚑𝚐𝚛𝚘𝚞𝚙𝚜 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚚𝚘𝚞𝚝𝚎𝚜𝚊𝚗𝚒𝚖𝚎 -𝚚𝚞𝚎𝚛𝚢-
+ 𝚐𝚖𝚜𝚊𝚛𝚎𝚗𝚊 -𝚚𝚞𝚎𝚛𝚢-
 
-╔➽〔 *_◉Tʀᴀᴅᴇ ʀᴘɢ◉_* 〕
-║➭ sellikan
-║➭ sellbesi
-║➭ sellemas
-║➭ selldiamond
-└───────────●
+ *_${global.caption}_*
+
+「 𝗘-𝗣𝗛𝗢𝗧𝗢 𝗠𝗘𝗡𝗨 」
+
+ 𝟹𝚍-𝚠𝚘𝚘𝚍
+ 𝚊𝚗𝚐𝚎𝚕𝚜-𝚠𝚒𝚗𝚐𝚜
+ 𝚜𝚗𝚊𝚔𝚎-𝚝𝚎𝚡𝚝
+ 𝚛𝚎𝚍𝚑𝚘𝚝-𝚖𝚎𝚝𝚊𝚕𝟸
+ 𝚜𝚊𝚗𝚍𝚜𝚞𝚖𝚖𝚎𝚛-𝚋𝚎𝚊𝚌𝚑
+ 𝚜𝚗𝚘𝚠-𝚝𝚎𝚡𝚝
+ 𝚠𝚊𝚝𝚎𝚛-𝟹𝚍
+ 𝚠𝚊𝚝𝚎𝚛-𝚎𝚏𝚏𝚎𝚌𝚝
+ 𝚠𝚎𝚝-𝚐𝚕𝚊𝚜𝚜
+ 𝚜𝚝𝚊𝚝𝚞𝚜-𝚖𝚘𝚘𝚍𝟸
+ 𝚜𝚞𝚖𝚖𝚎𝚛𝚢𝚜𝚊𝚗𝚍
+
+ *_${global.caption}_*
+
+「 𝗖𝗢𝗡𝗩𝗘𝗥𝗧 𝗠𝗘𝗡𝗨 」
+
+ 𝚝𝚘𝚒𝚖𝚐 -𝚚𝚞𝚘𝚝𝚎 𝚜𝚝𝚒𝚌𝚔𝚎𝚛-
+ 𝚝𝚘𝚐𝚒𝚏 -𝚚𝚞𝚘𝚝𝚎 𝚟𝚒𝚍𝚎𝚘-
+ 𝚝𝚘𝚍𝚘𝚌𝚞𝚖𝚎𝚗𝚝 -𝚖𝚎𝚍𝚒𝚊-
+ 𝚋𝚊𝚜𝚜 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚋𝚕𝚘𝚠𝚗 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚍𝚎𝚎𝚙 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚎𝚊𝚛𝚊𝚙𝚎 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚏𝚊𝚜𝚝 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚏𝚊𝚝 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚗𝚒𝚐𝚑𝚝𝚌𝚘𝚛𝚎 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚛𝚎𝚟𝚎𝚛𝚜𝚎 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚛𝚘𝚋𝚘𝚝 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚜𝚕𝚘𝚠 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚜𝚖𝚘𝚘𝚝𝚑 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚜𝚚𝚞𝚒𝚛𝚛𝚎𝚕 -𝚊𝚞𝚍𝚒𝚘-
+ 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 -𝚖𝚎𝚍𝚒𝚊-
+ 𝚜𝚖𝚎𝚖𝚎 -𝚖𝚎𝚍𝚒𝚊-
+ 𝚜𝚝𝚒𝚌𝚔𝚎𝚛𝚖𝚎𝚖𝚎 -𝚖𝚎𝚍𝚒𝚊-
+ 𝚜𝚠𝚖 -𝚜𝚝𝚒𝚌𝚔𝚎𝚛-
+
+ *_${global.caption}_*
+
+「 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 𝗠𝗘𝗡𝗨 」
+
+ 𝚊𝚍𝚍𝚖𝚜𝚐 -𝚖𝚜𝚐-
+ 𝚍𝚎𝚕𝚖𝚜𝚐 -𝚖𝚜𝚐-
+ 𝚕𝚒𝚜𝚝𝚖𝚜𝚐 -𝚖𝚜𝚐-
+ 𝚐𝚎𝚝𝚖𝚜𝚐 -𝚖𝚜𝚐-
+ 𝚜𝚎𝚝𝚌𝚖𝚍 -𝚖𝚜𝚐-
+ 𝚍𝚎𝚕𝚌𝚖𝚍 -𝚖𝚜𝚐-
+ 𝚕𝚒𝚜𝚝𝚌𝚖𝚍 -𝚖𝚜𝚐-
+
+ *_${global.caption}_*
+
+「 𝗣𝗛𝗢𝗧𝗢𝗢𝗫𝗬 𝗠𝗘𝗡𝗨 」
+
+ 𝚜𝚒𝚕𝚔 -𝚝𝚎𝚡𝚝-
+ 𝟹𝚍𝚗𝚊𝚝𝚞𝚛𝚎 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚎𝚟𝚎𝚕 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚒𝚛𝚝𝚑𝚍𝚊𝚢𝚌𝚊𝚔𝚎 -𝚝𝚎𝚡𝚝-
+ 𝚋𝚞𝚛𝚗𝚙𝚊𝚙𝚎𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚌𝚘𝚏𝚏𝚎𝚎 -𝚝𝚎𝚡𝚝-
+ 𝚌𝚘𝚏𝚏𝚎𝚎-𝚑𝚎𝚊𝚛𝚝𝚌𝚞𝚙 -𝚝𝚎𝚡𝚝-
+ 𝚎𝚖𝚋𝚛𝚘𝚒𝚍𝚎𝚛𝚢𝚝𝚎𝚡𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚏𝚕𝚊𝚖𝚒𝚗𝚐 -𝚝𝚎𝚡𝚝-
+ 𝚏𝚕𝚘𝚠𝚎𝚛𝚝𝚢𝚙𝚘 -𝚝𝚎𝚡𝚝-
+ 𝚏𝚞𝚗𝚗𝚢𝚌𝚞𝚙 -𝚝𝚎𝚡𝚝-
+ 𝚏𝚞𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚐𝚎𝚛𝚋𝚊𝚗𝚐 -𝚝𝚎𝚡𝚝-
+ 𝚐𝚕𝚘𝚠𝚛𝚊𝚒𝚗𝚋𝚘𝚠 -𝚝𝚎𝚡𝚝-
+ 𝚐𝚛𝚊𝚍𝚒𝚎𝚗𝚝𝚊𝚟𝚊𝚝𝚊𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚐𝚛𝚊𝚏𝚏𝚒𝚝𝚒𝚝𝚎𝚡𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚑𝚊𝚛𝚛𝚢𝚙𝚘𝚝𝚝𝚎𝚛 -𝚝𝚎𝚡𝚝-
+ 𝚕𝚘𝚟𝚎𝚖𝚎𝚜𝚜𝚊𝚐𝚎 -𝚝𝚎𝚡𝚝-
+ 𝚗𝚎𝚘𝚗𝚕𝚒𝚐𝚑𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚠𝚎𝚎𝚝𝚌𝚊𝚗𝚍𝚢 -𝚝𝚎𝚡𝚝-
+ 𝚜𝚞𝚖𝚖𝚎𝚛𝚝𝚎𝚡𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚠𝚘𝚘𝚍𝚑𝚎𝚊𝚛𝚝 -𝚝𝚎𝚡𝚝-
+ 𝚢𝚎𝚕𝚕𝚘𝚠𝚛𝚘𝚜𝚎𝚜 -𝚝𝚎𝚡𝚝-
+ 𝚠𝚘𝚕𝚏𝚖𝚎𝚝𝚊𝚕 -𝚝𝚎𝚡𝚝-
+ 𝚞𝚗𝚍𝚎𝚛𝚠𝚊𝚝𝚎𝚛𝚘𝚌𝚎𝚊𝚗 -𝚝𝚎𝚡𝚝-
+
+ *_${global.caption}_*
+
+
+「 𝗥𝗣𝗚 𝗠𝗘𝗡𝗨 」
+
+ 𝚓𝚘𝚒𝚗𝚛𝚙𝚐
+ 𝚚𝚞𝚎𝚜𝚝 
+ 𝚖𝚒𝚗𝚒𝚗𝚐
+ 𝚖𝚊𝚗𝚌𝚒𝚗𝚐
+ 𝚕𝚞𝚌𝚔𝚢𝚍𝚊𝚢
+ 𝚕𝚞𝚌𝚔𝚢𝚝𝚒𝚖𝚎
+ 𝚊𝚍𝚟𝚎𝚗𝚝𝚞𝚛𝚎
+ 𝚒𝚗𝚟𝚎𝚗𝚝𝚘𝚛𝚒
+
+ *_${global.caption}_*
+
+「 𝗥𝗣𝗚 𝗙𝗔𝗥𝗠 」
+
+ 𝚔𝚒𝚕𝚕𝚜𝚕𝚒𝚖𝚎
+ 𝚔𝚒𝚕𝚕𝚐𝚘𝚋𝚕𝚒𝚗
+ 𝚔𝚒𝚕𝚕𝚍𝚎𝚟𝚒𝚕
+ 𝚔𝚒𝚕𝚕𝚋𝚎𝚑𝚎𝚖𝚘𝚝𝚑
+ 𝚔𝚒𝚕𝚕𝚍𝚎𝚖𝚘𝚗
+ 𝚔𝚒𝚕𝚕𝚍𝚎𝚖𝚘𝚗𝚔𝚒𝚗𝚐 
+ 
+ *_${global.caption}_*
+
+「 𝗥𝗣𝗚 𝗧𝗥𝗔𝗗𝗘 」
+
+ 𝚜𝚎𝚕𝚕𝚒𝚔𝚊𝚗
+ 𝚜𝚎𝚕𝚕𝚋𝚎𝚜𝚒
+ 𝚜𝚎𝚕𝚕𝚎𝚖𝚊𝚜
+ 𝚜𝚎𝚕𝚕𝚍𝚒𝚊𝚖𝚘𝚗𝚍
+
+ *_${global.caption}_*
+ 
 %readmore` 
     let btn = [{
         urlButton: {
@@ -7590,31 +7621,32 @@ anu = `
 *🦄Total Memory:* ${os.totalmem()}
 *🗃️Ram Usage:* ${ram2}
 
-╔➽「 ◉ᴏᴡɴᴇʀᴍᴇɴᴜ◉ 」
-║➭ chatbot on/off
-║➭ setmenu -option-
-║➭ checkupdate 
-║➭ updatenow
-║➭ bc -text-
-║➭ bcall -text-
-║➭ bctext -text-
-║➭ bcvideo -media-
-║➭ bcaudio -media-
-║➭ bcimage -media-
-║➭ bcloc  -text-
-║➭ bcgc -text-
-║➭ lockcmd
-║➭ setstatus -text-
-║➭ setppbot -owner-
-║➭ block -owner-
-║➭ unblock -owner-
-║➭ join -owner-
-║➭ leave -owner-
-║➭ chat -owner-
-║➭ public
-║➭ self
-║➭ grouponly
-└───「 ${global.caption}」
+ 「 𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨 」
+
+ ```chatbot on/off
+ setmenu -option-
+ checkupdate 
+ updatenow
+ bc -text-
+ bcall -text-
+ bctext -text-
+ bcvideo -media-
+ bcaudio -media-
+ bcimage -media-
+ bcloc  -text-
+ bcgc -text-
+ lockcmd
+ setstatus -text-
+ setppbot -owner-
+ block -owner-
+ unblock -owner-
+ join -owner-
+ leave -owner-
+ chat -owner-
+ public
+ self
+ grouponly```
+「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -7658,15 +7690,14 @@ anu = `
 *🦄Total Memory:* ${os.totalmem()}
 *🗃️Ram Usage:* ${ram2}
 
-╔➽「 ◉ᴅᴀᴛᴀʙᴀꜱᴇᴍᴇɴᴜ◉ 」
-║➭ addmsg -msg-
-║➭ delmsg -msg-
-║➭ listmsg -msg-
-║➭ getmsg -msg-
-║➭ setcmd -msg-
-║➭ delcmd -msg-
-║➭ listcmd -msg-
-└───「 ${global.caption}」
+「 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 𝗠𝗘𝗡𝗨 」
+ ```addmsg -msg-
+ delmsg -msg-
+ listmsg -msg-
+ getmsg -msg-
+ setcmd -msg-
+ delcmd -msg-
+ listcmd -msg-```
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -7710,33 +7741,32 @@ case 'photooxymenu': {
 *🦄Total Memory:* ${os.totalmem()}
 *🗃️Ram Usage:* ${ram2}
 
-╔➽「 ◉Photooxyᴍᴇɴᴜ◉ 」
-║➭ silk -text-
-║➭ 3dnature -text-
-║➭ bevel -text-
-║➭ birthdaycake -text-
-║➭ burnpaper -text-
-║➭ coffee -text-
-║➭ coffee-heartcup -text-
-║➭ embroiderytext -text-
-║➭ flaming -text-
-║➭ flowertypo -text-
-║➭ funnycup -text-
-║➭ fur -text-
-║➭ gerbang -text-
-║➭ glowrainbow -text-
-║➭ gradientavatar -text-
-║➭ graffititext -text-
-║➭ harrypotter -text-
-║➭ lovemessage -text-
-║➭ neonlight -text-
-║➭ sweetcandy -text-
-║➭ summertext -text-
-║➭ woodheart -text-
-║➭ yellowroses -text-
-║➭ wolfmetal -text-
-║➭ underwaterocean -text-
-└───「 ${global.caption}」
+「 𝗣𝗛𝗢𝗧𝗢𝗢𝗫𝗬 𝗠𝗘𝗡𝗨 」
+ ```silk -text-
+ 3dnature -text-
+ bevel -text-
+ birthdaycake -text-
+ burnpaper -text-
+ coffee -text-
+ coffee-heartcup -text-
+ embroiderytext -text-
+ flaming -text-
+ flowertypo -text-
+ funnycup -text-
+ fur -text-
+ gerbang -text-
+ glowrainbow -text-
+ gradientavatar -text-
+ graffititext -text-
+ harrypotter -text-
+ lovemessage -text-
+ neonlight -text-
+ sweetcandy -text-
+ summertext -text-
+ woodheart -text-
+ yellowroses -text-
+ wolfmetal -text-
+ underwaterocean -text-```
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
   const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -7781,48 +7811,48 @@ anu = `
 *🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ◉ɢʀᴏᴜᴘᴍᴇɴᴜ◉ 」
-║➭ add -admin-
-║➭ kick -admin-
-║➭ welcome on/off -admin-
-║➭ listpc 
-║➭ listgc
-║➭ groupinfo -admin-
-║➭ antivn -admin-
-║➭ antiphoto -admin-
-║➭ antisticker -admin-
-║➭ antivideo -admin-
-║➭ antilinkall -admin-
-║➭ antiinstagram -admin-
-║➭ antitelegram -admin-
-║➭ antilink -admin-
-║➭ antiyt -admin-
-║➭ antibule -admin-
-║➭ antitiktok -admin-
-║➭ antifacebook -admin-
-║➭ antivirus -admin-
-║➭ antibadword -admin-
-║➭ antiwame -admin-
-║➭ group -options-
-║➭ mute
-║➭ groupinfo
-║➭ truth 
-║➭ dare
-║➭ slot
-║➭ math
-║➭ vote
-║➭ devote
-║➭ cekvote
-║➭ deletevote
-║➭ upvote
-║➭ setsubject -admin-
-║➭ setdesc -admin-
-║➭ setppgroup -admin-
-║➭ tagall -admin-
-║➭ hidetag -admin-
-║➭ ephemeral
-║➭ demote -admin-
-║➭ promote -admin-
-║➭ editinfo -admin-
+ add -admin-
+ kick -admin-
+ welcome on/off -admin-
+ listpc 
+ listgc
+ groupinfo -admin-
+ antivn -admin-
+ antiphoto -admin-
+ antisticker -admin-
+ antivideo -admin-
+ antilinkall -admin-
+ antiinstagram -admin-
+ antitelegram -admin-
+ antilink -admin-
+ antiyt -admin-
+ antibule -admin-
+ antitiktok -admin-
+ antifacebook -admin-
+ antivirus -admin-
+ antibadword -admin-
+ antiwame -admin-
+ group -options-
+ mute
+ groupinfo
+ truth 
+ dare
+ slot
+ math
+ vote
+ devote
+ cekvote
+ deletevote
+ upvote
+ setsubject -admin-
+ setdesc -admin-
+ setppgroup -admin-
+ tagall -admin-
+ hidetag -admin-
+ ephemeral
+ demote -admin-
+ promote -admin-
+ editinfo -admin-
 └───「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
@@ -7868,62 +7898,62 @@ anu = `
 *🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ◉ᴛᴇxᴛᴘʀᴏᴍᴇɴᴜ◉ 」
-║➭ candy -text-
-║➭ christmas -text-
-║➭ 3dchristmas -text-
-║➭ sparklechristmas -text-
-║➭ deepsea -text-
-║➭ scifi -text-
-║➭ rainbow2 -text-
-║➭ waterpipe -text-
-║➭ spooky -text-
-║➭ pencil -text-
-║➭ circuit -text-
-║➭ discovery -text-
-║➭ metalic -text-
-║➭ fiction -text-
-║➭ demon -text-
-║➭ transformer -text-
-║➭ berry -text-
-║➭ thunder -text-
-║➭ 3dstone2 -text-
-║➭ neonlight -text-
-║➭ glitch -text-
-║➭ harrypotter -text-
-║➭ brokenglass -text-
-║➭ papercut -text-
-║➭ watercolor -text-
-║➭ multicolor -text-
-║➭ neondevil -text-
-║➭ underwater -text-
-║➭ graffitibike -text-
-║➭ snow -text-
-║➭ cloud -text-
-║➭ honey -text-
-║➭ ice -text-
-║➭ fruitjuice -text-
-║➭ biscuit -text-
-║➭ wood -text-
-║➭ chocolate -text-
-║➭ strawberry -text-
-║➭ matrix -text-
-║➭ blood -text-
-║➭ dropwater -text-
-║➭ toxic -text-
-║➭ lava -text-
-║➭ rock -text-
-║➭ bloodglass -text-
-║➭ halloween -text-
-║➭ darkgold -text-
-║➭ joker -text-
-║➭ wicker -text-
-║➭ firework -text-
-║➭ skeleton -text-
-║➭ blackpink -text-
-║➭ sand -text-
-║➭ glue -text-
-║➭ 1917 -text-
-║➭ leaves -text-
+ candy -text-
+ christmas -text-
+ 3dchristmas -text-
+ sparklechristmas -text-
+ deepsea -text-
+ scifi -text-
+ rainbow2 -text-
+ waterpipe -text-
+ spooky -text-
+ pencil -text-
+ circuit -text-
+ discovery -text-
+ metalic -text-
+ fiction -text-
+ demon -text-
+ transformer -text-
+ berry -text-
+ thunder -text-
+ 3dstone2 -text-
+ neonlight -text-
+ glitch -text-
+ harrypotter -text-
+ brokenglass -text-
+ papercut -text-
+ watercolor -text-
+ multicolor -text-
+ neondevil -text-
+ underwater -text-
+ graffitibike -text-
+ snow -text-
+ cloud -text-
+ honey -text-
+ ice -text-
+ fruitjuice -text-
+ biscuit -text-
+ wood -text-
+ chocolate -text-
+ strawberry -text-
+ matrix -text-
+ blood -text-
+ dropwater -text-
+ toxic -text-
+ lava -text-
+ rock -text-
+ bloodglass -text-
+ halloween -text-
+ darkgold -text-
+ joker -text-
+ wicker -text-
+ firework -text-
+ skeleton -text-
+ blackpink -text-
+ sand -text-
+ glue -text-
+ 1917 -text-
+ leaves -text-
 └───「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
@@ -7969,30 +7999,30 @@ anu =`
 *🗃️Ram Usage:* ${ram2}
 
 ╔➽〔 *_ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ_* 〕
-║➭ ytmp3 -link-
-║➭ ytmp4 -link-
-║➭ audio  -link-
-║➭ play -query-
-║➭ mediafire -link-
-║➭ fb -link-
-║➭ fbmp3 -link-
-║➭ ytsvideo -query-
-║➭ getmusic -query-
-║➭ getvideo -query-
-║➭ savefrom -query-
-║➭ pindl -query-
-║➭ joox -query-
-║➭ tiktok -link-
-║➭ tiktokmp3-link-
-║➭ twitter -link-
-║➭ twittermp3-link-
-║➭ insta -link-
-║➭ igimage-link-
-║➭ igtv -link-
-║➭ soundcloud -link-
-║➭ ytshorts -link-
-║➭ get -link-
-║➭ youtube -link-
+ ytmp3 -link-
+ ytmp4 -link-
+ audio  -link-
+ play -query-
+ mediafire -link-
+ fb -link-
+ fbmp3 -link-
+ ytsvideo -query-
+ getmusic -query-
+ getvideo -query-
+ savefrom -query-
+ pindl -query-
+ joox -query-
+ tiktok -link-
+ tiktokmp3-link-
+ twitter -link-
+ twittermp3-link-
+ insta -link-
+ igimage-link-
+ igtv -link-
+ soundcloud -link-
+ ytshorts -link-
+ get -link-
+ youtube -link-
 └───〔 *_${global.caption}_* 〕
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
@@ -8039,44 +8069,44 @@ anu =`
 
   
 ╔➽「 ᴘʜᴏᴛꜰɪʟᴛᴇʀᴍᴇɴᴜ」
-║➭ angie -photo-
-║➭ aria -photo-
-║➭ attic -photo-
-║➭ blackandwhite -photo-
-║➭ chorme1977 -photo-
-║➭ constrastbandw -photo-
-║➭ creamy -photo-
-║➭ duotone -photo-
-║➭ eva -photo-
-║➭ goldenhour -photo-
-║➭ hana -photo-
-║➭ lavander -photo-
-║➭ lemonande -photo-
-║➭ lightleak -photo-
-║➭ lisa -photo-
-║➭ lomo -photo-
-║➭ milk -photo-
-║➭ molly -photo-
-║➭ monochrome -photo-
-║➭ morning -photo-
-║➭ movie -photo-
-║➭ orton -photo-
-║➭ paretro -photo-
-║➭ perfectbandw -photo-
-║➭ plumy -photo-
-║➭ retrolga -photo-
-║➭ ruby -photo-
-║➭ sand -photo-
-║➭ sapphire -photo-
-║➭ sepia -photo-
-║➭ softsepia -photo-
-║➭ solarize -photo-
-║➭ sphinx -photo-
-║➭ venus -photo-
-║➭ japanese -photo-
-║➭ hdr -photo-
-║➭ viewfilter -photo-
-║➭ warmsunset -photo-
+ angie -photo-
+ aria -photo-
+ attic -photo-
+ blackandwhite -photo-
+ chorme1977 -photo-
+ constrastbandw -photo-
+ creamy -photo-
+ duotone -photo-
+ eva -photo-
+ goldenhour -photo-
+ hana -photo-
+ lavander -photo-
+ lemonande -photo-
+ lightleak -photo-
+ lisa -photo-
+ lomo -photo-
+ milk -photo-
+ molly -photo-
+ monochrome -photo-
+ morning -photo-
+ movie -photo-
+ orton -photo-
+ paretro -photo-
+ perfectbandw -photo-
+ plumy -photo-
+ retrolga -photo-
+ ruby -photo-
+ sand -photo-
+ sapphire -photo-
+ sepia -photo-
+ softsepia -photo-
+ solarize -photo-
+ sphinx -photo-
+ venus -photo-
+ japanese -photo-
+ hdr -photo-
+ viewfilter -photo-
+ warmsunset -photo-
 └───「 ${global.caption}」
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
@@ -8123,47 +8153,47 @@ case 'animemenu':{
   
     
 ╔➽「 ᴀɴɪᴍᴇᴍᴇɴᴜ」
-║➭ cry
-║➭ kill
-║➭ hug
-║➭ pat
-║➭ lick
-║➭ kiss
-║➭ bite
-║➭ yeet
-║➭ neko
-║➭ bully
-║➭ bonk
-║➭ wink
-║➭ poke
-║➭ nom
-║➭ slap
-║➭ smile
-║➭ wave
-║➭ awoo
-║➭ blush
-║➭ smug
-║➭ glomp
-║➭ happy
-║➭ dance
-║➭ cringe
-║➭ cuddle
-║➭ highfive
-║➭ shinobu
-║➭ megumin
-║➭ handhold
-║➭ animeslap
-║➭ animepat
-║➭ animeneko
-║➭ animehug
-║➭ animekiss
-║➭ animewlp
-║➭ animespank
-║➭ shinobu2
-║➭ megumin2
-║➭ awoo2
-║➭ animewall2
-║➭ searchanime -query-
+ cry
+ kill
+ hug
+ pat
+ lick
+ kiss
+ bite
+ yeet
+ neko
+ bully
+ bonk
+ wink
+ poke
+ nom
+ slap
+ smile
+ wave
+ awoo
+ blush
+ smug
+ glomp
+ happy
+ dance
+ cringe
+ cuddle
+ highfive
+ shinobu
+ megumin
+ handhold
+ animeslap
+ animepat
+ animeneko
+ animehug
+ animekiss
+ animewlp
+ animespank
+ shinobu2
+ megumin2
+ awoo2
+ animewall2
+ searchanime -query-
 └───「 ${global.caption}」
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
@@ -8210,25 +8240,25 @@ case 'convertmenu': {
   
     
 ╔➽「 ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ」
-║➭ toimg -quote sticker-
-║➭ togif -quote video-
-║➭ todocument -media-
-║➭ bass -audio-
-║➭ blown -audio-
-║➭ deep -audio-
-║➭ earape -audio-
-║➭ fast -audio-
-║➭ fat -audio-
-║➭ nightcore -audio-
-║➭ reverse -audio-
-║➭ robot -audio-
-║➭ slow -audio-
-║➭ smooth -audio-
-║➭ squirrel -audio-
-║➭ sticker -media-
-║➭ smeme -media-
-║➭ stickermeme -media-
-║➭ swm -sticker-
+ toimg -quote sticker-
+ togif -quote video-
+ todocument -media-
+ bass -audio-
+ blown -audio-
+ deep -audio-
+ earape -audio-
+ fast -audio-
+ fat -audio-
+ nightcore -audio-
+ reverse -audio-
+ robot -audio-
+ slow -audio-
+ smooth -audio-
+ squirrel -audio-
+ sticker -media-
+ smeme -media-
+ stickermeme -media-
+ swm -sticker-
 └───「 ${global.caption}」
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
@@ -8275,20 +8305,20 @@ case 'toolmenu': {
   
     
 ╔➽「 ᴛᴏᴏʟᴍᴇɴᴜ」
-║➭ ip ->-
-║➭ ipdomain -domain name-
-║➭ codecolor -text-
-║➭ hackermaker -pic url-
-║➭ checknumber -number-
-║➭ veriphone -number-
-║➭ weather -place-
-║➭ attp -text-
-║➭ ssweb-hp -url-
-║➭ shortlink -url-
-║➭ ssweb-pc -url-
-║➭ shortlinkcuttly -url-
-║➭ shortlinkisgd -url-
-║➭ brainly -query-
+ ip ->-
+ ipdomain -domain name-
+ codecolor -text-
+ hackermaker -pic url-
+ checknumber -number-
+ veriphone -number-
+ weather -place-
+ attp -text-
+ ssweb-hp -url-
+ shortlink -url-
+ ssweb-pc -url-
+ shortlinkcuttly -url-
+ shortlinkisgd -url-
+ brainly -query-
 └───「 ${global.caption}」
   `
   let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
@@ -8334,32 +8364,32 @@ case 'searchmenu':{
 *🗃️Ram Usage:* ${ram2}
 
 ╔➽「 ꜱᴇᴀʀᴄʜᴍᴇɴᴜ」
-║➭ lyrics -query-
-║➭ linkwa -query-
-║➭ apk -query-
-║➭ happymod -query-
-║➭ apkupro -query-
-║➭ google -query-
-║➭ wiki -query-
-║➭ ytsearch -query-
-║➭ recipe -query-
-║➭ playstore -query-
-║➭ wikimedia -query-
-║➭ news -query-
-║➭ news2 -query-
-║➭ animee -query-
-║➭ anime -query-
-║➭ amino -query-
-║➭ googleimage -query-
-║➭ apkdone -query-
-║➭ githubsearch -query->
-║➭ igsearch -username-
-║➭ googlenews -query-
-║➭ gnews -query-
-║➭ wallpaper -query-
-║➭ searchgroups -query-
-║➭ qoutesanime -query-
-║➭ gmsarena -query-
+ lyrics -query-
+ linkwa -query-
+ apk -query-
+ happymod -query-
+ apkupro -query-
+ google -query-
+ wiki -query-
+ ytsearch -query-
+ recipe -query-
+ playstore -query-
+ wikimedia -query-
+ news -query-
+ news2 -query-
+ animee -query-
+ anime -query-
+ amino -query-
+ googleimage -query-
+ apkdone -query-
+ githubsearch -query->
+ igsearch -username-
+ googlenews -query-
+ gnews -query-
+ wallpaper -query-
+ searchgroups -query-
+ qoutesanime -query-
+ gmsarena -query-
 └───「 ${global.caption}」
 
   `
@@ -8393,31 +8423,19 @@ Wizard.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }}
 buffer = await getBuffer(picak+'EPHOTO MENU')
 ram250 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 anu =`
-*Oi Bro*
-*📁Directory:* ${os.homedir()}
-*👑Creator:*${global.ownername}
-*💳Version:* 1.0
-*💎Prefix:* [ ${prefix} ]
-*⌚Time:* ${time}
-*🖥️ Speed:* ${latensie.toFixed(4)} Second
-*📡Free Memory:* ${os.freemem()}
-*📦Framework:* Nodejs
-*🦄Total Memory:* ${os.totalmem()}
-*🗃️Ram Usage:* ${ram2}
+「 𝗘-𝗣𝗛𝗢𝗧𝗢 𝗠𝗘𝗡𝗨 」
 
-╔➽「 ᴇᴘʜᴏᴛᴏ-ᴍᴇɴᴜ」
-║➭ 3d-wood
-║➭ angels-wings
-║➭ snake-text
-║➭ redhot-metal2
-║➭ sandsummer-beach
-║➭ snow-text
-║➭ water-3d
-║➭ water-effect
-║➭ wet-glass
-║➭ status-mood2
-║➭ summerysand
-└───────────●
+ 𝟹𝚍-𝚠𝚘𝚘𝚍
+ 𝚊𝚗𝚐𝚎𝚕𝚜-𝚠𝚒𝚗𝚐𝚜
+ 𝚜𝚗𝚊𝚔𝚎-𝚝𝚎𝚡𝚝
+ 𝚛𝚎𝚍𝚑𝚘𝚝-𝚖𝚎𝚝𝚊𝚕𝟸
+ 𝚜𝚊𝚗𝚍𝚜𝚞𝚖𝚖𝚎𝚛-𝚋𝚎𝚊𝚌𝚑
+ 𝚜𝚗𝚘𝚠-𝚝𝚎𝚡𝚝
+ 𝚠𝚊𝚝𝚎𝚛-𝟹𝚍
+ 𝚠𝚊𝚝𝚎𝚛-𝚎𝚏𝚏𝚎𝚌𝚝
+ 𝚠𝚎𝚝-𝚐𝚕𝚊𝚜𝚜
+ 𝚜𝚝𝚊𝚝𝚞𝚜-𝚖𝚘𝚘𝚍𝟸
+ 𝚜𝚞𝚖𝚖𝚎𝚛𝚢𝚜𝚊𝚗𝚍
 `
 let message = await prepareWAMessageMedia({ image: buffer, jpegThumbnail:buffer }, { upload: Wizard.waUploadToServer })
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
