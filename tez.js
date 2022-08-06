@@ -1,6 +1,5 @@
 /*const NewsAPI = require('newsapi');
   const newsapi = new NewsAPI('306032cefd134ab38660d7db51dd18d1');
-  //By Drips
   // To query top headlines
   // All options passed to topHeadlines are optional, but you need to include at least one of them
   newsapi.v2.sources({
@@ -23,32 +22,10 @@
 .then(console.log)
 .catch(console.error);*/
 
-// ⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈⧈
-//▮ZIM BOT INC 2022 ®️ALL RIGHTS RESERVED
-//▮
-//▮FORK AND DON'T FORGET TO GIVE A STAR
-//▮
-//▮THIS SOFTWARE IS UNDER UZ COPYRIGHT
-//▮
-//▮REPORT ABUSE OF THIS SOFTWARE EMAIL US
-//▮reinhardtuna@mail.uk
-//▮WHATSAPP US : +44 7441 437150
-//▮YOUTUBE CHANNELL: https://youtube.com/c/DRIPSOFC
-//▮
-//╰▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-//
-//┏━━━━━━━━━━━━━━━━━━━━━━━━━
-//┃THIS SOFTWARE INCLUDES 
-//┃SOME ENCRYPTED FILES
-//┃
-//┃THANKS FOR CHOOSING ZIMBOT
-//┃I WROTE THIS SCRIPT BY MYSELF THIS SCRIPT IS FOR EVERYONE DONT SELL IT
-//┗━━━━━━━━━━━━━━━━━━━━━━━━━
-//
 
 var fs = require('fs')
 
-let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
+let _RPG = JSON.parse(fs.readFileSync('./Library/database/inventori.json'))
 
         var addEmas = (sender, amount) => {
             let position = false
@@ -59,7 +36,7 @@ let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
             })
             if (position !== false) {
                 _RPG[position].emas += amount
-                fs.writeFileSync('./database/inventori.json', JSON.stringify(_RPG))
+                fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_RPG))
             }
         }
         
@@ -72,7 +49,7 @@ let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
             })
             if (position !== false) {
                 _RPG[position].emas -= amount
-                fs.writeFileSync('./database/inventori.json', JSON.stringify(_RPG))
+                fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_RPG))
             }
         }        
         
@@ -97,7 +74,7 @@ let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
             })
             if (position !== false) {
                 _RPG[position].diamond += amount
-                fs.writeFileSync('./database/inventori.json', JSON.stringify(_RPG))
+                fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_RPG))
             }
         }
         
@@ -110,7 +87,7 @@ let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
             })
             if (position !== false) {
                 _RPG[position].diamond -= amount
-                fs.writeFileSync('./database/inventori.json', JSON.stringify(_RPG))
+                fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_RPG))
             }
         }
               
@@ -135,7 +112,7 @@ let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
             })
             if (position !== false) {
                 _RPG[position].besi += amount
-                fs.writeFileSync('./database/inventori.json', JSON.stringify(_RPG))
+                fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_RPG))
             }
         }
         
@@ -148,7 +125,7 @@ let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
             })
             if (position !== false) {
                 _RPG[position].besi -= amount
-                fs.writeFileSync('./database/inventori.json', JSON.stringify(_RPG))
+                fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_RPG))
             }
         }
                 
@@ -173,7 +150,7 @@ let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
             })
             if (position !== false) {
                 _RPG[position].ikan += amount
-                fs.writeFileSync('./database/inventori.json', JSON.stringify(_RPG))
+                fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_RPG))
             }
         }
         
@@ -186,7 +163,7 @@ let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
             })
             if (position !== false) {
                 _RPG[position].ikan -= amount
-                fs.writeFileSync('./database/inventori.json', JSON.stringify(_RPG))
+                fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_RPG))
             }
         } 
                
@@ -205,7 +182,7 @@ let _RPG = JSON.parse(fs.readFileSync('./database/inventori.json'))
         var addInventori = (sender) => {
             var obj = {id: sender, emas: 0, diamond: 0, besi: 0, ikan: 0}
             _RPG.push(obj)
-            fs.writeFileSync('./database/inventori.json', JSON.stringify(_RPG))
+            fs.writeFileSync('./Library/database/inventori.json', JSON.stringify(_RPG))
         }
         
         var checkPetualangUser = (sender) => {
