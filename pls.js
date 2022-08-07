@@ -1,0 +1,1 @@
+"Bro please e repository onn delete cheyyamo njan aa bot set aakikondirikkuva adhin public aakiyadha bro adh appol fork cheytho onn delete cheyyamo ennik adh relese cheyyandadha idhil kurach confidential aayittulla sadhanagal und adh public aakan pattathilla adh enc cheyyandadha please bro onn delete chey idh🥲"
