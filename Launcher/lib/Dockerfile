@@ -1,6 +1,6 @@
 FROM node:lts-buster
 
-RUN git clone https://github.com/Ajmal-Achu/BETA  /root/Ejumel
+RUN git clone https://github.com/husni-ser-x7/BETA  /root/Ejumel
 
 RUN apt-get update && \
 apt-get install -y \
